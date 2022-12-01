@@ -120,5 +120,28 @@ namespace SourceCodeEditor
             isSaved = false;
             MarkFileAsUnsaved();
         }
+
+        private void MainForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if ( e.Control && e.KeyCode == Keys.O)
+            {
+                openToolStripMenuItem_Click(sender,e);
+            }
+
+            if (e.Control && e.KeyCode == Keys.N)
+            {
+                newToolStripMenuItem_Click(sender, e);
+            }
+
+            if (e.Control && e.KeyCode == Keys.S)
+            {
+                saveToolStripMenuItem_Click(sender, e);
+            }
+
+            if (e.Control && e.Shift && e.KeyCode == Keys.S)
+            {
+                saveAsToolStripMenuItem_Click(sender,e);
+            }
+        }
     }
 }
