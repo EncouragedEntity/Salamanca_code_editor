@@ -1,0 +1,17 @@
+D:\COURSE WORK\SourceCodeEditor\SourceCodeEditor\bin\Debug\net6.0-windows\SourceCodeEditor.exe
+D:\COURSE WORK\SourceCodeEditor\SourceCodeEditor\bin\Debug\net6.0-windows\SourceCodeEditor.deps.json
+D:\COURSE WORK\SourceCodeEditor\SourceCodeEditor\bin\Debug\net6.0-windows\SourceCodeEditor.runtimeconfig.json
+D:\COURSE WORK\SourceCodeEditor\SourceCodeEditor\bin\Debug\net6.0-windows\SourceCodeEditor.dll
+D:\COURSE WORK\SourceCodeEditor\SourceCodeEditor\bin\Debug\net6.0-windows\SourceCodeEditor.pdb
+D:\COURSE WORK\SourceCodeEditor\SourceCodeEditor\obj\Debug\net6.0-windows\SourceCodeEditor.csproj.AssemblyReference.cache
+D:\COURSE WORK\SourceCodeEditor\SourceCodeEditor\obj\Debug\net6.0-windows\SourceCodeEditor.MainForm.resources
+D:\COURSE WORK\SourceCodeEditor\SourceCodeEditor\obj\Debug\net6.0-windows\SourceCodeEditor.csproj.GenerateResource.cache
+D:\COURSE WORK\SourceCodeEditor\SourceCodeEditor\obj\Debug\net6.0-windows\SourceCodeEditor.GeneratedMSBuildEditorConfig.editorconfig
+D:\COURSE WORK\SourceCodeEditor\SourceCodeEditor\obj\Debug\net6.0-windows\SourceCodeEditor.AssemblyInfoInputs.cache
+D:\COURSE WORK\SourceCodeEditor\SourceCodeEditor\obj\Debug\net6.0-windows\SourceCodeEditor.AssemblyInfo.cs
+D:\COURSE WORK\SourceCodeEditor\SourceCodeEditor\obj\Debug\net6.0-windows\SourceCodeEditor.csproj.CoreCompileInputs.cache
+D:\COURSE WORK\SourceCodeEditor\SourceCodeEditor\obj\Debug\net6.0-windows\SourceCodeEditor.dll
+D:\COURSE WORK\SourceCodeEditor\SourceCodeEditor\obj\Debug\net6.0-windows\refint\SourceCodeEditor.dll
+D:\COURSE WORK\SourceCodeEditor\SourceCodeEditor\obj\Debug\net6.0-windows\SourceCodeEditor.pdb
+D:\COURSE WORK\SourceCodeEditor\SourceCodeEditor\obj\Debug\net6.0-windows\SourceCodeEditor.genruntimeconfig.cache
+D:\COURSE WORK\SourceCodeEditor\SourceCodeEditor\obj\Debug\net6.0-windows\ref\SourceCodeEditor.dll
