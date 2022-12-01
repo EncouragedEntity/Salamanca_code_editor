@@ -5,7 +5,9 @@ namespace SourceCodeEditor
     public partial class MainForm : Form
     {
         private string _currentFile = String.Empty;
-        private string _fileExtension = String.Empty;
+        private bool isFileCreated = false;
+        private bool isSaved = false;
+
         public MainForm()
         {
             InitializeComponent();
@@ -13,20 +15,67 @@ namespace SourceCodeEditor
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e) => Application.Exit();
 
+        /// <summary>
+        /// Adds "*" at the end of the file name in form text
+        /// </summary>
+        private void MarkFileAsUnsaved()
+        {
+            if(this.Text.Last()!='*')
+                this.Text += "*";
+        }
+        /// <summary>
+        /// Removes "*" at the end of form text
+        /// </summary>
+        private void MarkFileAsSaved()
+        {
+            this.Text = this.Text.Remove(this.Text.IndexOf(this.Text.Last()),1);
+        }
+
+        /// <summary>
+        /// Sets form text as App name and file opened name
+        /// </summary>
+        /// <param name="FileName">Name of file to set</param>
+        private void FileNameToFormText(string FileName = "*")
+        {
+            this.Text = "Salamanca | ";
+            this.Text += Path.GetFileName(FileName);
+        }
+
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var op = openFileDialog1;
             if (op.ShowDialog() != DialogResult.OK) return;
 
+            isFileCreated = true;
             _currentFile = op.FileName;
-            _fileExtension = Path.GetExtension(_currentFile);
+            FileNameToFormText(_currentFile);
             richTextBox1.Lines = File.ReadAllLines(_currentFile);
         }
 
-        private void SaveFile() => File.WriteAllLines(_currentFile, richTextBox1.Lines);
-        private void SaveFile(string FileName) => File.WriteAllLines(FileName, richTextBox1.Lines);
+        private void SaveFile()
+        {
+            File.WriteAllLines(_currentFile, richTextBox1.Lines);
+            MarkFileAsSaved();
+            isSaved = true;
+            isFileCreated = true;
+        }
+        private void SaveFile(string FileName)
+        {
+            File.WriteAllLines(FileName, richTextBox1.Lines);
+            MarkFileAsSaved();
+            isSaved = true;
+            isFileCreated = true;
+        }
 
-        private void saveToolStripMenuItem_Click(object sender, EventArgs e) => SaveFile();
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (isFileCreated == true)
+            {
+                SaveFile();
+                return;
+            }
+            newToolStripMenuItem_Click(sender, e);   
+        }
 
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -55,14 +104,7 @@ namespace SourceCodeEditor
             rich.BackColor = grey;
             toolStrip.BackColor = moreGrey;
             toolStrip.ForeColor = rich.ForeColor = Color.White;
-            foreach (ToolStripMenuItem item in toolStrip.Items)
-            {
-                foreach (ToolStripDropDownItem dropItem in item.DropDownItems)
-                {
-                    dropItem.BackColor = grey;
-                    dropItem.ForeColor = Color.White;
-                }
-            }
+            //Add all dropdown items color change
         }
         private void whiteToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -71,6 +113,12 @@ namespace SourceCodeEditor
             rich.BackColor = Color.White;
             toolStrip.BackColor = Color.FromArgb(224, 224, 224);
             toolStrip.ForeColor = rich.ForeColor = Color.Black;
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            isSaved = false;
+            MarkFileAsUnsaved();
         }
     }
 }
