@@ -28,54 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.MainHeader = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.themeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.whiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.blackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.menuStrip1.SuspendLayout();
+            this.MainFooter = new System.Windows.Forms.Panel();
+            this.labelLineCountText = new System.Windows.Forms.Label();
+            this.MainTextField = new FastColoredTextBoxNS.FastColoredTextBox();
+            this.MainHeader.SuspendLayout();
+            this.MainFooter.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MainTextField)).BeginInit();
             this.SuspendLayout();
             // 
-            // richTextBox1
+            // MainHeader
             // 
-            this.richTextBox1.AcceptsTab = true;
-            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.DetectUrls = false;
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.richTextBox1.ForeColor = System.Drawing.Color.White;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 28);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(800, 422);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.menuStrip1.ForeColor = System.Drawing.Color.White;
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MainHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.MainHeader.ForeColor = System.Drawing.Color.White;
+            this.MainHeader.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.MainHeader.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.viewToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
+            this.MainHeader.Location = new System.Drawing.Point(0, 0);
+            this.MainHeader.Name = "MainHeader";
+            this.MainHeader.Size = new System.Drawing.Size(800, 28);
+            this.MainHeader.TabIndex = 1;
             // 
             // fileToolStripMenuItem
             // 
@@ -83,9 +69,7 @@
             this.openToolStripMenuItem,
             this.newToolStripMenuItem,
             this.saveToolStripMenuItem,
-            this.saveAsToolStripMenuItem,
-            this.toolStripSeparator1,
-            this.exitToolStripMenuItem});
+            this.saveAsToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
             this.fileToolStripMenuItem.Text = "File";
@@ -121,18 +105,6 @@
             this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
             this.saveAsToolStripMenuItem.Text = "Save as";
             this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(244, 6);
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // viewToolStripMenuItem
             // 
@@ -170,42 +142,109 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // MainFooter
+            // 
+            this.MainFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.MainFooter.Controls.Add(this.labelLineCountText);
+            this.MainFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.MainFooter.Location = new System.Drawing.Point(0, 422);
+            this.MainFooter.Name = "MainFooter";
+            this.MainFooter.Size = new System.Drawing.Size(800, 28);
+            this.MainFooter.TabIndex = 2;
+            // 
+            // labelLineCountText
+            // 
+            this.labelLineCountText.AutoSize = true;
+            this.labelLineCountText.ForeColor = System.Drawing.Color.White;
+            this.labelLineCountText.Location = new System.Drawing.Point(3, 4);
+            this.labelLineCountText.Name = "labelLineCountText";
+            this.labelLineCountText.Size = new System.Drawing.Size(57, 20);
+            this.labelLineCountText.TabIndex = 0;
+            this.labelLineCountText.Text = "Lines: 0";
+            // 
+            // MainTextField
+            // 
+            this.MainTextField.AutoCompleteBracketsList = new char[] {
+        '(',
+        ')',
+        '{',
+        '}',
+        '[',
+        ']',
+        '\"',
+        '\"',
+        '\'',
+        '\''};
+            this.MainTextField.AutoIndentCharsPatterns = "\r\n^\\s*[\\w\\.]+(\\s\\w+)?\\s*(?<range>=)\\s*(?<range>[^;]+);\r\n^\\s*(case|default)\\s*[^:]" +
+    "*(?<range>:)\\s*(?<range>[^;]+);\r\n";
+            this.MainTextField.AutoScrollMinSize = new System.Drawing.Size(35, 22);
+            this.MainTextField.BackBrush = null;
+            this.MainTextField.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.MainTextField.BracketsHighlightStrategy = FastColoredTextBoxNS.BracketsHighlightStrategy.Strategy2;
+            this.MainTextField.CharHeight = 22;
+            this.MainTextField.CharWidth = 12;
+            this.MainTextField.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.MainTextField.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainTextField.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.MainTextField.ForeColor = System.Drawing.Color.White;
+            this.MainTextField.IndentBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.MainTextField.IsReplaceMode = false;
+            this.MainTextField.Language = FastColoredTextBoxNS.Language.CSharp;
+            this.MainTextField.LeftBracket = '(';
+            this.MainTextField.LeftBracket2 = '{';
+            this.MainTextField.LineNumberColor = System.Drawing.Color.Silver;
+            this.MainTextField.Location = new System.Drawing.Point(0, 28);
+            this.MainTextField.Name = "MainTextField";
+            this.MainTextField.Paddings = new System.Windows.Forms.Padding(0);
+            this.MainTextField.RightBracket = ')';
+            this.MainTextField.RightBracket2 = '}';
+            this.MainTextField.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
+            this.MainTextField.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("MainTextField.ServiceColors")));
+            this.MainTextField.Size = new System.Drawing.Size(800, 394);
+            this.MainTextField.TabIndex = 3;
+            this.MainTextField.Zoom = 100;
+            this.MainTextField.TextChanged += new System.EventHandler<FastColoredTextBoxNS.TextChangedEventArgs>(this.MainTextField_TextChanged);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.MainTextField);
+            this.Controls.Add(this.MainFooter);
+            this.Controls.Add(this.MainHeader);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
-            this.MainMenuStrip = this.menuStrip1;
+            this.MainMenuStrip = this.MainHeader;
             this.Name = "MainForm";
             this.Text = "Salamanca | *";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.MainHeader.ResumeLayout(false);
+            this.MainHeader.PerformLayout();
+            this.MainFooter.ResumeLayout(false);
+            this.MainFooter.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MainTextField)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private RichTextBox richTextBox1;
-        private MenuStrip menuStrip1;
+        private MenuStrip MainHeader;
         private ToolStripMenuItem fileToolStripMenuItem;
         private ToolStripMenuItem openToolStripMenuItem;
         private ToolStripMenuItem newToolStripMenuItem;
         private ToolStripMenuItem saveToolStripMenuItem;
         private ToolStripMenuItem saveAsToolStripMenuItem;
-        private ToolStripMenuItem exitToolStripMenuItem;
-        private ToolStripSeparator toolStripSeparator1;
         private OpenFileDialog openFileDialog1;
         private SaveFileDialog saveFileDialog1;
         private ToolStripMenuItem viewToolStripMenuItem;
         private ToolStripMenuItem themeToolStripMenuItem;
         private ToolStripMenuItem whiteToolStripMenuItem;
         private ToolStripMenuItem blackToolStripMenuItem;
+        private Panel MainFooter;
+        private Label labelLineCountText;
+        private FastColoredTextBoxNS.FastColoredTextBox MainTextField;
     }
 }
