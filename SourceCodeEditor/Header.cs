@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace SourceCodeEditor
 {
-    internal class Header
+    /// <summary>
+    /// Class, that contains operations with Main MenuStrip on form
+    /// </summary>
+    public class Header
     {
+        /// <returns>Enumeration of dropdown items of header</returns>
         public static IEnumerable<ToolStripMenuItem> GetHeaderItems(ToolStripMenuItem item)
         {
             foreach (ToolStripMenuItem dropDownItem in item.DropDownItems)

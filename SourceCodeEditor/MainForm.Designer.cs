@@ -1,4 +1,6 @@
-﻿namespace SourceCodeEditor
+﻿using FastColoredTextBoxNS;
+
+namespace SourceCodeEditor
 {
     partial class MainForm
     {
@@ -217,6 +219,7 @@
             this.KeyPreview = true;
             this.MainMenuStrip = this.MainHeader;
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Salamanca | *";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);

@@ -1,4 +1,6 @@
+using FastColoredTextBoxNS;
 using SourceCodeEditor.AppearenceConfig;
+using System.Collections.Generic;
 
 namespace SourceCodeEditor
 {
@@ -10,10 +12,12 @@ namespace SourceCodeEditor
         public MainForm()
         {
             InitializeComponent();
+            MainTextField.SyntaxHighlighter.StringStyle = new TextStyle(Brushes.Orange, null, FontStyle.Regular);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            
             ThemeChanger.ChangeGeneralThemeToBlack(MainHeader, MainTextField, MainFooter, labelLineCountText);
         }
 
@@ -109,7 +113,7 @@ namespace SourceCodeEditor
                 SaveFile();
                 return;
             }
-            newToolStripMenuItem_Click(sender, e);   
+            newToolStripMenuItem_Click(sender, e);
         }
 
         /// <summary>
@@ -137,52 +141,66 @@ namespace SourceCodeEditor
         }
 
 
-        private void blackToolStripMenuItem_Click(object sender, EventArgs e) => 
-            ThemeChanger.ChangeGeneralThemeToBlack(MainHeader, MainTextField, MainFooter, labelLineCountText); 
+        private IEnumerable<Label> GetLabelsFromPanel(Panel panel)
+        {
+            var labels = new List<Label>();
+            foreach (Control control in panel.Controls)
+            {
+                if (control is Label)
+                    labels.Add((Label)control);
+            }
+            return labels;
+        }
 
-        /// <summary>
-        /// Set Application theme to "White"
-        /// </summary>
-        private void whiteToolStripMenuItem_Click(object sender, EventArgs e) => 
-            ThemeChanger.ChangeGeneralThemeToWhite(MainHeader, MainTextField, MainFooter, labelLineCountText);
+        private IEnumerable<Label> GetLabelsFromForm()
+        {
+            var labels = new List<Label>(); 
+            foreach (Control control in this.Controls)
+            {
+                if (control is Label)
+                     labels.Add((Label)control);
+                if (control is Panel)
+                    labels.AddRange((List<Label>)GetLabelsFromPanel((Panel)control));
+            }
+            return labels;
+        }
+
+        private void blackToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var labels = this.GetLabelsFromForm();
+            ThemeChanger.ChangeGeneralThemeToBlack(MainHeader, MainTextField, MainFooter, labels);
+        }
+
+        private void whiteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var labels = this.GetLabelsFromForm();
+            ThemeChanger.ChangeGeneralThemeToWhite(MainHeader, MainTextField, MainFooter, labels);
+        }
 
         /// <summary>
         /// Shortcuts on form
         /// </summary>
         private void MainForm_KeyDown(object sender, KeyEventArgs e)
         {
-	    if(!e.Control) return;
-	    switch(e.KeyCode)
-	    {
-	    	case Keys.O:
-			openToolStripMenuItem_Click(sender,e);
-		break; 
-	    	case Keys.N:
-			newToolStripMenuItem_Click(sender, e);
-		break; 
-	    	case Keys.S:
-                    if (e.Shift)
-                    {
-                        saveAsToolStripMenuItem_Click(sender, e);
+	        if(!e.Control) return;
+	        switch(e.KeyCode)
+	        {
+	    	    case Keys.O:
+			            openToolStripMenuItem_Click(sender,e);
+		    break; 
+	    	    case Keys.N:
+			            newToolStripMenuItem_Click(sender, e);
+		    break; 
+	    	    case Keys.S:
+                        if (e.Shift)
+                        {
+                            saveAsToolStripMenuItem_Click(sender, e);
+                            break;
+                        }
+                        saveToolStripMenuItem_Click(sender, e);
                         break;
-                    }
-                    saveToolStripMenuItem_Click(sender, e);
-                    break;
                 default: return;
-        }
-/*
-            if (e.Control && e.KeyCode == Keys.O)
-                openToolStripMenuItem_Click(sender,e);
-
-            if (e.Control && e.KeyCode == Keys.N)
-                newToolStripMenuItem_Click(sender, e);
-
-            if (e.Control && e.KeyCode == Keys.S)
-                saveToolStripMenuItem_Click(sender, e);
-            
-            if (e.Control && e.Shift && e.KeyCode == Keys.S)
-                saveAsToolStripMenuItem_Click(sender,e);
-*/    
+            }
         }
 
         private void MainTextField_TextChanged(object sender, FastColoredTextBoxNS.TextChangedEventArgs e)
