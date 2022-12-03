@@ -1,2 +1,2 @@
 # CSharp-source-code-editor
-Simple text editor, that supports C# syntax highlighting
+Simple code editor, that supports several languages syntax highlighting
