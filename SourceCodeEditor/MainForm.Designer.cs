@@ -40,8 +40,8 @@ namespace SourceCodeEditor
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.themeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.whiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.blackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.whiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.MainFooter = new System.Windows.Forms.Panel();
@@ -120,25 +120,28 @@ namespace SourceCodeEditor
             // 
             this.themeToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
             this.themeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.whiteToolStripMenuItem,
-            this.blackToolStripMenuItem});
+            this.blackToolStripMenuItem,
+            this.whiteToolStripMenuItem});
             this.themeToolStripMenuItem.Name = "themeToolStripMenuItem";
-            this.themeToolStripMenuItem.Size = new System.Drawing.Size(137, 26);
+            this.themeToolStripMenuItem.ShowShortcutKeys = false;
+            this.themeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.themeToolStripMenuItem.Text = "Theme";
+            // 
+            // blackToolStripMenuItem
+            // 
+            this.blackToolStripMenuItem.Checked = true;
+            this.blackToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.blackToolStripMenuItem.Name = "blackToolStripMenuItem";
+            this.blackToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.blackToolStripMenuItem.Text = "Black";
+            this.blackToolStripMenuItem.Click += new System.EventHandler(this.blackToolStripMenuItem_Click);
             // 
             // whiteToolStripMenuItem
             // 
             this.whiteToolStripMenuItem.Name = "whiteToolStripMenuItem";
-            this.whiteToolStripMenuItem.Size = new System.Drawing.Size(131, 26);
+            this.whiteToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.whiteToolStripMenuItem.Text = "White";
             this.whiteToolStripMenuItem.Click += new System.EventHandler(this.whiteToolStripMenuItem_Click);
-            // 
-            // blackToolStripMenuItem
-            // 
-            this.blackToolStripMenuItem.Name = "blackToolStripMenuItem";
-            this.blackToolStripMenuItem.Size = new System.Drawing.Size(131, 26);
-            this.blackToolStripMenuItem.Text = "Black";
-            this.blackToolStripMenuItem.Click += new System.EventHandler(this.blackToolStripMenuItem_Click);
             // 
             // openFileDialog1
             // 
@@ -243,11 +246,11 @@ namespace SourceCodeEditor
         private OpenFileDialog openFileDialog1;
         private SaveFileDialog saveFileDialog1;
         private ToolStripMenuItem viewToolStripMenuItem;
-        private ToolStripMenuItem themeToolStripMenuItem;
-        private ToolStripMenuItem whiteToolStripMenuItem;
-        private ToolStripMenuItem blackToolStripMenuItem;
         private Panel MainFooter;
         private Label labelLineCountText;
         private FastColoredTextBoxNS.FastColoredTextBox MainTextField;
+        private ToolStripMenuItem themeToolStripMenuItem;
+        private ToolStripMenuItem blackToolStripMenuItem;
+        private ToolStripMenuItem whiteToolStripMenuItem;
     }
 }

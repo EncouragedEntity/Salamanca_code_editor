@@ -9,23 +9,13 @@ namespace SourceCodeEditor
     /// </summary>
     public partial class MainForm : Form
     {
-        public MainForm()
-        {
-            InitializeComponent();
-            MainTextField.SyntaxHighlighter.StringStyle = new TextStyle(Brushes.Orange, null, FontStyle.Regular);
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            
-            ThemeChanger.ChangeGeneralThemeToBlack(MainHeader, MainTextField, MainFooter, labelLineCountText);
-        }
-
         #region Fields
         /// <summary>
         /// Name of application
         /// </summary>
         private string _programName = "Salamanca";
+
+        private Theme _currentTheme = Theme.Black;
 
         /// <summary>
         /// Current opened file
@@ -42,6 +32,17 @@ namespace SourceCodeEditor
         /// </summary>
         private bool _isSaved = false;
         #endregion
+
+        public MainForm()
+        {
+            InitializeComponent();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            //Chnage form theme to black on Load 
+            ThemeChanger.ChangeTheme(_currentTheme, MainHeader, MainTextField, MainFooter, new List<Label> {labelLineCountText});
+        }
 
         #region Methods
         /// <summary>
@@ -75,9 +76,8 @@ namespace SourceCodeEditor
 
             _isFileCreated = true;
             _currentFile = op.FileName;
-            FileNameToFormText(_currentFile);
-            StreamWriter sw = new StreamWriter(_currentFile);
-            sw.Write(MainTextField.Text);
+            FileNameToFormText(_currentFile);   
+            MainTextField.Text = File.ReadAllText(_currentFile);
         }
 
         /// <summary>
@@ -122,7 +122,9 @@ namespace SourceCodeEditor
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var sv = saveFileDialog1;
+            sv.FileName = _currentFile;
             if (sv.ShowDialog() != DialogResult.OK) return;
+
             SaveFile(sv.FileName);
             FileNameToFormText(sv.FileName);
         }
@@ -168,13 +170,20 @@ namespace SourceCodeEditor
         private void blackToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var labels = this.GetLabelsFromForm();
-            ThemeChanger.ChangeGeneralThemeToBlack(MainHeader, MainTextField, MainFooter, labels);
+            _currentTheme = Theme.Black;
+            ThemeChanger.ChangeTheme(_currentTheme, MainHeader, MainTextField, MainFooter, labels);
+
+            whiteToolStripMenuItem.Checked = false;
+            blackToolStripMenuItem.Checked = true;
         }
 
         private void whiteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var labels = this.GetLabelsFromForm();
-            ThemeChanger.ChangeGeneralThemeToWhite(MainHeader, MainTextField, MainFooter, labels);
+            _currentTheme = Theme.White;
+            ThemeChanger.ChangeTheme(_currentTheme, MainHeader, MainTextField, MainFooter, labels);
+            whiteToolStripMenuItem.Checked = true;
+            blackToolStripMenuItem.Checked = false;
         }
 
         /// <summary>
@@ -210,6 +219,5 @@ namespace SourceCodeEditor
             MarkFileAsUnsaved();
         }
         #endregion
-
     }
 }

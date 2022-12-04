@@ -17,3 +17,4 @@ D:\COURSE WORK\SourceCodeEditor\SourceCodeEditor\obj\Debug\net6.0-windows\Source
 D:\COURSE WORK\SourceCodeEditor\SourceCodeEditor\obj\Debug\net6.0-windows\ref\SourceCodeEditor.dll
 D:\COURSE WORK\SourceCodeEditor\SourceCodeEditor\bin\Debug\net6.0-windows\FastColoredTextBox.dll
 D:\COURSE WORK\SourceCodeEditor\SourceCodeEditor\obj\Debug\net6.0-windows\SourceCodeEditor.csproj.CopyComplete
+D:\COURSE WORK\SourceCodeEditor\SourceCodeEditor\obj\Debug\net6.0-windows\SourceCodeEditor.Properties.Resources.resources
