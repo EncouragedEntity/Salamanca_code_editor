@@ -2,6 +2,10 @@
 
 namespace SourceCodeEditor.AppearenceConfig
 {
+
+    /// TODO:
+    ///CHANGE THIS SHIT FROM STATIC TO OBJECT
+
     public class ThemeChanger
     {
         private static Color grey = Color.FromArgb(90, 90, 90);

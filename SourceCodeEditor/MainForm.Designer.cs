@@ -124,7 +124,7 @@ namespace SourceCodeEditor
             this.whiteToolStripMenuItem});
             this.themeToolStripMenuItem.Name = "themeToolStripMenuItem";
             this.themeToolStripMenuItem.ShowShortcutKeys = false;
-            this.themeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.themeToolStripMenuItem.Size = new System.Drawing.Size(128, 26);
             this.themeToolStripMenuItem.Text = "Theme";
             // 
             // blackToolStripMenuItem
@@ -132,14 +132,14 @@ namespace SourceCodeEditor
             this.blackToolStripMenuItem.Checked = true;
             this.blackToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.blackToolStripMenuItem.Name = "blackToolStripMenuItem";
-            this.blackToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.blackToolStripMenuItem.Size = new System.Drawing.Size(131, 26);
             this.blackToolStripMenuItem.Text = "Black";
             this.blackToolStripMenuItem.Click += new System.EventHandler(this.blackToolStripMenuItem_Click);
             // 
             // whiteToolStripMenuItem
             // 
             this.whiteToolStripMenuItem.Name = "whiteToolStripMenuItem";
-            this.whiteToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.whiteToolStripMenuItem.Size = new System.Drawing.Size(131, 26);
             this.whiteToolStripMenuItem.Text = "White";
             this.whiteToolStripMenuItem.Click += new System.EventHandler(this.whiteToolStripMenuItem_Click);
             // 
@@ -225,7 +225,6 @@ namespace SourceCodeEditor
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Salamanca | *";
             this.Load += new System.EventHandler(this.MainForm_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
             this.MainHeader.ResumeLayout(false);
             this.MainHeader.PerformLayout();
             this.MainFooter.ResumeLayout(false);

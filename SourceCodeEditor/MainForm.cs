@@ -1,6 +1,7 @@
 using FastColoredTextBoxNS;
 using SourceCodeEditor.AppearenceConfig;
 using System.Collections.Generic;
+using System.Text.Json;
 
 namespace SourceCodeEditor
 {
@@ -40,7 +41,9 @@ namespace SourceCodeEditor
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            //Chnage form theme to black on Load 
+            new HotKeysConfig(MainHeader).LoadHotkeysConfig();
+
+            //Change form theme to black on Load 
             ThemeChanger.ChangeTheme(_currentTheme, MainHeader, MainTextField, MainFooter, new List<Label> {labelLineCountText});
         }
 
@@ -67,7 +70,7 @@ namespace SourceCodeEditor
         private void FileNameToFormText(string FileName = "*") => this.Text = $"{_programName} | {Path.GetFileName(FileName)}";
 
         /// <summary>
-        /// Display opened file content to RichTextBox
+        /// Display opened file content to FastColoredTextBox
         /// </summary>
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -104,7 +107,7 @@ namespace SourceCodeEditor
         }
 
         /// <summary>
-        /// Save RichTextBox content to current file
+        /// Save FastColoredTextBox content to current file
         /// </summary>
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -117,7 +120,7 @@ namespace SourceCodeEditor
         }
 
         /// <summary>
-        /// Save RichTextBox content to new file
+        /// Save FastColoredTextBox content to new file
         /// </summary>
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -130,7 +133,7 @@ namespace SourceCodeEditor
         }
 
         /// <summary>
-        /// Create new file and save RichTextBox contents to it
+        /// Create new file and save FastColoredTextBox contents to it
         /// </summary>
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -141,7 +144,6 @@ namespace SourceCodeEditor
             FileNameToFormText(_currentFile);
             SaveFile();
         }
-
 
         private IEnumerable<Label> GetLabelsFromPanel(Panel panel)
         {
@@ -184,32 +186,6 @@ namespace SourceCodeEditor
             ThemeChanger.ChangeTheme(_currentTheme, MainHeader, MainTextField, MainFooter, labels);
             whiteToolStripMenuItem.Checked = true;
             blackToolStripMenuItem.Checked = false;
-        }
-
-        /// <summary>
-        /// Shortcuts on form
-        /// </summary>
-        private void MainForm_KeyDown(object sender, KeyEventArgs e)
-        {
-	        if(!e.Control) return;
-	        switch(e.KeyCode)
-	        {
-	    	    case Keys.O:
-			            openToolStripMenuItem_Click(sender,e);
-		    break; 
-	    	    case Keys.N:
-			            newToolStripMenuItem_Click(sender, e);
-		    break; 
-	    	    case Keys.S:
-                        if (e.Shift)
-                        {
-                            saveAsToolStripMenuItem_Click(sender, e);
-                            break;
-                        }
-                        saveToolStripMenuItem_Click(sender, e);
-                        break;
-                default: return;
-            }
         }
 
         private void MainTextField_TextChanged(object sender, FastColoredTextBoxNS.TextChangedEventArgs e)

@@ -24,5 +24,21 @@ namespace SourceCodeEditor
                 yield return dropDownItem;
             }
         }
+
+        public static IEnumerable<ToolStripMenuItem> GetHeaderItems(object item)
+        {
+            var Item = (ToolStripMenuItem)item;
+            foreach (ToolStripMenuItem dropDownItem in Item.DropDownItems)
+            {
+                if (dropDownItem.HasDropDownItems)
+                {
+                    foreach (ToolStripMenuItem subItem in GetHeaderItems(dropDownItem))
+                        yield return subItem;
+                }
+                yield return dropDownItem;
+            }
+        }
     }
+
+
 }
