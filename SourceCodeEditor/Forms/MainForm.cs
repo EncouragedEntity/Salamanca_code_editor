@@ -17,7 +17,7 @@ namespace SourceCodeEditor
         /// </summary>
         private string _applicationName = "Salamanca";
 
-        private Theme _currentTheme = Theme.Black;
+        public Theme _currentTheme = Theme.Black;
 
         /// <summary>
         /// Current opened file
@@ -28,11 +28,6 @@ namespace SourceCodeEditor
         /// Is file created on disk
         /// </summary>
         private bool _isFileCreated = false;
-
-        /// <summary>
-        /// Is file saved on disk
-        /// </summary>
-        private bool _isSaved = false;
         #endregion
 
         public MainForm()
@@ -183,7 +178,7 @@ namespace SourceCodeEditor
         /// <summary>
         /// Change theme of application to black
         /// </summary>
-        private void blackToolStripMenuItem_Click(object sender, EventArgs e)
+        public void blackToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var labels = this.GetLabelsFromForm();
             _currentTheme = Theme.Black;
@@ -196,7 +191,7 @@ namespace SourceCodeEditor
         /// <summary>
         /// Change theme of application to white
         /// </summary>
-        private void whiteToolStripMenuItem_Click(object sender, EventArgs e)
+        public void whiteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var labels = this.GetLabelsFromForm();
             _currentTheme = Theme.White;
@@ -217,7 +212,7 @@ namespace SourceCodeEditor
         /// </summary>
         private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new OptionsForm().ShowDialog();
+            new OptionsForm(this).ShowDialog();
         }
         #endregion 
     }

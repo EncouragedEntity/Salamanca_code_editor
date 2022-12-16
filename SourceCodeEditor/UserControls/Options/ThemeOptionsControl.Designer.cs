@@ -38,8 +38,9 @@
             this.buttonChange.Name = "buttonChange";
             this.buttonChange.Size = new System.Drawing.Size(94, 29);
             this.buttonChange.TabIndex = 0;
-            this.buttonChange.Text = "button1";
+            this.buttonChange.Text = "Change";
             this.buttonChange.UseVisualStyleBackColor = true;
+            this.buttonChange.Click += new System.EventHandler(this.buttonChange_Click);
             // 
             // comboBoxThemes
             // 
@@ -57,7 +58,7 @@
             this.Controls.Add(this.comboBoxThemes);
             this.Controls.Add(this.buttonChange);
             this.Name = "ThemeOptionsControl";
-            this.Size = new System.Drawing.Size(268, 43);
+            this.Size = new System.Drawing.Size(259, 37);
             this.Load += new System.EventHandler(this.ThemeOptionsControl_Load);
             this.ResumeLayout(false);
 
