@@ -28,31 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonChange = new System.Windows.Forms.Button();
+            this.comboBoxThemes = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // button1
+            // buttonChange
             // 
-            this.button1.Location = new System.Drawing.Point(91, 165);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(190, 39);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1asdasdad";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonChange.Location = new System.Drawing.Point(3, 3);
+            this.buttonChange.Name = "buttonChange";
+            this.buttonChange.Size = new System.Drawing.Size(94, 29);
+            this.buttonChange.TabIndex = 0;
+            this.buttonChange.Text = "button1";
+            this.buttonChange.UseVisualStyleBackColor = true;
+            // 
+            // comboBoxThemes
+            // 
+            this.comboBoxThemes.FormattingEnabled = true;
+            this.comboBoxThemes.Location = new System.Drawing.Point(103, 3);
+            this.comboBoxThemes.Name = "comboBoxThemes";
+            this.comboBoxThemes.Size = new System.Drawing.Size(151, 28);
+            this.comboBoxThemes.TabIndex = 1;
             // 
             // ThemeOptionsControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button1);
+            this.BackColor = System.Drawing.Color.Gray;
+            this.Controls.Add(this.comboBoxThemes);
+            this.Controls.Add(this.buttonChange);
             this.Name = "ThemeOptionsControl";
-            this.Size = new System.Drawing.Size(443, 378);
+            this.Size = new System.Drawing.Size(268, 43);
+            this.Load += new System.EventHandler(this.ThemeOptionsControl_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Button button1;
+        private Button buttonChange;
+        private ComboBox comboBoxThemes;
     }
 }

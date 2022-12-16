@@ -25,8 +25,25 @@ namespace SourceCodeEditor.Forms
             dataGridView1.Columns[0].Width = dataGridView1.Width-3;
         }
 
+        private void ReverseDataGridViewRows(DataGridView dg)
+        {
+            var rows = new List<DataGridViewRow>();
+            rows.AddRange(dg.Rows.Cast<DataGridViewRow>());
+            rows.Reverse();
+            dg.Rows.Clear();
+            dg.Rows.AddRange(rows.ToArray());
+        }
+
+        private void SetDataGridItems()
+        {
+            dataGridView1.Rows.Add("General");
+            dataGridView1.Rows.Add("Theme");
+
+        }
+
         private void OptionsForm_Load(object sender, EventArgs e)
         {
+            SetDataGridItems();
             GeneralOptionsControl optionsControl = new GeneralOptionsControl();
             optionsControl.Dock = DockStyle.Fill;
             WorkPanel.Controls.Add(optionsControl);

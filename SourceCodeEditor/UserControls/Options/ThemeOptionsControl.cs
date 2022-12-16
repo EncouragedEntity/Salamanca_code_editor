@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SourceCodeEditor.AppearenceConfig;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,11 @@ namespace SourceCodeEditor.UserControls
         public ThemeOptionsControl()
         {
             InitializeComponent();
+        }
+
+        private void ThemeOptionsControl_Load(object sender, EventArgs e)
+        {
+            comboBoxThemes.DataSource = Enum.GetNames(typeof(Theme));
         }
     }
 }
