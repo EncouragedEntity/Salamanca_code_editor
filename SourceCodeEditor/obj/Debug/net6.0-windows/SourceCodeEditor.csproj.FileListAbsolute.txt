@@ -19,3 +19,5 @@ D:\COURSE WORK\SourceCodeEditor\SourceCodeEditor\obj\Debug\net6.0-windows\refint
 D:\COURSE WORK\SourceCodeEditor\SourceCodeEditor\obj\Debug\net6.0-windows\SourceCodeEditor.pdb
 D:\COURSE WORK\SourceCodeEditor\SourceCodeEditor\obj\Debug\net6.0-windows\SourceCodeEditor.genruntimeconfig.cache
 D:\COURSE WORK\SourceCodeEditor\SourceCodeEditor\obj\Debug\net6.0-windows\ref\SourceCodeEditor.dll
+D:\COURSE WORK\SourceCodeEditor\SourceCodeEditor\obj\Debug\net6.0-windows\SourceCodeEditor.UserControls.GeneralOptionsControl.resources
+D:\COURSE WORK\SourceCodeEditor\SourceCodeEditor\obj\Debug\net6.0-windows\SourceCodeEditor.UserControls.ThemeOptionsControl.resources

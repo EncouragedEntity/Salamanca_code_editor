@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("General");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("General");
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ColumnOptions = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.WorkPanel = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,10 +44,10 @@
             this.treeView1.LineColor = System.Drawing.Color.Empty;
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Name = "treeView1";
-            treeNode1.Name = "NodeGeneral";
-            treeNode1.Text = "General";
+            treeNode2.Name = "NodeGeneral";
+            treeNode2.Text = "General";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1});
+            treeNode2});
             this.treeView1.Size = new System.Drawing.Size(213, 450);
             this.treeView1.TabIndex = 0;
             // 
@@ -64,7 +65,7 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(200, 450);
+            this.dataGridView1.Size = new System.Drawing.Size(139, 450);
             this.dataGridView1.TabIndex = 0;
             // 
             // ColumnOptions
@@ -77,12 +78,21 @@
             this.ColumnOptions.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.ColumnOptions.Width = 125;
             // 
+            // WorkPanel
+            // 
+            this.WorkPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.WorkPanel.Location = new System.Drawing.Point(139, 0);
+            this.WorkPanel.Name = "WorkPanel";
+            this.WorkPanel.Size = new System.Drawing.Size(643, 450);
+            this.WorkPanel.TabIndex = 1;
+            // 
             // OptionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.ClientSize = new System.Drawing.Size(782, 450);
+            this.Controls.Add(this.WorkPanel);
             this.Controls.Add(this.dataGridView1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -101,5 +111,6 @@
         private TreeView treeView1;
         private DataGridView dataGridView1;
         private DataGridViewButtonColumn ColumnOptions;
+        private Panel WorkPanel;
     }
 }

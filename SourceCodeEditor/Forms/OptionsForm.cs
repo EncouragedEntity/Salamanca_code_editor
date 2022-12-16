@@ -1,4 +1,5 @@
 ﻿using SourceCodeEditor.AppearenceConfig;
+using SourceCodeEditor.UserControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,6 +27,9 @@ namespace SourceCodeEditor.Forms
 
         private void OptionsForm_Load(object sender, EventArgs e)
         {
+            GeneralOptionsControl optionsControl = new GeneralOptionsControl();
+            optionsControl.Dock = DockStyle.Fill;
+            WorkPanel.Controls.Add(optionsControl);
             ValidateSize();
         }
 
