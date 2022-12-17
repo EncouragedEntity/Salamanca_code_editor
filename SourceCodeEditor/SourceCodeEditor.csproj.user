@@ -10,5 +10,8 @@
     <Compile Update="UserControls\Options\GeneralOptionsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="UserControls\Options\HotKeysOptionsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

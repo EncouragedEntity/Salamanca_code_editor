@@ -1,4 +1,4 @@
-﻿using SourceCodeEditor.AppearenceConfig;
+﻿using SourceCodeEditor.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

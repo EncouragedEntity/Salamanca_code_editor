@@ -1,5 +1,6 @@
 using FastColoredTextBoxNS;
 using SourceCodeEditor.AppearenceConfig;
+using SourceCodeEditor.Enums;
 using SourceCodeEditor.Forms;
 using System.Collections.Generic;
 using System.Text.Json;
@@ -87,7 +88,6 @@ namespace SourceCodeEditor
         {
             File.WriteAllLines(_currentFile, MainTextField.Lines);
             MarkFileAsSaved();
-            _isSaved = true;
             _isFileCreated = true;
         }
 
@@ -99,7 +99,6 @@ namespace SourceCodeEditor
         {
             File.WriteAllLines(FileName, MainTextField.Lines);
             MarkFileAsSaved();
-            _isSaved = true;
             _isFileCreated = true;
         }
 
@@ -203,7 +202,6 @@ namespace SourceCodeEditor
         private void MainTextField_TextChanged(object sender, TextChangedEventArgs e)
         {
             LineCountLable.Text = $"Lines: {MainTextField.Lines.Count}";
-            _isSaved = false;
             MarkFileAsUnsaved();
         }
         

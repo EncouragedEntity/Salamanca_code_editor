@@ -1,4 +1,5 @@
 ﻿using FastColoredTextBoxNS;
+using SourceCodeEditor.Enums;
 
 namespace SourceCodeEditor.AppearenceConfig
 {

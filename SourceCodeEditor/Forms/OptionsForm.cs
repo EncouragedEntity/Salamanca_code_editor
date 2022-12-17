@@ -1,15 +1,6 @@
-﻿using SourceCodeEditor.AppearenceConfig;
+﻿using SourceCodeEditor.Enums;
 using SourceCodeEditor.UserControls;
 using SourceCodeEditor.UserControls.Options;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace SourceCodeEditor.Forms
 {
@@ -43,6 +34,7 @@ namespace SourceCodeEditor.Forms
         {
             dataGridView1.Rows.Add("General");
             dataGridView1.Rows.Add("Theme");
+            dataGridView1.Rows.Add("HotKeys");
         }
 
         /// <summary>
@@ -100,6 +92,13 @@ namespace SourceCodeEditor.Forms
                     LoadUserControl(control);
                 }
                 break;
+
+                case Options.HotKeys:
+                {
+                    var control = new HotKeysOptionsControl(mainForm);
+                    LoadUserControl(control);
+                }
+                break;
             }
         }
 
@@ -119,6 +118,10 @@ namespace SourceCodeEditor.Forms
                 case "Theme":
                     {
                         ChangeOptionPanel(Options.Theme);
+                    }break;
+                case "HotKeys":
+                    {
+                        ChangeOptionPanel(Options.HotKeys);
                     }
                     break;
             }

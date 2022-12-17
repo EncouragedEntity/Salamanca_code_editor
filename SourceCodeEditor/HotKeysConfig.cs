@@ -25,7 +25,6 @@ namespace SourceCodeEditor
         /// <returns>JSON string</returns>
         private static string SerializeListOfHotKeys(List<Keys> listofHotKeys)
         {
-
             return JsonSerializer.Serialize(listofHotKeys,new JsonSerializerOptions { WriteIndented = true});
         }
 
@@ -44,19 +43,44 @@ namespace SourceCodeEditor
         /// </summary>
         public void SaveHotkeysConfig()
         {
+            File.WriteAllText("HotKeysConfig.json",SerializeListOfHotKeys(GetCurrentHotKeysNotNull()));
+        }
+
+        /// <summary>
+        /// Get current loaded hotkeys
+        /// </summary>
+        /// <returns>List of hotkeys, where hotkeys is not null(or zero)</returns>
+        public List<Keys> GetCurrentHotKeysNotNull()
+        {
             var listOfHeaderItems = menuStrip!.Items;
-
-            var listofHotKeys = new List<Keys>();
-
-            foreach(var MainItem in listOfHeaderItems)
+            var listOfHotKeys = new List<Keys>();
+            foreach (var MainItem in listOfHeaderItems)
             {
                 foreach (ToolStripMenuItem item in Header.GetHeaderItems(MainItem))
                 {
-                    listofHotKeys.Add(item.ShortcutKeys);
+                    listOfHotKeys.Add(item.ShortcutKeys);
                 }
             }
-            listofHotKeys = listofHotKeys.Where(value => value != 0).ToList();
-            File.WriteAllText("HotKeysConfig.json",SerializeListOfHotKeys(listofHotKeys));
+            listOfHotKeys = listOfHotKeys.Where(value => value != 0).ToList();
+            return listOfHotKeys;
+        }
+
+        /// <summary>
+        /// Get current loaded hotkeys
+        /// </summary>
+        /// <returns>List of hotkeys(including nulls and zeros)</returns>
+        public List<Keys> GetCurrentHotKeys()
+        {
+            var listOfHeaderItems = menuStrip!.Items;
+            var listOfHotKeys = new List<Keys>();
+            foreach (var MainItem in listOfHeaderItems)
+            {
+                foreach (ToolStripMenuItem item in Header.GetHeaderItems(MainItem))
+                {
+                    listOfHotKeys.Add(item.ShortcutKeys);
+                }
+            }
+            return listOfHotKeys;
         }
 
         /// <summary>
