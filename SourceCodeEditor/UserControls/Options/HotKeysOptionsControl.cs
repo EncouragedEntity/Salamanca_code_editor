@@ -1,5 +1,9 @@
 ﻿namespace SourceCodeEditor.UserControls.Options
 {
+    //TODO
+    //Hotkey changing
+    //
+
     public partial class HotKeysOptionsControl : UserControl
     {
         private MainForm? _mainForm = null;
@@ -18,6 +22,33 @@
             }
         }
 
+        private void SetDataGridWidth()
+        {
+            dataGridView1.Width = this.Width;
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            {
+                column.Width = dataGridView1.Width / 2;
+            }
+        }
+
+        private void SetPanelButtonsPosition()
+        {
+            var buttons = panel1.Controls.OfType<Button>().ToList();
+            buttons[0].Left = panel1.Width - 95;
+            buttons[1].Left = panel1.Width - buttons[0].Width - 100;
+        }
+
+        private void ValidateSize()
+        {
+            SetDataGridWidth();
+            SetPanelButtonsPosition();
+        }
+
+        private void HotKeysOptionsControl_SizeChanged(object sender, EventArgs e)
+        {
+            ValidateSize();
+        }
+
         private void HotKeysOptionsControl_Load(object sender, EventArgs e)
         {
             var ActionHotkeyPairs = new Dictionary<string, Keys>();
@@ -30,6 +61,7 @@
             }
 
             UploadDictionaryToDataGrid(ActionHotkeyPairs);
+            ValidateSize();
         }
 
         private (bool, int, int) HotKeyExists(Keys hotKey)
@@ -49,7 +81,7 @@
 
         private void dataGridView1_KeyUp(object sender, KeyEventArgs e)
         {
-            listofkeys.Remove(e.KeyCode);
+            listofkeys.Remove(e.KeyData);
         }
 
         private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
@@ -61,12 +93,12 @@
 
                 if (!result.Item1)
                 {
-                    listofkeys.Add(e.KeyCode);
+                    listofkeys.Add(e.KeyData);
                 }
                 else
                 {
                     dataGridView1.Rows[result.Item2].Cells[result.Item3].Value = String.Empty;
-                    listofkeys.Add(e.KeyCode);
+                    listofkeys.Add(e.KeyData);
                 }
                 PrintHotKeys();
             }
@@ -77,7 +109,12 @@
             dataGridView1.CurrentCell.Value = String.Empty;
             foreach (var key in listofkeys) 
             {
-                dataGridView1.CurrentCell.Value += key.ToString();
+                if (key != listofkeys.Last())
+                {
+                    dataGridView1.CurrentCell.Value += $"{key}";
+                }
+                else
+                    dataGridView1.CurrentCell.Value += $"{key} ";
             }
         }
 

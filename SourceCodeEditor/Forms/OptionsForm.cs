@@ -14,10 +14,6 @@ namespace SourceCodeEditor.Forms
             this.mainForm = mainForm;
         }
 
-        ///TODO: 
-        ///HotKey changer control
-
-
         /// <summary>
         /// Change size of dataGrid and its column according to options form
         /// </summary>

@@ -115,6 +115,7 @@
             this.Name = "HotKeysOptionsControl";
             this.Size = new System.Drawing.Size(581, 469);
             this.Load += new System.EventHandler(this.HotKeysOptionsControl_Load);
+            this.SizeChanged += new System.EventHandler(this.HotKeysOptionsControl_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

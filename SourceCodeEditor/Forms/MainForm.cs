@@ -212,6 +212,20 @@ namespace SourceCodeEditor
         {
             new OptionsForm(this).ShowDialog();
         }
-        #endregion 
+
+        private void linesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var item = (ToolStripMenuItem)sender;
+            if (item.Checked)
+            {
+                item.Checked = false;
+                var label = MainFooter.Items.Find(LineCountLable.Name,false);
+                MainFooter.Items.Remove(label.FirstOrDefault());
+                return;
+            }
+            item.Checked = true;
+            MainFooter.Items.Add(LineCountLable);
+        }
+        #endregion
     }
 }

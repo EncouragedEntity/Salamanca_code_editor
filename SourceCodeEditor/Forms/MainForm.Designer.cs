@@ -49,10 +49,13 @@ namespace SourceCodeEditor
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.MainTextField = new FastColoredTextBoxNS.FastColoredTextBox();
             this.MainFooter = new System.Windows.Forms.StatusStrip();
+            this.FooterContext = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.linesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LineCountLable = new System.Windows.Forms.ToolStripStatusLabel();
             this.MainHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainTextField)).BeginInit();
             this.MainFooter.SuspendLayout();
+            this.FooterContext.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainHeader
@@ -219,6 +222,7 @@ namespace SourceCodeEditor
             // MainFooter
             // 
             this.MainFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.MainFooter.ContextMenuStrip = this.FooterContext;
             this.MainFooter.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.MainFooter.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.LineCountLable});
@@ -227,6 +231,23 @@ namespace SourceCodeEditor
             this.MainFooter.Size = new System.Drawing.Size(800, 26);
             this.MainFooter.TabIndex = 4;
             this.MainFooter.Text = "statusStrip1";
+            // 
+            // FooterContext
+            // 
+            this.FooterContext.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.FooterContext.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.linesToolStripMenuItem});
+            this.FooterContext.Name = "contextMenuStrip1";
+            this.FooterContext.Size = new System.Drawing.Size(211, 58);
+            // 
+            // linesToolStripMenuItem
+            // 
+            this.linesToolStripMenuItem.Checked = true;
+            this.linesToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.linesToolStripMenuItem.Name = "linesToolStripMenuItem";
+            this.linesToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.linesToolStripMenuItem.Text = "Lines";
+            this.linesToolStripMenuItem.Click += new System.EventHandler(this.linesToolStripMenuItem_Click);
             // 
             // LineCountLable
             // 
@@ -255,6 +276,7 @@ namespace SourceCodeEditor
             ((System.ComponentModel.ISupportInitialize)(this.MainTextField)).EndInit();
             this.MainFooter.ResumeLayout(false);
             this.MainFooter.PerformLayout();
+            this.FooterContext.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -279,5 +301,7 @@ namespace SourceCodeEditor
         private ToolStripMenuItem optionsToolStripMenuItem;
         private StatusStrip MainFooter;
         private ToolStripStatusLabel LineCountLable;
+        private ContextMenuStrip FooterContext;
+        private ToolStripMenuItem linesToolStripMenuItem;
     }
 }
