@@ -3,6 +3,7 @@ using SourceCodeEditor.AppearenceConfig;
 using SourceCodeEditor.Enums;
 using SourceCodeEditor.Forms;
 using System.Collections.Generic;
+using System.DirectoryServices.ActiveDirectory;
 using System.Text.Json;
 
 namespace SourceCodeEditor
@@ -42,7 +43,7 @@ namespace SourceCodeEditor
             new HotKeysConfig(MainHeader).LoadHotkeysConfig();
 
             //Change form theme to black on Load 
-            new ThemeChanger(_currentTheme, MainHeader, MainTextField, MainFooter, new List<ToolStripStatusLabel> { LineCountLable }).ChangeTheme();
+            new ThemeChanger(_currentTheme, MainHeader, MainTextField, MainFooter, GetLabelsFromForm()).ChangeTheme();
         }
 
         #region Methods
@@ -198,12 +199,6 @@ namespace SourceCodeEditor
             whiteToolStripMenuItem.Checked = true;
             blackToolStripMenuItem.Checked = false;
         }
-
-        private void MainTextField_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            LineCountLable.Text = $"Lines: {MainTextField.Lines.Count}";
-            MarkFileAsUnsaved();
-        }
         
         /// <summary>
         /// Show OptionsForm dialog
@@ -213,18 +208,87 @@ namespace SourceCodeEditor
             new OptionsForm(this).ShowDialog();
         }
 
+        /// <summary>
+        /// Deletes status label from footer and unchecks context menu item
+        /// </summary>
+        /// <param name="label">label to delete</param>
+        /// <param name="item">context menu item to uncheck</param>
+        private void DeleteStatusLabel(ToolStripStatusLabel label, ToolStripMenuItem item)
+        {
+            item.Checked = false;
+            MainFooter.Items.Remove(label);
+        }
+
+        /// <summary>
+        /// Line count status switching
+        /// </summary>
         private void linesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var item = (ToolStripMenuItem)sender;
+            var label = LineCountLable;
             if (item.Checked)
             {
-                item.Checked = false;
-                var label = MainFooter.Items.Find(LineCountLable.Name,false);
-                MainFooter.Items.Remove(label.FirstOrDefault());
+                DeleteStatusLabel(label, item);
                 return;
             }
             item.Checked = true;
-            MainFooter.Items.Add(LineCountLable);
+            if(_currentTheme == Theme.Black)
+                label.ForeColor = Color.White;
+            else
+                label.ForeColor = Color.Black;
+            MainFooter.Items.Add(label);
+        }
+
+        /// <summary>
+        /// Current symbol status switching
+        /// </summary>
+        private void symbolToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var item = (ToolStripMenuItem)sender;
+            var label = SymbolCountLable;
+            if (item.Checked)
+            {
+                DeleteStatusLabel(SymbolCountLable, item);
+                return;
+            }
+            item.Checked = true;
+            if (_currentTheme == Theme.Black)
+                label.ForeColor = Color.White;
+            else
+                label.ForeColor = Color.Black;
+            MainFooter.Items.Add(SymbolCountLable);
+        }
+
+        /// <summary>
+        /// Current line status switching
+        /// </summary>
+        private void currentLineToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var item = (ToolStripMenuItem)sender;
+            var label = CurrentLineLabel;
+            if (item.Checked)
+            {
+                DeleteStatusLabel(CurrentLineLabel, item);
+                return;
+            }
+            item.Checked = true;
+            if (_currentTheme == Theme.Black)
+                label.ForeColor = Color.White;
+            else
+                label.ForeColor = Color.Black;
+            MainFooter.Items.Add(CurrentLineLabel);
+        }
+
+        private void MainTextField_SelectionChanged(object sender, EventArgs e)
+        {
+            SymbolCountLable.Text = $"Current symbol: {MainTextField.Selection.Start.iChar}";
+            CurrentLineLabel.Text = $"Current line: {MainTextField.Selection.Start.iLine + 1}";
+        }
+
+        private void MainTextField_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            LineCountLable.Text = $"Lines: {MainTextField.Lines.Count}";
+            MarkFileAsUnsaved();
         }
         #endregion
     }

@@ -51,7 +51,11 @@ namespace SourceCodeEditor
             this.MainFooter = new System.Windows.Forms.StatusStrip();
             this.FooterContext = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.linesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.symbolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.currentLineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LineCountLable = new System.Windows.Forms.ToolStripStatusLabel();
+            this.SymbolCountLable = new System.Windows.Forms.ToolStripStatusLabel();
+            this.CurrentLineLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.MainHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainTextField)).BeginInit();
             this.MainFooter.SuspendLayout();
@@ -218,6 +222,7 @@ namespace SourceCodeEditor
             this.MainTextField.TabIndex = 3;
             this.MainTextField.Zoom = 100;
             this.MainTextField.TextChanged += new System.EventHandler<FastColoredTextBoxNS.TextChangedEventArgs>(this.MainTextField_TextChanged);
+            this.MainTextField.SelectionChanged += new System.EventHandler(this.MainTextField_SelectionChanged);
             // 
             // MainFooter
             // 
@@ -225,7 +230,9 @@ namespace SourceCodeEditor
             this.MainFooter.ContextMenuStrip = this.FooterContext;
             this.MainFooter.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.MainFooter.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.LineCountLable});
+            this.LineCountLable,
+            this.SymbolCountLable,
+            this.CurrentLineLabel});
             this.MainFooter.Location = new System.Drawing.Point(0, 424);
             this.MainFooter.Name = "MainFooter";
             this.MainFooter.Size = new System.Drawing.Size(800, 26);
@@ -236,9 +243,11 @@ namespace SourceCodeEditor
             // 
             this.FooterContext.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.FooterContext.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.linesToolStripMenuItem});
+            this.linesToolStripMenuItem,
+            this.symbolToolStripMenuItem,
+            this.currentLineToolStripMenuItem});
             this.FooterContext.Name = "contextMenuStrip1";
-            this.FooterContext.Size = new System.Drawing.Size(211, 58);
+            this.FooterContext.Size = new System.Drawing.Size(211, 110);
             // 
             // linesToolStripMenuItem
             // 
@@ -249,12 +258,44 @@ namespace SourceCodeEditor
             this.linesToolStripMenuItem.Text = "Lines";
             this.linesToolStripMenuItem.Click += new System.EventHandler(this.linesToolStripMenuItem_Click);
             // 
+            // symbolToolStripMenuItem
+            // 
+            this.symbolToolStripMenuItem.Checked = true;
+            this.symbolToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.symbolToolStripMenuItem.Name = "symbolToolStripMenuItem";
+            this.symbolToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.symbolToolStripMenuItem.Text = "Current symbol";
+            this.symbolToolStripMenuItem.Click += new System.EventHandler(this.symbolToolStripMenuItem_Click);
+            // 
+            // currentLineToolStripMenuItem
+            // 
+            this.currentLineToolStripMenuItem.Checked = true;
+            this.currentLineToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.currentLineToolStripMenuItem.Name = "currentLineToolStripMenuItem";
+            this.currentLineToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.currentLineToolStripMenuItem.Text = "Current line";
+            this.currentLineToolStripMenuItem.Click += new System.EventHandler(this.currentLineToolStripMenuItem_Click);
+            // 
             // LineCountLable
             // 
             this.LineCountLable.ForeColor = System.Drawing.Color.White;
             this.LineCountLable.Name = "LineCountLable";
             this.LineCountLable.Size = new System.Drawing.Size(57, 20);
             this.LineCountLable.Text = "Lines: 0";
+            // 
+            // SymbolCountLable
+            // 
+            this.SymbolCountLable.ForeColor = System.Drawing.Color.White;
+            this.SymbolCountLable.Name = "SymbolCountLable";
+            this.SymbolCountLable.Size = new System.Drawing.Size(124, 20);
+            this.SymbolCountLable.Text = "Current symbol: 0";
+            // 
+            // CurrentLineLabel
+            // 
+            this.CurrentLineLabel.ForeColor = System.Drawing.Color.White;
+            this.CurrentLineLabel.Name = "CurrentLineLabel";
+            this.CurrentLineLabel.Size = new System.Drawing.Size(100, 20);
+            this.CurrentLineLabel.Text = "Current line: 0";
             // 
             // MainForm
             // 
@@ -303,5 +344,9 @@ namespace SourceCodeEditor
         private ToolStripStatusLabel LineCountLable;
         private ContextMenuStrip FooterContext;
         private ToolStripMenuItem linesToolStripMenuItem;
+        private ToolStripMenuItem symbolToolStripMenuItem;
+        private ToolStripStatusLabel SymbolCountLable;
+        private ToolStripStatusLabel CurrentLineLabel;
+        private ToolStripMenuItem currentLineToolStripMenuItem;
     }
 }
