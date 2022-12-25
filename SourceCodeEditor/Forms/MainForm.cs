@@ -378,7 +378,37 @@ namespace SourceCodeEditor
                 }
             }
         }
-        #endregion
 
+        /// <summary>
+        /// Set screen mode to "fullscreen"
+        /// </summary>
+        private void fullscreenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var item = (ToolStripMenuItem)sender;
+            if (!item.Checked) item.Checked = true;
+            else item.Checked = false;
+
+            windowedToolStripMenuItem.Checked = false;
+
+
+            FormBorderStyle = FormBorderStyle.None;
+            WindowState = FormWindowState.Maximized;
+        }
+
+        /// <summary>
+        /// Set screen mode to "windowed"
+        /// </summary>
+        private void windowedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var item = (ToolStripMenuItem)sender;
+            if (!item.Checked) item.Checked = true;
+            else item.Checked = false;
+
+            fullscreenToolStripMenuItem.Checked = false;
+
+            FormBorderStyle = FormBorderStyle.Sizable;
+            WindowState = FormWindowState.Normal;
+        }
+        #endregion
     }
 }
