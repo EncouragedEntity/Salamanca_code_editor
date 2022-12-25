@@ -53,9 +53,11 @@ namespace SourceCodeEditor
             this.linesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.symbolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.currentLineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LineCountLable = new System.Windows.Forms.ToolStripStatusLabel();
             this.SymbolCountLable = new System.Windows.Forms.ToolStripStatusLabel();
             this.CurrentLineLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.IsSavedLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.MainHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainTextField)).BeginInit();
             this.MainFooter.SuspendLayout();
@@ -232,7 +234,8 @@ namespace SourceCodeEditor
             this.MainFooter.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.LineCountLable,
             this.SymbolCountLable,
-            this.CurrentLineLabel});
+            this.CurrentLineLabel,
+            this.IsSavedLabel});
             this.MainFooter.Location = new System.Drawing.Point(0, 424);
             this.MainFooter.Name = "MainFooter";
             this.MainFooter.Size = new System.Drawing.Size(800, 26);
@@ -245,16 +248,17 @@ namespace SourceCodeEditor
             this.FooterContext.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.linesToolStripMenuItem,
             this.symbolToolStripMenuItem,
-            this.currentLineToolStripMenuItem});
+            this.currentLineToolStripMenuItem,
+            this.fileStatusToolStripMenuItem});
             this.FooterContext.Name = "contextMenuStrip1";
-            this.FooterContext.Size = new System.Drawing.Size(211, 110);
+            this.FooterContext.Size = new System.Drawing.Size(179, 108);
             // 
             // linesToolStripMenuItem
             // 
             this.linesToolStripMenuItem.Checked = true;
             this.linesToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.linesToolStripMenuItem.Name = "linesToolStripMenuItem";
-            this.linesToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.linesToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
             this.linesToolStripMenuItem.Text = "Lines";
             this.linesToolStripMenuItem.Click += new System.EventHandler(this.linesToolStripMenuItem_Click);
             // 
@@ -263,7 +267,7 @@ namespace SourceCodeEditor
             this.symbolToolStripMenuItem.Checked = true;
             this.symbolToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.symbolToolStripMenuItem.Name = "symbolToolStripMenuItem";
-            this.symbolToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.symbolToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
             this.symbolToolStripMenuItem.Text = "Current symbol";
             this.symbolToolStripMenuItem.Click += new System.EventHandler(this.symbolToolStripMenuItem_Click);
             // 
@@ -272,9 +276,18 @@ namespace SourceCodeEditor
             this.currentLineToolStripMenuItem.Checked = true;
             this.currentLineToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.currentLineToolStripMenuItem.Name = "currentLineToolStripMenuItem";
-            this.currentLineToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.currentLineToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
             this.currentLineToolStripMenuItem.Text = "Current line";
             this.currentLineToolStripMenuItem.Click += new System.EventHandler(this.currentLineToolStripMenuItem_Click);
+            // 
+            // fileStatusToolStripMenuItem
+            // 
+            this.fileStatusToolStripMenuItem.Checked = true;
+            this.fileStatusToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.fileStatusToolStripMenuItem.Name = "fileStatusToolStripMenuItem";
+            this.fileStatusToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
+            this.fileStatusToolStripMenuItem.Text = "File status";
+            this.fileStatusToolStripMenuItem.Click += new System.EventHandler(this.fileStatusToolStripMenuItem_Click);
             // 
             // LineCountLable
             // 
@@ -297,6 +310,13 @@ namespace SourceCodeEditor
             this.CurrentLineLabel.Size = new System.Drawing.Size(100, 20);
             this.CurrentLineLabel.Text = "Current line: 0";
             // 
+            // IsSavedLabel
+            // 
+            this.IsSavedLabel.ForeColor = System.Drawing.Color.White;
+            this.IsSavedLabel.Name = "IsSavedLabel";
+            this.IsSavedLabel.Size = new System.Drawing.Size(137, 20);
+            this.IsSavedLabel.Text = "File status: Unsaved";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -311,6 +331,7 @@ namespace SourceCodeEditor
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Salamanca | *";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.MainHeader.ResumeLayout(false);
             this.MainHeader.PerformLayout();
@@ -348,5 +369,7 @@ namespace SourceCodeEditor
         private ToolStripStatusLabel SymbolCountLable;
         private ToolStripStatusLabel CurrentLineLabel;
         private ToolStripMenuItem currentLineToolStripMenuItem;
+        private ToolStripStatusLabel IsSavedLabel;
+        private ToolStripMenuItem fileStatusToolStripMenuItem;
     }
 }

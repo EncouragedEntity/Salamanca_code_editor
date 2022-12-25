@@ -13,6 +13,7 @@ namespace SourceCodeEditor
     /// </summary>
     public partial class MainForm : Form
     {
+        private delegate DialogResult DialogRes(string text,string caption,MessageBoxButtons buttons,MessageBoxIcon icon);
         #region Fields
         /// <summary>
         /// Name of application
@@ -30,6 +31,11 @@ namespace SourceCodeEditor
         /// Is file created on disk
         /// </summary>
         private bool _isFileCreated = false;
+       
+        /// <summary>
+        /// Is file saved on disk
+        /// </summary>
+        private bool _isFileSaved = false;
         #endregion
 
         public MainForm()
@@ -44,23 +50,29 @@ namespace SourceCodeEditor
 
             //Change form theme to black on Load 
             new ThemeChanger(_currentTheme, MainHeader, MainTextField, MainFooter, GetLabelsFromForm()).ChangeTheme();
+
+            DeleteLineLabel();
+            DeleteSymbolLabel();
         }
 
         #region Methods
         /// <summary>
-        /// Exit from application
+        /// Marks current opened file as unsaved
         /// </summary>
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e) => Application.Exit();
+        private void MarkFileAsUnsaved()
+        {
+            this.Text += this.Text.Last() != '*' ? "*" : String.Empty;
+            IsSavedLabel.Text = "File status: Unsaved";
+        }
 
         /// <summary>
-        /// Adds "*" at the end of the file name in form text
+        /// Marks current opened file as saved
         /// </summary>
-        private void MarkFileAsUnsaved() => this.Text += this.Text.Last() != '*' ? "*" : String.Empty;
-
-        /// <summary>
-        /// Removes "*" at the end of form text
-        /// </summary>
-        private void MarkFileAsSaved() => FileNameToFormText(_currentFile);
+        private void MarkFileAsSaved()
+        {
+            FileNameToFormText(_currentFile);
+            IsSavedLabel.Text = "File status: Saved";
+        }
 
         /// <summary>
         /// Sets form text as App name and file opened name
@@ -74,6 +86,7 @@ namespace SourceCodeEditor
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var op = openFileDialog1;
+            op.FileName = "untitled.txt";
             if (op.ShowDialog() != DialogResult.OK) return;
 
             _isFileCreated = true;
@@ -90,6 +103,7 @@ namespace SourceCodeEditor
             File.WriteAllLines(_currentFile, MainTextField.Lines);
             MarkFileAsSaved();
             _isFileCreated = true;
+            _isFileSaved = true;   
         }
 
         /// <summary>
@@ -101,6 +115,7 @@ namespace SourceCodeEditor
             File.WriteAllLines(FileName, MainTextField.Lines);
             MarkFileAsSaved();
             _isFileCreated = true;
+            _isFileSaved = true;
         }
 
         /// <summary>
@@ -219,6 +234,23 @@ namespace SourceCodeEditor
             MainFooter.Items.Remove(label);
         }
 
+        private void DeleteLineCountLabel()
+        {
+            DeleteStatusLabel(LineCountLable, linesToolStripMenuItem);
+        }
+        private void DeleteSymbolLabel()
+        {
+            DeleteStatusLabel(SymbolCountLable, symbolToolStripMenuItem);
+        }
+        private void DeleteLineLabel()
+        {
+            DeleteStatusLabel(CurrentLineLabel, currentLineToolStripMenuItem);
+        }
+        private void DeleteFileStatusLabel()
+        {
+            DeleteStatusLabel(IsSavedLabel, fileStatusToolStripMenuItem);
+        }
+
         /// <summary>
         /// Line count status switching
         /// </summary>
@@ -228,7 +260,7 @@ namespace SourceCodeEditor
             var label = LineCountLable;
             if (item.Checked)
             {
-                DeleteStatusLabel(label, item);
+                DeleteLineCountLabel();
                 return;
             }
             item.Checked = true;
@@ -248,7 +280,7 @@ namespace SourceCodeEditor
             var label = SymbolCountLable;
             if (item.Checked)
             {
-                DeleteStatusLabel(SymbolCountLable, item);
+                DeleteSymbolLabel();
                 return;
             }
             item.Checked = true;
@@ -268,7 +300,7 @@ namespace SourceCodeEditor
             var label = CurrentLineLabel;
             if (item.Checked)
             {
-                DeleteStatusLabel(CurrentLineLabel, item);
+                DeleteLineLabel();
                 return;
             }
             item.Checked = true;
@@ -277,6 +309,23 @@ namespace SourceCodeEditor
             else
                 label.ForeColor = Color.Black;
             MainFooter.Items.Add(CurrentLineLabel);
+        }
+
+        private void fileStatusToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var item = (ToolStripMenuItem)sender;
+            var label = IsSavedLabel;
+            if (item.Checked)
+            {
+                DeleteFileStatusLabel();
+                return;
+            }
+            item.Checked = true;
+            if (_currentTheme == Theme.Black)
+                label.ForeColor = Color.White;
+            else
+                label.ForeColor = Color.Black;
+            MainFooter.Items.Add(label);
         }
 
         private void MainTextField_SelectionChanged(object sender, EventArgs e)
@@ -288,8 +337,29 @@ namespace SourceCodeEditor
         private void MainTextField_TextChanged(object sender, TextChangedEventArgs e)
         {
             LineCountLable.Text = $"Lines: {MainTextField.Lines.Count}";
+            _isFileSaved = false;
             MarkFileAsUnsaved();
         }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (_currentFile != String.Empty)
+            {
+                if (!_isFileSaved)
+                {
+                    DialogRes AskToSave = new DialogRes(MessageBox.Show);
+                    var result = AskToSave("Do you want to save your file?", "Save?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Exclamation);
+                    if (result == DialogResult.Yes)
+                    {
+                        SaveFile();
+                        return;
+                    }
+                    if(result == DialogResult.Cancel)
+                        e.Cancel = true;
+                }
+            }
+        }
         #endregion
+
     }
 }
