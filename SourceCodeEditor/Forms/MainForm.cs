@@ -22,6 +22,8 @@ namespace SourceCodeEditor
 
         public Theme _currentTheme = Theme.Black;
 
+        private CurrentTheme theme;
+
         /// <summary>
         /// Current opened file
         /// </summary>
@@ -40,8 +42,25 @@ namespace SourceCodeEditor
 
         public MainForm() => InitializeComponent();
 
+        private void SetTheme()
+        {
+            theme = new CurrentTheme(MainHeader.BackColor, MainHeader.ForeColor,
+                                     MainFooter.BackColor, MainFooter.ForeColor,
+                                     MainTextField.BackColor, MainTextField.ForeColor,
+                                     GetLabelsFromForm().FirstOrDefault().BackColor,
+                                     GetLabelsFromForm().FirstOrDefault().ForeColor,
+                                     new SyntaxColors(MainTextField.SyntaxHighlighter.ClassNameStyle,
+                                                      MainTextField.SyntaxHighlighter.StringStyle,
+                                                      MainTextField.SyntaxHighlighter.CommentStyle,
+                                                      MainTextField.SyntaxHighlighter.CommentTagStyle,
+                                                      MainTextField.SyntaxHighlighter.KeywordStyle));
+        }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
+            SetTheme();
+            new ThemeSerializer(theme,MainHeader,MainTextField,MainFooter,GetLabelsFromForm()).SerializeTheme();
+
             //Load hotkeys config from file on form load
             new HotKeysConfig(MainHeader).LoadHotkeysConfig();
 

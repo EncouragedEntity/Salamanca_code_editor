@@ -25,7 +25,7 @@ namespace SourceCodeEditor
         /// <returns>JSON string</returns>
         private static string SerializeListOfHotKeys(List<Keys> listofHotKeys)
         {
-            return JsonSerializer.Serialize(listofHotKeys,new JsonSerializerOptions { WriteIndented = true});
+            return JsonSerializer.Serialize(listofHotKeys, new JsonSerializerOptions { WriteIndented = true});
         }
 
         /// <summary>

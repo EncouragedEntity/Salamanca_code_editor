@@ -9,19 +9,19 @@ namespace SourceCodeEditor.AppearenceConfig
 {
     public class SyntaxColors
     {
-        public readonly TextStyle _classNameStyle;
-        public readonly TextStyle _stringStyle;
-        public readonly TextStyle _commentStyle;
-        public readonly TextStyle _commentTagStyle;
-        public readonly TextStyle _keywordStyle;
+        public readonly Style _classNameStyle;
+        public readonly Style _stringStyle;
+        public readonly Style _commentStyle;
+        public readonly Style _commentTagStyle;
+        public readonly Style _keywordStyle;
 
-        public SyntaxColors(TextStyle className, TextStyle stringStyle, TextStyle comment, TextStyle commentTag, TextStyle keyword )
+        public SyntaxColors(Style className, Style stringStyle, Style comment, Style commentTag, Style keyword )
         {
-            _classNameStyle= className;
-            _stringStyle= stringStyle;
-            _commentStyle= comment;
-            _commentTagStyle= commentTag;
-            _keywordStyle= keyword;
+            _classNameStyle = className;
+            _stringStyle = stringStyle;
+            _commentStyle = comment;
+            _commentTagStyle = commentTag;
+            _keywordStyle = keyword;
         }
     }
 }
