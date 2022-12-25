@@ -35,13 +35,10 @@ namespace SourceCodeEditor
         /// <summary>
         /// Is file saved on disk
         /// </summary>
-        private bool _isFileSaved = false;
+        private bool _isFileSaved;
         #endregion
 
-        public MainForm()
-        {
-            InitializeComponent();
-        }
+        public MainForm() => InitializeComponent();
 
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -311,6 +308,9 @@ namespace SourceCodeEditor
             MainFooter.Items.Add(CurrentLineLabel);
         }
 
+        /// <summary>
+        /// Current file status status switching
+        /// </summary>
         private void fileStatusToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var item = (ToolStripMenuItem)sender;

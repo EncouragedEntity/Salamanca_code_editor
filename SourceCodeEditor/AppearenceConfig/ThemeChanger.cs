@@ -49,10 +49,6 @@ namespace SourceCodeEditor.AppearenceConfig
         /// <summary>
         /// Set Application controls theme to "Black"
         /// </summary>
-        /// <param name="header">Main menu strip on form</param>
-        /// <param name="mainTextField">Main text field on form</param>
-        /// <param name="footer">Bottom form panel, that contains info about application</param>
-        /// <param name="labels">All labels on form</param>
         public void ChangeGeneralThemeToBlack()
         {
             _mainTextField.BackColor = grey;
@@ -74,10 +70,6 @@ namespace SourceCodeEditor.AppearenceConfig
         /// <summary>
         /// Set Application controls theme to "White"
         /// </summary>
-        /// <param name="header">Main menu strip on form</param>
-        /// <param name="mainTextField">Main text field on form</param>
-        /// <param name="footer">Bottom form panel, that contains info about application</param>
-        /// <param name="labels">All labels on form</param>
         public void ChangeGeneralThemeToWhite()
         {
             _mainTextField.BackColor = Color.White;
@@ -129,11 +121,17 @@ namespace SourceCodeEditor.AppearenceConfig
             {
                 string text = _mainTextField.Text;
                 _mainTextField.Text = String.Empty;
-                _mainTextField.SyntaxHighlighter.ClassNameStyle = new TextStyle(Brushes.White, null, FontStyle.Bold | FontStyle.Underline);
-                _mainTextField.SyntaxHighlighter.StringStyle = new TextStyle(Brushes.Orange, null, FontStyle.Regular);
-                _mainTextField.SyntaxHighlighter.CommentStyle = new TextStyle(Brushes.LimeGreen, null, FontStyle.Regular);
-                _mainTextField.SyntaxHighlighter.CommentTagStyle = new TextStyle(Brushes.DarkGray, null, FontStyle.Regular);
-                _mainTextField.SyntaxHighlighter.KeywordStyle = new TextStyle(Brushes.DeepSkyBlue, null, FontStyle.Regular);
+                SyntaxColors syntaxColors = new SyntaxColors(new TextStyle(Brushes.White, null, FontStyle.Bold | FontStyle.Underline),
+                                                             new TextStyle(Brushes.Orange, null, FontStyle.Regular),
+                                                             new TextStyle(Brushes.LimeGreen, null, FontStyle.Regular),
+                                                             new TextStyle(Brushes.DarkGray, null, FontStyle.Regular),
+                                                             new TextStyle(Brushes.DeepSkyBlue, null, FontStyle.Regular));
+
+                _mainTextField.SyntaxHighlighter.ClassNameStyle = syntaxColors._classNameStyle;
+                _mainTextField.SyntaxHighlighter.StringStyle = syntaxColors._stringStyle;
+                _mainTextField.SyntaxHighlighter.CommentStyle = syntaxColors._commentStyle;
+                _mainTextField.SyntaxHighlighter.CommentTagStyle = syntaxColors._commentTagStyle;
+                _mainTextField.SyntaxHighlighter.KeywordStyle = syntaxColors._keywordStyle;
                 _mainTextField.Text = text;
             }
             catch (Exception)

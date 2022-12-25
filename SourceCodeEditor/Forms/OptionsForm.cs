@@ -31,6 +31,7 @@ namespace SourceCodeEditor.Forms
             dataGridView1.Rows.Add("General");
             dataGridView1.Rows.Add("Theme");
             dataGridView1.Rows.Add("HotKeys");
+            dataGridView1.Rows.Add("Colors");
         }
 
         /// <summary>
