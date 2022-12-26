@@ -96,6 +96,12 @@ namespace SourceCodeEditor.Forms
                     LoadUserControl(control);
                 }
                 break;
+                case Options.Colors:
+                 {
+                    var control = new ColorsOptionsControl(mainForm);
+                    LoadUserControl(control);
+                 }
+                    break;
             }
         }
 
@@ -119,6 +125,11 @@ namespace SourceCodeEditor.Forms
                 case "HotKeys":
                     {
                         ChangeOptionPanel(Options.HotKeys);
+                    }
+                    break;
+                case "Colors":
+                    {
+                        ChangeOptionPanel(Options.Colors);
                     }
                     break;
             }

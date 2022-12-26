@@ -1,27 +1,25 @@
 ﻿using FastColoredTextBoxNS;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SourceCodeEditor.AppearenceConfig
 {
     public class SyntaxColors
     {
-        public readonly Style _classNameStyle;
-        public readonly Style _stringStyle;
-        public readonly Style _commentStyle;
-        public readonly Style _commentTagStyle;
-        public readonly Style _keywordStyle;
+        public TextStyle _classNameStyle { get; set; }
+        public TextStyle _stringStyle { get; set; }
+        public TextStyle _commentStyle { get; set; }
+        public TextStyle _commentTagStyle { get; set; }
+        public TextStyle _keywordStyle { get; set; }
 
-        public SyntaxColors(Style className, Style stringStyle, Style comment, Style commentTag, Style keyword )
+        public SyntaxColors() : this(null, null, null, null, null) { }
+
+        public SyntaxColors(Style className, Style stringStyle, Style comment, Style commentTag, Style keyword)
         {
-            _classNameStyle = className;
-            _stringStyle = stringStyle;
-            _commentStyle = comment;
-            _commentTagStyle = commentTag;
-            _keywordStyle = keyword;
+            
+            _classNameStyle = className as TextStyle;
+            _stringStyle = stringStyle as TextStyle;
+            _commentStyle = comment as TextStyle;
+            _commentTagStyle = commentTag as TextStyle;
+            _keywordStyle = keyword as TextStyle;
         }
     }
 }

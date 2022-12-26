@@ -11,7 +11,7 @@ namespace SourceCodeEditor.AppearenceConfig
 {
     public class ThemeSerializer
     {
-        private readonly CurrentTheme _theme;
+        private CurrentTheme _theme;
         private readonly MenuStrip _header;
         private readonly FastColoredTextBox _mainTextField;
         private readonly StatusStrip _footer;
@@ -34,7 +34,6 @@ namespace SourceCodeEditor.AppearenceConfig
                 label.ForeColor = _theme._headerFore;
             }
         }
-
         private void SetColors()
         {
             _header.BackColor = _theme._headerBack;
@@ -48,7 +47,7 @@ namespace SourceCodeEditor.AppearenceConfig
 
             SetLabelsColors();
         }
-
+        
         private void GetLabelsColors()
         {
             var firstLabel = _labels.FirstOrDefault();
@@ -74,7 +73,19 @@ namespace SourceCodeEditor.AppearenceConfig
         private string Serialize()
         {
             GetColors();
-            return JsonSerializer.Serialize<CurrentTheme>(_theme, new JsonSerializerOptions { WriteIndented = true });
+            return JsonSerializer.Serialize(_theme, new JsonSerializerOptions { WriteIndented = true });
+        }
+
+        private CurrentTheme Deserialize()
+        {
+            return JsonSerializer.Deserialize<CurrentTheme>(File.ReadAllText("ColorsConfig.json"))!;
+        }
+
+        public CurrentTheme DeserializeTheme()
+        {
+            _theme = Deserialize();
+            SetColors();
+            return _theme;
         }
 
         public void SerializeTheme()

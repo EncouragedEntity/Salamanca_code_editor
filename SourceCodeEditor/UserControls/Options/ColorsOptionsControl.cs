@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SourceCodeEditor.AppearenceConfig;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,18 @@ namespace SourceCodeEditor.UserControls.Options
 {
     public partial class ColorsOptionsControl : UserControl
     {
-        public ColorsOptionsControl()
+        public CurrentTheme? CurrentTheme { get; set; }
+        public MainForm? form;
+
+        public ColorsOptionsControl(MainForm? form)
         {
+            this.form = form;
             InitializeComponent();
+        }
+
+        private void ColorsOptionsControl_Load(object sender, EventArgs e)
+        {
+            CurrentTheme = new ThemeSerializer(form!.theme,form.MainHeader,form.MainTextField,form.MainFooter,form.GetLabelsFromForm()).DeserializeTheme();
         }
     }
 }

@@ -22,7 +22,7 @@ namespace SourceCodeEditor
 
         public Theme _currentTheme = Theme.Black;
 
-        private CurrentTheme theme;
+        public CurrentTheme theme;
 
         /// <summary>
         /// Current opened file
@@ -65,7 +65,7 @@ namespace SourceCodeEditor
             new HotKeysConfig(MainHeader).LoadHotkeysConfig();
 
             //Change form theme to black on Load 
-            new ThemeChanger(_currentTheme, MainHeader, MainTextField, MainFooter, GetLabelsFromForm()).ChangeTheme();
+            new ThemeChanger(this, _currentTheme, MainHeader, MainTextField, MainFooter, GetLabelsFromForm()).ChangeTheme();
 
             DeleteLineLabel();
             DeleteSymbolLabel();
@@ -193,7 +193,7 @@ namespace SourceCodeEditor
         /// Get all labels from form
         /// </summary>
         /// <returns>List of labels</returns>
-        private IEnumerable<ToolStripStatusLabel> GetLabelsFromForm()
+        public IEnumerable<ToolStripStatusLabel> GetLabelsFromForm()
         {
             var labels = new List<ToolStripStatusLabel>(); 
             foreach (var control in this.Controls)
@@ -213,7 +213,7 @@ namespace SourceCodeEditor
         {
             var labels = this.GetLabelsFromForm();
             _currentTheme = Theme.Black;
-            new ThemeChanger(_currentTheme, MainHeader, MainTextField, MainFooter, labels).ChangeTheme();
+            new ThemeChanger(this, _currentTheme, MainHeader, MainTextField, MainFooter, labels).ChangeTheme();
 
             whiteToolStripMenuItem.Checked = false;
             blackToolStripMenuItem.Checked = true;
@@ -226,7 +226,7 @@ namespace SourceCodeEditor
         {
             var labels = this.GetLabelsFromForm();
             _currentTheme = Theme.White;
-            new ThemeChanger(_currentTheme, MainHeader, MainTextField, MainFooter, labels).ChangeTheme();
+            new ThemeChanger(this, _currentTheme, MainHeader, MainTextField, MainFooter, labels).ChangeTheme();
             whiteToolStripMenuItem.Checked = true;
             blackToolStripMenuItem.Checked = false;
         }

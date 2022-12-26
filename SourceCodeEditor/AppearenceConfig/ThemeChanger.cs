@@ -12,13 +12,16 @@ namespace SourceCodeEditor.AppearenceConfig
         /// Theme is Black by default
         /// </summary>
         private readonly Theme _theme = Theme.Black;
+        private CurrentTheme currentTheme;
+        private readonly MainForm mainForm;
         private readonly MenuStrip _header;
         private readonly FastColoredTextBox _mainTextField;
         private readonly StatusStrip _footer;
         private readonly IEnumerable<ToolStripStatusLabel> _labels;
 
-        public ThemeChanger(Theme theme, MenuStrip header, FastColoredTextBox mainTextField, StatusStrip footer, IEnumerable<ToolStripStatusLabel> labels)
+        public ThemeChanger(MainForm form, Theme theme, MenuStrip header, FastColoredTextBox mainTextField, StatusStrip footer, IEnumerable<ToolStripStatusLabel> labels)
         {
+            mainForm = form;
             _theme = theme;
             _header = header;
             _mainTextField = mainTextField;
@@ -51,18 +54,19 @@ namespace SourceCodeEditor.AppearenceConfig
         /// </summary>
         public void ChangeGeneralThemeToBlack()
         {
-            _mainTextField.BackColor = grey;
-            _mainTextField.ForeColor = Color.White;
+            currentTheme = new CurrentTheme();
+            currentTheme._mainTextFieldBack = _mainTextField.BackColor = grey;
+            currentTheme._mainTextFieldFore = _header.ForeColor = _mainTextField.ForeColor = Color.White;
+            currentTheme._headerBack = _header.BackColor = darkGrey;
+            currentTheme._footerBack = _footer.BackColor = darkGrey;
+            currentTheme._labelsFore = Color.White;
+
             _mainTextField.IndentBackColor = darkGrey;
             _mainTextField.LineNumberColor = Color.Silver;
-            _header.BackColor = darkGrey;
-            _footer.BackColor = darkGrey;
-            _header.ForeColor = _mainTextField.ForeColor = Color.White;
             foreach (var label in _labels)
             {
                 label.ForeColor = Color.White;
             }
-
             ChangeSyntaxHighlithingToBlack();
             ChangeHeaderThemeToBlack();
         }
@@ -72,6 +76,8 @@ namespace SourceCodeEditor.AppearenceConfig
         /// </summary>
         public void ChangeGeneralThemeToWhite()
         {
+            currentTheme = new CurrentTheme();
+
             _mainTextField.BackColor = Color.White;
             _mainTextField.LineNumberColor = Color.Black;
             _mainTextField.ForeColor = Color.Black;
@@ -79,6 +85,15 @@ namespace SourceCodeEditor.AppearenceConfig
             _header.BackColor = Color.FromArgb(224, 224, 224);
             _footer.BackColor = Color.FromArgb(224, 224, 224);
             _header.ForeColor = _mainTextField.ForeColor = Color.Black;
+
+            currentTheme._mainTextFieldBack = _mainTextField.BackColor;
+            currentTheme._mainTextFieldFore = _mainTextField.ForeColor;
+            currentTheme._headerBack = _header.BackColor;
+            currentTheme._headerFore = _header.ForeColor;
+            currentTheme._footerBack = _footer.BackColor;
+            currentTheme._footerFore = _footer.ForeColor;
+            currentTheme._labelsFore = Color.Black;
+
             foreach (var label in _labels)
             {
                 label.ForeColor = Color.Black;
@@ -95,14 +110,17 @@ namespace SourceCodeEditor.AppearenceConfig
         {
             try
             {
-
                 string text = _mainTextField.Text;
                 _mainTextField.Text = String.Empty;
-                _mainTextField.SyntaxHighlighter.ClassNameStyle = new TextStyle(Brushes.Black, null, FontStyle.Bold | FontStyle.Underline);
-                _mainTextField.SyntaxHighlighter.StringStyle = new TextStyle(Brushes.Red, null, FontStyle.Regular);
-                _mainTextField.SyntaxHighlighter.CommentStyle = new TextStyle(Brushes.Green, null, FontStyle.Regular);
-                _mainTextField.SyntaxHighlighter.CommentTagStyle = new TextStyle(Brushes.Gray, null, FontStyle.Regular);
-                _mainTextField.SyntaxHighlighter.KeywordStyle = new TextStyle(Brushes.Blue, null, FontStyle.Regular);
+
+                currentTheme.syntaxColors = new SyntaxColors();
+                _mainTextField.SyntaxHighlighter.ClassNameStyle = currentTheme.syntaxColors._classNameStyle = new TextStyle(Brushes.Black, null, FontStyle.Bold | FontStyle.Underline);
+                _mainTextField.SyntaxHighlighter.StringStyle = currentTheme.syntaxColors._stringStyle = new TextStyle(Brushes.Red, null, FontStyle.Regular);
+                _mainTextField.SyntaxHighlighter.CommentStyle = currentTheme.syntaxColors._commentStyle = new TextStyle(Brushes.Green, null, FontStyle.Regular);
+                _mainTextField.SyntaxHighlighter.CommentTagStyle = currentTheme.syntaxColors._commentTagStyle = new TextStyle(Brushes.Gray, null, FontStyle.Regular);
+                _mainTextField.SyntaxHighlighter.KeywordStyle = currentTheme.syntaxColors._keywordStyle = new TextStyle(Brushes.Blue, null, FontStyle.Regular);
+                mainForm.theme = currentTheme;
+
                 _mainTextField.Text = text;
             }
             catch(Exception) 
@@ -121,17 +139,15 @@ namespace SourceCodeEditor.AppearenceConfig
             {
                 string text = _mainTextField.Text;
                 _mainTextField.Text = String.Empty;
-                SyntaxColors syntaxColors = new SyntaxColors(new TextStyle(Brushes.White, null, FontStyle.Bold | FontStyle.Underline),
-                                                             new TextStyle(Brushes.Orange, null, FontStyle.Regular),
-                                                             new TextStyle(Brushes.LimeGreen, null, FontStyle.Regular),
-                                                             new TextStyle(Brushes.DarkGray, null, FontStyle.Regular),
-                                                             new TextStyle(Brushes.DeepSkyBlue, null, FontStyle.Regular));
 
-                _mainTextField.SyntaxHighlighter.ClassNameStyle = syntaxColors._classNameStyle;
-                _mainTextField.SyntaxHighlighter.StringStyle = syntaxColors._stringStyle;
-                _mainTextField.SyntaxHighlighter.CommentStyle = syntaxColors._commentStyle;
-                _mainTextField.SyntaxHighlighter.CommentTagStyle = syntaxColors._commentTagStyle;
-                _mainTextField.SyntaxHighlighter.KeywordStyle = syntaxColors._keywordStyle;
+                currentTheme.syntaxColors = new SyntaxColors();
+                _mainTextField.SyntaxHighlighter.ClassNameStyle = currentTheme.syntaxColors._classNameStyle = new TextStyle(Brushes.White, null, FontStyle.Bold | FontStyle.Underline);
+                _mainTextField.SyntaxHighlighter.StringStyle = currentTheme.syntaxColors._stringStyle = new TextStyle(Brushes.Orange, null, FontStyle.Regular);
+                _mainTextField.SyntaxHighlighter.CommentStyle = currentTheme.syntaxColors._commentStyle = new TextStyle(Brushes.LimeGreen, null, FontStyle.Regular);
+                _mainTextField.SyntaxHighlighter.CommentTagStyle = currentTheme.syntaxColors._commentTagStyle = new TextStyle(Brushes.DarkGray, null, FontStyle.Regular);
+                _mainTextField.SyntaxHighlighter.KeywordStyle = currentTheme.syntaxColors._keywordStyle = new TextStyle(Brushes.DeepSkyBlue, null, FontStyle.Regular);
+                mainForm.theme = currentTheme;
+
                 _mainTextField.Text = text;
             }
             catch (Exception)

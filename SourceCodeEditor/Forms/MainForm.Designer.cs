@@ -374,7 +374,7 @@ namespace SourceCodeEditor
         }
 
         #endregion
-        private MenuStrip MainHeader;
+        public MenuStrip MainHeader;
         private ToolStripMenuItem fileToolStripMenuItem;
         private ToolStripMenuItem openToolStripMenuItem;
         private ToolStripMenuItem newToolStripMenuItem;
@@ -383,14 +383,14 @@ namespace SourceCodeEditor
         private OpenFileDialog openFileDialog1;
         private SaveFileDialog saveFileDialog1;
         private ToolStripMenuItem viewToolStripMenuItem;
-        private FastColoredTextBoxNS.FastColoredTextBox MainTextField;
+        public FastColoredTextBoxNS.FastColoredTextBox MainTextField;
         private ToolStripMenuItem themeToolStripMenuItem;
         private ToolStripMenuItem blackToolStripMenuItem;
         private ToolStripMenuItem whiteToolStripMenuItem;
         private ToolStripMenuItem editToolStripMenuItem;
         private ToolStripMenuItem toolsToolStripMenuItem;
         private ToolStripMenuItem optionsToolStripMenuItem;
-        private StatusStrip MainFooter;
+        public StatusStrip MainFooter;
         private ToolStripStatusLabel LineCountLable;
         private ContextMenuStrip FooterContext;
         private ToolStripMenuItem linesToolStripMenuItem;

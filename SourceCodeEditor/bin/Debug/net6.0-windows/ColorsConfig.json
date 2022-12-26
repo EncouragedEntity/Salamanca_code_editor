@@ -1,1 +1,122 @@
-{}
+{
+  "_headerBack": {
+    "R": 50,
+    "G": 50,
+    "B": 50,
+    "A": 255,
+    "IsKnownColor": false,
+    "IsEmpty": false,
+    "IsNamedColor": false,
+    "IsSystemColor": false,
+    "Name": "ff323232"
+  },
+  "_headerFore": {
+    "R": 255,
+    "G": 255,
+    "B": 255,
+    "A": 255,
+    "IsKnownColor": true,
+    "IsEmpty": false,
+    "IsNamedColor": true,
+    "IsSystemColor": false,
+    "Name": "White"
+  },
+  "_footerBack": {
+    "R": 50,
+    "G": 50,
+    "B": 50,
+    "A": 255,
+    "IsKnownColor": false,
+    "IsEmpty": false,
+    "IsNamedColor": false,
+    "IsSystemColor": false,
+    "Name": "ff323232"
+  },
+  "_footerFore": {
+    "R": 0,
+    "G": 0,
+    "B": 0,
+    "A": 255,
+    "IsKnownColor": true,
+    "IsEmpty": false,
+    "IsNamedColor": true,
+    "IsSystemColor": true,
+    "Name": "ControlText"
+  },
+  "_mainTextFieldBack": {
+    "R": 80,
+    "G": 80,
+    "B": 80,
+    "A": 255,
+    "IsKnownColor": false,
+    "IsEmpty": false,
+    "IsNamedColor": false,
+    "IsSystemColor": false,
+    "Name": "ff505050"
+  },
+  "_mainTextFieldFore": {
+    "R": 255,
+    "G": 255,
+    "B": 255,
+    "A": 255,
+    "IsKnownColor": true,
+    "IsEmpty": false,
+    "IsNamedColor": true,
+    "IsSystemColor": false,
+    "Name": "White"
+  },
+  "_labelsBack": {
+    "R": 50,
+    "G": 50,
+    "B": 50,
+    "A": 255,
+    "IsKnownColor": false,
+    "IsEmpty": false,
+    "IsNamedColor": false,
+    "IsSystemColor": false,
+    "Name": "ff323232"
+  },
+  "_labelsFore": {
+    "R": 255,
+    "G": 255,
+    "B": 255,
+    "A": 255,
+    "IsKnownColor": true,
+    "IsEmpty": false,
+    "IsNamedColor": true,
+    "IsSystemColor": false,
+    "Name": "White"
+  },
+  "syntaxColors": {
+    "_classNameStyle": {
+      "ForeBrush": null,
+      "BackgroundBrush": null,
+      "FontStyle": 5,
+      "IsExportable": true
+    },
+    "_stringStyle": {
+      "ForeBrush": {},
+      "BackgroundBrush": null,
+      "FontStyle": 2,
+      "IsExportable": true
+    },
+    "_commentStyle": {
+      "ForeBrush": {},
+      "BackgroundBrush": null,
+      "FontStyle": 2,
+      "IsExportable": true
+    },
+    "_commentTagStyle": {
+      "ForeBrush": {},
+      "BackgroundBrush": null,
+      "FontStyle": 0,
+      "IsExportable": true
+    },
+    "_keywordStyle": {
+      "ForeBrush": {},
+      "BackgroundBrush": null,
+      "FontStyle": 0,
+      "IsExportable": true
+    }
+  }
+}
