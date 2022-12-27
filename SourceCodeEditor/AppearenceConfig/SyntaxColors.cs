@@ -4,22 +4,24 @@ namespace SourceCodeEditor.AppearenceConfig
 {
     public class SyntaxColors
     {
-        public TextStyle _classNameStyle { get; set; }
-        public TextStyle _stringStyle { get; set; }
-        public TextStyle _commentStyle { get; set; }
-        public TextStyle _commentTagStyle { get; set; }
-        public TextStyle _keywordStyle { get; set; }
+        public Tuple<Color, FontStyle> _classNameStyle { get; set; }
+        public Tuple<Color, FontStyle> _stringStyle { get; set; }
+        public Tuple<Color, FontStyle> _commentStyle { get; set; }
+        public Tuple<Color, FontStyle> _commentTagStyle { get; set; }
+        public Tuple<Color, FontStyle> _keywordStyle { get; set; }
 
-        public SyntaxColors() : this(null, null, null, null, null) { }
+        public SyntaxColors() : this(Tuple.Create(Color.Transparent,FontStyle.Regular), Tuple.Create(Color.Transparent, FontStyle.Regular),
+                                     Tuple.Create(Color.Transparent, FontStyle.Regular), Tuple.Create(Color.Transparent, FontStyle.Regular),
+                                     Tuple.Create(Color.Transparent, FontStyle.Regular)) { }
 
-        public SyntaxColors(Style className, Style stringStyle, Style comment, Style commentTag, Style keyword)
+        public SyntaxColors(Tuple<Color, FontStyle> className, Tuple<Color, FontStyle> stringStyle, Tuple<Color, FontStyle> commentStyle,
+                            Tuple<Color, FontStyle> commentTagStyle, Tuple<Color, FontStyle> keywordStyle)
         {
-            
-            _classNameStyle = className as TextStyle;
-            _stringStyle = stringStyle as TextStyle;
-            _commentStyle = comment as TextStyle;
-            _commentTagStyle = commentTag as TextStyle;
-            _keywordStyle = keyword as TextStyle;
+            _classNameStyle = className;
+            _stringStyle = stringStyle;
+            _commentStyle = commentStyle;
+            _commentTagStyle = commentTagStyle;
+            _keywordStyle = keywordStyle;
         }
     }
 }

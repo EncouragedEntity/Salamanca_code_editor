@@ -55,11 +55,11 @@ namespace SourceCodeEditor.AppearenceConfig
         public void ChangeGeneralThemeToBlack()
         {
             currentTheme = new CurrentTheme();
-            currentTheme._mainTextFieldBack = _mainTextField.BackColor = grey;
-            currentTheme._mainTextFieldFore = _header.ForeColor = _mainTextField.ForeColor = Color.White;
-            currentTheme._headerBack = _header.BackColor = darkGrey;
-            currentTheme._footerBack = _footer.BackColor = darkGrey;
-            currentTheme._labelsFore = Color.White;
+            currentTheme.MainTextFieldBack = _mainTextField.BackColor = grey;
+            currentTheme.MainTextFieldFore = _header.ForeColor = _mainTextField.ForeColor = Color.White;
+            currentTheme.HeaderBack = _header.BackColor = darkGrey;
+            currentTheme.FooterBack = _footer.BackColor = darkGrey;
+            currentTheme.LabelsFore = Color.White;
 
             _mainTextField.IndentBackColor = darkGrey;
             _mainTextField.LineNumberColor = Color.Silver;
@@ -86,13 +86,13 @@ namespace SourceCodeEditor.AppearenceConfig
             _footer.BackColor = Color.FromArgb(224, 224, 224);
             _header.ForeColor = _mainTextField.ForeColor = Color.Black;
 
-            currentTheme._mainTextFieldBack = _mainTextField.BackColor;
-            currentTheme._mainTextFieldFore = _mainTextField.ForeColor;
-            currentTheme._headerBack = _header.BackColor;
-            currentTheme._headerFore = _header.ForeColor;
-            currentTheme._footerBack = _footer.BackColor;
-            currentTheme._footerFore = _footer.ForeColor;
-            currentTheme._labelsFore = Color.Black;
+            currentTheme.MainTextFieldBack = _mainTextField.BackColor;
+            currentTheme.MainTextFieldFore = _mainTextField.ForeColor;
+            currentTheme.HeaderBack = _header.BackColor;
+            currentTheme.HeaderFore = _header.ForeColor;
+            currentTheme.FooterBack = _footer.BackColor;
+            currentTheme.FooterFore = _footer.ForeColor;
+            currentTheme.LabelsFore = Color.Black;
 
             foreach (var label in _labels)
             {
@@ -114,11 +114,18 @@ namespace SourceCodeEditor.AppearenceConfig
                 _mainTextField.Text = String.Empty;
 
                 currentTheme.syntaxColors = new SyntaxColors();
-                _mainTextField.SyntaxHighlighter.ClassNameStyle = currentTheme.syntaxColors._classNameStyle = new TextStyle(Brushes.Black, null, FontStyle.Bold | FontStyle.Underline);
-                _mainTextField.SyntaxHighlighter.StringStyle = currentTheme.syntaxColors._stringStyle = new TextStyle(Brushes.Red, null, FontStyle.Regular);
-                _mainTextField.SyntaxHighlighter.CommentStyle = currentTheme.syntaxColors._commentStyle = new TextStyle(Brushes.Green, null, FontStyle.Regular);
-                _mainTextField.SyntaxHighlighter.CommentTagStyle = currentTheme.syntaxColors._commentTagStyle = new TextStyle(Brushes.Gray, null, FontStyle.Regular);
-                _mainTextField.SyntaxHighlighter.KeywordStyle = currentTheme.syntaxColors._keywordStyle = new TextStyle(Brushes.Blue, null, FontStyle.Regular);
+                _mainTextField.SyntaxHighlighter.ClassNameStyle = new TextStyle(Brushes.Black, null, FontStyle.Bold | FontStyle.Underline);
+                _mainTextField.SyntaxHighlighter.StringStyle = new TextStyle(Brushes.Red, null, FontStyle.Regular);
+                _mainTextField.SyntaxHighlighter.CommentStyle = new TextStyle(Brushes.Green, null, FontStyle.Regular);
+                _mainTextField.SyntaxHighlighter.CommentTagStyle = new TextStyle(Brushes.Gray, null, FontStyle.Regular);
+                _mainTextField.SyntaxHighlighter.KeywordStyle = new TextStyle(Brushes.Blue, null, FontStyle.Regular);
+
+                currentTheme.syntaxColors._classNameStyle = Tuple.Create(Color.Black, FontStyle.Bold | FontStyle.Underline);
+                currentTheme.syntaxColors._stringStyle = Tuple.Create(Color.Red, FontStyle.Regular);
+                currentTheme.syntaxColors._commentStyle = Tuple.Create(Color.Green, FontStyle.Regular);
+                currentTheme.syntaxColors._commentTagStyle = Tuple.Create(Color.Gray, FontStyle.Regular);
+                currentTheme.syntaxColors._keywordStyle = Tuple.Create(Color.Blue, FontStyle.Regular);
+
                 mainForm.theme = currentTheme;
 
                 _mainTextField.Text = text;
@@ -141,11 +148,18 @@ namespace SourceCodeEditor.AppearenceConfig
                 _mainTextField.Text = String.Empty;
 
                 currentTheme.syntaxColors = new SyntaxColors();
-                _mainTextField.SyntaxHighlighter.ClassNameStyle = currentTheme.syntaxColors._classNameStyle = new TextStyle(Brushes.White, null, FontStyle.Bold | FontStyle.Underline);
-                _mainTextField.SyntaxHighlighter.StringStyle = currentTheme.syntaxColors._stringStyle = new TextStyle(Brushes.Orange, null, FontStyle.Regular);
-                _mainTextField.SyntaxHighlighter.CommentStyle = currentTheme.syntaxColors._commentStyle = new TextStyle(Brushes.LimeGreen, null, FontStyle.Regular);
-                _mainTextField.SyntaxHighlighter.CommentTagStyle = currentTheme.syntaxColors._commentTagStyle = new TextStyle(Brushes.DarkGray, null, FontStyle.Regular);
-                _mainTextField.SyntaxHighlighter.KeywordStyle = currentTheme.syntaxColors._keywordStyle = new TextStyle(Brushes.DeepSkyBlue, null, FontStyle.Regular);
+                _mainTextField.SyntaxHighlighter.ClassNameStyle = new TextStyle(Brushes.White, null, FontStyle.Bold | FontStyle.Underline);
+                _mainTextField.SyntaxHighlighter.StringStyle = new TextStyle(Brushes.Orange, null, FontStyle.Regular);
+                _mainTextField.SyntaxHighlighter.CommentStyle = new TextStyle(Brushes.LimeGreen, null, FontStyle.Regular);
+                _mainTextField.SyntaxHighlighter.CommentTagStyle = new TextStyle(Brushes.DarkGray, null, FontStyle.Regular);
+                _mainTextField.SyntaxHighlighter.KeywordStyle = new TextStyle(Brushes.DeepSkyBlue, null, FontStyle.Regular);
+
+                currentTheme.syntaxColors._classNameStyle = Tuple.Create(Color.White, FontStyle.Bold | FontStyle.Underline);
+                currentTheme.syntaxColors._stringStyle = Tuple.Create(Color.Orange, FontStyle.Regular);
+                currentTheme.syntaxColors._commentStyle = Tuple.Create(Color.LimeGreen, FontStyle.Regular);
+                currentTheme.syntaxColors._commentTagStyle = Tuple.Create(Color.DarkGray, FontStyle.Regular);
+                currentTheme.syntaxColors._keywordStyle = Tuple.Create(Color.DeepSkyBlue, FontStyle.Regular);
+
                 mainForm.theme = currentTheme;
 
                 _mainTextField.Text = text;

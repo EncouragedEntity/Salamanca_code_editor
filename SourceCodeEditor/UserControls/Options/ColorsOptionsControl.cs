@@ -22,9 +22,23 @@ namespace SourceCodeEditor.UserControls.Options
             InitializeComponent();
         }
 
+        private void SetButtonsColors()
+        {
+            buttonHeaderBack.BackColor = CurrentTheme!.HeaderBack;
+            buttonHeaderFore.BackColor = CurrentTheme.HeaderFore;
+            buttonFooterBack.BackColor = CurrentTheme.FooterBack;
+            buttonFooterFore.BackColor = CurrentTheme.FooterFore;
+            buttonTextBack.BackColor = CurrentTheme.MainTextFieldBack;
+            buttonTextFore.BackColor = CurrentTheme.MainTextFieldFore;
+            buttonLabelsBack.BackColor = CurrentTheme.LabelsBack;
+            buttonLabelsFore.BackColor = CurrentTheme.LabelsFore;
+        }
+
         private void ColorsOptionsControl_Load(object sender, EventArgs e)
         {
-            CurrentTheme = new ThemeSerializer(form!.theme,form.MainHeader,form.MainTextField,form.MainFooter,form.GetLabelsFromForm()).DeserializeTheme();
+            CurrentTheme = new ThemeSerializer(form!.theme, form.MainHeader, form.MainTextField, form.MainFooter,
+                                               form.GetLabelsFromForm()).DeserializeTheme();
+            SetButtonsColors();
         }
     }
 }

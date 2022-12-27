@@ -2,10 +2,6 @@ using FastColoredTextBoxNS;
 using SourceCodeEditor.AppearenceConfig;
 using SourceCodeEditor.Enums;
 using SourceCodeEditor.Forms;
-using System.Collections.Generic;
-using System.DirectoryServices.ActiveDirectory;
-using System.Text.Json;
-
 namespace SourceCodeEditor
 {
     /// <summary>
@@ -42,24 +38,10 @@ namespace SourceCodeEditor
 
         public MainForm() => InitializeComponent();
 
-        private void SetTheme()
-        {
-            theme = new CurrentTheme(MainHeader.BackColor, MainHeader.ForeColor,
-                                     MainFooter.BackColor, MainFooter.ForeColor,
-                                     MainTextField.BackColor, MainTextField.ForeColor,
-                                     GetLabelsFromForm().FirstOrDefault().BackColor,
-                                     GetLabelsFromForm().FirstOrDefault().ForeColor,
-                                     new SyntaxColors(MainTextField.SyntaxHighlighter.ClassNameStyle,
-                                                      MainTextField.SyntaxHighlighter.StringStyle,
-                                                      MainTextField.SyntaxHighlighter.CommentStyle,
-                                                      MainTextField.SyntaxHighlighter.CommentTagStyle,
-                                                      MainTextField.SyntaxHighlighter.KeywordStyle));
-        }
+
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            SetTheme();
-            new ThemeSerializer(theme,MainHeader,MainTextField,MainFooter,GetLabelsFromForm()).SerializeTheme();
 
             //Load hotkeys config from file on form load
             new HotKeysConfig(MainHeader).LoadHotkeysConfig();
@@ -67,8 +49,12 @@ namespace SourceCodeEditor
             //Change form theme to black on Load 
             new ThemeChanger(this, _currentTheme, MainHeader, MainTextField, MainFooter, GetLabelsFromForm()).ChangeTheme();
 
+            //Serialize current theme
+            new ThemeSerializer(theme, MainHeader, MainTextField, MainFooter, GetLabelsFromForm()).SerializeTheme();
+
             DeleteLineLabel();
             DeleteSymbolLabel();
+            DeleteFileStatusLabel();
         }
 
         #region Methods

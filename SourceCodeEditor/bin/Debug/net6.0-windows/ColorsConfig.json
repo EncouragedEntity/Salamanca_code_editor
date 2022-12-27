@@ -1,5 +1,5 @@
 {
-  "_headerBack": {
+  "HeaderBack": {
     "R": 50,
     "G": 50,
     "B": 50,
@@ -10,7 +10,7 @@
     "IsSystemColor": false,
     "Name": "ff323232"
   },
-  "_headerFore": {
+  "HeaderFore": {
     "R": 255,
     "G": 255,
     "B": 255,
@@ -21,7 +21,7 @@
     "IsSystemColor": false,
     "Name": "White"
   },
-  "_footerBack": {
+  "FooterBack": {
     "R": 50,
     "G": 50,
     "B": 50,
@@ -32,7 +32,7 @@
     "IsSystemColor": false,
     "Name": "ff323232"
   },
-  "_footerFore": {
+  "FooterFore": {
     "R": 0,
     "G": 0,
     "B": 0,
@@ -43,18 +43,18 @@
     "IsSystemColor": true,
     "Name": "ControlText"
   },
-  "_mainTextFieldBack": {
-    "R": 80,
-    "G": 80,
-    "B": 80,
+  "MainTextFieldBack": {
+    "R": 90,
+    "G": 90,
+    "B": 90,
     "A": 255,
     "IsKnownColor": false,
     "IsEmpty": false,
     "IsNamedColor": false,
     "IsSystemColor": false,
-    "Name": "ff505050"
+    "Name": "ff5a5a5a"
   },
-  "_mainTextFieldFore": {
+  "MainTextFieldFore": {
     "R": 255,
     "G": 255,
     "B": 255,
@@ -65,7 +65,7 @@
     "IsSystemColor": false,
     "Name": "White"
   },
-  "_labelsBack": {
+  "LabelsBack": {
     "R": 50,
     "G": 50,
     "B": 50,
@@ -76,7 +76,7 @@
     "IsSystemColor": false,
     "Name": "ff323232"
   },
-  "_labelsFore": {
+  "LabelsFore": {
     "R": 255,
     "G": 255,
     "B": 255,
@@ -89,34 +89,74 @@
   },
   "syntaxColors": {
     "_classNameStyle": {
-      "ForeBrush": null,
-      "BackgroundBrush": null,
-      "FontStyle": 5,
-      "IsExportable": true
+      "Item1": {
+        "R": 255,
+        "G": 255,
+        "B": 255,
+        "A": 255,
+        "IsKnownColor": true,
+        "IsEmpty": false,
+        "IsNamedColor": true,
+        "IsSystemColor": false,
+        "Name": "White"
+      },
+      "Item2": 5
     },
     "_stringStyle": {
-      "ForeBrush": {},
-      "BackgroundBrush": null,
-      "FontStyle": 2,
-      "IsExportable": true
+      "Item1": {
+        "R": 255,
+        "G": 165,
+        "B": 0,
+        "A": 255,
+        "IsKnownColor": true,
+        "IsEmpty": false,
+        "IsNamedColor": true,
+        "IsSystemColor": false,
+        "Name": "Orange"
+      },
+      "Item2": 0
     },
     "_commentStyle": {
-      "ForeBrush": {},
-      "BackgroundBrush": null,
-      "FontStyle": 2,
-      "IsExportable": true
+      "Item1": {
+        "R": 50,
+        "G": 205,
+        "B": 50,
+        "A": 255,
+        "IsKnownColor": true,
+        "IsEmpty": false,
+        "IsNamedColor": true,
+        "IsSystemColor": false,
+        "Name": "LimeGreen"
+      },
+      "Item2": 0
     },
     "_commentTagStyle": {
-      "ForeBrush": {},
-      "BackgroundBrush": null,
-      "FontStyle": 0,
-      "IsExportable": true
+      "Item1": {
+        "R": 169,
+        "G": 169,
+        "B": 169,
+        "A": 255,
+        "IsKnownColor": true,
+        "IsEmpty": false,
+        "IsNamedColor": true,
+        "IsSystemColor": false,
+        "Name": "DarkGray"
+      },
+      "Item2": 0
     },
     "_keywordStyle": {
-      "ForeBrush": {},
-      "BackgroundBrush": null,
-      "FontStyle": 0,
-      "IsExportable": true
+      "Item1": {
+        "R": 0,
+        "G": 191,
+        "B": 255,
+        "A": 255,
+        "IsKnownColor": true,
+        "IsEmpty": false,
+        "IsNamedColor": true,
+        "IsSystemColor": false,
+        "Name": "DeepSkyBlue"
+      },
+      "Item2": 0
     }
   }
 }

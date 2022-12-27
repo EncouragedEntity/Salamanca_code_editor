@@ -30,20 +30,20 @@ namespace SourceCodeEditor.AppearenceConfig
         {
             foreach (var label in _labels)
             {
-                label.BackColor = _theme._labelsBack;
-                label.ForeColor = _theme._headerFore;
+                label.BackColor = _theme.LabelsBack;
+                label.ForeColor = _theme.HeaderFore;
             }
         }
         private void SetColors()
         {
-            _header.BackColor = _theme._headerBack;
-            _header.ForeColor = _theme._headerFore;
+            _header.BackColor = _theme.HeaderBack;
+            _header.ForeColor = _theme.HeaderFore;
 
-            _footer.BackColor = _theme._footerBack;
-            _footer.ForeColor = _theme._footerFore;
+            _footer.BackColor = _theme.FooterBack;
+            _footer.ForeColor = _theme.FooterFore;
 
-            _mainTextField.BackColor = _theme._mainTextFieldBack;
-            _mainTextField.ForeColor = _theme._mainTextFieldFore;
+            _mainTextField.BackColor = _theme.MainTextFieldBack;
+            _mainTextField.ForeColor = _theme.MainTextFieldFore;
 
             SetLabelsColors();
         }
@@ -51,21 +51,21 @@ namespace SourceCodeEditor.AppearenceConfig
         private void GetLabelsColors()
         {
             var firstLabel = _labels.FirstOrDefault();
-            _theme._labelsFore = firstLabel!.ForeColor;
-            _theme._labelsBack = firstLabel!.BackColor;
+            _theme.LabelsFore = firstLabel!.ForeColor;
+            _theme.LabelsBack = firstLabel!.BackColor;
 
         }
 
         private void GetColors()
         {
-            _theme._headerBack = _header.BackColor;
-            _theme._headerFore = _header.ForeColor;
+            _theme.HeaderBack = _header.BackColor;
+            _theme.HeaderFore = _header.ForeColor;
 
-            _theme._footerBack = _footer.BackColor;
-            _theme._footerFore = _footer.ForeColor;
+            _theme.FooterBack = _footer.BackColor;
+            _theme.FooterFore = _footer.ForeColor;
 
-            _theme._mainTextFieldBack = _mainTextField.BackColor;
-            _theme._mainTextFieldFore = _mainTextField.ForeColor;
+            _theme.MainTextFieldBack = _mainTextField.BackColor;
+            _theme.MainTextFieldFore = _mainTextField.ForeColor;
 
             GetLabelsColors();  
         }
@@ -78,20 +78,24 @@ namespace SourceCodeEditor.AppearenceConfig
 
         private CurrentTheme Deserialize()
         {
-            return JsonSerializer.Deserialize<CurrentTheme>(File.ReadAllText("ColorsConfig.json"))!;
+            var jsonstring = File.ReadAllText("ColorsConfig.json");
+            var theme = JsonSerializer.Deserialize<CurrentTheme>(jsonstring)!;
+            return theme;
         }
 
         public CurrentTheme DeserializeTheme()
         {
-            _theme = Deserialize();
+            return _theme = Deserialize();
+        }
+
+        public void SetColorsOfTheme()
+        {
             SetColors();
-            return _theme;
         }
 
         public void SerializeTheme()
         {
-            string JsonText = Serialize();
-            File.WriteAllText("ColorsConfig.json",JsonText);
+            File.WriteAllText("ColorsConfig.json", Serialize());
         }
     }
 }
