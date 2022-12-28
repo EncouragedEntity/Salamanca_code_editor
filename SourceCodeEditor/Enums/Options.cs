@@ -10,6 +10,7 @@ namespace SourceCodeEditor.Enums
     {
         General,
         Theme,
-        HotKeys
+        HotKeys,
+        Colors
     }
 }

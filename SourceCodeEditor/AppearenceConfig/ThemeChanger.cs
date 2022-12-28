@@ -12,13 +12,16 @@ namespace SourceCodeEditor.AppearenceConfig
         /// Theme is Black by default
         /// </summary>
         private readonly Theme _theme = Theme.Black;
+        private CurrentTheme currentTheme;
+        private readonly MainForm mainForm;
         private readonly MenuStrip _header;
         private readonly FastColoredTextBox _mainTextField;
         private readonly StatusStrip _footer;
         private readonly IEnumerable<ToolStripStatusLabel> _labels;
 
-        public ThemeChanger(Theme theme, MenuStrip header, FastColoredTextBox mainTextField, StatusStrip footer, IEnumerable<ToolStripStatusLabel> labels)
+        public ThemeChanger(MainForm form, Theme theme, MenuStrip header, FastColoredTextBox mainTextField, StatusStrip footer, IEnumerable<ToolStripStatusLabel> labels)
         {
+            mainForm = form;
             _theme = theme;
             _header = header;
             _mainTextField = mainTextField;
@@ -49,24 +52,21 @@ namespace SourceCodeEditor.AppearenceConfig
         /// <summary>
         /// Set Application controls theme to "Black"
         /// </summary>
-        /// <param name="header">Main menu strip on form</param>
-        /// <param name="mainTextField">Main text field on form</param>
-        /// <param name="footer">Bottom form panel, that contains info about application</param>
-        /// <param name="labels">All labels on form</param>
         public void ChangeGeneralThemeToBlack()
         {
-            _mainTextField.BackColor = grey;
-            _mainTextField.ForeColor = Color.White;
+            currentTheme = new CurrentTheme();
+            currentTheme.MainTextFieldBack = _mainTextField.BackColor = grey;
+            currentTheme.MainTextFieldFore = _header.ForeColor = _mainTextField.ForeColor = Color.White;
+            currentTheme.HeaderBack = _header.BackColor = darkGrey;
+            currentTheme.FooterBack = _footer.BackColor = darkGrey;
+            currentTheme.LabelsFore = Color.White;
+
             _mainTextField.IndentBackColor = darkGrey;
             _mainTextField.LineNumberColor = Color.Silver;
-            _header.BackColor = darkGrey;
-            _footer.BackColor = darkGrey;
-            _header.ForeColor = _mainTextField.ForeColor = Color.White;
             foreach (var label in _labels)
             {
                 label.ForeColor = Color.White;
             }
-
             ChangeSyntaxHighlithingToBlack();
             ChangeHeaderThemeToBlack();
         }
@@ -74,12 +74,10 @@ namespace SourceCodeEditor.AppearenceConfig
         /// <summary>
         /// Set Application controls theme to "White"
         /// </summary>
-        /// <param name="header">Main menu strip on form</param>
-        /// <param name="mainTextField">Main text field on form</param>
-        /// <param name="footer">Bottom form panel, that contains info about application</param>
-        /// <param name="labels">All labels on form</param>
         public void ChangeGeneralThemeToWhite()
         {
+            currentTheme = new CurrentTheme();
+
             _mainTextField.BackColor = Color.White;
             _mainTextField.LineNumberColor = Color.Black;
             _mainTextField.ForeColor = Color.Black;
@@ -87,6 +85,15 @@ namespace SourceCodeEditor.AppearenceConfig
             _header.BackColor = Color.FromArgb(224, 224, 224);
             _footer.BackColor = Color.FromArgb(224, 224, 224);
             _header.ForeColor = _mainTextField.ForeColor = Color.Black;
+
+            currentTheme.MainTextFieldBack = _mainTextField.BackColor;
+            currentTheme.MainTextFieldFore = _mainTextField.ForeColor;
+            currentTheme.HeaderBack = _header.BackColor;
+            currentTheme.HeaderFore = _header.ForeColor;
+            currentTheme.FooterBack = _footer.BackColor;
+            currentTheme.FooterFore = _footer.ForeColor;
+            currentTheme.LabelsFore = Color.Black;
+
             foreach (var label in _labels)
             {
                 label.ForeColor = Color.Black;
@@ -103,14 +110,16 @@ namespace SourceCodeEditor.AppearenceConfig
         {
             try
             {
-
                 string text = _mainTextField.Text;
                 _mainTextField.Text = String.Empty;
+
+                currentTheme.syntaxColors = new SyntaxColors();
                 _mainTextField.SyntaxHighlighter.ClassNameStyle = new TextStyle(Brushes.Black, null, FontStyle.Bold | FontStyle.Underline);
                 _mainTextField.SyntaxHighlighter.StringStyle = new TextStyle(Brushes.Red, null, FontStyle.Regular);
                 _mainTextField.SyntaxHighlighter.CommentStyle = new TextStyle(Brushes.Green, null, FontStyle.Regular);
                 _mainTextField.SyntaxHighlighter.CommentTagStyle = new TextStyle(Brushes.Gray, null, FontStyle.Regular);
                 _mainTextField.SyntaxHighlighter.KeywordStyle = new TextStyle(Brushes.Blue, null, FontStyle.Regular);
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 
@@ -123,6 +132,17 @@ namespace SourceCodeEditor.AppearenceConfig
                 mainForm.theme = currentTheme;
 
 >>>>>>> Stashed changes
+=======
+
+                currentTheme.syntaxColors._classNameStyle = Tuple.Create(Color.Black, FontStyle.Bold | FontStyle.Underline);
+                currentTheme.syntaxColors._stringStyle = Tuple.Create(Color.Red, FontStyle.Regular);
+                currentTheme.syntaxColors._commentStyle = Tuple.Create(Color.Green, FontStyle.Regular);
+                currentTheme.syntaxColors._commentTagStyle = Tuple.Create(Color.Gray, FontStyle.Regular);
+                currentTheme.syntaxColors._keywordStyle = Tuple.Create(Color.Blue, FontStyle.Regular);
+
+                mainForm.theme = currentTheme;
+
+>>>>>>> 7adffb1059c39d6254111392bf8b9ae6d080b189
                 _mainTextField.Text = text;
             }
             catch(Exception) 
@@ -141,11 +161,14 @@ namespace SourceCodeEditor.AppearenceConfig
             {
                 string text = _mainTextField.Text;
                 _mainTextField.Text = String.Empty;
+
+                currentTheme.syntaxColors = new SyntaxColors();
                 _mainTextField.SyntaxHighlighter.ClassNameStyle = new TextStyle(Brushes.White, null, FontStyle.Bold | FontStyle.Underline);
                 _mainTextField.SyntaxHighlighter.StringStyle = new TextStyle(Brushes.Orange, null, FontStyle.Regular);
                 _mainTextField.SyntaxHighlighter.CommentStyle = new TextStyle(Brushes.LimeGreen, null, FontStyle.Regular);
                 _mainTextField.SyntaxHighlighter.CommentTagStyle = new TextStyle(Brushes.DarkGray, null, FontStyle.Regular);
                 _mainTextField.SyntaxHighlighter.KeywordStyle = new TextStyle(Brushes.DeepSkyBlue, null, FontStyle.Regular);
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 
@@ -161,6 +184,17 @@ namespace SourceCodeEditor.AppearenceConfig
                 mainForm.theme = currentTheme;
 
 >>>>>>> Stashed changes
+=======
+
+                currentTheme.syntaxColors._classNameStyle = Tuple.Create(Color.White, FontStyle.Bold | FontStyle.Underline);
+                currentTheme.syntaxColors._stringStyle = Tuple.Create(Color.Orange, FontStyle.Regular);
+                currentTheme.syntaxColors._commentStyle = Tuple.Create(Color.LimeGreen, FontStyle.Regular);
+                currentTheme.syntaxColors._commentTagStyle = Tuple.Create(Color.DarkGray, FontStyle.Regular);
+                currentTheme.syntaxColors._keywordStyle = Tuple.Create(Color.DeepSkyBlue, FontStyle.Regular);
+
+                mainForm.theme = currentTheme;
+
+>>>>>>> 7adffb1059c39d6254111392bf8b9ae6d080b189
                 _mainTextField.Text = text;
             }
             catch (Exception)

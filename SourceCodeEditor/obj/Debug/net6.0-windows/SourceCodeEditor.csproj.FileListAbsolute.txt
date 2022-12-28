@@ -22,3 +22,4 @@ D:\COURSE WORK\SourceCodeEditor\SourceCodeEditor\obj\Debug\net6.0-windows\ref\So
 D:\COURSE WORK\SourceCodeEditor\SourceCodeEditor\obj\Debug\net6.0-windows\SourceCodeEditor.UserControls.GeneralOptionsControl.resources
 D:\COURSE WORK\SourceCodeEditor\SourceCodeEditor\obj\Debug\net6.0-windows\SourceCodeEditor.UserControls.ThemeOptionsControl.resources
 D:\COURSE WORK\SourceCodeEditor\SourceCodeEditor\obj\Debug\net6.0-windows\SourceCodeEditor.UserControls.Options.HotKeysOptionsControl.resources
+D:\COURSE WORK\SourceCodeEditor\SourceCodeEditor\obj\Debug\net6.0-windows\SourceCodeEditor.UserControls.Options.ColorsOptionsControl.resources

@@ -43,6 +43,9 @@ namespace SourceCodeEditor
             this.themeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.blackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.whiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.screenModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fullscreenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.windowedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -132,6 +135,7 @@ namespace SourceCodeEditor
             // viewToolStripMenuItem
             // 
             this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+<<<<<<< HEAD
 <<<<<<< Updated upstream
             this.themeToolStripMenuItem});
 =======
@@ -139,6 +143,10 @@ namespace SourceCodeEditor
             this.screenModeToolStripMenuItem,
             this.syntaxToolStripMenuItem});
 >>>>>>> Stashed changes
+=======
+            this.themeToolStripMenuItem,
+            this.screenModeToolStripMenuItem});
+>>>>>>> 7adffb1059c39d6254111392bf8b9ae6d080b189
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
             this.viewToolStripMenuItem.Text = "View";
@@ -151,7 +159,7 @@ namespace SourceCodeEditor
             this.whiteToolStripMenuItem});
             this.themeToolStripMenuItem.Name = "themeToolStripMenuItem";
             this.themeToolStripMenuItem.ShowShortcutKeys = false;
-            this.themeToolStripMenuItem.Size = new System.Drawing.Size(128, 26);
+            this.themeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.themeToolStripMenuItem.Text = "Theme";
             // 
             // blackToolStripMenuItem
@@ -170,8 +178,11 @@ namespace SourceCodeEditor
             this.whiteToolStripMenuItem.Text = "White";
             this.whiteToolStripMenuItem.Click += new System.EventHandler(this.whiteToolStripMenuItem_Click);
             // 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
+=======
+>>>>>>> 7adffb1059c39d6254111392bf8b9ae6d080b189
             // screenModeToolStripMenuItem
             // 
             this.screenModeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -184,7 +195,11 @@ namespace SourceCodeEditor
             // fullscreenToolStripMenuItem
             // 
             this.fullscreenToolStripMenuItem.Name = "fullscreenToolStripMenuItem";
+<<<<<<< HEAD
             this.fullscreenToolStripMenuItem.Size = new System.Drawing.Size(164, 26);
+=======
+            this.fullscreenToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+>>>>>>> 7adffb1059c39d6254111392bf8b9ae6d080b189
             this.fullscreenToolStripMenuItem.Text = "Fullscreen";
             this.fullscreenToolStripMenuItem.Click += new System.EventHandler(this.fullscreenToolStripMenuItem_Click);
             // 
@@ -193,11 +208,18 @@ namespace SourceCodeEditor
             this.windowedToolStripMenuItem.Checked = true;
             this.windowedToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.windowedToolStripMenuItem.Name = "windowedToolStripMenuItem";
+<<<<<<< HEAD
             this.windowedToolStripMenuItem.Size = new System.Drawing.Size(164, 26);
             this.windowedToolStripMenuItem.Text = "Windowed";
             this.windowedToolStripMenuItem.Click += new System.EventHandler(this.windowedToolStripMenuItem_Click);
             // 
 >>>>>>> Stashed changes
+=======
+            this.windowedToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.windowedToolStripMenuItem.Text = "Windowed";
+            this.windowedToolStripMenuItem.Click += new System.EventHandler(this.windowedToolStripMenuItem_Click);
+            // 
+>>>>>>> 7adffb1059c39d6254111392bf8b9ae6d080b189
             // toolsToolStripMenuItem
             // 
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -386,7 +408,7 @@ namespace SourceCodeEditor
         }
 
         #endregion
-        private MenuStrip MainHeader;
+        public MenuStrip MainHeader;
         private ToolStripMenuItem fileToolStripMenuItem;
         private ToolStripMenuItem openToolStripMenuItem;
         private ToolStripMenuItem newToolStripMenuItem;
@@ -395,14 +417,14 @@ namespace SourceCodeEditor
         private OpenFileDialog openFileDialog1;
         private SaveFileDialog saveFileDialog1;
         private ToolStripMenuItem viewToolStripMenuItem;
-        private FastColoredTextBoxNS.FastColoredTextBox MainTextField;
+        public FastColoredTextBoxNS.FastColoredTextBox MainTextField;
         private ToolStripMenuItem themeToolStripMenuItem;
         private ToolStripMenuItem blackToolStripMenuItem;
         private ToolStripMenuItem whiteToolStripMenuItem;
         private ToolStripMenuItem editToolStripMenuItem;
         private ToolStripMenuItem toolsToolStripMenuItem;
         private ToolStripMenuItem optionsToolStripMenuItem;
-        private StatusStrip MainFooter;
+        public StatusStrip MainFooter;
         private ToolStripStatusLabel LineCountLable;
         private ContextMenuStrip FooterContext;
         private ToolStripMenuItem linesToolStripMenuItem;
@@ -412,6 +434,7 @@ namespace SourceCodeEditor
         private ToolStripMenuItem currentLineToolStripMenuItem;
         private ToolStripStatusLabel IsSavedLabel;
         private ToolStripMenuItem fileStatusToolStripMenuItem;
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
         private ToolStripMenuItem screenModeToolStripMenuItem;
@@ -419,5 +442,10 @@ namespace SourceCodeEditor
         private ToolStripMenuItem windowedToolStripMenuItem;
         public ToolStripMenuItem syntaxToolStripMenuItem;
 >>>>>>> Stashed changes
+=======
+        private ToolStripMenuItem screenModeToolStripMenuItem;
+        private ToolStripMenuItem fullscreenToolStripMenuItem;
+        private ToolStripMenuItem windowedToolStripMenuItem;
+>>>>>>> 7adffb1059c39d6254111392bf8b9ae6d080b189
     }
 }

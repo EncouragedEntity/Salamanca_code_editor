@@ -1,0 +1,162 @@
+{
+  "HeaderBack": {
+    "R": 50,
+    "G": 50,
+    "B": 50,
+    "A": 255,
+    "IsKnownColor": false,
+    "IsEmpty": false,
+    "IsNamedColor": false,
+    "IsSystemColor": false,
+    "Name": "ff323232"
+  },
+  "HeaderFore": {
+    "R": 255,
+    "G": 255,
+    "B": 255,
+    "A": 255,
+    "IsKnownColor": true,
+    "IsEmpty": false,
+    "IsNamedColor": true,
+    "IsSystemColor": false,
+    "Name": "White"
+  },
+  "FooterBack": {
+    "R": 50,
+    "G": 50,
+    "B": 50,
+    "A": 255,
+    "IsKnownColor": false,
+    "IsEmpty": false,
+    "IsNamedColor": false,
+    "IsSystemColor": false,
+    "Name": "ff323232"
+  },
+  "FooterFore": {
+    "R": 0,
+    "G": 0,
+    "B": 0,
+    "A": 255,
+    "IsKnownColor": true,
+    "IsEmpty": false,
+    "IsNamedColor": true,
+    "IsSystemColor": true,
+    "Name": "ControlText"
+  },
+  "MainTextFieldBack": {
+    "R": 90,
+    "G": 90,
+    "B": 90,
+    "A": 255,
+    "IsKnownColor": false,
+    "IsEmpty": false,
+    "IsNamedColor": false,
+    "IsSystemColor": false,
+    "Name": "ff5a5a5a"
+  },
+  "MainTextFieldFore": {
+    "R": 255,
+    "G": 255,
+    "B": 255,
+    "A": 255,
+    "IsKnownColor": true,
+    "IsEmpty": false,
+    "IsNamedColor": true,
+    "IsSystemColor": false,
+    "Name": "White"
+  },
+  "LabelsBack": {
+    "R": 50,
+    "G": 50,
+    "B": 50,
+    "A": 255,
+    "IsKnownColor": false,
+    "IsEmpty": false,
+    "IsNamedColor": false,
+    "IsSystemColor": false,
+    "Name": "ff323232"
+  },
+  "LabelsFore": {
+    "R": 255,
+    "G": 255,
+    "B": 255,
+    "A": 255,
+    "IsKnownColor": true,
+    "IsEmpty": false,
+    "IsNamedColor": true,
+    "IsSystemColor": false,
+    "Name": "White"
+  },
+  "syntaxColors": {
+    "_classNameStyle": {
+      "Item1": {
+        "R": 255,
+        "G": 255,
+        "B": 255,
+        "A": 255,
+        "IsKnownColor": true,
+        "IsEmpty": false,
+        "IsNamedColor": true,
+        "IsSystemColor": false,
+        "Name": "White"
+      },
+      "Item2": 5
+    },
+    "_stringStyle": {
+      "Item1": {
+        "R": 255,
+        "G": 165,
+        "B": 0,
+        "A": 255,
+        "IsKnownColor": true,
+        "IsEmpty": false,
+        "IsNamedColor": true,
+        "IsSystemColor": false,
+        "Name": "Orange"
+      },
+      "Item2": 0
+    },
+    "_commentStyle": {
+      "Item1": {
+        "R": 50,
+        "G": 205,
+        "B": 50,
+        "A": 255,
+        "IsKnownColor": true,
+        "IsEmpty": false,
+        "IsNamedColor": true,
+        "IsSystemColor": false,
+        "Name": "LimeGreen"
+      },
+      "Item2": 0
+    },
+    "_commentTagStyle": {
+      "Item1": {
+        "R": 169,
+        "G": 169,
+        "B": 169,
+        "A": 255,
+        "IsKnownColor": true,
+        "IsEmpty": false,
+        "IsNamedColor": true,
+        "IsSystemColor": false,
+        "Name": "DarkGray"
+      },
+      "Item2": 0
+    },
+    "_keywordStyle": {
+      "Item1": {
+        "R": 0,
+        "G": 191,
+        "B": 255,
+        "A": 255,
+        "IsKnownColor": true,
+        "IsEmpty": false,
+        "IsNamedColor": true,
+        "IsSystemColor": false,
+        "Name": "DeepSkyBlue"
+      },
+      "Item2": 0
+    }
+  }
+}

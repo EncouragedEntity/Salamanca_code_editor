@@ -7,6 +7,9 @@
     <Compile Update="Forms\OptionsForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="UserControls\Options\ColorsOptionsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="UserControls\Options\GeneralOptionsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

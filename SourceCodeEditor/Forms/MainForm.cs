@@ -2,10 +2,6 @@ using FastColoredTextBoxNS;
 using SourceCodeEditor.AppearenceConfig;
 using SourceCodeEditor.Enums;
 using SourceCodeEditor.Forms;
-using System.Collections.Generic;
-using System.DirectoryServices.ActiveDirectory;
-using System.Text.Json;
-
 namespace SourceCodeEditor
 {
     /// <summary>
@@ -22,6 +18,8 @@ namespace SourceCodeEditor
 
         public Theme CurrentTheme = Theme.Black;
 
+        public CurrentTheme theme;
+
         /// <summary>
         /// Current opened file
         /// </summary>
@@ -35,25 +33,29 @@ namespace SourceCodeEditor
         /// <summary>
         /// Is file saved on disk
         /// </summary>
-        private bool _isFileSaved = false;
+        private bool _isFileSaved;
         #endregion
 
-        public MainForm()
-        {
-            InitializeComponent();
-        }
+        public MainForm() => InitializeComponent();
+
+
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
             new LanguageConfig(this).LoadLanguages();
 
 >>>>>>> Stashed changes
+=======
+
+>>>>>>> 7adffb1059c39d6254111392bf8b9ae6d080b189
             //Load hotkeys config from file on form load
             new HotKeysConfig(MainHeader).LoadHotkeysConfig();
 
             //Change form theme to black on Load 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
             new ThemeChanger(_currentTheme, MainHeader, MainTextField, MainFooter, GetLabelsFromForm()).ChangeTheme();
 =======
@@ -63,9 +65,16 @@ namespace SourceCodeEditor
             new ThemeSerializer(theme, MainHeader, MainTextField, MainFooter, GetLabelsFromForm()).SerializeTheme();
 >>>>>>> Stashed changes
 
+=======
+            new ThemeChanger(this, _currentTheme, MainHeader, MainTextField, MainFooter, GetLabelsFromForm()).ChangeTheme();
+
+            //Serialize current theme
+            new ThemeSerializer(theme, MainHeader, MainTextField, MainFooter, GetLabelsFromForm()).SerializeTheme();
+>>>>>>> 7adffb1059c39d6254111392bf8b9ae6d080b189
 
             DeleteLineLabel();
             DeleteSymbolLabel();
+            DeleteFileStatusLabel();
         }
 
         #region Methods
@@ -191,7 +200,7 @@ namespace SourceCodeEditor
         /// Get all labels from form
         /// </summary>
         /// <returns>List of labels</returns>
-        private IEnumerable<ToolStripStatusLabel> GetLabelsFromForm()
+        public IEnumerable<ToolStripStatusLabel> GetLabelsFromForm()
         {
             var labels = new List<ToolStripStatusLabel>(); 
             foreach (var control in this.Controls)
@@ -212,11 +221,15 @@ namespace SourceCodeEditor
             var labels = this.GetLabelsFromForm();
 <<<<<<< Updated upstream
             _currentTheme = Theme.Black;
+<<<<<<< HEAD
             new ThemeChanger(_currentTheme, MainHeader, MainTextField, MainFooter, labels).ChangeTheme();
 =======
             CurrentTheme = Theme.Black;
             new ThemeChanger(this, CurrentTheme, MainHeader, MainTextField, MainFooter, labels).ChangeTheme();
 >>>>>>> Stashed changes
+=======
+            new ThemeChanger(this, _currentTheme, MainHeader, MainTextField, MainFooter, labels).ChangeTheme();
+>>>>>>> 7adffb1059c39d6254111392bf8b9ae6d080b189
 
             whiteToolStripMenuItem.Checked = false;
             blackToolStripMenuItem.Checked = true;
@@ -230,11 +243,15 @@ namespace SourceCodeEditor
             var labels = this.GetLabelsFromForm();
 <<<<<<< Updated upstream
             _currentTheme = Theme.White;
+<<<<<<< HEAD
             new ThemeChanger(_currentTheme, MainHeader, MainTextField, MainFooter, labels).ChangeTheme();
 =======
             CurrentTheme = Theme.White;
             new ThemeChanger(this, CurrentTheme, MainHeader, MainTextField, MainFooter, labels).ChangeTheme();
 >>>>>>> Stashed changes
+=======
+            new ThemeChanger(this, _currentTheme, MainHeader, MainTextField, MainFooter, labels).ChangeTheme();
+>>>>>>> 7adffb1059c39d6254111392bf8b9ae6d080b189
             whiteToolStripMenuItem.Checked = true;
             blackToolStripMenuItem.Checked = false;
         }
@@ -335,6 +352,9 @@ namespace SourceCodeEditor
             MainFooter.Items.Add(CurrentLineLabel);
         }
 
+        /// <summary>
+        /// Current file status status switching
+        /// </summary>
         private void fileStatusToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var item = (ToolStripMenuItem)sender;
@@ -383,7 +403,37 @@ namespace SourceCodeEditor
                 }
             }
         }
-        #endregion
 
+        /// <summary>
+        /// Set screen mode to "fullscreen"
+        /// </summary>
+        private void fullscreenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var item = (ToolStripMenuItem)sender;
+            if (!item.Checked) item.Checked = true;
+            else item.Checked = false;
+
+            windowedToolStripMenuItem.Checked = false;
+
+
+            FormBorderStyle = FormBorderStyle.None;
+            WindowState = FormWindowState.Maximized;
+        }
+
+        /// <summary>
+        /// Set screen mode to "windowed"
+        /// </summary>
+        private void windowedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var item = (ToolStripMenuItem)sender;
+            if (!item.Checked) item.Checked = true;
+            else item.Checked = false;
+
+            fullscreenToolStripMenuItem.Checked = false;
+
+            FormBorderStyle = FormBorderStyle.Sizable;
+            WindowState = FormWindowState.Normal;
+        }
+        #endregion
     }
 }
