@@ -111,6 +111,18 @@ namespace SourceCodeEditor.AppearenceConfig
                 _mainTextField.SyntaxHighlighter.CommentStyle = new TextStyle(Brushes.Green, null, FontStyle.Regular);
                 _mainTextField.SyntaxHighlighter.CommentTagStyle = new TextStyle(Brushes.Gray, null, FontStyle.Regular);
                 _mainTextField.SyntaxHighlighter.KeywordStyle = new TextStyle(Brushes.Blue, null, FontStyle.Regular);
+<<<<<<< Updated upstream
+=======
+
+                currentTheme.syntaxColors.ClassNameStyle = Tuple.Create(Color.Black, FontStyle.Bold | FontStyle.Underline);
+                currentTheme.syntaxColors.StringStyle = Tuple.Create(Color.Red, FontStyle.Regular);
+                currentTheme.syntaxColors.CommentStyle = Tuple.Create(Color.Green, FontStyle.Regular);
+                currentTheme.syntaxColors.CommentTagStyle = Tuple.Create(Color.Gray, FontStyle.Regular);
+                currentTheme.syntaxColors.KeywordStyle = Tuple.Create(Color.Blue, FontStyle.Regular);
+
+                mainForm.theme = currentTheme;
+
+>>>>>>> Stashed changes
                 _mainTextField.Text = text;
             }
             catch(Exception) 
@@ -134,6 +146,21 @@ namespace SourceCodeEditor.AppearenceConfig
                 _mainTextField.SyntaxHighlighter.CommentStyle = new TextStyle(Brushes.LimeGreen, null, FontStyle.Regular);
                 _mainTextField.SyntaxHighlighter.CommentTagStyle = new TextStyle(Brushes.DarkGray, null, FontStyle.Regular);
                 _mainTextField.SyntaxHighlighter.KeywordStyle = new TextStyle(Brushes.DeepSkyBlue, null, FontStyle.Regular);
+<<<<<<< Updated upstream
+=======
+
+
+                ///TODO:
+                /// Full syntax styling
+                currentTheme.syntaxColors.ClassNameStyle = Tuple.Create(Color.White, FontStyle.Bold | FontStyle.Underline);
+                currentTheme.syntaxColors.StringStyle = Tuple.Create(Color.Orange, FontStyle.Regular);
+                currentTheme.syntaxColors.CommentStyle = Tuple.Create(Color.LimeGreen, FontStyle.Regular);
+                currentTheme.syntaxColors.CommentTagStyle = Tuple.Create(Color.DarkGray, FontStyle.Regular);
+                currentTheme.syntaxColors.KeywordStyle = Tuple.Create(Color.DeepSkyBlue, FontStyle.Regular);
+
+                mainForm.theme = currentTheme;
+
+>>>>>>> Stashed changes
                 _mainTextField.Text = text;
             }
             catch (Exception)

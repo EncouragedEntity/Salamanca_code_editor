@@ -20,7 +20,7 @@ namespace SourceCodeEditor
         /// </summary>
         private string _applicationName = "Salamanca";
 
-        public Theme _currentTheme = Theme.Black;
+        public Theme CurrentTheme = Theme.Black;
 
         /// <summary>
         /// Current opened file
@@ -45,17 +45,31 @@ namespace SourceCodeEditor
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+<<<<<<< Updated upstream
+=======
+            new LanguageConfig(this).LoadLanguages();
+
+>>>>>>> Stashed changes
             //Load hotkeys config from file on form load
             new HotKeysConfig(MainHeader).LoadHotkeysConfig();
 
             //Change form theme to black on Load 
+<<<<<<< Updated upstream
             new ThemeChanger(_currentTheme, MainHeader, MainTextField, MainFooter, GetLabelsFromForm()).ChangeTheme();
+=======
+            new ThemeChanger(this, CurrentTheme, MainHeader, MainTextField, MainFooter, GetLabelsFromForm()).ChangeTheme();
+
+            //Serialize current theme
+            new ThemeSerializer(theme, MainHeader, MainTextField, MainFooter, GetLabelsFromForm()).SerializeTheme();
+>>>>>>> Stashed changes
+
 
             DeleteLineLabel();
             DeleteSymbolLabel();
         }
 
         #region Methods
+
         /// <summary>
         /// Marks current opened file as unsaved
         /// </summary>
@@ -196,8 +210,13 @@ namespace SourceCodeEditor
         public void blackToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var labels = this.GetLabelsFromForm();
+<<<<<<< Updated upstream
             _currentTheme = Theme.Black;
             new ThemeChanger(_currentTheme, MainHeader, MainTextField, MainFooter, labels).ChangeTheme();
+=======
+            CurrentTheme = Theme.Black;
+            new ThemeChanger(this, CurrentTheme, MainHeader, MainTextField, MainFooter, labels).ChangeTheme();
+>>>>>>> Stashed changes
 
             whiteToolStripMenuItem.Checked = false;
             blackToolStripMenuItem.Checked = true;
@@ -209,8 +228,13 @@ namespace SourceCodeEditor
         public void whiteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var labels = this.GetLabelsFromForm();
+<<<<<<< Updated upstream
             _currentTheme = Theme.White;
             new ThemeChanger(_currentTheme, MainHeader, MainTextField, MainFooter, labels).ChangeTheme();
+=======
+            CurrentTheme = Theme.White;
+            new ThemeChanger(this, CurrentTheme, MainHeader, MainTextField, MainFooter, labels).ChangeTheme();
+>>>>>>> Stashed changes
             whiteToolStripMenuItem.Checked = true;
             blackToolStripMenuItem.Checked = false;
         }
@@ -264,7 +288,7 @@ namespace SourceCodeEditor
                 return;
             }
             item.Checked = true;
-            if(_currentTheme == Theme.Black)
+            if(CurrentTheme == Theme.Black)
                 label.ForeColor = Color.White;
             else
                 label.ForeColor = Color.Black;
@@ -284,7 +308,7 @@ namespace SourceCodeEditor
                 return;
             }
             item.Checked = true;
-            if (_currentTheme == Theme.Black)
+            if (CurrentTheme == Theme.Black)
                 label.ForeColor = Color.White;
             else
                 label.ForeColor = Color.Black;
@@ -304,7 +328,7 @@ namespace SourceCodeEditor
                 return;
             }
             item.Checked = true;
-            if (_currentTheme == Theme.Black)
+            if (CurrentTheme == Theme.Black)
                 label.ForeColor = Color.White;
             else
                 label.ForeColor = Color.Black;
@@ -321,7 +345,7 @@ namespace SourceCodeEditor
                 return;
             }
             item.Checked = true;
-            if (_currentTheme == Theme.Black)
+            if (CurrentTheme == Theme.Black)
                 label.ForeColor = Color.White;
             else
                 label.ForeColor = Color.Black;
