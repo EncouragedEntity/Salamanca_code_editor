@@ -11,13 +11,15 @@ namespace SourceCodeEditor.AppearenceConfig
         /// <summary>
         /// Theme is Black by default
         /// </summary>
-        private readonly Theme _theme = Theme.Black;
-        private CurrentTheme currentTheme;
+        private Theme _theme = Theme.Black;
+        private CurrentTheme currentTheme = new CurrentTheme();
         private readonly MainForm mainForm;
         private readonly MenuStrip _header;
         private readonly FastColoredTextBox _mainTextField;
         private readonly StatusStrip _footer;
         private readonly IEnumerable<ToolStripStatusLabel> _labels;
+
+        private int SelectionStart = 0;
 
         public ThemeChanger(MainForm form, Theme theme, MenuStrip header, FastColoredTextBox mainTextField, StatusStrip footer, IEnumerable<ToolStripStatusLabel> labels)
         {
@@ -55,6 +57,8 @@ namespace SourceCodeEditor.AppearenceConfig
         public void ChangeGeneralThemeToBlack()
         {
             currentTheme = new CurrentTheme();
+            _theme = Theme.Black;
+
             currentTheme.MainTextFieldBack = _mainTextField.BackColor = grey;
             currentTheme.MainTextFieldFore = _header.ForeColor = _mainTextField.ForeColor = Color.White;
             currentTheme.HeaderBack = _header.BackColor = darkGrey;
@@ -77,6 +81,7 @@ namespace SourceCodeEditor.AppearenceConfig
         public void ChangeGeneralThemeToWhite()
         {
             currentTheme = new CurrentTheme();
+            _theme = Theme.White;
 
             _mainTextField.BackColor = Color.White;
             _mainTextField.LineNumberColor = Color.Black;
@@ -103,6 +108,84 @@ namespace SourceCodeEditor.AppearenceConfig
             ChangeSyntaxHighlithingToWhite();
         }
 
+        private void SetColorsToHighlighter()
+        {
+            switch (_theme)
+            {
+                case Theme.Black: 
+                    {
+                        _mainTextField.SyntaxHighlighter.ClassNameStyle = new TextStyle(Brushes.MediumSpringGreen, null, FontStyle.Bold);
+                        _mainTextField.SyntaxHighlighter.StringStyle = new TextStyle(Brushes.Orange, null, FontStyle.Regular);
+                        _mainTextField.SyntaxHighlighter.CommentStyle = new TextStyle(Brushes.LimeGreen, null, FontStyle.Regular);
+                        _mainTextField.SyntaxHighlighter.CommentTagStyle = new TextStyle(Brushes.DarkGray, null, FontStyle.Regular);
+                        _mainTextField.SyntaxHighlighter.KeywordStyle = new TextStyle(Brushes.DeepSkyBlue, null, FontStyle.Regular);
+                        _mainTextField.SyntaxHighlighter.KeywordStyle2 = new TextStyle(Brushes.DeepSkyBlue, null, FontStyle.Regular);
+                        _mainTextField.SyntaxHighlighter.KeywordStyle3 = new TextStyle(Brushes.DarkBlue, null, FontStyle.Regular);
+                        _mainTextField.SyntaxHighlighter.AttributeStyle = new TextStyle(Brushes.Yellow, null, FontStyle.Regular);
+                        _mainTextField.SyntaxHighlighter.AttributeValueStyle = new TextStyle(Brushes.LightGreen, null, FontStyle.Regular);
+                        _mainTextField.SyntaxHighlighter.FunctionsStyle = new TextStyle(Brushes.Blue, null, FontStyle.Regular);
+                        _mainTextField.SyntaxHighlighter.HtmlEntityStyle = new TextStyle(Brushes.LightBlue, null, FontStyle.Regular);
+                        _mainTextField.SyntaxHighlighter.XmlEntityStyle = new TextStyle(Brushes.LightBlue, null, FontStyle.Regular);
+                        _mainTextField.SyntaxHighlighter.NumberStyle = new TextStyle(Brushes.Red, null, FontStyle.Regular);
+                        _mainTextField.SyntaxHighlighter.StatementsStyle = new TextStyle(Brushes.LightCoral, null, FontStyle.Regular);
+                        _mainTextField.SyntaxHighlighter.TagBracketStyle = new TextStyle(Brushes.RoyalBlue, null, FontStyle.Regular);
+                        _mainTextField.SyntaxHighlighter.TagNameStyle = new TextStyle(Brushes.Salmon, null, FontStyle.Regular);
+                        _mainTextField.SyntaxHighlighter.TypesStyle = new TextStyle(Brushes.Aqua, null, FontStyle.Regular);
+                        _mainTextField.SyntaxHighlighter.VariableStyle = new TextStyle(Brushes.Cyan, null, FontStyle.Regular);
+                        _mainTextField.SyntaxHighlighter.XmlAttributeStyle = new TextStyle(Brushes.Green, null, FontStyle.Regular);
+                        _mainTextField.SyntaxHighlighter.XmlAttributeValueStyle = new TextStyle(Brushes.LightGreen, null, FontStyle.Regular);
+                        _mainTextField.SyntaxHighlighter.XmlCDataStyle = new TextStyle(Brushes.Salmon, null, FontStyle.Regular);
+                        _mainTextField.SyntaxHighlighter.XmlTagBracketStyle = new TextStyle(Brushes.Blue, null, FontStyle.Regular);
+                        _mainTextField.SyntaxHighlighter.XmlTagNameStyle = new TextStyle(Brushes.Salmon, null, FontStyle.Regular);
+                    }break;
+                case Theme.White:
+                    {
+                    
+                    }break;
+            }
+
+        }
+
+        private void SetColorsToCurrentTheme()
+        {
+            currentTheme.syntaxColors = new SyntaxColors();
+            switch (_theme)
+            {
+                case Theme.Black:
+                    {
+                        currentTheme.syntaxColors.ClassNameStyle = Tuple.Create(Color.MediumSpringGreen, FontStyle.Bold);
+                        currentTheme.syntaxColors.StringStyle = Tuple.Create(Color.Orange, FontStyle.Regular);
+                        currentTheme.syntaxColors.CommentStyle = Tuple.Create(Color.LimeGreen, FontStyle.Regular);
+                        currentTheme.syntaxColors.CommentTagStyle = Tuple.Create(Color.DarkGray, FontStyle.Regular);
+                        currentTheme.syntaxColors.KeywordStyle = Tuple.Create(Color.DeepSkyBlue, FontStyle.Regular);
+                        currentTheme.syntaxColors.KeywordStyle2 = Tuple.Create(Color.DeepSkyBlue, FontStyle.Regular);
+                        currentTheme.syntaxColors.KeywordStyle3 = Tuple.Create(Color.DarkBlue, FontStyle.Regular);
+                        currentTheme.syntaxColors.AttributeStyle = Tuple.Create(Color.Green, FontStyle.Regular);
+                        currentTheme.syntaxColors.AttributeValueStyle = Tuple.Create(Color.LightGreen, FontStyle.Regular);
+                        currentTheme.syntaxColors.FunctionsStyle = Tuple.Create(Color.Blue, FontStyle.Regular);
+                        currentTheme.syntaxColors.HtmlEntityStyle = Tuple.Create(Color.LightBlue, FontStyle.Regular);
+                        currentTheme.syntaxColors.XmlEntityStyle = Tuple.Create(Color.LightBlue, FontStyle.Regular);
+                        currentTheme.syntaxColors.NumberStyle = Tuple.Create(Color.Red, FontStyle.Regular);
+                        currentTheme.syntaxColors.StatementsStyle = Tuple.Create(Color.LightCoral, FontStyle.Regular);
+                        currentTheme.syntaxColors.TagBracketStyle = Tuple.Create(Color.RoyalBlue, FontStyle.Regular);
+                        currentTheme.syntaxColors.TagNameStyle = Tuple.Create(Color.Salmon, FontStyle.Regular);
+                        currentTheme.syntaxColors.TypesStyle = Tuple.Create(Color.Aqua, FontStyle.Regular);
+                        currentTheme.syntaxColors.VariableStyle = Tuple.Create(Color.Cyan, FontStyle.Regular);
+                        currentTheme.syntaxColors.XmlAttributeStyle = Tuple.Create(Color.Green, FontStyle.Regular);
+                        currentTheme.syntaxColors.XmlAttributeValueStyle = Tuple.Create(Color.LightGreen, FontStyle.Regular);
+                        currentTheme.syntaxColors.XmlCDataStyle = Tuple.Create(Color.Salmon, FontStyle.Regular);
+                        currentTheme.syntaxColors.XmlTagBracketStyle = Tuple.Create(Color.Blue, FontStyle.Regular);
+                        currentTheme.syntaxColors.XmlTagNameStyle = Tuple.Create(Color.Salmon, FontStyle.Regular);
+                    }
+                    break;
+                case Theme.White:
+                    {
+                        
+                    }break;
+            }
+
+        }
+
         /// <summary>
         /// Change syntax highlighting to white
         /// </summary>
@@ -111,6 +194,7 @@ namespace SourceCodeEditor.AppearenceConfig
             try
             {
                 string text = _mainTextField.Text;
+                SelectionStart = _mainTextField.SelectionStart;
                 _mainTextField.Text = String.Empty;
 
                 currentTheme.syntaxColors = new SyntaxColors();
@@ -119,9 +203,6 @@ namespace SourceCodeEditor.AppearenceConfig
                 _mainTextField.SyntaxHighlighter.CommentStyle = new TextStyle(Brushes.Green, null, FontStyle.Regular);
                 _mainTextField.SyntaxHighlighter.CommentTagStyle = new TextStyle(Brushes.Gray, null, FontStyle.Regular);
                 _mainTextField.SyntaxHighlighter.KeywordStyle = new TextStyle(Brushes.Blue, null, FontStyle.Regular);
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
 
                 currentTheme.syntaxColors.ClassNameStyle = Tuple.Create(Color.Black, FontStyle.Bold | FontStyle.Underline);
                 currentTheme.syntaxColors.StringStyle = Tuple.Create(Color.Red, FontStyle.Regular);
@@ -130,19 +211,7 @@ namespace SourceCodeEditor.AppearenceConfig
                 currentTheme.syntaxColors.KeywordStyle = Tuple.Create(Color.Blue, FontStyle.Regular);
 
                 mainForm.theme = currentTheme;
-
->>>>>>> Stashed changes
-=======
-
-                currentTheme.syntaxColors._classNameStyle = Tuple.Create(Color.Black, FontStyle.Bold | FontStyle.Underline);
-                currentTheme.syntaxColors._stringStyle = Tuple.Create(Color.Red, FontStyle.Regular);
-                currentTheme.syntaxColors._commentStyle = Tuple.Create(Color.Green, FontStyle.Regular);
-                currentTheme.syntaxColors._commentTagStyle = Tuple.Create(Color.Gray, FontStyle.Regular);
-                currentTheme.syntaxColors._keywordStyle = Tuple.Create(Color.Blue, FontStyle.Regular);
-
-                mainForm.theme = currentTheme;
-
->>>>>>> 7adffb1059c39d6254111392bf8b9ae6d080b189
+                _mainTextField.SelectionStart = SelectionStart;
                 _mainTextField.Text = text;
             }
             catch(Exception) 
@@ -160,42 +229,15 @@ namespace SourceCodeEditor.AppearenceConfig
             try
             {
                 string text = _mainTextField.Text;
+                SelectionStart = _mainTextField.SelectionStart;
                 _mainTextField.Text = String.Empty;
 
-                currentTheme.syntaxColors = new SyntaxColors();
-                _mainTextField.SyntaxHighlighter.ClassNameStyle = new TextStyle(Brushes.White, null, FontStyle.Bold | FontStyle.Underline);
-                _mainTextField.SyntaxHighlighter.StringStyle = new TextStyle(Brushes.Orange, null, FontStyle.Regular);
-                _mainTextField.SyntaxHighlighter.CommentStyle = new TextStyle(Brushes.LimeGreen, null, FontStyle.Regular);
-                _mainTextField.SyntaxHighlighter.CommentTagStyle = new TextStyle(Brushes.DarkGray, null, FontStyle.Regular);
-                _mainTextField.SyntaxHighlighter.KeywordStyle = new TextStyle(Brushes.DeepSkyBlue, null, FontStyle.Regular);
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
-
-
-                ///TODO:
-                /// Full syntax styling
-                currentTheme.syntaxColors.ClassNameStyle = Tuple.Create(Color.White, FontStyle.Bold | FontStyle.Underline);
-                currentTheme.syntaxColors.StringStyle = Tuple.Create(Color.Orange, FontStyle.Regular);
-                currentTheme.syntaxColors.CommentStyle = Tuple.Create(Color.LimeGreen, FontStyle.Regular);
-                currentTheme.syntaxColors.CommentTagStyle = Tuple.Create(Color.DarkGray, FontStyle.Regular);
-                currentTheme.syntaxColors.KeywordStyle = Tuple.Create(Color.DeepSkyBlue, FontStyle.Regular);
+                SetColorsToHighlighter();
+                SetColorsToCurrentTheme();
 
                 mainForm.theme = currentTheme;
-
->>>>>>> Stashed changes
-=======
-
-                currentTheme.syntaxColors._classNameStyle = Tuple.Create(Color.White, FontStyle.Bold | FontStyle.Underline);
-                currentTheme.syntaxColors._stringStyle = Tuple.Create(Color.Orange, FontStyle.Regular);
-                currentTheme.syntaxColors._commentStyle = Tuple.Create(Color.LimeGreen, FontStyle.Regular);
-                currentTheme.syntaxColors._commentTagStyle = Tuple.Create(Color.DarkGray, FontStyle.Regular);
-                currentTheme.syntaxColors._keywordStyle = Tuple.Create(Color.DeepSkyBlue, FontStyle.Regular);
-
-                mainForm.theme = currentTheme;
-
->>>>>>> 7adffb1059c39d6254111392bf8b9ae6d080b189
                 _mainTextField.Text = text;
+                _mainTextField.SelectionStart = SelectionStart;
             }
             catch (Exception)
             {

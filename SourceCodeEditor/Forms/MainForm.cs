@@ -18,7 +18,7 @@ namespace SourceCodeEditor
 
         public Theme CurrentTheme = Theme.Black;
 
-        public CurrentTheme theme;
+        public CurrentTheme? theme;
 
         /// <summary>
         /// Current opened file
@@ -42,35 +42,17 @@ namespace SourceCodeEditor
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
             new LanguageConfig(this).LoadLanguages();
 
->>>>>>> Stashed changes
-=======
-
->>>>>>> 7adffb1059c39d6254111392bf8b9ae6d080b189
             //Load hotkeys config from file on form load
             new HotKeysConfig(MainHeader).LoadHotkeysConfig();
 
             //Change form theme to black on Load 
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-            new ThemeChanger(_currentTheme, MainHeader, MainTextField, MainFooter, GetLabelsFromForm()).ChangeTheme();
-=======
             new ThemeChanger(this, CurrentTheme, MainHeader, MainTextField, MainFooter, GetLabelsFromForm()).ChangeTheme();
 
             //Serialize current theme
-            new ThemeSerializer(theme, MainHeader, MainTextField, MainFooter, GetLabelsFromForm()).SerializeTheme();
->>>>>>> Stashed changes
+            new ThemeSerializer(theme!, MainHeader, MainTextField, MainFooter, GetLabelsFromForm()).SerializeTheme();
 
-=======
-            new ThemeChanger(this, _currentTheme, MainHeader, MainTextField, MainFooter, GetLabelsFromForm()).ChangeTheme();
-
-            //Serialize current theme
-            new ThemeSerializer(theme, MainHeader, MainTextField, MainFooter, GetLabelsFromForm()).SerializeTheme();
->>>>>>> 7adffb1059c39d6254111392bf8b9ae6d080b189
 
             DeleteLineLabel();
             DeleteSymbolLabel();
@@ -219,17 +201,8 @@ namespace SourceCodeEditor
         public void blackToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var labels = this.GetLabelsFromForm();
-<<<<<<< Updated upstream
-            _currentTheme = Theme.Black;
-<<<<<<< HEAD
-            new ThemeChanger(_currentTheme, MainHeader, MainTextField, MainFooter, labels).ChangeTheme();
-=======
             CurrentTheme = Theme.Black;
             new ThemeChanger(this, CurrentTheme, MainHeader, MainTextField, MainFooter, labels).ChangeTheme();
->>>>>>> Stashed changes
-=======
-            new ThemeChanger(this, _currentTheme, MainHeader, MainTextField, MainFooter, labels).ChangeTheme();
->>>>>>> 7adffb1059c39d6254111392bf8b9ae6d080b189
 
             whiteToolStripMenuItem.Checked = false;
             blackToolStripMenuItem.Checked = true;
@@ -241,17 +214,8 @@ namespace SourceCodeEditor
         public void whiteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var labels = this.GetLabelsFromForm();
-<<<<<<< Updated upstream
-            _currentTheme = Theme.White;
-<<<<<<< HEAD
-            new ThemeChanger(_currentTheme, MainHeader, MainTextField, MainFooter, labels).ChangeTheme();
-=======
             CurrentTheme = Theme.White;
             new ThemeChanger(this, CurrentTheme, MainHeader, MainTextField, MainFooter, labels).ChangeTheme();
->>>>>>> Stashed changes
-=======
-            new ThemeChanger(this, _currentTheme, MainHeader, MainTextField, MainFooter, labels).ChangeTheme();
->>>>>>> 7adffb1059c39d6254111392bf8b9ae6d080b189
             whiteToolStripMenuItem.Checked = true;
             blackToolStripMenuItem.Checked = false;
         }

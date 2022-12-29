@@ -1,13 +1,8 @@
 ﻿using FastColoredTextBoxNS;
-<<<<<<< HEAD
-=======
-
->>>>>>> 7adffb1059c39d6254111392bf8b9ae6d080b189
 namespace SourceCodeEditor.AppearenceConfig
 {
     public class SyntaxColors
     {
-<<<<<<< HEAD
         public Tuple<Color, FontStyle> ClassNameStyle { get; set; }
         public Tuple<Color, FontStyle> AttributeStyle { get; set; }
         public Tuple<Color, FontStyle> AttributeValueStyle { get; set; }
@@ -33,9 +28,7 @@ namespace SourceCodeEditor.AppearenceConfig
         public Tuple<Color, FontStyle> XmlTagBracketStyle { get; set; }
         public Tuple<Color, FontStyle> XmlTagNameStyle { get; set; }
 
-
-
-        
+        #region Constructors
         public SyntaxColors() : this(Tuple.Create(Color.Transparent,FontStyle.Regular), Tuple.Create(Color.Transparent, FontStyle.Regular),
                                      Tuple.Create(Color.Transparent, FontStyle.Regular), Tuple.Create(Color.Transparent, FontStyle.Regular),
                                      Tuple.Create(Color.Transparent, FontStyle.Regular), Tuple.Create(Color.Transparent, FontStyle.Regular),
@@ -81,26 +74,7 @@ namespace SourceCodeEditor.AppearenceConfig
             XmlAttributeValueStyle = xmlAttributeValueStyle;
             XmlTagBracketStyle = xmlTagBracketStyle;
             XmlTagNameStyle = xmlTagNameSTyle;
-=======
-        public Tuple<Color, FontStyle> _classNameStyle { get; set; }
-        public Tuple<Color, FontStyle> _stringStyle { get; set; }
-        public Tuple<Color, FontStyle> _commentStyle { get; set; }
-        public Tuple<Color, FontStyle> _commentTagStyle { get; set; }
-        public Tuple<Color, FontStyle> _keywordStyle { get; set; }
-
-        public SyntaxColors() : this(Tuple.Create(Color.Transparent,FontStyle.Regular), Tuple.Create(Color.Transparent, FontStyle.Regular),
-                                     Tuple.Create(Color.Transparent, FontStyle.Regular), Tuple.Create(Color.Transparent, FontStyle.Regular),
-                                     Tuple.Create(Color.Transparent, FontStyle.Regular)) { }
-
-        public SyntaxColors(Tuple<Color, FontStyle> className, Tuple<Color, FontStyle> stringStyle, Tuple<Color, FontStyle> commentStyle,
-                            Tuple<Color, FontStyle> commentTagStyle, Tuple<Color, FontStyle> keywordStyle)
-        {
-            _classNameStyle = className;
-            _stringStyle = stringStyle;
-            _commentStyle = commentStyle;
-            _commentTagStyle = commentTagStyle;
-            _keywordStyle = keywordStyle;
->>>>>>> 7adffb1059c39d6254111392bf8b9ae6d080b189
         }
+        #endregion
     }
 }

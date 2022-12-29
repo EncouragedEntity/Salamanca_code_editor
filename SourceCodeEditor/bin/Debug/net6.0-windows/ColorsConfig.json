@@ -88,21 +88,77 @@
     "Name": "White"
   },
   "syntaxColors": {
-    "_classNameStyle": {
+    "ClassNameStyle": {
       "Item1": {
-        "R": 255,
-        "G": 255,
+        "R": 0,
+        "G": 250,
+        "B": 154,
+        "A": 255,
+        "IsKnownColor": true,
+        "IsEmpty": false,
+        "IsNamedColor": true,
+        "IsSystemColor": false,
+        "Name": "MediumSpringGreen"
+      },
+      "Item2": 1
+    },
+    "AttributeStyle": {
+      "Item1": {
+        "R": 0,
+        "G": 128,
+        "B": 0,
+        "A": 255,
+        "IsKnownColor": true,
+        "IsEmpty": false,
+        "IsNamedColor": true,
+        "IsSystemColor": false,
+        "Name": "Green"
+      },
+      "Item2": 0
+    },
+    "AttributeValueStyle": {
+      "Item1": {
+        "R": 144,
+        "G": 238,
+        "B": 144,
+        "A": 255,
+        "IsKnownColor": true,
+        "IsEmpty": false,
+        "IsNamedColor": true,
+        "IsSystemColor": false,
+        "Name": "LightGreen"
+      },
+      "Item2": 0
+    },
+    "HtmlEntityStyle": {
+      "Item1": {
+        "R": 173,
+        "G": 216,
+        "B": 230,
+        "A": 255,
+        "IsKnownColor": true,
+        "IsEmpty": false,
+        "IsNamedColor": true,
+        "IsSystemColor": false,
+        "Name": "LightBlue"
+      },
+      "Item2": 0
+    },
+    "FunctionsStyle": {
+      "Item1": {
+        "R": 0,
+        "G": 0,
         "B": 255,
         "A": 255,
         "IsKnownColor": true,
         "IsEmpty": false,
         "IsNamedColor": true,
         "IsSystemColor": false,
-        "Name": "White"
+        "Name": "Blue"
       },
-      "Item2": 5
+      "Item2": 0
     },
-    "_stringStyle": {
+    "StringStyle": {
       "Item1": {
         "R": 255,
         "G": 165,
@@ -116,7 +172,7 @@
       },
       "Item2": 0
     },
-    "_commentStyle": {
+    "CommentStyle": {
       "Item1": {
         "R": 50,
         "G": 205,
@@ -130,7 +186,7 @@
       },
       "Item2": 0
     },
-    "_commentTagStyle": {
+    "CommentTagStyle": {
       "Item1": {
         "R": 169,
         "G": 169,
@@ -144,7 +200,7 @@
       },
       "Item2": 0
     },
-    "_keywordStyle": {
+    "KeywordStyle": {
       "Item1": {
         "R": 0,
         "G": 191,
@@ -155,6 +211,202 @@
         "IsNamedColor": true,
         "IsSystemColor": false,
         "Name": "DeepSkyBlue"
+      },
+      "Item2": 0
+    },
+    "KeywordStyle2": {
+      "Item1": {
+        "R": 0,
+        "G": 191,
+        "B": 255,
+        "A": 255,
+        "IsKnownColor": true,
+        "IsEmpty": false,
+        "IsNamedColor": true,
+        "IsSystemColor": false,
+        "Name": "DeepSkyBlue"
+      },
+      "Item2": 0
+    },
+    "KeywordStyle3": {
+      "Item1": {
+        "R": 0,
+        "G": 0,
+        "B": 139,
+        "A": 255,
+        "IsKnownColor": true,
+        "IsEmpty": false,
+        "IsNamedColor": true,
+        "IsSystemColor": false,
+        "Name": "DarkBlue"
+      },
+      "Item2": 0
+    },
+    "VariableStyle": {
+      "Item1": {
+        "R": 0,
+        "G": 255,
+        "B": 255,
+        "A": 255,
+        "IsKnownColor": true,
+        "IsEmpty": false,
+        "IsNamedColor": true,
+        "IsSystemColor": false,
+        "Name": "Cyan"
+      },
+      "Item2": 0
+    },
+    "TypesStyle": {
+      "Item1": {
+        "R": 0,
+        "G": 255,
+        "B": 255,
+        "A": 255,
+        "IsKnownColor": true,
+        "IsEmpty": false,
+        "IsNamedColor": true,
+        "IsSystemColor": false,
+        "Name": "Aqua"
+      },
+      "Item2": 0
+    },
+    "NumberStyle": {
+      "Item1": {
+        "R": 255,
+        "G": 0,
+        "B": 0,
+        "A": 255,
+        "IsKnownColor": true,
+        "IsEmpty": false,
+        "IsNamedColor": true,
+        "IsSystemColor": false,
+        "Name": "Red"
+      },
+      "Item2": 0
+    },
+    "StatementsStyle": {
+      "Item1": {
+        "R": 240,
+        "G": 128,
+        "B": 128,
+        "A": 255,
+        "IsKnownColor": true,
+        "IsEmpty": false,
+        "IsNamedColor": true,
+        "IsSystemColor": false,
+        "Name": "LightCoral"
+      },
+      "Item2": 0
+    },
+    "TagBracketStyle": {
+      "Item1": {
+        "R": 65,
+        "G": 105,
+        "B": 225,
+        "A": 255,
+        "IsKnownColor": true,
+        "IsEmpty": false,
+        "IsNamedColor": true,
+        "IsSystemColor": false,
+        "Name": "RoyalBlue"
+      },
+      "Item2": 0
+    },
+    "TagNameStyle": {
+      "Item1": {
+        "R": 250,
+        "G": 128,
+        "B": 114,
+        "A": 255,
+        "IsKnownColor": true,
+        "IsEmpty": false,
+        "IsNamedColor": true,
+        "IsSystemColor": false,
+        "Name": "Salmon"
+      },
+      "Item2": 0
+    },
+    "XmlEntityStyle": {
+      "Item1": {
+        "R": 173,
+        "G": 216,
+        "B": 230,
+        "A": 255,
+        "IsKnownColor": true,
+        "IsEmpty": false,
+        "IsNamedColor": true,
+        "IsSystemColor": false,
+        "Name": "LightBlue"
+      },
+      "Item2": 0
+    },
+    "XmlAttributeStyle": {
+      "Item1": {
+        "R": 0,
+        "G": 128,
+        "B": 0,
+        "A": 255,
+        "IsKnownColor": true,
+        "IsEmpty": false,
+        "IsNamedColor": true,
+        "IsSystemColor": false,
+        "Name": "Green"
+      },
+      "Item2": 0
+    },
+    "XmlAttributeValueStyle": {
+      "Item1": {
+        "R": 144,
+        "G": 238,
+        "B": 144,
+        "A": 255,
+        "IsKnownColor": true,
+        "IsEmpty": false,
+        "IsNamedColor": true,
+        "IsSystemColor": false,
+        "Name": "LightGreen"
+      },
+      "Item2": 0
+    },
+    "XmlCDataStyle": {
+      "Item1": {
+        "R": 250,
+        "G": 128,
+        "B": 114,
+        "A": 255,
+        "IsKnownColor": true,
+        "IsEmpty": false,
+        "IsNamedColor": true,
+        "IsSystemColor": false,
+        "Name": "Salmon"
+      },
+      "Item2": 0
+    },
+    "XmlTagBracketStyle": {
+      "Item1": {
+        "R": 0,
+        "G": 0,
+        "B": 255,
+        "A": 255,
+        "IsKnownColor": true,
+        "IsEmpty": false,
+        "IsNamedColor": true,
+        "IsSystemColor": false,
+        "Name": "Blue"
+      },
+      "Item2": 0
+    },
+    "XmlTagNameStyle": {
+      "Item1": {
+        "R": 250,
+        "G": 128,
+        "B": 114,
+        "A": 255,
+        "IsKnownColor": true,
+        "IsEmpty": false,
+        "IsNamedColor": true,
+        "IsSystemColor": false,
+        "Name": "Salmon"
       },
       "Item2": 0
     }

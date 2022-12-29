@@ -46,6 +46,7 @@ namespace SourceCodeEditor
             this.screenModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fullscreenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.windowedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.syntaxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -61,7 +62,6 @@ namespace SourceCodeEditor
             this.SymbolCountLable = new System.Windows.Forms.ToolStripStatusLabel();
             this.CurrentLineLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.IsSavedLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.syntaxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainTextField)).BeginInit();
             this.MainFooter.SuspendLayout();
@@ -135,18 +135,9 @@ namespace SourceCodeEditor
             // viewToolStripMenuItem
             // 
             this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-            this.themeToolStripMenuItem});
-=======
             this.themeToolStripMenuItem,
             this.screenModeToolStripMenuItem,
             this.syntaxToolStripMenuItem});
->>>>>>> Stashed changes
-=======
-            this.themeToolStripMenuItem,
-            this.screenModeToolStripMenuItem});
->>>>>>> 7adffb1059c39d6254111392bf8b9ae6d080b189
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
             this.viewToolStripMenuItem.Text = "View";
@@ -178,11 +169,6 @@ namespace SourceCodeEditor
             this.whiteToolStripMenuItem.Text = "White";
             this.whiteToolStripMenuItem.Click += new System.EventHandler(this.whiteToolStripMenuItem_Click);
             // 
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> 7adffb1059c39d6254111392bf8b9ae6d080b189
             // screenModeToolStripMenuItem
             // 
             this.screenModeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -195,11 +181,7 @@ namespace SourceCodeEditor
             // fullscreenToolStripMenuItem
             // 
             this.fullscreenToolStripMenuItem.Name = "fullscreenToolStripMenuItem";
-<<<<<<< HEAD
             this.fullscreenToolStripMenuItem.Size = new System.Drawing.Size(164, 26);
-=======
-            this.fullscreenToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
->>>>>>> 7adffb1059c39d6254111392bf8b9ae6d080b189
             this.fullscreenToolStripMenuItem.Text = "Fullscreen";
             this.fullscreenToolStripMenuItem.Click += new System.EventHandler(this.fullscreenToolStripMenuItem_Click);
             // 
@@ -208,18 +190,16 @@ namespace SourceCodeEditor
             this.windowedToolStripMenuItem.Checked = true;
             this.windowedToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.windowedToolStripMenuItem.Name = "windowedToolStripMenuItem";
-<<<<<<< HEAD
             this.windowedToolStripMenuItem.Size = new System.Drawing.Size(164, 26);
             this.windowedToolStripMenuItem.Text = "Windowed";
             this.windowedToolStripMenuItem.Click += new System.EventHandler(this.windowedToolStripMenuItem_Click);
             // 
->>>>>>> Stashed changes
-=======
-            this.windowedToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.windowedToolStripMenuItem.Text = "Windowed";
-            this.windowedToolStripMenuItem.Click += new System.EventHandler(this.windowedToolStripMenuItem_Click);
+            // syntaxToolStripMenuItem
             // 
->>>>>>> 7adffb1059c39d6254111392bf8b9ae6d080b189
+            this.syntaxToolStripMenuItem.Name = "syntaxToolStripMenuItem";
+            this.syntaxToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.syntaxToolStripMenuItem.Text = "Syntax";
+            // 
             // toolsToolStripMenuItem
             // 
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -266,7 +246,6 @@ namespace SourceCodeEditor
             this.MainTextField.ForeColor = System.Drawing.Color.White;
             this.MainTextField.IndentBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.MainTextField.IsReplaceMode = false;
-            this.MainTextField.Language = FastColoredTextBoxNS.Language.CSharp;
             this.MainTextField.LeftBracket = '(';
             this.MainTextField.LeftBracket2 = '{';
             this.MainTextField.LineNumberColor = System.Drawing.Color.Silver;
@@ -374,12 +353,6 @@ namespace SourceCodeEditor
             this.IsSavedLabel.Size = new System.Drawing.Size(137, 20);
             this.IsSavedLabel.Text = "File status: Unsaved";
             // 
-            // syntaxToolStripMenuItem
-            // 
-            this.syntaxToolStripMenuItem.Name = "syntaxToolStripMenuItem";
-            this.syntaxToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.syntaxToolStripMenuItem.Text = "Syntax";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -417,7 +390,7 @@ namespace SourceCodeEditor
         private OpenFileDialog openFileDialog1;
         private SaveFileDialog saveFileDialog1;
         private ToolStripMenuItem viewToolStripMenuItem;
-        public FastColoredTextBoxNS.FastColoredTextBox MainTextField;
+        public FastColoredTextBox MainTextField;
         private ToolStripMenuItem themeToolStripMenuItem;
         private ToolStripMenuItem blackToolStripMenuItem;
         private ToolStripMenuItem whiteToolStripMenuItem;
@@ -434,18 +407,9 @@ namespace SourceCodeEditor
         private ToolStripMenuItem currentLineToolStripMenuItem;
         private ToolStripStatusLabel IsSavedLabel;
         private ToolStripMenuItem fileStatusToolStripMenuItem;
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
         private ToolStripMenuItem screenModeToolStripMenuItem;
         private ToolStripMenuItem fullscreenToolStripMenuItem;
         private ToolStripMenuItem windowedToolStripMenuItem;
         public ToolStripMenuItem syntaxToolStripMenuItem;
->>>>>>> Stashed changes
-=======
-        private ToolStripMenuItem screenModeToolStripMenuItem;
-        private ToolStripMenuItem fullscreenToolStripMenuItem;
-        private ToolStripMenuItem windowedToolStripMenuItem;
->>>>>>> 7adffb1059c39d6254111392bf8b9ae6d080b189
     }
 }
