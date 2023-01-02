@@ -1,4 +1,5 @@
 ﻿using SourceCodeEditor.AppearenceConfig;
+using SourceCodeEditor.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,12 +14,16 @@ namespace SourceCodeEditor.UserControls.Options
 {
     public partial class ColorsOptionsControl : UserControl
     {
+        public OptionsForm optionsForm { get; set; }
         public CurrentTheme CurrentTheme { get; set; }
         public MainForm form;
 
-        public ColorsOptionsControl(MainForm form)
+        private int BackColorChangingCounter = 0;
+
+        public ColorsOptionsControl(MainForm form, OptionsForm optForm)
         {
             this.form = form;
+            optionsForm = optForm;
             CurrentTheme = ThemeSerializer.DeserializeTheme(form.theme.ThemePath)!;
             InitializeComponent();
         }
@@ -59,16 +64,26 @@ namespace SourceCodeEditor.UserControls.Options
                 {
                     var button = (Button)control;
                     button.Click += ColorButton_Click;
+                    button.BackColorChanged += buttonBack_BackColorChanged;
                 }
             }
         }
 
+        private void SetCurrentButtonColorToColorDialog(Button sender)
+        {
+            colorDialog1.FullOpen = true;
+            colorDialog1.Color = sender.BackColor;
+        }
+
         private void ColorButton_Click(object? sender, EventArgs e)
         {
-            if(colorDialog1.ShowDialog() == DialogResult.OK)
+            var obj = sender as Button;
+
+            SetCurrentButtonColorToColorDialog(obj!);
+
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
             {
-                var obj = sender as Button;
-                obj.BackColor = colorDialog1.Color; 
+                obj!.BackColor = colorDialog1.Color; 
             }
             
         }
@@ -81,13 +96,27 @@ namespace SourceCodeEditor.UserControls.Options
 
         private void buttonDiscard_Click(object sender, EventArgs e)
         {
-            ColorsOptionsControl_Load(sender,e);
+            ColorsOptionsControl_Load(sender, e);
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
             GetButtonsColors();
-            new ThemeSerializer(CurrentTheme,form).SerializeTheme();
+            new ThemeSerializer(CurrentTheme, form).SerializeTheme();
+        }
+
+        private void buttonBack_BackColorChanged(object sender, EventArgs e)
+        {
+            if (BackColorChangingCounter == 0)
+            {
+                BackColorChangingCounter++;
+                return;
+            }
+            if (BackColorChangingCounter >= 0)
+            {
+                optionsForm.ColorsChanged = true;
+                return;
+            }
         }
     }
 }

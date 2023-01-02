@@ -31,6 +31,15 @@ namespace SourceCodeEditor.AppearenceConfig
             _labels = labels;
         }
 
+        public ThemeChanger(MainForm form)
+        {
+            mainForm = form;
+            _theme = form.CurrentTheme;
+            _header = form.MainHeader;
+            _mainTextField = form.MainTextField;
+            _footer = form.MainFooter;
+            _labels = form.GetLabelsFromForm();
+        }
         /// <summary>
         /// Change theme
         /// </summary>
@@ -59,9 +68,9 @@ namespace SourceCodeEditor.AppearenceConfig
             mainForm.theme.ThemePath = currentTheme.ThemePath = "BlackTheme.theme";
             _theme = Theme.Black;
 
-            currentTheme = ThemeSerializer.DeserializeTheme(currentTheme.ThemePath);
+            currentTheme = ThemeSerializer.DeserializeTheme(currentTheme.ThemePath)!;
 
-            
+            /*
             currentTheme.MainTextFieldBack = _mainTextField.BackColor = grey;
             currentTheme.MainTextFieldFore = _header.ForeColor = _mainTextField.ForeColor = Color.White;
             currentTheme.HeaderBack = _header.BackColor = darkGrey;
@@ -73,13 +82,15 @@ namespace SourceCodeEditor.AppearenceConfig
 
             _mainTextField.IndentBackColor = darkGrey;
             _mainTextField.LineNumberColor = Color.Silver;
+            
             foreach (var label in _labels)
             {
                 label.ForeColor = Color.White;
             }
+            */
 
             ChangeSyntaxHighlithingToBlack();
-            ChangeHeaderTheme(currentTheme);
+            ChangeHeaderTheme(currentTheme!);
         }
 
         /// <summary>
@@ -87,10 +98,12 @@ namespace SourceCodeEditor.AppearenceConfig
         /// </summary>
         public void ChangeGeneralThemeToWhite()
         {
-            currentTheme = new CurrentTheme();
             _theme = Theme.White;
-            currentTheme.ThemePath = "WhiteTheme.theme";
+            mainForm.theme.ThemePath =  currentTheme.ThemePath = "WhiteTheme.theme";
 
+            //currentTheme = ThemeSerializer.DeserializeTheme(currentTheme.ThemePath)!;
+
+            
             _mainTextField.BackColor = Color.White;
             _mainTextField.LineNumberColor = Color.Black;
             _mainTextField.ForeColor = Color.Black;
@@ -113,6 +126,7 @@ namespace SourceCodeEditor.AppearenceConfig
             {
                 label.ForeColor = Color.Black;
             }
+            
 
             ChangeHeaderTheme(currentTheme);
             ChangeSyntaxHighlithingToWhite();
@@ -262,7 +276,7 @@ namespace SourceCodeEditor.AppearenceConfig
         /// <param name="header">Object of main menu strip</param>
         private void ChangeHeaderTheme(CurrentTheme theme)
         {
-            List<ToolStripMenuItem> allItems = new List<ToolStripMenuItem>();
+            var allItems = new List<ToolStripMenuItem>();
             foreach (ToolStripMenuItem toolItem in _header.Items)
             {
                 allItems.Add(toolItem);

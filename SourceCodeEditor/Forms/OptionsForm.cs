@@ -1,4 +1,5 @@
-﻿using SourceCodeEditor.Enums;
+﻿using SourceCodeEditor.AppearenceConfig;
+using SourceCodeEditor.Enums;
 using SourceCodeEditor.UserControls;
 using SourceCodeEditor.UserControls.Options;
 
@@ -7,7 +8,11 @@ namespace SourceCodeEditor.Forms
     public partial class OptionsForm : Form
     {
         private UserControl? _currentControl = null;
+        
         private MainForm? mainForm = null;
+
+        public bool ColorsChanged { get; set; } = false;
+
         public OptionsForm(MainForm? mainForm)
         {
             InitializeComponent();
@@ -98,7 +103,7 @@ namespace SourceCodeEditor.Forms
                 break;
                 case Options.Colors:
                  {
-                    var control = new ColorsOptionsControl(mainForm);
+                    var control = new ColorsOptionsControl(mainForm!, this);
                     LoadUserControl(control);
                  }
                     break;
@@ -145,6 +150,14 @@ namespace SourceCodeEditor.Forms
         private void OptionsForm_SizeChanged(object sender, EventArgs e)
         {
             ValidateSize();
+        }
+
+        private void OptionsForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (ColorsChanged)
+            {
+                new ThemeChanger(mainForm).ChangeTheme();
+            }
         }
     }
 }

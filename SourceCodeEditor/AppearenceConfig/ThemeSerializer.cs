@@ -1,12 +1,5 @@
 ﻿using FastColoredTextBoxNS;
-using SourceCodeEditor.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
-using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace SourceCodeEditor.AppearenceConfig
 {
@@ -28,11 +21,6 @@ namespace SourceCodeEditor.AppearenceConfig
             _mainTextField = form.MainTextField;
             _footer = form.MainFooter;
             _labels = form.GetLabelsFromForm();
-        }
-
-        public ThemeSerializer(CurrentTheme theme)
-        {
-            _theme = theme;
         }
 
         private void SetLabelsColors()
@@ -83,7 +71,6 @@ namespace SourceCodeEditor.AppearenceConfig
         {
             SetColors();
         }
-
 
         public static CurrentTheme? DeserializeTheme(string path)
         {

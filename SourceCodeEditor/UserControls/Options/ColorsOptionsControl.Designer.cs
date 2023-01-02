@@ -219,6 +219,7 @@
             this.buttonHeaderBack.Size = new System.Drawing.Size(94, 51);
             this.buttonHeaderBack.TabIndex = 8;
             this.buttonHeaderBack.UseVisualStyleBackColor = false;
+            this.buttonHeaderBack.BackColorChanged += new System.EventHandler(this.buttonBack_BackColorChanged);
             // 
             // label7
             // 
