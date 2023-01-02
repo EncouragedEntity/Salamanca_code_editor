@@ -53,6 +53,7 @@
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonDiscard = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.buttonDefault = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -303,6 +304,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.buttonDefault);
             this.panel1.Controls.Add(this.buttonSave);
             this.panel1.Controls.Add(this.buttonDiscard);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -332,6 +334,17 @@
             this.buttonDiscard.Text = "Discard";
             this.buttonDiscard.UseVisualStyleBackColor = true;
             this.buttonDiscard.Click += new System.EventHandler(this.buttonDiscard_Click);
+            // 
+            // buttonDefault
+            // 
+            this.buttonDefault.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonDefault.Location = new System.Drawing.Point(398, 12);
+            this.buttonDefault.Name = "buttonDefault";
+            this.buttonDefault.Size = new System.Drawing.Size(152, 29);
+            this.buttonDefault.TabIndex = 2;
+            this.buttonDefault.Text = "Return to default";
+            this.buttonDefault.UseVisualStyleBackColor = true;
+            this.buttonDefault.Click += new System.EventHandler(this.buttonDefault_Click);
             // 
             // ColorsOptionsControl
             // 
@@ -377,5 +390,6 @@
         private Label label9;
         private Button buttonTextIndent;
         private Button buttonTextLineNumber;
+        private Button buttonDefault;
     }
 }

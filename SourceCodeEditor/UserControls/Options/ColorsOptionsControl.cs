@@ -18,12 +18,17 @@ namespace SourceCodeEditor.UserControls.Options
         public CurrentTheme CurrentTheme { get; set; }
         public MainForm form;
 
+        private string _defaultTheme { get; set; } = String.Empty;
+
         private int BackColorChangingCounter = 0;
 
         public ColorsOptionsControl(MainForm form, OptionsForm optForm)
         {
             this.form = form;
             optionsForm = optForm;
+
+            _defaultTheme = form.CurrentTheme == Enums.Theme.Black ? "BlackThemeDefault.theme" : "WhiteThemeDefault.theme";
+
             SetTheme();
             InitializeComponent();
         }
@@ -118,6 +123,9 @@ namespace SourceCodeEditor.UserControls.Options
         {
             GetButtonsColors();
             new ThemeSerializer(CurrentTheme, form).SerializeTheme();
+            if (optionsForm.ColorsChanged)
+                new ThemeChanger(form).ChangeTheme();
+            
         }
 
         private void buttonBack_BackColorChanged(object sender, EventArgs e)
@@ -132,6 +140,13 @@ namespace SourceCodeEditor.UserControls.Options
                 optionsForm.ColorsChanged = true;
                 return;
             }
+        }
+
+        private void buttonDefault_Click(object sender, EventArgs e)
+        {
+            CurrentTheme = ThemeSerializer.DeserializeTheme(_defaultTheme)!;
+            SetButtonsColors();
+            buttonSave_Click(sender,e);
         }
     }
 }

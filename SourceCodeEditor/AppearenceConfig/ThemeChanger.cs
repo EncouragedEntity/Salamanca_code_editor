@@ -5,9 +5,6 @@ namespace SourceCodeEditor.AppearenceConfig
 {
     public class ThemeChanger
     {
-        private readonly Color grey = Color.FromArgb(90, 90, 90);
-        private readonly Color darkGrey = Color.FromArgb(50, 50, 50);
-
         /// <summary>
         /// Theme is Black by default
         /// </summary>
@@ -89,6 +86,8 @@ namespace SourceCodeEditor.AppearenceConfig
             ChangeHeaderTheme(currentTheme!);
 
             /*
+             * MANUAL THEME CHANGING
+             * 
             currentTheme.MainTextFieldBack = _mainTextField.BackColor = grey;
             currentTheme.MainTextFieldFore = _header.ForeColor = _mainTextField.ForeColor = Color.White;
             currentTheme.HeaderBack = _header.BackColor = darkGrey;
@@ -128,7 +127,11 @@ namespace SourceCodeEditor.AppearenceConfig
             }
             ChangeHeaderTheme(currentTheme);
             ChangeSyntaxHighlithingToWhite();
+
+
             /*
+             * MANUAL THEME CHANGING
+             * 
             _mainTextField.BackColor = Color.White;
             _mainTextField.LineNumberColor = Color.Black;
             _mainTextField.ForeColor = Color.Black;
@@ -288,7 +291,7 @@ namespace SourceCodeEditor.AppearenceConfig
         }
 
         /// <summary>
-        /// Changes "header's" items theme to "Black"
+        /// Changes "header's" items theme
         /// </summary>
         /// <param name="header">Object of main menu strip</param>
         private void ChangeHeaderTheme(CurrentTheme theme)
@@ -305,6 +308,9 @@ namespace SourceCodeEditor.AppearenceConfig
                 item.BackColor = theme.HeaderBack;
                 item.ForeColor = theme.HeaderFore;
             }
+
+            _header.BackColor = theme.HeaderBack;
+            _header.ForeColor = theme.HeaderFore;
         }
     }
 }

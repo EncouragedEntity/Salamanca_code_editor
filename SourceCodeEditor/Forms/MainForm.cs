@@ -49,9 +49,8 @@ namespace SourceCodeEditor
 
             //Load hotkeys config from file on form load
             new HotKeysConfig(MainHeader).LoadHotkeysConfig();
-            ///TODO:
-            ///Fix theme deserialization (header)
-            theme = ThemeSerializer.DeserializeTheme(theme.ThemePath);
+            
+            theme = ThemeSerializer.DeserializeTheme(theme!.ThemePath)!;
 
             new ThemeChanger(this).ChangeTheme();
 
