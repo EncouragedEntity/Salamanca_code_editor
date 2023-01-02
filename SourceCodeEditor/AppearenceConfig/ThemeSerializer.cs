@@ -3,6 +3,7 @@ using SourceCodeEditor.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -12,18 +13,26 @@ namespace SourceCodeEditor.AppearenceConfig
     public class ThemeSerializer
     {
         private CurrentTheme _theme;
+        private readonly MainForm _form;
         private readonly MenuStrip _header;
         private readonly FastColoredTextBox _mainTextField;
         private readonly StatusStrip _footer;
         private readonly IEnumerable<ToolStripStatusLabel> _labels;
 
-        public ThemeSerializer(CurrentTheme theme, MenuStrip header, FastColoredTextBox mainTextField, StatusStrip footer, IEnumerable<ToolStripStatusLabel> labels)
+        public ThemeSerializer(CurrentTheme theme, MainForm form)
         {
             _theme = theme;
-            _header = header;
-            _mainTextField = mainTextField;
-            _footer = footer;
-            _labels = labels;
+            _theme.ThemePath = form.theme!.ThemePath;
+            _form = form;
+            _header = form.MainHeader;
+            _mainTextField = form.MainTextField;
+            _footer = form.MainFooter;
+            _labels = form.GetLabelsFromForm();
+        }
+
+        public ThemeSerializer(CurrentTheme theme)
+        {
+            _theme = theme;
         }
 
         private void SetLabelsColors()
@@ -70,32 +79,29 @@ namespace SourceCodeEditor.AppearenceConfig
             GetLabelsColors();  
         }
 
-        private string Serialize()
-        {
-            GetColors();
-            return JsonSerializer.Serialize(_theme, new JsonSerializerOptions { WriteIndented = true });
-        }
-
-        private CurrentTheme Deserialize()
-        {
-            var jsonstring = File.ReadAllText("ColorsConfig.json");
-            var theme = JsonSerializer.Deserialize<CurrentTheme>(jsonstring)!;
-            return theme;
-        }
-
-        public CurrentTheme DeserializeTheme()
-        {
-            return _theme = Deserialize();
-        }
-
         public void SetColorsOfTheme()
         {
             SetColors();
         }
 
+
+        public static CurrentTheme? DeserializeTheme(string path)
+        {
+            using (Stream str = File.Open(path, FileMode.Open))
+            {
+                var bf = new BinaryFormatter();
+                return bf.Deserialize(str) as CurrentTheme;
+            }
+        }
+
         public void SerializeTheme()
         {
-            File.WriteAllText("ColorsConfig.json", Serialize());
+            using (Stream str = File.Open(_theme.ThemePath, FileMode.Create))
+            {
+                var bf = new BinaryFormatter();
+                bf.Serialize(str, _theme);
+                str.Close();
+            }
         }
     }
 }

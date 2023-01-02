@@ -1,23 +1,30 @@
 ﻿using FastColoredTextBoxNS;
 namespace SourceCodeEditor.AppearenceConfig
 {
+    [Serializable]
     public class SyntaxColors
     {
-        public Tuple<Color, FontStyle> ClassNameStyle { get; set; }
+
         public Tuple<Color, FontStyle> AttributeStyle { get; set; }
         public Tuple<Color, FontStyle> AttributeValueStyle { get; set; }
+
+        public Tuple<Color, FontStyle> ClassNameStyle { get; set; }
         public Tuple<Color, FontStyle> HtmlEntityStyle { get; set; }
         public Tuple<Color, FontStyle> FunctionsStyle { get; set; }
         public Tuple<Color, FontStyle> StringStyle { get; set; }
+
         public Tuple<Color, FontStyle> CommentStyle { get; set; }
         public Tuple<Color, FontStyle> CommentTagStyle { get; set; }
+
         public Tuple<Color, FontStyle> KeywordStyle { get; set; }
         public Tuple<Color, FontStyle> KeywordStyle2 { get; set; }
         public Tuple<Color, FontStyle> KeywordStyle3 { get; set; }
+
         public Tuple<Color, FontStyle> VariableStyle { get; set; }
         public Tuple<Color, FontStyle> TypesStyle { get; set; }
         public Tuple<Color, FontStyle> NumberStyle { get; set; }
         public Tuple<Color, FontStyle> StatementsStyle { get; set; }
+
         public Tuple<Color, FontStyle> TagBracketStyle { get; set; }
         public Tuple<Color, FontStyle> TagNameStyle { get; set; }
 

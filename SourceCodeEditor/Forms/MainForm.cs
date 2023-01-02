@@ -4,13 +4,15 @@ using SourceCodeEditor.Enums;
 using SourceCodeEditor.Forms;
 namespace SourceCodeEditor
 {
+    delegate DialogResult DialogRes(string text, string caption, MessageBoxButtons buttons, MessageBoxIcon icon);
+
     /// <summary>
     /// Main form of Application
     /// </summary>
     public partial class MainForm : Form
     {
-        private delegate DialogResult DialogRes(string text,string caption,MessageBoxButtons buttons,MessageBoxIcon icon);
         #region Fields
+
         /// <summary>
         /// Name of application
         /// </summary>
@@ -18,7 +20,7 @@ namespace SourceCodeEditor
 
         public Theme CurrentTheme = Theme.Black;
 
-        public CurrentTheme? theme;
+        public CurrentTheme theme = new CurrentTheme();
 
         /// <summary>
         /// Current opened file
@@ -36,9 +38,10 @@ namespace SourceCodeEditor
         private bool _isFileSaved;
         #endregion
 
-        public MainForm() => InitializeComponent();
-
-
+        public MainForm()
+        {
+            InitializeComponent();
+        }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -46,20 +49,26 @@ namespace SourceCodeEditor
 
             //Load hotkeys config from file on form load
             new HotKeysConfig(MainHeader).LoadHotkeysConfig();
+            ///TODO:
+            ///Fix theme deserialization (header)
+            theme = ThemeSerializer.DeserializeTheme(theme.ThemePath);
 
-            //Change form theme to black on Load 
             new ThemeChanger(this, CurrentTheme, MainHeader, MainTextField, MainFooter, GetLabelsFromForm()).ChangeTheme();
 
-            //Serialize current theme
-            new ThemeSerializer(theme!, MainHeader, MainTextField, MainFooter, GetLabelsFromForm()).SerializeTheme();
+            new ThemeSerializer(theme!, this).SerializeTheme();
 
 
+            DeleteUnnecessaryLabels();
+        }
+
+        #region Methods
+
+        private void DeleteUnnecessaryLabels()
+        {
             DeleteLineLabel();
             DeleteSymbolLabel();
             DeleteFileStatusLabel();
         }
-
-        #region Methods
 
         /// <summary>
         /// Marks current opened file as unsaved

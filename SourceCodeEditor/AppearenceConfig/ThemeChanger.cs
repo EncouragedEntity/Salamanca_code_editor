@@ -56,14 +56,20 @@ namespace SourceCodeEditor.AppearenceConfig
         /// </summary>
         public void ChangeGeneralThemeToBlack()
         {
-            currentTheme = new CurrentTheme();
+            mainForm.theme.ThemePath = currentTheme.ThemePath = "BlackTheme.theme";
             _theme = Theme.Black;
 
+            currentTheme = ThemeSerializer.DeserializeTheme(currentTheme.ThemePath);
+
+            
             currentTheme.MainTextFieldBack = _mainTextField.BackColor = grey;
             currentTheme.MainTextFieldFore = _header.ForeColor = _mainTextField.ForeColor = Color.White;
             currentTheme.HeaderBack = _header.BackColor = darkGrey;
             currentTheme.FooterBack = _footer.BackColor = darkGrey;
             currentTheme.LabelsFore = Color.White;
+
+            currentTheme.MainTextFieldIndentBack = _mainTextField.IndentBackColor;
+            currentTheme.MainTextFieldLineNumber = _mainTextField.LineNumberColor;
 
             _mainTextField.IndentBackColor = darkGrey;
             _mainTextField.LineNumberColor = Color.Silver;
@@ -71,8 +77,9 @@ namespace SourceCodeEditor.AppearenceConfig
             {
                 label.ForeColor = Color.White;
             }
+
             ChangeSyntaxHighlithingToBlack();
-            ChangeHeaderThemeToBlack();
+            ChangeHeaderTheme(currentTheme);
         }
 
         /// <summary>
@@ -82,6 +89,7 @@ namespace SourceCodeEditor.AppearenceConfig
         {
             currentTheme = new CurrentTheme();
             _theme = Theme.White;
+            currentTheme.ThemePath = "WhiteTheme.theme";
 
             _mainTextField.BackColor = Color.White;
             _mainTextField.LineNumberColor = Color.Black;
@@ -93,6 +101,8 @@ namespace SourceCodeEditor.AppearenceConfig
 
             currentTheme.MainTextFieldBack = _mainTextField.BackColor;
             currentTheme.MainTextFieldFore = _mainTextField.ForeColor;
+            currentTheme.MainTextFieldIndentBack = _mainTextField.IndentBackColor;
+            currentTheme.MainTextFieldLineNumber = _mainTextField.LineNumberColor;
             currentTheme.HeaderBack = _header.BackColor;
             currentTheme.HeaderFore = _header.ForeColor;
             currentTheme.FooterBack = _footer.BackColor;
@@ -104,7 +114,7 @@ namespace SourceCodeEditor.AppearenceConfig
                 label.ForeColor = Color.Black;
             }
 
-            ChangeHeaderThemeToWhite();
+            ChangeHeaderTheme(currentTheme);
             ChangeSyntaxHighlithingToWhite();
         }
 
@@ -250,27 +260,7 @@ namespace SourceCodeEditor.AppearenceConfig
         /// Changes "header's" items theme to "Black"
         /// </summary>
         /// <param name="header">Object of main menu strip</param>
-        private void ChangeHeaderThemeToBlack()
-        {
-            List<ToolStripMenuItem> allItems = new List<ToolStripMenuItem>();
-            foreach (ToolStripMenuItem toolItem in _header.Items)
-            {
-                    allItems.Add(toolItem);
-                    allItems.AddRange(Header.GetHeaderItems(toolItem));
-            }
-
-            foreach (var item in allItems)
-            {
-                item.BackColor = darkGrey;
-                item.ForeColor = Color.White;
-            }
-        }
-
-        /// <summary>
-        /// Changes "header's" items theme to "White"
-        /// </summary>
-        /// <param name="header">Object of main menu strip</param>
-        private void ChangeHeaderThemeToWhite()
+        private void ChangeHeaderTheme(CurrentTheme theme)
         {
             List<ToolStripMenuItem> allItems = new List<ToolStripMenuItem>();
             foreach (ToolStripMenuItem toolItem in _header.Items)
@@ -281,8 +271,8 @@ namespace SourceCodeEditor.AppearenceConfig
 
             foreach (var item in allItems)
             {
-                item.BackColor = Color.FromArgb(224, 224, 224);
-                item.ForeColor = Color.Black;
+                item.BackColor = theme.HeaderBack;
+                item.ForeColor = theme.HeaderFore;
             }
         }
     }
