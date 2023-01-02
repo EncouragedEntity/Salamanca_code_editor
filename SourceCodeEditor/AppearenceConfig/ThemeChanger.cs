@@ -70,6 +70,24 @@ namespace SourceCodeEditor.AppearenceConfig
 
             currentTheme = ThemeSerializer.DeserializeTheme(currentTheme.ThemePath)!;
 
+            _mainTextField.BackColor = currentTheme.MainTextFieldBack;
+            _mainTextField.ForeColor = currentTheme.MainTextFieldFore;
+            _mainTextField.IndentBackColor = currentTheme.MainTextFieldIndentBack;
+            _mainTextField.LineNumberColor = currentTheme.MainTextFieldLineNumber;
+            _header.BackColor = currentTheme.HeaderBack;
+            _header.ForeColor = currentTheme.HeaderFore;
+            _footer.BackColor = currentTheme.FooterBack;
+            _footer.ForeColor = currentTheme.FooterFore;
+
+            foreach (var label in _labels)
+            {
+                label.ForeColor = currentTheme.LabelsFore;
+                label.BackColor = currentTheme.LabelsBack;
+            }
+
+            ChangeSyntaxHighlithingToBlack();
+            ChangeHeaderTheme(currentTheme!);
+
             /*
             currentTheme.MainTextFieldBack = _mainTextField.BackColor = grey;
             currentTheme.MainTextFieldFore = _header.ForeColor = _mainTextField.ForeColor = Color.White;
@@ -82,15 +100,7 @@ namespace SourceCodeEditor.AppearenceConfig
 
             _mainTextField.IndentBackColor = darkGrey;
             _mainTextField.LineNumberColor = Color.Silver;
-            
-            foreach (var label in _labels)
-            {
-                label.ForeColor = Color.White;
-            }
             */
-
-            ChangeSyntaxHighlithingToBlack();
-            ChangeHeaderTheme(currentTheme!);
         }
 
         /// <summary>
@@ -101,9 +111,24 @@ namespace SourceCodeEditor.AppearenceConfig
             _theme = Theme.White;
             mainForm.theme.ThemePath =  currentTheme.ThemePath = "WhiteTheme.theme";
 
-            //currentTheme = ThemeSerializer.DeserializeTheme(currentTheme.ThemePath)!;
+            currentTheme = ThemeSerializer.DeserializeTheme(currentTheme.ThemePath)!;
+            _mainTextField.BackColor = currentTheme.MainTextFieldBack;
+            _mainTextField.ForeColor = currentTheme.MainTextFieldFore;
+            _mainTextField.IndentBackColor = currentTheme.MainTextFieldIndentBack;
+            _mainTextField.LineNumberColor = currentTheme.MainTextFieldLineNumber;
+            _header.BackColor = currentTheme.HeaderBack;
+            _header.ForeColor = currentTheme.HeaderFore;
+            _footer.BackColor = currentTheme.FooterBack;
+            _footer.ForeColor = currentTheme.FooterFore;
 
-            
+            foreach (var label in _labels)
+            {
+                label.ForeColor = currentTheme.LabelsFore;
+                label.BackColor = currentTheme.LabelsBack;
+            }
+            ChangeHeaderTheme(currentTheme);
+            ChangeSyntaxHighlithingToWhite();
+            /*
             _mainTextField.BackColor = Color.White;
             _mainTextField.LineNumberColor = Color.Black;
             _mainTextField.ForeColor = Color.Black;
@@ -121,15 +146,7 @@ namespace SourceCodeEditor.AppearenceConfig
             currentTheme.FooterBack = _footer.BackColor;
             currentTheme.FooterFore = _footer.ForeColor;
             currentTheme.LabelsFore = Color.Black;
-
-            foreach (var label in _labels)
-            {
-                label.ForeColor = Color.Black;
-            }
-            
-
-            ChangeHeaderTheme(currentTheme);
-            ChangeSyntaxHighlithingToWhite();
+            */
         }
 
         private void SetColorsToHighlighter()

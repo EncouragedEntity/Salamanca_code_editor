@@ -53,7 +53,7 @@ namespace SourceCodeEditor
             ///Fix theme deserialization (header)
             theme = ThemeSerializer.DeserializeTheme(theme.ThemePath);
 
-            new ThemeChanger(this, CurrentTheme, MainHeader, MainTextField, MainFooter, GetLabelsFromForm()).ChangeTheme();
+            new ThemeChanger(this).ChangeTheme();
 
             new ThemeSerializer(theme!, this).SerializeTheme();
 
@@ -209,9 +209,8 @@ namespace SourceCodeEditor
         /// </summary>
         public void blackToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var labels = this.GetLabelsFromForm();
             CurrentTheme = Theme.Black;
-            new ThemeChanger(this, CurrentTheme, MainHeader, MainTextField, MainFooter, labels).ChangeTheme();
+            new ThemeChanger(this).ChangeTheme();
 
             whiteToolStripMenuItem.Checked = false;
             blackToolStripMenuItem.Checked = true;
@@ -222,9 +221,8 @@ namespace SourceCodeEditor
         /// </summary>
         public void whiteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var labels = this.GetLabelsFromForm();
             CurrentTheme = Theme.White;
-            new ThemeChanger(this, CurrentTheme, MainHeader, MainTextField, MainFooter, labels).ChangeTheme();
+            new ThemeChanger(this).ChangeTheme();
             whiteToolStripMenuItem.Checked = true;
             blackToolStripMenuItem.Checked = false;
         }

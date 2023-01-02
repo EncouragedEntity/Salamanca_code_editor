@@ -67,10 +67,10 @@ namespace SourceCodeEditor.AppearenceConfig
             GetLabelsColors();  
         }
 
-        public void SetColorsOfTheme()
+       /* public void SetColorsOfTheme()
         {
             SetColors();
-        }
+        }*/
 
         public static CurrentTheme? DeserializeTheme(string path)
         {

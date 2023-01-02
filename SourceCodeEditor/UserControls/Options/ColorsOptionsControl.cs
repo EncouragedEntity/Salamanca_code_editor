@@ -24,8 +24,23 @@ namespace SourceCodeEditor.UserControls.Options
         {
             this.form = form;
             optionsForm = optForm;
-            CurrentTheme = ThemeSerializer.DeserializeTheme(form.theme.ThemePath)!;
+            SetTheme();
             InitializeComponent();
+        }
+
+        private void SetTheme()
+        {
+            var path = form.theme.ThemePath;
+            if (File.Exists(path))
+            {
+                CurrentTheme = ThemeSerializer.DeserializeTheme(path)!;
+                return;
+            }
+            File.Create(path);
+            GetButtonsColors();
+            form.theme = CurrentTheme;
+            new ThemeSerializer(CurrentTheme, form).SerializeTheme();
+
         }
 
         private void SetButtonsColors()
