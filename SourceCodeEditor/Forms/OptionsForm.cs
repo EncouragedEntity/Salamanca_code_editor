@@ -83,7 +83,7 @@ namespace SourceCodeEditor.Forms
             {
                 case Options.General:
                 {
-                    var control = new GeneralOptionsControl();
+                    var control = new GeneralOptionsControl(mainForm);
                     LoadUserControl(control);
                 }
                 break;
@@ -142,7 +142,7 @@ namespace SourceCodeEditor.Forms
 
         private void OptionsForm_Load(object sender, EventArgs e)
         {
-            LoadUserControl(new GeneralOptionsControl());
+            LoadUserControl(new GeneralOptionsControl(mainForm));
             SetDataGridItems();
             ValidateSize();
         }

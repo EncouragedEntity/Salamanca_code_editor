@@ -18,13 +18,15 @@ namespace SourceCodeEditor
         /// </summary>
         private string _applicationName { get; set; } = "Salamanca";
 
-        public Theme CurrentTheme { get; set; } = Theme.Black;
+        public Theme CurrentTheme { get; set; }
+
+        private Theme DefaultTheme { get; set; } = Theme.Black;
 
         public WindowState StateOfWindow { get; set; } = Enums.WindowState.Windowed;
 
         public CurrentTheme theme = new CurrentTheme();
 
-        private int _defaultZoom { get; set; } = 100;
+        public int DefaultZoom { get; set; } = 100;
 
         /// <summary>
         /// Current opened file
@@ -47,17 +49,16 @@ namespace SourceCodeEditor
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            //Set toolStripMenuItem dropdown items from "MainTextField.Languages" on load
             new LanguageConfig(this).LoadLanguages();
 
             //Load hotkeys config from file on form load
             new HotKeysConfig(MainHeader).LoadHotkeysConfig();
 
+            //Get default theme from file and apply it on load
             theme = ThemeSerializer.DeserializeTheme(theme!.ThemePath)!;
-
-            new ThemeChanger(this).ChangeTheme();
-
-            new ThemeSerializer(theme!, this).SerializeTheme();
-
+            CurrentTheme = Theme.Black;
+            new ThemeChanger(this).ChangeTheme(DefaultTheme);
 
             DeleteUnnecessaryLabels();
         }
@@ -385,6 +386,9 @@ namespace SourceCodeEditor
             CurrentLineLabel.Text = $"Current line: {MainTextField.Selection.Start.iLine + 1}";
         }
 
+        /// <summary>
+        /// Occurs when content of MainTextField changes somehow
+        /// </summary>
         private void MainTextField_OnContentChanged()
         {
             LineCountLable.Text = $"Lines: {MainTextField.Lines.Count}";
@@ -412,7 +416,7 @@ namespace SourceCodeEditor
 
         private void zoomPercentageLabel_Click(object sender, EventArgs e)
         {
-            MainTextField.Zoom = _defaultZoom;
+            MainTextField.Zoom = DefaultZoom;
         }
 
         /// <summary>

@@ -57,6 +57,23 @@ namespace SourceCodeEditor.AppearenceConfig
             }
         }
 
+        public void ChangeTheme(Theme theme)
+        {
+            switch (theme)
+            {
+                case Theme.White:
+                    {
+                        ChangeGeneralThemeToWhite();
+                    }
+                    break;
+                case Theme.Black:
+                    {
+                        ChangeGeneralThemeToBlack();
+                    }
+                    break;
+            }
+        }
+
         /// <summary>
         /// Set Application controls theme to "Black"
         /// </summary>
