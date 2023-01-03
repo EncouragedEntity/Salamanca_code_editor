@@ -44,8 +44,6 @@ namespace SourceCodeEditor
             this.blackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.whiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.screenModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fullscreenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.windowedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.syntaxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -171,28 +169,10 @@ namespace SourceCodeEditor
             // 
             // screenModeToolStripMenuItem
             // 
-            this.screenModeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fullscreenToolStripMenuItem,
-            this.windowedToolStripMenuItem});
             this.screenModeToolStripMenuItem.Name = "screenModeToolStripMenuItem";
             this.screenModeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.screenModeToolStripMenuItem.Text = "Screen mode";
-            // 
-            // fullscreenToolStripMenuItem
-            // 
-            this.fullscreenToolStripMenuItem.Name = "fullscreenToolStripMenuItem";
-            this.fullscreenToolStripMenuItem.Size = new System.Drawing.Size(164, 26);
-            this.fullscreenToolStripMenuItem.Text = "Fullscreen";
-            this.fullscreenToolStripMenuItem.Click += new System.EventHandler(this.fullscreenToolStripMenuItem_Click);
-            // 
-            // windowedToolStripMenuItem
-            // 
-            this.windowedToolStripMenuItem.Checked = true;
-            this.windowedToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.windowedToolStripMenuItem.Name = "windowedToolStripMenuItem";
-            this.windowedToolStripMenuItem.Size = new System.Drawing.Size(164, 26);
-            this.windowedToolStripMenuItem.Text = "Windowed";
-            this.windowedToolStripMenuItem.Click += new System.EventHandler(this.windowedToolStripMenuItem_Click);
+            this.screenModeToolStripMenuItem.Text = "Switch to Fullscreen";
+            this.screenModeToolStripMenuItem.Click += new System.EventHandler(this.screenModeToolStripMenuItem_Click);
             // 
             // syntaxToolStripMenuItem
             // 
@@ -261,6 +241,8 @@ namespace SourceCodeEditor
             this.MainTextField.Zoom = 100;
             this.MainTextField.TextChanged += new System.EventHandler<FastColoredTextBoxNS.TextChangedEventArgs>(this.MainTextField_TextChanged);
             this.MainTextField.SelectionChanged += new System.EventHandler(this.MainTextField_SelectionChanged);
+            this.MainTextField.LineInserted += new System.EventHandler<FastColoredTextBoxNS.LineInsertedEventArgs>(this.MainTextField_LineInserted);
+            this.MainTextField.LineRemoved += new System.EventHandler<FastColoredTextBoxNS.LineRemovedEventArgs>(this.MainTextField_LineRemoved);
             // 
             // MainFooter
             // 
@@ -408,8 +390,6 @@ namespace SourceCodeEditor
         private ToolStripStatusLabel IsSavedLabel;
         private ToolStripMenuItem fileStatusToolStripMenuItem;
         private ToolStripMenuItem screenModeToolStripMenuItem;
-        private ToolStripMenuItem fullscreenToolStripMenuItem;
-        private ToolStripMenuItem windowedToolStripMenuItem;
         public ToolStripMenuItem syntaxToolStripMenuItem;
     }
 }

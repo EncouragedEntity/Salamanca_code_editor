@@ -18,8 +18,10 @@ namespace SourceCodeEditor
         /// </summary>
         private string _applicationName = "Salamanca";
 
-        public Theme CurrentTheme = Theme.Black;
+        public Theme CurrentTheme { get; set; } = Theme.Black;
 
+        public WindowState StateOfWindow { get; set; } = Enums.WindowState.Windowed;
+        
         public CurrentTheme theme = new CurrentTheme();
 
         /// <summary>
@@ -187,7 +189,7 @@ namespace SourceCodeEditor
         }
 
         /// <summary>
-        /// Get all labels from form
+        /// Get all status labels from form
         /// </summary>
         /// <returns>List of labels</returns>
         public IEnumerable<ToolStripStatusLabel> GetLabelsFromForm()
@@ -214,7 +216,6 @@ namespace SourceCodeEditor
             whiteToolStripMenuItem.Checked = false;
             blackToolStripMenuItem.Checked = true;
         }
-
         /// <summary>
         /// Change theme of application to white
         /// </summary>
@@ -222,6 +223,7 @@ namespace SourceCodeEditor
         {
             CurrentTheme = Theme.White;
             new ThemeChanger(this).ChangeTheme();
+
             whiteToolStripMenuItem.Checked = true;
             blackToolStripMenuItem.Checked = false;
         }
@@ -244,7 +246,6 @@ namespace SourceCodeEditor
             item.Checked = false;
             MainFooter.Items.Remove(label);
         }
-
         private void DeleteLineCountLabel()
         {
             DeleteStatusLabel(LineCountLable, linesToolStripMenuItem);
@@ -281,7 +282,6 @@ namespace SourceCodeEditor
                 label.ForeColor = Color.Black;
             MainFooter.Items.Add(label);
         }
-
         /// <summary>
         /// Current symbol status switching
         /// </summary>
@@ -301,7 +301,6 @@ namespace SourceCodeEditor
                 label.ForeColor = Color.Black;
             MainFooter.Items.Add(SymbolCountLable);
         }
-
         /// <summary>
         /// Current line status switching
         /// </summary>
@@ -321,9 +320,8 @@ namespace SourceCodeEditor
                 label.ForeColor = Color.Black;
             MainFooter.Items.Add(CurrentLineLabel);
         }
-
         /// <summary>
-        /// Current file status status switching
+        /// Current file status label switching
         /// </summary>
         private void fileStatusToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -342,19 +340,37 @@ namespace SourceCodeEditor
             MainFooter.Items.Add(label);
         }
 
+        /// <summary>
+        /// Set the selection details into status labels
+        /// </summary>
         private void MainTextField_SelectionChanged(object sender, EventArgs e)
         {
             SymbolCountLable.Text = $"Current symbol: {MainTextField.Selection.Start.iChar}";
             CurrentLineLabel.Text = $"Current line: {MainTextField.Selection.Start.iLine + 1}";
         }
 
-        private void MainTextField_TextChanged(object sender, TextChangedEventArgs e)
+        private void MainTextField_OnContentChanged()
         {
             LineCountLable.Text = $"Lines: {MainTextField.Lines.Count}";
             _isFileSaved = false;
             MarkFileAsUnsaved();
         }
+        private void MainTextField_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            MainTextField_OnContentChanged();
+        }
+        private void MainTextField_LineInserted(object sender, LineInsertedEventArgs e)
+        {
+            MainTextField_OnContentChanged();
+        }
+        private void MainTextField_LineRemoved(object sender, LineRemovedEventArgs e)
+        {
+            MainTextField_OnContentChanged();
+        }
 
+        /// <summary>
+        /// Shows message box on form closing if file is unsaved to confirm closing with or without save
+        /// </summary>
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (_currentFile != String.Empty)
@@ -368,6 +384,9 @@ namespace SourceCodeEditor
                         SaveFile();
                         return;
                     }
+
+                    /// If user wants to cancel the operation of closing
+                    /// We use "FormClosingEvents" object and set its property "Cancel" to true
                     if(result == DialogResult.Cancel)
                         e.Cancel = true;
                 }
@@ -375,35 +394,37 @@ namespace SourceCodeEditor
         }
 
         /// <summary>
-        /// Set screen mode to "fullscreen"
+        /// Switch state of window
         /// </summary>
-        private void fullscreenToolStripMenuItem_Click(object sender, EventArgs e)
+        private void screenModeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var item = (ToolStripMenuItem)sender;
-            if (!item.Checked) item.Checked = true;
-            else item.Checked = false;
+            
+            switch (StateOfWindow)
+            {
+                case Enums.WindowState.Windowed:
+                    {
+                        FormBorderStyle = FormBorderStyle.None;
+                        WindowState = FormWindowState.Maximized;
 
-            windowedToolStripMenuItem.Checked = false;
+                        item.Text = $"Switch to {StateOfWindow}";
+                        StateOfWindow = Enums.WindowState.Fullscreen;
+                        
+                    }
+                    break;
+                case Enums.WindowState.Fullscreen: 
+                    {
+                        FormBorderStyle = FormBorderStyle.Sizable;
+                        WindowState = FormWindowState.Normal;
 
+                        item.Text = $"Switch to {StateOfWindow}";
 
-            FormBorderStyle = FormBorderStyle.None;
-            WindowState = FormWindowState.Maximized;
-        }
-
-        /// <summary>
-        /// Set screen mode to "windowed"
-        /// </summary>
-        private void windowedToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var item = (ToolStripMenuItem)sender;
-            if (!item.Checked) item.Checked = true;
-            else item.Checked = false;
-
-            fullscreenToolStripMenuItem.Checked = false;
-
-            FormBorderStyle = FormBorderStyle.Sizable;
-            WindowState = FormWindowState.Normal;
+                        StateOfWindow = Enums.WindowState.Windowed;
+                    }
+                    break;
+            }
         }
         #endregion
+
     }
 }
