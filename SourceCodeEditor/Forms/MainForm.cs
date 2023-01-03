@@ -16,28 +16,28 @@ namespace SourceCodeEditor
         /// <summary>
         /// Name of application
         /// </summary>
-        private string _applicationName = "Salamanca";
+        private string _applicationName { get; set; } = "Salamanca";
 
         public Theme CurrentTheme { get; set; } = Theme.Black;
 
         public WindowState StateOfWindow { get; set; } = Enums.WindowState.Windowed;
-        
+
         public CurrentTheme theme = new CurrentTheme();
+
+        private int _defaultZoom { get; set; } = 100;
 
         /// <summary>
         /// Current opened file
         /// </summary>
-        private string _currentFile = String.Empty;
-
+        private string _currentFile { get; set; } = String.Empty;
         /// <summary>
         /// Is file created on disk
         /// </summary>
-        private bool _isFileCreated = false;
-       
+        private bool _isFileCreated { get; set; } = false;
         /// <summary>
         /// Is file saved on disk
         /// </summary>
-        private bool _isFileSaved;
+        private bool _isFileSaved { get; set; } = false;
         #endregion
 
         public MainForm()
@@ -51,7 +51,7 @@ namespace SourceCodeEditor
 
             //Load hotkeys config from file on form load
             new HotKeysConfig(MainHeader).LoadHotkeysConfig();
-            
+
             theme = ThemeSerializer.DeserializeTheme(theme!.ThemePath)!;
 
             new ThemeChanger(this).ChangeTheme();
@@ -63,14 +63,34 @@ namespace SourceCodeEditor
         }
 
         #region Methods
-
+        /// <summary>
+        ///  Deletes not default labels
+        /// </summary>
         private void DeleteUnnecessaryLabels()
         {
             DeleteLineLabel();
             DeleteSymbolLabel();
             DeleteFileStatusLabel();
+            DeleteZoomLabel();
         }
 
+        /// <summary>
+        /// Switches file save mark ("*") in form text
+        /// </summary>
+        private void SwitchFileSavedMark()
+        {
+            switch (_isFileSaved)
+            {
+                case true:
+                    {
+                        MarkFileAsUnsaved();
+                    } break;
+                case false:
+                    {
+                        MarkFileAsSaved();
+                    } break;
+            }
+        }
         /// <summary>
         /// Marks current opened file as unsaved
         /// </summary>
@@ -79,7 +99,6 @@ namespace SourceCodeEditor
             this.Text += this.Text.Last() != '*' ? "*" : String.Empty;
             IsSavedLabel.Text = "File status: Unsaved";
         }
-
         /// <summary>
         /// Marks current opened file as saved
         /// </summary>
@@ -106,21 +125,19 @@ namespace SourceCodeEditor
 
             _isFileCreated = true;
             _currentFile = op.FileName;
-            FileNameToFormText(_currentFile);   
+            FileNameToFormText(_currentFile);
             MainTextField.Text = File.ReadAllText(_currentFile);
         }
-
         /// <summary>
         /// Save RichTextBox content to current file
         /// </summary>
         private void SaveFile()
         {
             File.WriteAllLines(_currentFile, MainTextField.Lines);
-            MarkFileAsSaved();
+            SwitchFileSavedMark();
             _isFileCreated = true;
-            _isFileSaved = true;   
+            _isFileSaved = true;
         }
-
         /// <summary>
         /// Save RichTextBox content to file
         /// </summary>
@@ -128,11 +145,10 @@ namespace SourceCodeEditor
         private void SaveFile(string FileName)
         {
             File.WriteAllLines(FileName, MainTextField.Lines);
-            MarkFileAsSaved();
+            SwitchFileSavedMark();
             _isFileCreated = true;
             _isFileSaved = true;
         }
-
         /// <summary>
         /// Save FastColoredTextBox content to current file
         /// </summary>
@@ -145,7 +161,6 @@ namespace SourceCodeEditor
             }
             newToolStripMenuItem_Click(sender, e);
         }
-
         /// <summary>
         /// Save FastColoredTextBox content to new file
         /// </summary>
@@ -158,7 +173,6 @@ namespace SourceCodeEditor
             SaveFile(sv.FileName);
             FileNameToFormText(sv.FileName);
         }
-
         /// <summary>
         /// Create new file and save FastColoredTextBox contents to it
         /// </summary>
@@ -187,18 +201,17 @@ namespace SourceCodeEditor
             }
             return labels;
         }
-
         /// <summary>
         /// Get all status labels from form
         /// </summary>
         /// <returns>List of labels</returns>
         public IEnumerable<ToolStripStatusLabel> GetLabelsFromForm()
         {
-            var labels = new List<ToolStripStatusLabel>(); 
+            var labels = new List<ToolStripStatusLabel>();
             foreach (var control in this.Controls)
             {
                 if (control is ToolStripStatusLabel)
-                     labels.Add((ToolStripStatusLabel)control);
+                    labels.Add((ToolStripStatusLabel)control);
                 if (control is StatusStrip)
                     labels.AddRange((List<ToolStripStatusLabel>)GetLabelsFromStatusStrip((StatusStrip)control));
             }
@@ -227,7 +240,7 @@ namespace SourceCodeEditor
             whiteToolStripMenuItem.Checked = true;
             blackToolStripMenuItem.Checked = false;
         }
-        
+
         /// <summary>
         /// Show OptionsForm dialog
         /// </summary>
@@ -261,6 +274,10 @@ namespace SourceCodeEditor
         private void DeleteFileStatusLabel()
         {
             DeleteStatusLabel(IsSavedLabel, fileStatusToolStripMenuItem);
+        }
+        private void DeleteZoomLabel()
+        {
+            DeleteStatusLabel(zoomPercentageLabel, zoomToolStripMenuItem);
         }
 
         /// <summary>
@@ -339,6 +356,25 @@ namespace SourceCodeEditor
                 label.ForeColor = Color.Black;
             MainFooter.Items.Add(label);
         }
+        /// <summary>
+        /// Zoom status label switching
+        /// </summary>
+        private void zoomToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var item = (ToolStripMenuItem)sender;
+            var button = zoomPercentageLabel;
+            if (item.Checked)
+            {
+                DeleteZoomLabel();
+                return;
+            }
+            item.Checked = true;
+            if (CurrentTheme == Theme.Black)
+                button.ForeColor = Color.White;
+            else
+                button.ForeColor = Color.Black;
+            MainFooter.Items.Add(button);
+        }
 
         /// <summary>
         /// Set the selection details into status labels
@@ -353,7 +389,7 @@ namespace SourceCodeEditor
         {
             LineCountLable.Text = $"Lines: {MainTextField.Lines.Count}";
             _isFileSaved = false;
-            MarkFileAsUnsaved();
+            SwitchFileSavedMark();
         }
         private void MainTextField_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -366,6 +402,17 @@ namespace SourceCodeEditor
         private void MainTextField_LineRemoved(object sender, LineRemovedEventArgs e)
         {
             MainTextField_OnContentChanged();
+        }
+
+        private void MainTextField_ZoomChanged(object sender, EventArgs e)
+        {
+            var zoom = MainTextField.Zoom;
+            zoomPercentageLabel.Text = $"Zoom: {zoom}%";
+        }
+
+        private void zoomPercentageLabel_Click(object sender, EventArgs e)
+        {
+            MainTextField.Zoom = _defaultZoom;
         }
 
         /// <summary>
@@ -425,6 +472,5 @@ namespace SourceCodeEditor
             }
         }
         #endregion
-
     }
 }

@@ -56,10 +56,12 @@ namespace SourceCodeEditor
             this.symbolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.currentLineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fileStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zoomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LineCountLable = new System.Windows.Forms.ToolStripStatusLabel();
             this.SymbolCountLable = new System.Windows.Forms.ToolStripStatusLabel();
             this.CurrentLineLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.IsSavedLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.zoomPercentageLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.MainHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainTextField)).BeginInit();
             this.MainFooter.SuspendLayout();
@@ -148,7 +150,7 @@ namespace SourceCodeEditor
             this.whiteToolStripMenuItem});
             this.themeToolStripMenuItem.Name = "themeToolStripMenuItem";
             this.themeToolStripMenuItem.ShowShortcutKeys = false;
-            this.themeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.themeToolStripMenuItem.Size = new System.Drawing.Size(222, 26);
             this.themeToolStripMenuItem.Text = "Theme";
             // 
             // blackToolStripMenuItem
@@ -170,14 +172,14 @@ namespace SourceCodeEditor
             // screenModeToolStripMenuItem
             // 
             this.screenModeToolStripMenuItem.Name = "screenModeToolStripMenuItem";
-            this.screenModeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.screenModeToolStripMenuItem.Size = new System.Drawing.Size(222, 26);
             this.screenModeToolStripMenuItem.Text = "Switch to Fullscreen";
             this.screenModeToolStripMenuItem.Click += new System.EventHandler(this.screenModeToolStripMenuItem_Click);
             // 
             // syntaxToolStripMenuItem
             // 
             this.syntaxToolStripMenuItem.Name = "syntaxToolStripMenuItem";
-            this.syntaxToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.syntaxToolStripMenuItem.Size = new System.Drawing.Size(222, 26);
             this.syntaxToolStripMenuItem.Text = "Syntax";
             // 
             // toolsToolStripMenuItem
@@ -243,6 +245,7 @@ namespace SourceCodeEditor
             this.MainTextField.SelectionChanged += new System.EventHandler(this.MainTextField_SelectionChanged);
             this.MainTextField.LineInserted += new System.EventHandler<FastColoredTextBoxNS.LineInsertedEventArgs>(this.MainTextField_LineInserted);
             this.MainTextField.LineRemoved += new System.EventHandler<FastColoredTextBoxNS.LineRemovedEventArgs>(this.MainTextField_LineRemoved);
+            this.MainTextField.ZoomChanged += new System.EventHandler(this.MainTextField_ZoomChanged);
             // 
             // MainFooter
             // 
@@ -253,7 +256,8 @@ namespace SourceCodeEditor
             this.LineCountLable,
             this.SymbolCountLable,
             this.CurrentLineLabel,
-            this.IsSavedLabel});
+            this.IsSavedLabel,
+            this.zoomPercentageLabel});
             this.MainFooter.Location = new System.Drawing.Point(0, 424);
             this.MainFooter.Name = "MainFooter";
             this.MainFooter.Size = new System.Drawing.Size(800, 26);
@@ -267,9 +271,10 @@ namespace SourceCodeEditor
             this.linesToolStripMenuItem,
             this.symbolToolStripMenuItem,
             this.currentLineToolStripMenuItem,
-            this.fileStatusToolStripMenuItem});
+            this.fileStatusToolStripMenuItem,
+            this.zoomToolStripMenuItem});
             this.FooterContext.Name = "contextMenuStrip1";
-            this.FooterContext.Size = new System.Drawing.Size(179, 108);
+            this.FooterContext.Size = new System.Drawing.Size(179, 134);
             // 
             // linesToolStripMenuItem
             // 
@@ -307,6 +312,15 @@ namespace SourceCodeEditor
             this.fileStatusToolStripMenuItem.Text = "File status";
             this.fileStatusToolStripMenuItem.Click += new System.EventHandler(this.fileStatusToolStripMenuItem_Click);
             // 
+            // zoomToolStripMenuItem
+            // 
+            this.zoomToolStripMenuItem.Checked = true;
+            this.zoomToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.zoomToolStripMenuItem.Name = "zoomToolStripMenuItem";
+            this.zoomToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
+            this.zoomToolStripMenuItem.Text = " Zoom";
+            this.zoomToolStripMenuItem.Click += new System.EventHandler(this.zoomToolStripMenuItem_Click);
+            // 
             // LineCountLable
             // 
             this.LineCountLable.ForeColor = System.Drawing.Color.White;
@@ -334,6 +348,16 @@ namespace SourceCodeEditor
             this.IsSavedLabel.Name = "IsSavedLabel";
             this.IsSavedLabel.Size = new System.Drawing.Size(137, 20);
             this.IsSavedLabel.Text = "File status: Unsaved";
+            // 
+            // zoomPercentageLabel
+            // 
+            this.zoomPercentageLabel.AutoToolTip = true;
+            this.zoomPercentageLabel.ForeColor = System.Drawing.Color.White;
+            this.zoomPercentageLabel.Name = "zoomPercentageLabel";
+            this.zoomPercentageLabel.Size = new System.Drawing.Size(92, 20);
+            this.zoomPercentageLabel.Text = "Zoom: 100%";
+            this.zoomPercentageLabel.ToolTipText = "Click to set to default";
+            this.zoomPercentageLabel.Click += new System.EventHandler(this.zoomPercentageLabel_Click);
             // 
             // MainForm
             // 
@@ -391,5 +415,7 @@ namespace SourceCodeEditor
         private ToolStripMenuItem fileStatusToolStripMenuItem;
         private ToolStripMenuItem screenModeToolStripMenuItem;
         public ToolStripMenuItem syntaxToolStripMenuItem;
+        private ToolStripMenuItem zoomToolStripMenuItem;
+        private ToolStripStatusLabel zoomPercentageLabel;
     }
 }

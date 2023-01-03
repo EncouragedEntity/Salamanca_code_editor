@@ -50,7 +50,6 @@ namespace SourceCodeEditor.AppearenceConfig
             var firstLabel = _labels.FirstOrDefault();
             _theme.LabelsFore = firstLabel!.ForeColor;
             _theme.LabelsBack = firstLabel!.BackColor;
-
         }
 
         private void GetColors()
