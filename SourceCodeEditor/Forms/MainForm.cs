@@ -139,9 +139,9 @@ namespace SourceCodeEditor
         private void SaveFile(string FileName)
         {
             File.WriteAllLines(FileName, MainTextField.Lines);
-            SwitchFileSavedMark();
             _isFileCreated = true;
             _isFileSaved = true;
+            SwitchFileSavedMark();
         }
         /// <summary>
         /// Save FastColoredTextBox content to current file
