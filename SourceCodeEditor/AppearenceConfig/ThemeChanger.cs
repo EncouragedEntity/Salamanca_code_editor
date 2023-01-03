@@ -169,6 +169,18 @@ namespace SourceCodeEditor.AppearenceConfig
             */
         }
 
+
+
+
+
+        ///TODO: 
+        ///
+        /// Set "white" styles to Highlidhter and CurrentTheme!!! 
+        /// 
+
+
+
+
         private void SetColorsToHighlighter()
         {
             switch (_theme)

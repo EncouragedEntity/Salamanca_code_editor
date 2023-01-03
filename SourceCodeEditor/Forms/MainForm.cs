@@ -12,20 +12,13 @@ namespace SourceCodeEditor
     public partial class MainForm : Form
     {
         #region Fields
-
-        /// <summary>
-        /// Name of application
-        /// </summary>
         private string _applicationName { get; set; } = "Salamanca";
 
         public Theme CurrentTheme { get; set; }
-
         private Theme DefaultTheme { get; set; } = Theme.Black;
-
-        public WindowState StateOfWindow { get; set; } = Enums.WindowState.Windowed;
-
         public CurrentTheme theme = new CurrentTheme();
 
+        public WindowState StateOfWindow { get; set; } = Enums.WindowState.Windowed;
         public int DefaultZoom { get; set; } = 100;
 
         /// <summary>
@@ -84,11 +77,11 @@ namespace SourceCodeEditor
             {
                 case true:
                     {
-                        MarkFileAsUnsaved();
+                        MarkFileAsSaved();
                     } break;
                 case false:
                     {
-                        MarkFileAsSaved();
+                        MarkFileAsUnsaved();
                     } break;
             }
         }
@@ -135,9 +128,9 @@ namespace SourceCodeEditor
         private void SaveFile()
         {
             File.WriteAllLines(_currentFile, MainTextField.Lines);
-            SwitchFileSavedMark();
-            _isFileCreated = true;
             _isFileSaved = true;
+            _isFileCreated = true;
+            SwitchFileSavedMark();
         }
         /// <summary>
         /// Save RichTextBox content to file
