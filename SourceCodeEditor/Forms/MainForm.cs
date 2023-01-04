@@ -65,7 +65,6 @@ namespace SourceCodeEditor
             DeleteLineLabel();
             DeleteSymbolLabel();
             DeleteFileStatusLabel();
-            DeleteZoomLabel();
         }
 
         /// <summary>

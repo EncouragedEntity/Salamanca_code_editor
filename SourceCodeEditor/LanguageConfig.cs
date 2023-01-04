@@ -122,7 +122,7 @@ namespace SourceCodeEditor
                     }
                     break;
             }
-            new ThemeChanger(MainForm, MainForm.CurrentTheme, MainForm.MainHeader, MainForm.MainTextField, MainForm.MainFooter, MainForm.GetLabelsFromForm()).ChangeSyntaxHighlithingToBlack();
+            new ThemeChanger(MainForm).ChangeSyntaxHighlithing();
         }
     }
 }
