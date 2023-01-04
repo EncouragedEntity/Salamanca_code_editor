@@ -12,12 +12,14 @@
 
         private void GeneralOptionsControl_Load(object sender, EventArgs e)
         {
-            numericUpDown1.Value = MainForm.DefaultZoom;
+            numericUpDownDefaultZoom.Value = MainForm.DefaultZoom;
+            numericUpDownActualZoom.Value = MainForm.MainTextField.Zoom;
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            MainForm.DefaultZoom = Convert.ToInt32(numericUpDown1.Value);
+            MainForm.DefaultZoom = Convert.ToInt32(numericUpDownDefaultZoom.Value);
+            MainForm.MainTextField.Zoom = Convert.ToInt32(numericUpDownActualZoom.Value);
         }
 
         private void buttonDiscard_Click(object sender, EventArgs e)
@@ -35,8 +37,14 @@
 
         private void buttonToHundred_Click(object sender, EventArgs e)
         {
-            numericUpDown1.Value = 100;
-            numericUpDown1.Focus();
+            numericUpDownDefaultZoom.Value = 100;
+            numericUpDownDefaultZoom.Focus();
+        }
+
+        private void buttonToDefault_Click(object sender, EventArgs e)
+        {
+            numericUpDownActualZoom.Value = numericUpDownDefaultZoom.Value;
+            numericUpDownActualZoom.Focus();
         }
     }
 }
