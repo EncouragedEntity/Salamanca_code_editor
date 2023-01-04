@@ -319,27 +319,15 @@ namespace SourceCodeEditor.AppearenceConfig
         public void ChangeSyntaxHighlithing()
         {
             var sercon = new ContentSerializer(_mainTextField.Text);
-            try
-            {
-                if (!IsContentSerialized)
-                {
-                    sercon.SerializeContent();
-                    SelectionStart = _mainTextField.SelectionStart;
-                    _mainTextField.Text = String.Empty;
-                    IsContentSerialized = true;
-                }
-
-                SetColorsToHighlighter();
-                SetColorsToCurrentTheme();
-                mainForm.theme = currentTheme;
-                _mainTextField.Text = sercon.Deserialize();
-                _mainTextField.SelectionStart = SelectionStart;
-            }
-            catch (Exception)
-            {
-                _mainTextField.ClearStylesBuffer();
-                ChangeSyntaxHighlithing();
-            }
+            _mainTextField.ClearStylesBuffer();
+            sercon.SerializeContent();
+            SelectionStart = _mainTextField.SelectionStart;
+            _mainTextField.Text = String.Empty;
+            SetColorsToHighlighter();
+            SetColorsToCurrentTheme();
+            mainForm.theme = currentTheme;
+            _mainTextField.Text = sercon.Deserialize();
+            _mainTextField.SelectionStart = SelectionStart;
         }
 
         /// <summary>
