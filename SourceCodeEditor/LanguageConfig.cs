@@ -123,6 +123,8 @@ namespace SourceCodeEditor
                     break;
             }
             new ThemeChanger(MainForm).ChangeSyntaxHighlithing();
+
+            File.Delete("TextFieldContent.bin");
         }
     }
 }

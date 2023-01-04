@@ -18,7 +18,7 @@ namespace SourceCodeEditor.AppearenceConfig
         private readonly IEnumerable<ToolStripStatusLabel> _labels;
 
         private int SelectionStart = 0;
-        private bool IsContentSerialized = false;
+        private bool IsContentSerialized { get; set; } = false;
 
         public ThemeChanger(MainForm form, Theme theme, MenuStrip header, FastColoredTextBox mainTextField, StatusStrip footer, IEnumerable<ToolStripStatusLabel> labels)
         {
@@ -38,6 +38,8 @@ namespace SourceCodeEditor.AppearenceConfig
             _mainTextField = form.MainTextField;
             _footer = form.MainFooter;
             _labels = form.GetLabelsFromForm();
+
+            IsContentSerialized = false;
         }
         /// <summary>
         /// Change theme
@@ -322,11 +324,10 @@ namespace SourceCodeEditor.AppearenceConfig
                 if (!IsContentSerialized)
                 {
                     sercon.SerializeContent();
+                    SelectionStart = _mainTextField.SelectionStart;
+                    _mainTextField.Text = String.Empty;
                     IsContentSerialized = true;
                 }
-
-                SelectionStart = _mainTextField.SelectionStart;
-                _mainTextField.Text = String.Empty;
 
                 SetColorsToHighlighter();
                 SetColorsToCurrentTheme();
