@@ -17,6 +17,7 @@ namespace SourceCodeEditor
         public Theme CurrentTheme { get; set; }
         private Theme DefaultTheme { get; set; } = Theme.Black;
         public CurrentTheme theme = new CurrentTheme();
+        public Font DefaultTextFont { get; set; } = new Font(new FontFamily("Courier New"), 12);
 
         public WindowState StateOfWindow { get; set; } = Enums.WindowState.Windowed;
         public int DefaultZoom { get; set; } = 100;

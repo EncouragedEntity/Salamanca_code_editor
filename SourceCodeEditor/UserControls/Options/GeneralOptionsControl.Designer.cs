@@ -38,10 +38,14 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonDiscard = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
+            this.groupBoxFont = new System.Windows.Forms.GroupBox();
+            this.buttonFont = new System.Windows.Forms.Button();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.groupBoxZoom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownActualZoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDefaultZoom)).BeginInit();
             this.panel1.SuspendLayout();
+            this.groupBoxFont.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxZoom
@@ -86,7 +90,7 @@
             0,
             0,
             0});
-            this.numericUpDownActualZoom.Location = new System.Drawing.Point(3, 105);
+            this.numericUpDownActualZoom.Location = new System.Drawing.Point(6, 105);
             this.numericUpDownActualZoom.Maximum = new decimal(new int[] {
             2500,
             0,
@@ -159,7 +163,7 @@
             this.panel1.Controls.Add(this.buttonDiscard);
             this.panel1.Controls.Add(this.buttonSave);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 290);
+            this.panel1.Location = new System.Drawing.Point(0, 464);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(482, 48);
             this.panel1.TabIndex = 1;
@@ -186,21 +190,52 @@
             this.buttonSave.UseVisualStyleBackColor = true;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
+            // groupBoxFont
+            // 
+            this.groupBoxFont.Controls.Add(this.buttonFont);
+            this.groupBoxFont.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBoxFont.Location = new System.Drawing.Point(0, 138);
+            this.groupBoxFont.Name = "groupBoxFont";
+            this.groupBoxFont.Size = new System.Drawing.Size(482, 153);
+            this.groupBoxFont.TabIndex = 2;
+            this.groupBoxFont.TabStop = false;
+            this.groupBoxFont.Text = "Font";
+            // 
+            // buttonFont
+            // 
+            this.buttonFont.Location = new System.Drawing.Point(6, 36);
+            this.buttonFont.Name = "buttonFont";
+            this.buttonFont.Size = new System.Drawing.Size(135, 29);
+            this.buttonFont.TabIndex = 0;
+            this.buttonFont.Text = "Choose font";
+            this.buttonFont.UseVisualStyleBackColor = true;
+            this.buttonFont.Click += new System.EventHandler(this.buttonFont_Click);
+            // 
+            // fontDialog1
+            // 
+            this.fontDialog1.AllowScriptChange = false;
+            this.fontDialog1.AllowSimulations = false;
+            this.fontDialog1.AllowVectorFonts = false;
+            this.fontDialog1.AllowVerticalFonts = false;
+            this.fontDialog1.FixedPitchOnly = true;
+            // 
             // GeneralOptionsControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
+            this.Controls.Add(this.groupBoxFont);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBoxZoom);
             this.Name = "GeneralOptionsControl";
-            this.Size = new System.Drawing.Size(482, 338);
+            this.Size = new System.Drawing.Size(482, 512);
             this.Load += new System.EventHandler(this.GeneralOptionsControl_Load);
             this.groupBoxZoom.ResumeLayout(false);
             this.groupBoxZoom.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownActualZoom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDefaultZoom)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.groupBoxFont.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -217,5 +252,8 @@
         private NumericUpDown numericUpDownActualZoom;
         private Label label2;
         private Button buttonToDefault;
+        private GroupBox groupBoxFont;
+        private FontDialog fontDialog1;
+        private Button buttonFont;
     }
 }

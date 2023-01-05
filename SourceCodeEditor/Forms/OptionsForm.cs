@@ -6,7 +6,8 @@ using SourceCodeEditor.UserControls.Options;
 
 
 /// TODO:
-/// SyntaxColorsOptionsControl design and functionality
+/// * SyntaxColorsOptionsControl design and functionality
+/// * fix Font options, it`s design and functionality
 
 namespace SourceCodeEditor.Forms
 {
