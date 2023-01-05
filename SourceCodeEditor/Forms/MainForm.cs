@@ -6,6 +6,9 @@ namespace SourceCodeEditor
 {
     delegate DialogResult DialogRes(string text, string caption, MessageBoxButtons buttons, MessageBoxIcon icon);
 
+    ///TODO:
+    /// "Edit" tool in MainHeader
+
     /// <summary>
     /// Main form of Application
     /// </summary>
@@ -50,63 +53,15 @@ namespace SourceCodeEditor
 
             //Get default theme from file and apply it on load
             theme = ThemeSerializer.DeserializeTheme(theme!.ThemePath)!;
-            CurrentTheme = Theme.Black;
-            new ThemeChanger(this).ChangeTheme(DefaultTheme);
+            CurrentTheme = DefaultTheme;
+            new ThemeChanger(this).ChangeTheme(CurrentTheme);
 
             DeleteUnnecessaryLabels();
         }
 
         #region Methods
-        /// <summary>
-        ///  Deletes not default labels
-        /// </summary>
-        private void DeleteUnnecessaryLabels()
-        {
-            DeleteLineLabel();
-            DeleteSymbolLabel();
-            DeleteFileStatusLabel();
-        }
 
-        /// <summary>
-        /// Switches file save mark ("*") in form text
-        /// </summary>
-        private void SwitchFileSavedMark()
-        {
-            switch (_isFileSaved)
-            {
-                case true:
-                    {
-                        MarkFileAsSaved();
-                    } break;
-                case false:
-                    {
-                        MarkFileAsUnsaved();
-                    } break;
-            }
-        }
-        /// <summary>
-        /// Marks current opened file as unsaved
-        /// </summary>
-        private void MarkFileAsUnsaved()
-        {
-            this.Text += this.Text.Last() != '*' ? "*" : String.Empty;
-            IsSavedLabel.Text = "File status: Unsaved";
-        }
-        /// <summary>
-        /// Marks current opened file as saved
-        /// </summary>
-        private void MarkFileAsSaved()
-        {
-            FileNameToFormText(_currentFile);
-            IsSavedLabel.Text = "File status: Saved";
-        }
-
-        /// <summary>
-        /// Sets form text as App name and file opened name
-        /// </summary>
-        /// <param name="FileName">Name of file to set</param>
-        private void FileNameToFormText(string FileName = "*") => this.Text = $"{_applicationName} | {Path.GetFileName(FileName)}";
-
+        #region File
         /// <summary>
         /// Display opened file content to FastColoredTextBox
         /// </summary>
@@ -178,6 +133,104 @@ namespace SourceCodeEditor
             FileNameToFormText(_currentFile);
             SaveFile();
         }
+        #endregion
+        #region Edit
+        private void undoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainTextField.Undo();
+        }
+        private void redoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainTextField.Redo();
+        }
+        private void cutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainTextField.Cut();
+        }
+        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainTextField.Copy();
+        }
+        private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainTextField.Paste();
+        }
+        #endregion
+        #region Theme
+        /// <summary>
+        /// Change theme of application to black
+        /// </summary>
+        public void blackToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CurrentTheme = Theme.Black;
+            new ThemeChanger(this).ChangeTheme();
+
+            whiteToolStripMenuItem.Checked = false;
+            blackToolStripMenuItem.Checked = true;
+        }
+        /// <summary>
+        /// Change theme of application to white
+        /// </summary>
+        public void whiteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CurrentTheme = Theme.White;
+            new ThemeChanger(this).ChangeTheme();
+
+            whiteToolStripMenuItem.Checked = true;
+            blackToolStripMenuItem.Checked = false;
+        }
+        #endregion
+
+
+        /// <summary>
+        ///  Deletes not default labels
+        /// </summary>
+        private void DeleteUnnecessaryLabels()
+        {
+            DeleteLineLabel();
+            DeleteSymbolLabel();
+            DeleteFileStatusLabel();
+        }
+
+        /// <summary>
+        /// Switches file save mark ("*") in form text
+        /// </summary>
+        private void SwitchFileSavedMark()
+        {
+            switch (_isFileSaved)
+            {
+                case true:
+                    {
+                        MarkFileAsSaved();
+                    } break;
+                case false:
+                    {
+                        MarkFileAsUnsaved();
+                    } break;
+            }
+        }
+        /// <summary>
+        /// Marks current opened file as unsaved
+        /// </summary>
+        private void MarkFileAsUnsaved()
+        {
+            this.Text += this.Text.Last() != '*' ? "*" : String.Empty;
+            IsSavedLabel.Text = "File status: Unsaved";
+        }
+        /// <summary>
+        /// Marks current opened file as saved
+        /// </summary>
+        private void MarkFileAsSaved()
+        {
+            FileNameToFormText(_currentFile);
+            IsSavedLabel.Text = "File status: Saved";
+        }
+
+        /// <summary>
+        /// Sets form text as App name and file opened name
+        /// </summary>
+        /// <param name="FileName">Name of file to set</param>
+        private void FileNameToFormText(string FileName = "*") => this.Text = $"{_applicationName} | {Path.GetFileName(FileName)}";
 
         /// <summary>
         /// Get all labels from StatusStrip
@@ -211,28 +264,6 @@ namespace SourceCodeEditor
             return labels;
         }
 
-        /// <summary>
-        /// Change theme of application to black
-        /// </summary>
-        public void blackToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            CurrentTheme = Theme.Black;
-            new ThemeChanger(this).ChangeTheme();
-
-            whiteToolStripMenuItem.Checked = false;
-            blackToolStripMenuItem.Checked = true;
-        }
-        /// <summary>
-        /// Change theme of application to white
-        /// </summary>
-        public void whiteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            CurrentTheme = Theme.White;
-            new ThemeChanger(this).ChangeTheme();
-
-            whiteToolStripMenuItem.Checked = true;
-            blackToolStripMenuItem.Checked = false;
-        }
 
         /// <summary>
         /// Show OptionsForm dialog
@@ -467,6 +498,10 @@ namespace SourceCodeEditor
                     break;
             }
         }
+
+        
         #endregion
+
+
     }
 }
