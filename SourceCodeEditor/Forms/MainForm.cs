@@ -6,9 +6,6 @@ namespace SourceCodeEditor
 {
     delegate DialogResult DialogRes(string text, string caption, MessageBoxButtons buttons, MessageBoxIcon icon);
 
-    ///TODO:
-    /// "Edit" tool in MainHeader
-
     /// <summary>
     /// Main form of Application
     /// </summary>

@@ -7,13 +7,16 @@
     <Compile Update="Forms\OptionsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="UserControls\Options\ColorsOptionsControl.cs">
+    <Compile Update="UserControls\Options\Colors\ColorsOptionsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="UserControls\Options\GeneralOptionsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="UserControls\Options\HotKeysOptionsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserControls\Options\Colors\SyntaxColorsOptionsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>

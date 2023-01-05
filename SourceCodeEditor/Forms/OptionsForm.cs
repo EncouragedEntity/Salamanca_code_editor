@@ -3,17 +3,22 @@ using SourceCodeEditor.Enums;
 using SourceCodeEditor.UserControls;
 using SourceCodeEditor.UserControls.Options;
 
+
+
+/// TODO:
+/// SyntaxColorsOptionsControl design and functionality
+
 namespace SourceCodeEditor.Forms
 {
     public partial class OptionsForm : Form
     {
         private UserControl? _currentControl = null;
-        
-        private MainForm? mainForm = null;
+
+        private MainForm mainForm;
 
         public bool ColorsChanged { get; set; } = false;
 
-        public OptionsForm(MainForm? mainForm)
+        public OptionsForm(MainForm mainForm)
         {
             InitializeComponent();
             this.mainForm = mainForm;
@@ -37,6 +42,7 @@ namespace SourceCodeEditor.Forms
             dataGridView1.Rows.Add("Theme");
             dataGridView1.Rows.Add("HotKeys");
             dataGridView1.Rows.Add("Colors");
+            dataGridView1.Rows.Add("Syntax colors");
         }
 
         /// <summary>
@@ -82,30 +88,38 @@ namespace SourceCodeEditor.Forms
             switch (options)
             {
                 case Options.General:
-                {
-                    var control = new GeneralOptionsControl(mainForm);
-                    LoadUserControl(control);
-                }
-                break;
+                    {
+                        var control = new GeneralOptionsControl(mainForm);
+                        LoadUserControl(control);
+                    }
+                    break;
 
                 case Options.Theme:
-                {
-                    var control = new ThemeOptionsControl(mainForm);
-                    LoadUserControl(control);
-                }
-                break;
+                    {
+                        var control = new ThemeOptionsControl(mainForm);
+                        LoadUserControl(control);
+                    }
+                    break;
 
                 case Options.HotKeys:
-                {
-                    var control = new HotKeysOptionsControl(mainForm);
-                    LoadUserControl(control);
-                }
-                break;
+                    {
+                        var control = new HotKeysOptionsControl(mainForm);
+                        LoadUserControl(control);
+                    }
+                    break;
+
                 case Options.Colors:
-                 {
-                    var control = new ColorsOptionsControl(mainForm!, this);
-                    LoadUserControl(control);
-                 }
+                    {
+                        var control = new ColorsOptionsControl(mainForm, this);
+                        LoadUserControl(control);
+                    }
+                    break;
+
+                case Options.SyntaxColors:
+                    {
+                        var control = new SyntaxColorsOptionsControl(mainForm);
+                        LoadUserControl(control);
+                    }
                     break;
             }
         }
@@ -135,6 +149,11 @@ namespace SourceCodeEditor.Forms
                 case "Colors":
                     {
                         ChangeOptionPanel(Options.Colors);
+                    }
+                    break;
+                case "Syntax colors":
+                    {
+                        ChangeOptionPanel(Options.SyntaxColors);
                     }
                     break;
             }

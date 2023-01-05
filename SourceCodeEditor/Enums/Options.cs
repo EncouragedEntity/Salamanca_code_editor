@@ -11,6 +11,7 @@ namespace SourceCodeEditor.Enums
         General,
         Theme,
         HotKeys,
-        Colors
+        Colors,
+        SyntaxColors
     }
 }
