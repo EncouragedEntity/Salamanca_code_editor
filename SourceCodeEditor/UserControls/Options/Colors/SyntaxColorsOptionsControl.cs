@@ -37,6 +37,7 @@ namespace SourceCodeEditor.UserControls.Options
                 buttons[i].BackColor = Colors[i];
             }
         }
+
         private void SetFontStyles()
         {
 
@@ -58,6 +59,53 @@ namespace SourceCodeEditor.UserControls.Options
         {
             SetButtonsColors();
             SetFontStyles();
+            SetButtonsEvents();
+        }
+
+        private SyntaxColors GetSyntaxColors()
+        {
+            var syntaxColors = new SyntaxColors();
+            var buttons = tableLayoutPanel1.Controls.OfType<Button>().ToList();
+            var fontStyleControls = tableLayoutPanel1.Controls.OfType<FontStyleControl>().ToList();
+
+            for (int i = 0; i < Properties.Count; i++)
+            {
+                var property = Properties[i];
+                property.SetValue(syntaxColors, Tuple.Create(buttons[i].BackColor, fontStyleControls[i].GetFontStyle()));
+            }
+
+            return syntaxColors;
+        }
+
+        private void SetButtonsEvents()
+        {
+            foreach (var button in tableLayoutPanel1.Controls.OfType<Button>())
+            {
+                button.Click += buttonColor_Click;
+            }
+        }
+
+        private void SetCurrentButtonColorToColorDialog(Button sender)
+        {
+            colorDialog1.FullOpen = true;
+            colorDialog1.Color = sender.BackColor;
+        }
+
+        private void buttonColor_Click(object? sender, EventArgs e)
+        {
+            var obj = (Button)sender!;
+            SetCurrentButtonColorToColorDialog(obj);
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                obj.BackColor = colorDialog1.Color;
+            }
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            SyntaxColors colors = GetSyntaxColors();
+            _mainForm.theme.syntaxColors = colors;
+            _mainForm.theme.syntaxColors.SetColorsToHighlighter(_mainForm.MainTextField);
         }
     }
 }
