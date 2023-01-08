@@ -23,7 +23,6 @@ namespace SourceCodeEditor.UserControls.Options
 
         private void SetButtonsColors()
         {
-
             foreach (var property in Properties)
             {
                 var value = (Tuple<Color, FontStyle>)property.GetValue(_syntaxColors)!;
@@ -106,6 +105,12 @@ namespace SourceCodeEditor.UserControls.Options
             SyntaxColors colors = GetSyntaxColors();
             _mainForm.theme.syntaxColors = colors;
             _mainForm.theme.syntaxColors.SetColorsToHighlighter(_mainForm.MainTextField);
+            new ThemeSerializer(_mainForm.theme, _mainForm).SerializeSyntax();
+        }
+
+        private void buttonToDefault_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

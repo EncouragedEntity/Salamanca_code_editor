@@ -50,20 +50,27 @@ namespace SourceCodeEditor
             new HotKeysConfig(MainHeader).LoadHotkeysConfig();
 
             //Get default theme from file and apply it on load
-            theme = ThemeSerializer.DeserializeTheme(theme!.ThemePath)!;
+            theme = ThemeSerializer.Deserialize<CurrentTheme>(theme!.ThemePath)!;
+            theme.syntaxColors = ThemeSerializer.Deserialize<SyntaxColors>("BlackSyntax.syn");
             CurrentTheme = DefaultTheme;
             new ThemeChanger(this).ChangeTheme(CurrentTheme);
-
             DeleteUnnecessaryLabels();
         }
 
         #region Methods
 
         #region File
+
+        private async Task ReadTextFromFile()
+        {
+            var astr = await File.ReadAllTextAsync(_currentFile);
+            MainTextField.Text = astr;
+        }
+
         /// <summary>
         /// Display opened file content to FastColoredTextBox
         /// </summary>
-        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        private async void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var op = openFileDialog1;
             op.FileName = "untitled.txt";
@@ -72,8 +79,9 @@ namespace SourceCodeEditor
             _isFileCreated = true;
             _currentFile = op.FileName;
             FileNameToFormText(_currentFile);
-            MainTextField.Text = File.ReadAllText(_currentFile);
-        }
+
+            await ReadTextFromFile();
+        }       
         /// <summary>
         /// Save RichTextBox content to current file
         /// </summary>
@@ -496,10 +504,6 @@ namespace SourceCodeEditor
                     break;
             }
         }
-
-        
         #endregion
-
-
     }
 }

@@ -83,9 +83,10 @@ namespace SourceCodeEditor.AppearenceConfig
         public void ChangeGeneralThemeToBlack()
         {
             mainForm.theme.ThemePath = currentTheme.ThemePath = "BlackTheme.theme";
+            mainForm.theme.syntaxColors.SyntaxPath = "BlackSyntax.syn";
             _theme = Theme.Black;
 
-            currentTheme = ThemeSerializer.DeserializeTheme(currentTheme.ThemePath)!;
+            currentTheme = ThemeSerializer.Deserialize<CurrentTheme>(currentTheme.ThemePath)!;
 
             _mainTextField.BackColor = currentTheme.MainTextFieldBack;
             _mainTextField.ForeColor = currentTheme.MainTextFieldFore;
@@ -129,8 +130,10 @@ namespace SourceCodeEditor.AppearenceConfig
         {
             _theme = Theme.White;
             mainForm.theme.ThemePath =  currentTheme.ThemePath = "WhiteTheme.theme";
+            mainForm.theme.syntaxColors.SyntaxPath = "WhiteSyntax.syn";
 
-            currentTheme = ThemeSerializer.DeserializeTheme(currentTheme.ThemePath)!;
+
+            currentTheme = ThemeSerializer.Deserialize<CurrentTheme>(currentTheme.ThemePath)!;
             _mainTextField.BackColor = currentTheme.MainTextFieldBack;
             _mainTextField.ForeColor = currentTheme.MainTextFieldFore;
             _mainTextField.IndentBackColor = currentTheme.MainTextFieldIndentBack;
@@ -301,11 +304,13 @@ namespace SourceCodeEditor.AppearenceConfig
             {
                 case Theme.Black:
                     {
+                        currentTheme.syntaxColors.SyntaxPath = "BlackSyntax.syn";
                         SetColorsToCurrentThemeBlack();
                     }
                     break;
                 case Theme.White:
                     {
+                        currentTheme.syntaxColors.SyntaxPath = "WhiteSyntax.syn";
                         SetColorsToCurrentThemeWhite();
                     }
                     break;

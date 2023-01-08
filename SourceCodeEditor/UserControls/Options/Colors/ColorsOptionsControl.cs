@@ -41,7 +41,7 @@ namespace SourceCodeEditor.UserControls.Options
             var path = form.theme.ThemePath;
             if (File.Exists(path))
             {
-                CurrentTheme = ThemeSerializer.DeserializeTheme(path)!;
+                CurrentTheme = ThemeSerializer.Deserialize<CurrentTheme>(path)!;
                 return;
             }
             File.Create(path);
@@ -181,7 +181,7 @@ namespace SourceCodeEditor.UserControls.Options
         /// <param name="e"></param>
         private void buttonDefault_Click(object sender, EventArgs e)
         {
-            CurrentTheme = ThemeSerializer.DeserializeTheme(_defaultTheme)!;
+            CurrentTheme = ThemeSerializer.Deserialize<CurrentTheme>(_defaultTheme)!;
             SetButtonsColors();
             buttonSave_Click(sender,e);
         }

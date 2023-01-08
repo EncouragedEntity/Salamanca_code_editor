@@ -1,4 +1,5 @@
 ﻿using FastColoredTextBoxNS;
+using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
 namespace SourceCodeEditor.AppearenceConfig
@@ -51,7 +52,6 @@ namespace SourceCodeEditor.AppearenceConfig
             _theme.LabelsFore = firstLabel!.ForeColor;
             _theme.LabelsBack = firstLabel!.BackColor;
         }
-
         private void GetColors()
         {
             _theme.HeaderBack = _header.BackColor;
@@ -66,26 +66,30 @@ namespace SourceCodeEditor.AppearenceConfig
             GetLabelsColors();  
         }
 
-       /* public void SetColorsOfTheme()
-        {
-            SetColors();
-        }*/
-
-        public static CurrentTheme? DeserializeTheme(string path)
+        public static T? Deserialize<T>(string path)
         {
             using (Stream str = File.Open(path, FileMode.Open))
             {
                 var bf = new BinaryFormatter();
-                return bf.Deserialize(str) as CurrentTheme;
+                return (T)bf.Deserialize(str);
             }
         }
-
         public void SerializeTheme()
         {
             using (Stream str = File.Open(_theme.ThemePath, FileMode.Create))
             {
                 var bf = new BinaryFormatter();
                 bf.Serialize(str, _theme);
+                str.Close();
+            }
+        }
+
+        public void SerializeSyntax()
+        {
+            using (Stream str = File.Open(_theme.syntaxColors.SyntaxPath, FileMode.Create))
+            {
+                var bf = new BinaryFormatter();
+                bf.Serialize(str, _theme.syntaxColors);
                 str.Close();
             }
         }

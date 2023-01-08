@@ -4,6 +4,7 @@ namespace SourceCodeEditor.AppearenceConfig
     [Serializable]
     public class SyntaxColors
     {
+        public string SyntaxPath = "BlackSyntax.syn";
 
         public Tuple<Color, FontStyle> AttributeStyle { get; set; }
         public Tuple<Color, FontStyle> AttributeValueStyle { get; set; }
@@ -36,7 +37,7 @@ namespace SourceCodeEditor.AppearenceConfig
         public Tuple<Color, FontStyle> XmlTagNameStyle { get; set; }
 
         #region Constructors
-        public SyntaxColors() : this(Tuple.Create(Color.Transparent,FontStyle.Regular), Tuple.Create(Color.Transparent, FontStyle.Regular),
+        public SyntaxColors() : this(Tuple.Create(Color.Transparent, FontStyle.Regular), Tuple.Create(Color.Transparent, FontStyle.Regular),
                                      Tuple.Create(Color.Transparent, FontStyle.Regular), Tuple.Create(Color.Transparent, FontStyle.Regular),
                                      Tuple.Create(Color.Transparent, FontStyle.Regular), Tuple.Create(Color.Transparent, FontStyle.Regular),
                                      Tuple.Create(Color.Transparent, FontStyle.Regular), Tuple.Create(Color.Transparent, FontStyle.Regular),
@@ -47,7 +48,7 @@ namespace SourceCodeEditor.AppearenceConfig
                                      Tuple.Create(Color.Transparent, FontStyle.Regular), Tuple.Create(Color.Transparent, FontStyle.Regular),
                                      Tuple.Create(Color.Transparent, FontStyle.Regular), Tuple.Create(Color.Transparent, FontStyle.Regular),
                                      Tuple.Create(Color.Transparent, FontStyle.Regular), Tuple.Create(Color.Transparent, FontStyle.Regular),
-                                     Tuple.Create(Color.Transparent, FontStyle.Regular)) { }
+                                     Tuple.Create(Color.Transparent, FontStyle.Regular)) { SyntaxPath = "BlackSyntax.syn"; }
 
         public SyntaxColors(Tuple<Color, FontStyle> className, Tuple<Color, FontStyle> stringStyle, Tuple<Color, FontStyle> commentStyle,
                             Tuple<Color, FontStyle> commentTagStyle, Tuple<Color, FontStyle> keywordStyle, Tuple<Color, FontStyle> keywordStyle2,
@@ -58,6 +59,8 @@ namespace SourceCodeEditor.AppearenceConfig
                             Tuple<Color, FontStyle> xmlAttributeStyle, Tuple<Color, FontStyle> xmlAttributeValueStyle,
                             Tuple<Color, FontStyle> xmlCDataStyle, Tuple<Color, FontStyle> xmlTagBracketStyle, Tuple<Color, FontStyle> xmlTagNameSTyle)
         {
+            SyntaxPath = "BlackSyntax.syn";
+
             ClassNameStyle = className;
             StringStyle = stringStyle;
             CommentStyle = commentStyle;
@@ -112,15 +115,15 @@ namespace SourceCodeEditor.AppearenceConfig
             textBox.SyntaxHighlighter.TypesStyle = new TextStyle(new SolidBrush(TypesStyle.Item1), null, TypesStyle.Item2);
             textBox.SyntaxHighlighter.VariableStyle = new TextStyle(new SolidBrush(VariableStyle.Item1), null, VariableStyle.Item2);
             textBox.SyntaxHighlighter.XmlAttributeStyle = new TextStyle(new SolidBrush(XmlAttributeStyle.Item1), null, XmlAttributeStyle.Item2);
-            textBox.SyntaxHighlighter.XmlAttributeValueStyle = new TextStyle(new SolidBrush(XmlAttributeValueStyle.Item1), 
+            textBox.SyntaxHighlighter.XmlAttributeValueStyle = new TextStyle(new SolidBrush(XmlAttributeValueStyle.Item1),
                                                                              null, XmlAttributeValueStyle.Item2);
             textBox.SyntaxHighlighter.XmlCDataStyle = new TextStyle(new SolidBrush(XmlCDataStyle.Item1), null, XmlCDataStyle.Item2);
-            textBox.SyntaxHighlighter.XmlTagBracketStyle = new TextStyle(new SolidBrush(XmlTagBracketStyle.Item1), 
+            textBox.SyntaxHighlighter.XmlTagBracketStyle = new TextStyle(new SolidBrush(XmlTagBracketStyle.Item1),
                                                                          null, XmlTagBracketStyle.Item2);
             textBox.SyntaxHighlighter.XmlTagNameStyle = new TextStyle(new SolidBrush(XmlTagNameStyle.Item1), null, XmlTagNameStyle.Item2);
 
             textBox.Text = sercon.Deserialize();
-            textBox.SelectionStart = SelectionStart; 
+            textBox.SelectionStart = SelectionStart;
         }
     }
 }
