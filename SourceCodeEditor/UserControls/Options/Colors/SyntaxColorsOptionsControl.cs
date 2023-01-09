@@ -19,6 +19,7 @@ namespace SourceCodeEditor.UserControls.Options
             Colors = new List<Color>();
             FontStyles = new List<FontStyle>();
             InitializeComponent();
+            SetButtonsEvents();
         }
 
         private void SetButtonsColors()
@@ -58,7 +59,6 @@ namespace SourceCodeEditor.UserControls.Options
         {
             SetButtonsColors();
             SetFontStyles();
-            SetButtonsEvents();
         }
 
         private SyntaxColors GetSyntaxColors()
