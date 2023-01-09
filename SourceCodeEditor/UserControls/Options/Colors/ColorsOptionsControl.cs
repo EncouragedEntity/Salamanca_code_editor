@@ -31,6 +31,7 @@ namespace SourceCodeEditor.UserControls.Options
 
             SetTheme();
             InitializeComponent();
+            SetButtonsEvents();
         }
 
         /// <summary>
@@ -126,7 +127,6 @@ namespace SourceCodeEditor.UserControls.Options
 
         private void ColorsOptionsControl_Load(object sender, EventArgs e)
         {
-            SetButtonsEvents();
             SetButtonsColors();
         }
 
