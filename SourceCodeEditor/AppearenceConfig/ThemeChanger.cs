@@ -18,7 +18,6 @@ namespace SourceCodeEditor.AppearenceConfig
         private readonly IEnumerable<ToolStripStatusLabel> _labels;
 
         private int SelectionStart = 0;
-        private bool IsContentSerialized { get; set; } = false;
 
         public ThemeChanger(MainForm form, Theme theme, MenuStrip header, FastColoredTextBox mainTextField, StatusStrip footer, IEnumerable<ToolStripStatusLabel> labels)
         {
@@ -38,8 +37,6 @@ namespace SourceCodeEditor.AppearenceConfig
             _mainTextField = form.MainTextField;
             _footer = form.MainFooter;
             _labels = form.GetLabelsFromForm();
-
-            IsContentSerialized = false;
         }
         /// <summary>
         /// Change theme
@@ -82,8 +79,8 @@ namespace SourceCodeEditor.AppearenceConfig
         /// </summary>
         public void ChangeGeneralThemeToBlack()
         {
-            mainForm.theme.ThemePath = currentTheme.ThemePath = "BlackTheme.theme";
-            mainForm.theme.syntaxColors.SyntaxPath = "BlackSyntax.syn";
+            mainForm.theme.ThemePath = currentTheme.ThemePath = "Themes/BlackTheme.theme";
+            mainForm.theme.syntaxColors.SyntaxPath = "SyntaxColors/BlackSyntax.syn";
             _theme = Theme.Black;
 
             currentTheme = ThemeSerializer.Deserialize<CurrentTheme>(currentTheme.ThemePath)!;
@@ -129,8 +126,8 @@ namespace SourceCodeEditor.AppearenceConfig
         public void ChangeGeneralThemeToWhite()
         {
             _theme = Theme.White;
-            mainForm.theme.ThemePath =  currentTheme.ThemePath = "WhiteTheme.theme";
-            mainForm.theme.syntaxColors.SyntaxPath = "WhiteSyntax.syn";
+            mainForm.theme.ThemePath =  currentTheme.ThemePath = "Themes/WhiteTheme.theme";
+            mainForm.theme.syntaxColors.SyntaxPath = "SyntaxColors/WhiteSyntax.syn";
 
 
             currentTheme = ThemeSerializer.Deserialize<CurrentTheme>(currentTheme.ThemePath)!;
@@ -177,6 +174,8 @@ namespace SourceCodeEditor.AppearenceConfig
 
         private void SetColorsToHighLighterBlack()
         {
+            currentTheme.syntaxColors.SetColorsToHighlighter(mainForm.MainTextField);
+            /*
             _mainTextField.SyntaxHighlighter.ClassNameStyle = new TextStyle(Brushes.MediumSpringGreen, null, FontStyle.Bold);
             _mainTextField.SyntaxHighlighter.StringStyle = new TextStyle(Brushes.Orange, null, FontStyle.Regular);
             _mainTextField.SyntaxHighlighter.CommentStyle = new TextStyle(Brushes.LimeGreen, null, FontStyle.Regular);
@@ -200,9 +199,12 @@ namespace SourceCodeEditor.AppearenceConfig
             _mainTextField.SyntaxHighlighter.XmlCDataStyle = new TextStyle(Brushes.Salmon, null, FontStyle.Regular);
             _mainTextField.SyntaxHighlighter.XmlTagBracketStyle = new TextStyle(Brushes.Blue, null, FontStyle.Regular);
             _mainTextField.SyntaxHighlighter.XmlTagNameStyle = new TextStyle(Brushes.Salmon, null, FontStyle.Regular);
+            */
         }
         private void SetColorsToHighLighterWhite()
         {
+            SetColorsToHighLighterBlack();
+            /*
             _mainTextField.SyntaxHighlighter.ClassNameStyle = new TextStyle(Brushes.DarkGreen, null, FontStyle.Bold);
             _mainTextField.SyntaxHighlighter.StringStyle = new TextStyle(Brushes.DarkRed, null, FontStyle.Regular);
             _mainTextField.SyntaxHighlighter.CommentStyle = new TextStyle(Brushes.Green, null, FontStyle.Regular);
@@ -226,6 +228,7 @@ namespace SourceCodeEditor.AppearenceConfig
             _mainTextField.SyntaxHighlighter.XmlCDataStyle = new TextStyle(Brushes.Salmon, null, FontStyle.Regular);
             _mainTextField.SyntaxHighlighter.XmlTagBracketStyle = new TextStyle(Brushes.Blue, null, FontStyle.Regular);
             _mainTextField.SyntaxHighlighter.XmlTagNameStyle = new TextStyle(Brushes.Salmon, null, FontStyle.Regular);
+            */
         }
         private void SetColorsToHighlighter()
         {
@@ -233,11 +236,13 @@ namespace SourceCodeEditor.AppearenceConfig
             {
                 case Theme.Black: 
                     {
+                        currentTheme.syntaxColors.SyntaxPath = "SyntaxColors/BlackSyntax.syn";
                         SetColorsToHighLighterBlack();
                     }
                     break;
                 case Theme.White:
                     {
+                        currentTheme.syntaxColors.SyntaxPath = "SyntaxColors/WhiteSyntax.syn";
                         SetColorsToHighLighterWhite();
                     }
                     break;
@@ -246,6 +251,19 @@ namespace SourceCodeEditor.AppearenceConfig
         }
 
         private void SetColorsToCurrentThemeBlack()
+        {
+            currentTheme.syntaxColors = ThemeSerializer.Deserialize<SyntaxColors>("SyntaxColors/BlackSyntax.syn");
+
+
+
+        }
+        private void SetColorsToCurrentThemeWhite()
+        {
+            currentTheme.syntaxColors = ThemeSerializer.Deserialize<SyntaxColors>("SyntaxColors/WhiteSyntax.syn");
+
+        }
+
+        public void SetColorsToBlackThemeManually()
         {
             currentTheme.syntaxColors!.ClassNameStyle = Tuple.Create(Color.MediumSpringGreen, FontStyle.Bold);
             currentTheme.syntaxColors.StringStyle = Tuple.Create(Color.Orange, FontStyle.Regular);
@@ -271,7 +289,7 @@ namespace SourceCodeEditor.AppearenceConfig
             currentTheme.syntaxColors.XmlTagBracketStyle = Tuple.Create(Color.Blue, FontStyle.Regular);
             currentTheme.syntaxColors.XmlTagNameStyle = Tuple.Create(Color.Salmon, FontStyle.Regular);
         }
-        private void SetColorsToCurrentThemeWhite()
+        public void SetColorsToWhiteThemeManually()
         {
             currentTheme.syntaxColors!.ClassNameStyle = Tuple.Create(Color.DarkGreen, FontStyle.Bold);
             currentTheme.syntaxColors.StringStyle = Tuple.Create(Color.DarkRed, FontStyle.Regular);
@@ -297,20 +315,22 @@ namespace SourceCodeEditor.AppearenceConfig
             currentTheme.syntaxColors.XmlTagBracketStyle = Tuple.Create(Color.Blue, FontStyle.Regular);
             currentTheme.syntaxColors.XmlTagNameStyle = Tuple.Create(Color.Salmon, FontStyle.Regular);
         }
+
         private void SetColorsToCurrentTheme()
         {
             currentTheme.syntaxColors = new SyntaxColors();
+
             switch (_theme)
             {
                 case Theme.Black:
                     {
-                        currentTheme.syntaxColors.SyntaxPath = "BlackSyntax.syn";
+                        currentTheme.syntaxColors.SyntaxPath = "SyntaxColors/BlackSyntax.syn";
                         SetColorsToCurrentThemeBlack();
                     }
                     break;
                 case Theme.White:
                     {
-                        currentTheme.syntaxColors.SyntaxPath = "WhiteSyntax.syn";
+                        currentTheme.syntaxColors.SyntaxPath = "SyntaxColors/WhiteSyntax.syn";
                         SetColorsToCurrentThemeWhite();
                     }
                     break;
@@ -323,13 +343,14 @@ namespace SourceCodeEditor.AppearenceConfig
         /// </summary>
         public void ChangeSyntaxHighlithing()
         {
+
             var sercon = new ContentSerializer(_mainTextField.Text);
             _mainTextField.ClearStylesBuffer();
             sercon.SerializeContent();
             SelectionStart = _mainTextField.SelectionStart;
             _mainTextField.Text = String.Empty;
-            SetColorsToHighlighter();
             SetColorsToCurrentTheme();
+            SetColorsToHighlighter();
             mainForm.theme = currentTheme;
             _mainTextField.Text = sercon.Deserialize();
             _mainTextField.SelectionStart = SelectionStart;

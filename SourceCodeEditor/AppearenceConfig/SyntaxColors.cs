@@ -89,11 +89,9 @@ namespace SourceCodeEditor.AppearenceConfig
 
         public void SetColorsToHighlighter(FastColoredTextBox textBox)
         {
-            var sercon = new ContentSerializer(textBox.Text);
-            sercon.SerializeContent();
+            string Text = textBox.Text;
             textBox.Text = String.Empty;
             int SelectionStart = textBox.SelectionStart;
-
 
             textBox.ClearStylesBuffer();
             textBox.SyntaxHighlighter.ClassNameStyle = new TextStyle(new SolidBrush(ClassNameStyle.Item1), null, ClassNameStyle.Item2);
@@ -122,7 +120,7 @@ namespace SourceCodeEditor.AppearenceConfig
                                                                          null, XmlTagBracketStyle.Item2);
             textBox.SyntaxHighlighter.XmlTagNameStyle = new TextStyle(new SolidBrush(XmlTagNameStyle.Item1), null, XmlTagNameStyle.Item2);
 
-            textBox.Text = sercon.Deserialize();
+            textBox.Text = Text;
             textBox.SelectionStart = SelectionStart;
         }
     }

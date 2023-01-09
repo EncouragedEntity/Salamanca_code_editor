@@ -26,8 +26,8 @@ namespace SourceCodeEditor.UserControls.Options
         {
             this.form = form;
             optionsForm = optForm;
-
-            _defaultTheme = form.CurrentTheme == Enums.Theme.Black ? "BlackThemeDefault.theme" : "WhiteThemeDefault.theme";
+            form.theme.ThemePath = form.CurrentTheme == Enums.Theme.Black ? "Themes/BlackTheme.theme" : "Themes/WhiteTheme.theme";
+            _defaultTheme = form.CurrentTheme == Enums.Theme.Black ? "Themes/BlackThemeDefault.theme" : "Themes/WhiteThemeDefault.theme";
 
             SetTheme();
             InitializeComponent();

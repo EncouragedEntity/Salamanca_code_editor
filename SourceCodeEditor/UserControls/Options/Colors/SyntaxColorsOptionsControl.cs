@@ -103,6 +103,10 @@ namespace SourceCodeEditor.UserControls.Options
         private void buttonSave_Click(object sender, EventArgs e)
         {
             SyntaxColors colors = GetSyntaxColors();
+            if (_mainForm.CurrentTheme == Enums.Theme.Black)
+                colors.SyntaxPath = "SyntaxColors/BlackSyntax.syn";
+            else
+                colors.SyntaxPath = "SyntaxColors/WhiteSyntax.syn";
             _mainForm.theme.syntaxColors = colors;
             _mainForm.theme.syntaxColors.SetColorsToHighlighter(_mainForm.MainTextField);
             new ThemeSerializer(_mainForm.theme, _mainForm).SerializeSyntax();
@@ -110,7 +114,9 @@ namespace SourceCodeEditor.UserControls.Options
 
         private void buttonToDefault_Click(object sender, EventArgs e)
         {
-
+            _mainForm.theme.syntaxColors = ThemeSerializer.Deserialize<SyntaxColors>(_mainForm.theme.syntaxColors.SyntaxPath);
+            SyntaxColorsOptionsControl_Load(sender, e);
+            buttonSave_Click(sender,e);
         }
     }
 }

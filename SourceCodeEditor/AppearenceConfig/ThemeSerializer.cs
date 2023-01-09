@@ -1,5 +1,4 @@
 ﻿using FastColoredTextBoxNS;
-using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
 namespace SourceCodeEditor.AppearenceConfig
@@ -68,11 +67,11 @@ namespace SourceCodeEditor.AppearenceConfig
 
         public static T? Deserialize<T>(string path)
         {
-            using (Stream str = File.Open(path, FileMode.Open))
-            {
-                var bf = new BinaryFormatter();
-                return (T)bf.Deserialize(str);
-            }
+                using (Stream str = File.Open(path, FileMode.Open))
+                {
+                    var bf = new BinaryFormatter();
+                    return (T)bf.Deserialize(str);
+                }
         }
         public void SerializeTheme()
         {

@@ -3,7 +3,7 @@
     [Serializable]
     public class CurrentTheme
     {
-        public string ThemePath = "BlackTheme.theme";
+        public string ThemePath = "Themes/BlackTheme.theme";
 
         public Color HeaderBack { get; set; }
         public Color HeaderFore { get; set; }

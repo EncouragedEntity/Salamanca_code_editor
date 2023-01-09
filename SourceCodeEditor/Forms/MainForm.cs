@@ -50,8 +50,9 @@ namespace SourceCodeEditor
             new HotKeysConfig(MainHeader).LoadHotkeysConfig();
 
             //Get default theme from file and apply it on load
-            theme = ThemeSerializer.Deserialize<CurrentTheme>(theme!.ThemePath)!;
-            theme.syntaxColors = ThemeSerializer.Deserialize<SyntaxColors>("BlackSyntax.syn");
+            theme.ThemePath = "Themes/BlackTheme.theme";
+            theme = ThemeSerializer.Deserialize<CurrentTheme>("Themes/BlackTheme.theme")!;
+            theme.syntaxColors = ThemeSerializer.Deserialize<SyntaxColors>("SyntaxColors/BlackSyntax.syn");
             CurrentTheme = DefaultTheme;
             new ThemeChanger(this).ChangeTheme(CurrentTheme);
             DeleteUnnecessaryLabels();
@@ -168,6 +169,7 @@ namespace SourceCodeEditor
         /// </summary>
         public void blackToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            theme.syntaxColors.SyntaxPath = "SyntaxColors/BlackSyntax.syn";
             CurrentTheme = Theme.Black;
             new ThemeChanger(this).ChangeTheme();
 
@@ -179,6 +181,7 @@ namespace SourceCodeEditor
         /// </summary>
         public void whiteToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            theme.syntaxColors.SyntaxPath = "SyntaxColors/WhiteSyntax.syn";
             CurrentTheme = Theme.White;
             new ThemeChanger(this).ChangeTheme();
 
