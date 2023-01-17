@@ -62,11 +62,13 @@ namespace SourceCodeEditor
             this.currentLineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fileStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zoomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.syntaxToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.LineCountLable = new System.Windows.Forms.ToolStripStatusLabel();
             this.SymbolCountLable = new System.Windows.Forms.ToolStripStatusLabel();
             this.CurrentLineLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.IsSavedLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.zoomPercentageLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.syntaxLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.MainHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainTextField)).BeginInit();
             this.MainFooter.SuspendLayout();
@@ -309,7 +311,8 @@ namespace SourceCodeEditor
             this.SymbolCountLable,
             this.CurrentLineLabel,
             this.IsSavedLabel,
-            this.zoomPercentageLabel});
+            this.zoomPercentageLabel,
+            this.syntaxLabel});
             this.MainFooter.Location = new System.Drawing.Point(0, 424);
             this.MainFooter.Name = "MainFooter";
             this.MainFooter.Size = new System.Drawing.Size(800, 26);
@@ -324,16 +327,17 @@ namespace SourceCodeEditor
             this.symbolToolStripMenuItem,
             this.currentLineToolStripMenuItem,
             this.fileStatusToolStripMenuItem,
-            this.zoomToolStripMenuItem});
+            this.zoomToolStripMenuItem,
+            this.syntaxToolStripMenuItem1});
             this.FooterContext.Name = "contextMenuStrip1";
-            this.FooterContext.Size = new System.Drawing.Size(179, 134);
+            this.FooterContext.Size = new System.Drawing.Size(211, 188);
             // 
             // linesToolStripMenuItem
             // 
             this.linesToolStripMenuItem.Checked = true;
             this.linesToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.linesToolStripMenuItem.Name = "linesToolStripMenuItem";
-            this.linesToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
+            this.linesToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.linesToolStripMenuItem.Text = "Lines";
             this.linesToolStripMenuItem.Click += new System.EventHandler(this.linesToolStripMenuItem_Click);
             // 
@@ -342,7 +346,7 @@ namespace SourceCodeEditor
             this.symbolToolStripMenuItem.Checked = true;
             this.symbolToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.symbolToolStripMenuItem.Name = "symbolToolStripMenuItem";
-            this.symbolToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
+            this.symbolToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.symbolToolStripMenuItem.Text = "Current symbol";
             this.symbolToolStripMenuItem.Click += new System.EventHandler(this.symbolToolStripMenuItem_Click);
             // 
@@ -351,7 +355,7 @@ namespace SourceCodeEditor
             this.currentLineToolStripMenuItem.Checked = true;
             this.currentLineToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.currentLineToolStripMenuItem.Name = "currentLineToolStripMenuItem";
-            this.currentLineToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
+            this.currentLineToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.currentLineToolStripMenuItem.Text = "Current line";
             this.currentLineToolStripMenuItem.Click += new System.EventHandler(this.currentLineToolStripMenuItem_Click);
             // 
@@ -360,7 +364,7 @@ namespace SourceCodeEditor
             this.fileStatusToolStripMenuItem.Checked = true;
             this.fileStatusToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.fileStatusToolStripMenuItem.Name = "fileStatusToolStripMenuItem";
-            this.fileStatusToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
+            this.fileStatusToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.fileStatusToolStripMenuItem.Text = "File status";
             this.fileStatusToolStripMenuItem.Click += new System.EventHandler(this.fileStatusToolStripMenuItem_Click);
             // 
@@ -369,9 +373,18 @@ namespace SourceCodeEditor
             this.zoomToolStripMenuItem.Checked = true;
             this.zoomToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.zoomToolStripMenuItem.Name = "zoomToolStripMenuItem";
-            this.zoomToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
+            this.zoomToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.zoomToolStripMenuItem.Text = " Zoom";
             this.zoomToolStripMenuItem.Click += new System.EventHandler(this.zoomToolStripMenuItem_Click);
+            // 
+            // syntaxToolStripMenuItem1
+            // 
+            this.syntaxToolStripMenuItem1.Checked = true;
+            this.syntaxToolStripMenuItem1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.syntaxToolStripMenuItem1.Name = "syntaxToolStripMenuItem1";
+            this.syntaxToolStripMenuItem1.Size = new System.Drawing.Size(210, 26);
+            this.syntaxToolStripMenuItem1.Text = "Syntax";
+            this.syntaxToolStripMenuItem1.Click += new System.EventHandler(this.syntaxToolStripMenuItem1_Click);
             // 
             // LineCountLable
             // 
@@ -410,6 +423,13 @@ namespace SourceCodeEditor
             this.zoomPercentageLabel.Text = "Zoom: 100%";
             this.zoomPercentageLabel.ToolTipText = "Click to set to default";
             this.zoomPercentageLabel.Click += new System.EventHandler(this.zoomPercentageLabel_Click);
+            // 
+            // syntaxLabel
+            // 
+            this.syntaxLabel.ForeColor = System.Drawing.Color.White;
+            this.syntaxLabel.Name = "syntaxLabel";
+            this.syntaxLabel.Size = new System.Drawing.Size(109, 20);
+            this.syntaxLabel.Text = "Syntax: Custom";
             // 
             // MainForm
             // 
@@ -474,5 +494,7 @@ namespace SourceCodeEditor
         private ToolStripMenuItem cutToolStripMenuItem;
         private ToolStripMenuItem copyToolStripMenuItem;
         private ToolStripMenuItem pasteToolStripMenuItem;
+        public ToolStripStatusLabel syntaxLabel;
+        private ToolStripMenuItem syntaxToolStripMenuItem1;
     }
 }

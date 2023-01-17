@@ -60,7 +60,6 @@ namespace SourceCodeEditor
         #region Methods
 
         #region File
-
         private async Task ReadTextFromFile()
         {
             var astr = await File.ReadAllTextAsync(_currentFile);
@@ -195,9 +194,11 @@ namespace SourceCodeEditor
         /// </summary>
         private void DeleteUnnecessaryLabels()
         {
+            DeleteLineCountLabel();
             DeleteLineLabel();
             DeleteSymbolLabel();
             DeleteFileStatusLabel();
+            DeleteSyntaxLabel();
         }
 
         /// <summary>
@@ -311,6 +312,10 @@ namespace SourceCodeEditor
         {
             DeleteStatusLabel(zoomPercentageLabel, zoomToolStripMenuItem);
         }
+        private void DeleteSyntaxLabel()
+        {
+            DeleteStatusLabel(syntaxLabel,syntaxToolStripMenuItem1);
+        }
 
         /// <summary>
         /// Line count status switching
@@ -407,7 +412,22 @@ namespace SourceCodeEditor
                 button.ForeColor = Color.Black;
             MainFooter.Items.Add(button);
         }
-
+        private void syntaxToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var item = (ToolStripMenuItem)sender;
+            var button = syntaxLabel;
+            if (item.Checked)
+            {
+                DeleteSyntaxLabel();
+                return;
+            }
+            item.Checked = true;
+            if (CurrentTheme == Theme.Black)
+                button.ForeColor = Color.White;
+            else
+                button.ForeColor = Color.Black;
+            MainFooter.Items.Add(button);
+        }
         /// <summary>
         /// Set the selection details into status labels
         /// </summary>
@@ -507,5 +527,7 @@ namespace SourceCodeEditor
             }
         }
         #endregion
+
+
     }
 }

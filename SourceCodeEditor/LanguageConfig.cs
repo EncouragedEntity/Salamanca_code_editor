@@ -61,6 +61,7 @@ namespace SourceCodeEditor
         private void LanguageItem_Click(object? sender, EventArgs e)
         {
             var item = (ToolStripMenuItem)sender!;
+            var status = MainForm.syntaxLabel;
             RemoveCheckFromOtherItems();
             item.Checked = true;
 
@@ -122,6 +123,7 @@ namespace SourceCodeEditor
                     }
                     break;
             }
+            status.Text = $"Syntax: {item.Text}";
             new ThemeChanger(MainForm).ChangeSyntaxHighlithing();
 
             File.Delete("TextFieldContent.bin");
