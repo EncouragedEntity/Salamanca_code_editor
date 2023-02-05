@@ -1,8 +1,10 @@
-﻿namespace SourceCodeEditor.Forms
+﻿using FastColoredTextBoxNS;
+
+namespace SourceCodeEditor.Forms
 {
     public partial class TemplatesForm : Form
     {
-        public TemplatesForm()
+        public TemplatesForm(FastColoredTextBox textField)
         {
             InitializeComponent();
             SetButtonsEvents();
@@ -27,7 +29,39 @@
 
         private void ButtonClick(object sender, EventArgs e)
         {
-            MessageBox.Show("hello");
+            var button = (PictureBox)sender;
+            int templateNum = int.Parse(button.Name.Last().ToString());
+
+            if (button.Name.Contains("Play"))
+            {
+                TemplatePlay(templateNum);
+                return;
+            }
+            if (button.Name.Contains("Edit"))
+            {
+                TemplateEdit(templateNum);
+                return;
+            }
+            if (button.Name.Contains("Delete"))
+            {
+                TemplateDelete(templateNum);
+                return;
+            }
+        }
+
+        private void TemplatePlay(int templateNumber)
+        {
+            
+        }
+
+        private void TemplateEdit(int templateNumber)
+        {
+
+        }
+
+        private void TemplateDelete(int templateNumber)
+        {
+
         }
 
         private void TemplatesForm_Load(object sender, EventArgs e)

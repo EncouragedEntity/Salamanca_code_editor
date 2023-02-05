@@ -18,6 +18,7 @@ namespace SourceCodeEditor
         private Theme DefaultTheme { get; set; } = Theme.Black;
         public CurrentTheme theme = new CurrentTheme();
         public Font DefaultTextFont { get; set; } = new Font(new FontFamily("Courier New"), 12);
+        public List<Template> Templates { get; set; } = new List<Template>(10);
 
         public WindowState StateOfWindow { get; set; } = Enums.WindowState.Windowed;
         public int DefaultZoom { get; set; } = 100;
@@ -528,11 +529,8 @@ namespace SourceCodeEditor
 
         private void templatesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new TemplatesForm().ShowDialog();
+            new TemplatesForm(MainTextField).ShowDialog();
         }
-
         #endregion
-
-
     }
 }
