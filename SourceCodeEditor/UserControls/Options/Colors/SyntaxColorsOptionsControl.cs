@@ -6,15 +6,19 @@ namespace SourceCodeEditor.UserControls.Options
     public partial class SyntaxColorsOptionsControl : UserControl
     {
         private MainForm _mainForm { get; set; }
-        private SyntaxColors _syntaxColors { get; set; }
+        private SyntaxColors? _syntaxColors { get; set; }
+        private string _defaultSyntax { get; set; } = String.Empty;
 
         private List<PropertyInfo> Properties { get; set; }
         private List<Color> Colors { get; set; }
         private List<FontStyle> FontStyles { get; set; }
+
         public SyntaxColorsOptionsControl(MainForm form)
         {
             _mainForm = form;
             _syntaxColors = _mainForm.theme.syntaxColors!;
+            _defaultSyntax = form.CurrentTheme == Enums.Theme.Black ? "SyntaxColors/BlackSyntaxDefault.syn" : "SyntaxColors/WhiteSyntaxDefault.syn";
+
             Properties = _syntaxColors.GetType().GetProperties().ToList();
             Colors = new List<Color>();
             FontStyles = new List<FontStyle>();
@@ -114,9 +118,8 @@ namespace SourceCodeEditor.UserControls.Options
 
         private void buttonToDefault_Click(object sender, EventArgs e)
         {
-            _mainForm.theme.syntaxColors = ThemeSerializer.Deserialize<SyntaxColors>(_mainForm.theme.syntaxColors.SyntaxPath);
+            _syntaxColors = ThemeSerializer.Deserialize<SyntaxColors>(_defaultSyntax);
             SyntaxColorsOptionsControl_Load(sender, e);
-            buttonSave_Click(sender,e);
         }
     }
 }

@@ -40,7 +40,6 @@ namespace SourceCodeEditor
         {
             InitializeComponent();
         }
-
         private void MainForm_Load(object sender, EventArgs e)
         {
             //Set toolStripMenuItem dropdown items from "MainTextField.Languages" on load
@@ -526,6 +525,12 @@ namespace SourceCodeEditor
                     break;
             }
         }
+
+        private void templatesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new TemplatesForm().ShowDialog();
+        }
+
         #endregion
 
 

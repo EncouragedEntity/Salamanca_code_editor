@@ -67,12 +67,15 @@ namespace SourceCodeEditor.AppearenceConfig
 
         public static T? Deserialize<T>(string path)
         {
-                using (Stream str = File.Open(path, FileMode.Open))
+                using (Stream str = File.Open(path, FileMode.Open, FileAccess.Read))
                 {
                     var bf = new BinaryFormatter();
-                    return (T)bf.Deserialize(str);
+                    var obj = (T)bf.Deserialize(str);
+                    str.Close();
+                    return obj;
                 }
         }
+
         public void SerializeTheme()
         {
             using (Stream str = File.Open(_theme.ThemePath, FileMode.Create))
