@@ -26,3 +26,4 @@ D:\COURSE WORK\SourceCodeEditor\SourceCodeEditor\obj\Debug\net6.0-windows\Source
 D:\COURSE WORK\SourceCodeEditor\SourceCodeEditor\obj\Debug\net6.0-windows\SourceCodeEditor.UserControls.Options.SyntaxColorsOptionsControl.resources
 D:\COURSE WORK\SourceCodeEditor\SourceCodeEditor\obj\Debug\net6.0-windows\SourceCodeEditor.UserControls.FontStyleControl.resources
 D:\COURSE WORK\SourceCodeEditor\SourceCodeEditor\obj\Debug\net6.0-windows\SourceCodeEditor.Forms.TemplatesForm.resources
+D:\COURSE WORK\SourceCodeEditor\SourceCodeEditor\obj\Debug\net6.0-windows\SourceCodeEditor.Forms.Templates.TemplateAddForm.resources

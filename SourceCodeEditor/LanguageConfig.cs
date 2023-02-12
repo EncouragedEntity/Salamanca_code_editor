@@ -10,16 +10,24 @@ namespace SourceCodeEditor
 {
     public class LanguageConfig
     {
-        public MainForm MainForm { get; set; }
-        public LanguageConfig(MainForm form) 
+        public MainForm? MainForm { get; set; }
+        public LanguageConfig(MainForm? form) 
         {
             MainForm = form;
         }
+
+        public LanguageConfig() : this(null) { }
+
+        public string[] GetLanguages() 
+        {
+            return Enum.GetNames(typeof(Language));
+        }
+
         public void LoadLanguages()
         {
-            foreach (var item in Enum.GetNames<Language>())
+            foreach(var lang in GetLanguages())
             {
-                MainForm.syntaxToolStripMenuItem.DropDownItems.Add(item.ToString());
+                MainForm.syntaxToolStripMenuItem.DropDownItems.Add(lang);
             }
             SetLanguagesEvents();
             var firtsItem = MainForm.syntaxToolStripMenuItem.DropDownItems[0] as ToolStripMenuItem;
