@@ -6,11 +6,16 @@ namespace SourceCodeEditor.Forms.Templates
     {
         private TemplatesForm Form { get; set; }
         private Template Template { get; set; }
-        public TemplateAddForm(TemplatesForm form, Template template)
+        private string FilePath { get; set; }
+
+        public TemplateAddForm(TemplatesForm form, Template template, string filePath)
         {
             InitializeComponent();
             Form = form;
             Template = template;
+            FilePath = filePath;
+
+            comboBoxLanguages.Text = Language.Custom.ToString();
         }
 
         public Template AddTemplate()
@@ -20,13 +25,19 @@ namespace SourceCodeEditor.Forms.Templates
             Template.Language = (Language) Enum.Parse(typeof(Language), comboBoxLanguages.SelectedItem.ToString());
             try
             {
-                MainForm.Templates[Template.Number] = Template;
+                ChangeTemplateLabelText(Form.GetLabelById(Template.Number));
+                File.WriteAllText(FilePath, fastColoredTextBox1.Text);
             }
             catch (IndexOutOfRangeException ex)
             {
                 MessageBox.Show(ex.Message);
             }
             return Template;
+        }
+
+        public void ChangeTemplateLabelText(Label label)
+        {
+            label.Text = textBoxName.Text;
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)

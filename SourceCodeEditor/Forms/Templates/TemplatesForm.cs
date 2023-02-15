@@ -35,6 +35,12 @@ namespace SourceCodeEditor.Forms
             return int.Parse(button.Name.Last().ToString()) - 1;
         }
 
+        public Label? GetLabelById(int id)
+        {
+            var label = tableLayoutPanel1.Controls.OfType<Label>().Where(value => value.Name == $"label{id+1}").FirstOrDefault();
+            return label;
+        }
+
         private void ButtonClick(object sender, EventArgs e)
         {
             var button = (PictureBox)sender;
@@ -70,19 +76,22 @@ namespace SourceCodeEditor.Forms
         private void TemplateAdd(int templateNumber)
         {
             string FolderPath = "Templates";
-            string TemplateName = $"Template{templateNumber}.txt";
-            string FilePath = $"{FolderPath}/{TemplateName}";
+            string TemplateName = $"Template{templateNumber+1}.txt";
+            string FilePath = $"{FolderPath}/{TemplateName+1}";
 
             var template = new Template();
             template.Name = TemplateName;
             template.Number = templateNumber;
 
-            new TemplateAddForm(this, template).ShowDialog();
 
             if (!Directory.Exists(FolderPath))
             {
                 Directory.CreateDirectory(FolderPath);
             }
+
+            var addTemplate = new TemplateAddForm(this, template, FilePath);
+
+            addTemplate.ShowDialog();
         }
 
         private void TemplateEdit(int templateNumber)
