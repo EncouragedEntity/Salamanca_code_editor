@@ -92,12 +92,15 @@ namespace SourceCodeEditor.Forms
 
         private void TemplatePlay(int templateNumber)
         {
-            if (!File.Exists($"Templates/Template{templateNumber+1}.txt"))
+            string TemplatePath = $"Templates/Template{templateNumber + 1}.txt";
+            if (!File.Exists(TemplatePath))
             {
                 TemplateAdd(templateNumber);
+                return;
             }
-        }
 
+            TextField.InsertText(File.ReadAllText(TemplatePath));
+        }
         private void TemplateAdd(int templateNumber)
         {
             string FolderPath = "Templates";
