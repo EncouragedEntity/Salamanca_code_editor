@@ -1,4 +1,5 @@
 ﻿using FastColoredTextBoxNS;
+using System.Text.Json;
 
 namespace SourceCodeEditor.Forms.Templates
 {
@@ -14,19 +15,21 @@ namespace SourceCodeEditor.Forms.Templates
             Form = form;
             Template = template;
             FilePath = filePath;
-
             comboBoxLanguages.Text = Language.Custom.ToString();
         }
 
         public Template AddTemplate()
         {
-            Template.Content = fastColoredTextBox1.Text;
             Template.Name = textBoxName.Text;
             Template.Language = (Language) Enum.Parse(typeof(Language), comboBoxLanguages.SelectedItem.ToString());
             try
             {
                 ChangeTemplateLabelText(Form.GetLabelById(Template.Number));
                 File.WriteAllText(FilePath, fastColoredTextBox1.Text);
+
+                string JsonPath = FilePath.Replace("txt", "json");
+                Template.Number++;
+                File.WriteAllText(JsonPath, JsonSerializer.Serialize(Template, new JsonSerializerOptions() { WriteIndented = true }));
             }
             catch (IndexOutOfRangeException ex)
             {

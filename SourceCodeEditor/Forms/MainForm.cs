@@ -13,13 +13,10 @@ namespace SourceCodeEditor
     {
         #region Fields
         private string _applicationName { get; set; } = "Salamanca";
-
         public Theme CurrentTheme { get; set; }
         private Theme DefaultTheme { get; set; } = Theme.Black;
         public CurrentTheme theme = new CurrentTheme();
         public Font DefaultTextFont { get; set; } = new Font(new FontFamily("Courier New"), 12);
-        public static List<Template> Templates { get; set; }
-
         public WindowState StateOfWindow { get; set; } = Enums.WindowState.Windowed;
         public int DefaultZoom { get; set; } = 100;
 
@@ -43,7 +40,6 @@ namespace SourceCodeEditor
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
-            Templates = Enumerable.Repeat(new Template(), 10).ToList();
             //Set toolStripMenuItem dropdown items from "MainTextField.Languages" on load
             new LanguageConfig(this).LoadLanguages();
 

@@ -1,16 +1,41 @@
 ﻿using FastColoredTextBoxNS;
 using SourceCodeEditor.Forms.Templates;
+using System.Text.Json;
 
 namespace SourceCodeEditor.Forms
 {
     public partial class TemplatesForm : Form
     {
         public FastColoredTextBox TextField { get; set; }
+        private List<Template> Templates { get; set; }
+
         public TemplatesForm(FastColoredTextBox textField)
         {
+            Templates = new List<Template>();
+
             InitializeComponent();
             SetButtonsEvents();
+            LoadTemplates();
+
             TextField = textField;
+        }
+
+        private void LoadTemplates()
+        {
+            foreach (var file in new DirectoryInfo("Templates").GetFiles())
+            {
+                if (Path.GetExtension(file.Name) == ".json")
+                {
+                    Template template = new Template();
+                    template = JsonSerializer.Deserialize<Template>(File.ReadAllText($"Templates/{file.Name}"))!;
+                    Templates.Add(template);
+                }
+            }
+
+            for (int i = 0; i < Templates.Count; i++)
+            {
+                GetLabelById(i)!.Text = Templates[i].Name;
+            }
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
@@ -67,7 +92,7 @@ namespace SourceCodeEditor.Forms
 
         private void TemplatePlay(int templateNumber)
         {
-            if (!File.Exists($"Templates/Template{templateNumber}.txt"))
+            if (!File.Exists($"Templates/Template{templateNumber+1}.txt"))
             {
                 TemplateAdd(templateNumber);
             }
@@ -77,7 +102,7 @@ namespace SourceCodeEditor.Forms
         {
             string FolderPath = "Templates";
             string TemplateName = $"Template{templateNumber+1}.txt";
-            string FilePath = $"{FolderPath}/{TemplateName+1}";
+            string FilePath = $"{FolderPath}/{TemplateName}";
 
             var template = new Template();
             template.Name = TemplateName;
