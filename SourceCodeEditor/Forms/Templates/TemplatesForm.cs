@@ -1,4 +1,5 @@
 ﻿using FastColoredTextBoxNS;
+using Microsoft.VisualBasic.FileIO;
 using SourceCodeEditor.Forms.Templates;
 using System.Text.Json;
 
@@ -11,8 +12,7 @@ namespace SourceCodeEditor.Forms
 
         public TemplatesForm(FastColoredTextBox textField)
         {
-            Templates = new List<Template>();
-
+            Templates = Enumerable.Repeat(new Template(),10).ToList();
             InitializeComponent();
             SetButtonsEvents();
             LoadTemplates();
@@ -22,19 +22,23 @@ namespace SourceCodeEditor.Forms
 
         private void LoadTemplates()
         {
+            int counter = 0;
             foreach (var file in new DirectoryInfo("Templates").GetFiles())
             {
                 if (Path.GetExtension(file.Name) == ".json")
                 {
                     Template template = new Template();
                     template = JsonSerializer.Deserialize<Template>(File.ReadAllText($"Templates/{file.Name}"))!;
-                    Templates.Add(template);
+                    Templates[counter] = (template);
                 }
+
+                counter++;
             }
 
             for (int i = 0; i < Templates.Count; i++)
             {
-                GetLabelById(i)!.Text = Templates[i].Name;
+                if(!String.IsNullOrEmpty(Templates[i].Name))
+                    GetLabelById(i)!.Text = Templates[i].Name;
             }
         }
 
@@ -88,7 +92,7 @@ namespace SourceCodeEditor.Forms
             }
         }
 
-        /// TODO Edit form, add form, play method
+        /// TODO Edit form, deletion method
 
         private void TemplatePlay(int templateNumber)
         {
@@ -129,7 +133,17 @@ namespace SourceCodeEditor.Forms
 
         private void TemplateDelete(int templateNumber)
         {
+            string TemplatePath = $"Templates/Template{templateNumber + 1}.txt";
+            if (File.Exists(TemplatePath))
+            {
+                string JsonPath = TemplatePath.Replace("txt", "json");
 
+                FileSystem.DeleteFile(TemplatePath, UIOption.AllDialogs, RecycleOption.DeletePermanently);
+                FileSystem.DeleteFile(JsonPath, UIOption.AllDialogs, RecycleOption.DeletePermanently);
+                Templates.Remove(Templates.ElementAt(templateNumber));
+
+                GetLabelById(templateNumber)!.Text = $"Template{templateNumber + 1}";
+            }
         }
 
         private void TemplatesForm_Load(object sender, EventArgs e)
