@@ -66,8 +66,7 @@ namespace SourceCodeEditor.Forms
 
         public Label? GetLabelById(int id)
         {
-            var label = tableLayoutPanel1.Controls.OfType<Label>().Where(value => value.Name == $"label{id+1}").FirstOrDefault();
-            return label;
+            return tableLayoutPanel1.Controls.OfType<Label>().Where(value => value.Name == $"label{id + 1}").FirstOrDefault(); ;
         }
 
         private void ButtonClick(object sender, EventArgs e)
@@ -92,7 +91,7 @@ namespace SourceCodeEditor.Forms
             }
         }
 
-        /// TODO Edit form, deletion method
+        /// TODO Edit form
 
         private void TemplatePlay(int templateNumber)
         {
@@ -103,8 +102,15 @@ namespace SourceCodeEditor.Forms
                 return;
             }
 
-            TextField.InsertText(File.ReadAllText(TemplatePath));
+            if (Templates[templateNumber].Language == TextField.Language)
+            {
+                TextField.InsertText(File.ReadAllText(TemplatePath));
+                return;
+            }
+
+            MessageBox.Show("Wrong language selected at Main Text Field","Error!",MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
         private void TemplateAdd(int templateNumber)
         {
             string FolderPath = "Templates";
@@ -128,7 +134,16 @@ namespace SourceCodeEditor.Forms
 
         private void TemplateEdit(int templateNumber)
         {
+            string FolderPath = "Templates";
+            string TemplateName = $"Template{templateNumber + 1}.txt";
+            string FilePath = $"{FolderPath}/{TemplateName}";
 
+            var template = new Template();
+            template.Name = GetLabelById(templateNumber).Text;
+            template.Number = templateNumber;
+            
+            var editTemplate = new TemplateAddForm(this, template, FilePath, TemplateAddMode.Editing);
+            editTemplate.ShowDialog();
         }
 
         private void TemplateDelete(int templateNumber)
@@ -138,17 +153,12 @@ namespace SourceCodeEditor.Forms
             {
                 string JsonPath = TemplatePath.Replace("txt", "json");
 
-                FileSystem.DeleteFile(TemplatePath, UIOption.AllDialogs, RecycleOption.DeletePermanently);
-                FileSystem.DeleteFile(JsonPath, UIOption.AllDialogs, RecycleOption.DeletePermanently);
+                FileSystem.DeleteFile(TemplatePath, UIOption.OnlyErrorDialogs, RecycleOption.DeletePermanently);
+                FileSystem.DeleteFile(JsonPath, UIOption.OnlyErrorDialogs, RecycleOption.DeletePermanently);
                 Templates.Remove(Templates.ElementAt(templateNumber));
 
                 GetLabelById(templateNumber)!.Text = $"Template{templateNumber + 1}";
             }
-        }
-
-        private void TemplatesForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -70,6 +70,7 @@ namespace SourceCodeEditor
             this.IsSavedLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.zoomPercentageLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.syntaxLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.configurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainTextField)).BeginInit();
             this.MainFooter.SuspendLayout();
@@ -248,16 +249,17 @@ namespace SourceCodeEditor
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
             this.optionsToolStripMenuItem.Text = "Options";
             this.optionsToolStripMenuItem.Click += new System.EventHandler(this.optionsToolStripMenuItem_Click);
             // 
             // templatesToolStripMenuItem
             // 
+            this.templatesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.configurationToolStripMenuItem});
             this.templatesToolStripMenuItem.Name = "templatesToolStripMenuItem";
             this.templatesToolStripMenuItem.Size = new System.Drawing.Size(91, 24);
             this.templatesToolStripMenuItem.Text = "Templates";
-            this.templatesToolStripMenuItem.Click += new System.EventHandler(this.templatesToolStripMenuItem_Click);
             // 
             // openFileDialog1
             // 
@@ -440,6 +442,13 @@ namespace SourceCodeEditor
             this.syntaxLabel.Size = new System.Drawing.Size(109, 20);
             this.syntaxLabel.Text = "Syntax: Custom";
             // 
+            // configurationToolStripMenuItem
+            // 
+            this.configurationToolStripMenuItem.Name = "configurationToolStripMenuItem";
+            this.configurationToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.configurationToolStripMenuItem.Text = "Configuration";
+            this.configurationToolStripMenuItem.Click += new System.EventHandler(this.templatesToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -506,5 +515,6 @@ namespace SourceCodeEditor
         public ToolStripStatusLabel syntaxLabel;
         private ToolStripMenuItem syntaxToolStripMenuItem1;
         private ToolStripMenuItem templatesToolStripMenuItem;
+        private ToolStripMenuItem configurationToolStripMenuItem;
     }
 }
