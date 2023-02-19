@@ -30,9 +30,8 @@ namespace SourceCodeEditor.Forms
                     Template template = new Template();
                     template = JsonSerializer.Deserialize<Template>(File.ReadAllText($"Templates/{file.Name}"))!;
                     Templates[counter] = (template);
+                    counter++;
                 }
-
-                counter++;
             }
 
             for (int i = 0; i < Templates.Count; i++)
@@ -91,8 +90,6 @@ namespace SourceCodeEditor.Forms
             }
         }
 
-        /// TODO Edit form
-
         private void TemplatePlay(int templateNumber)
         {
             string TemplatePath = $"Templates/Template{templateNumber + 1}.txt";
@@ -141,9 +138,13 @@ namespace SourceCodeEditor.Forms
             var template = new Template();
             template.Name = GetLabelById(templateNumber).Text;
             template.Number = templateNumber;
+            template.Language = Templates[templateNumber].Language;
             
             var editTemplate = new TemplateAddForm(this, template, FilePath, TemplateAddMode.Editing);
             editTemplate.ShowDialog();
+
+
+            LoadTemplates();
         }
 
         private void TemplateDelete(int templateNumber)

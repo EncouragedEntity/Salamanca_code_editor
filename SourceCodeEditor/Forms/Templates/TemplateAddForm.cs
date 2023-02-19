@@ -15,23 +15,33 @@ namespace SourceCodeEditor.Forms.Templates
             InitializeComponent();
             Form = form;
             Template = template;
+
             FilePath = filePath;
 
             if (mode == TemplateAddMode.Editing)
             {
                 try
                 {
-                    fastColoredTextBox1.Text = File.ReadAllText(filePath);
-                    comboBoxLanguages.SelectedIndex = Convert.ToInt32(Template.Language);
-                    textBoxName.Text = Template.Name;
-                    fastColoredTextBox1.Language = Template.Language;
+                    if (File.Exists(FilePath))
+                        SetDefaultValues(Template);
+                    else
+                        SetDefaultValues(new Template()); 
                 }
                 catch (FileNotFoundException)
                 {
                     
                 }
-                comboBoxLanguages.SelectedIndex = Convert.ToInt32(Language.Custom);
+                return;
             }
+            comboBoxLanguages.SelectedIndex = Convert.ToInt32(Language.Custom);
+        }
+
+        private void SetDefaultValues(Template temp)
+        {
+            comboBoxLanguages.SelectedItem = temp.Language.ToString();
+            fastColoredTextBox1.Text = File.ReadAllText(FilePath);
+            textBoxName.Text = temp.Name;
+            fastColoredTextBox1.Language = temp.Language;
         }
 
         public Template AddTemplate()
