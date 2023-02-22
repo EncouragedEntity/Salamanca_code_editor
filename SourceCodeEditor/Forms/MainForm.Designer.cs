@@ -53,6 +53,7 @@ namespace SourceCodeEditor
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.templatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.configurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.MainTextField = new FastColoredTextBoxNS.FastColoredTextBox();
@@ -70,7 +71,6 @@ namespace SourceCodeEditor
             this.IsSavedLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.zoomPercentageLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.syntaxLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.configurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainTextField)).BeginInit();
             this.MainFooter.SuspendLayout();
@@ -261,6 +261,13 @@ namespace SourceCodeEditor
             this.templatesToolStripMenuItem.Size = new System.Drawing.Size(91, 24);
             this.templatesToolStripMenuItem.Text = "Templates";
             // 
+            // configurationToolStripMenuItem
+            // 
+            this.configurationToolStripMenuItem.Name = "configurationToolStripMenuItem";
+            this.configurationToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.configurationToolStripMenuItem.Text = "Configuration";
+            this.configurationToolStripMenuItem.Click += new System.EventHandler(this.templatesToolStripMenuItem_Click);
+            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
@@ -441,13 +448,6 @@ namespace SourceCodeEditor
             this.syntaxLabel.Name = "syntaxLabel";
             this.syntaxLabel.Size = new System.Drawing.Size(109, 20);
             this.syntaxLabel.Text = "Syntax: Custom";
-            // 
-            // configurationToolStripMenuItem
-            // 
-            this.configurationToolStripMenuItem.Name = "configurationToolStripMenuItem";
-            this.configurationToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.configurationToolStripMenuItem.Text = "Configuration";
-            this.configurationToolStripMenuItem.Click += new System.EventHandler(this.templatesToolStripMenuItem_Click);
             // 
             // MainForm
             // 

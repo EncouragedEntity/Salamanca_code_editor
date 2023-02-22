@@ -2,6 +2,9 @@ using FastColoredTextBoxNS;
 using SourceCodeEditor.AppearenceConfig;
 using SourceCodeEditor.Enums;
 using SourceCodeEditor.Forms;
+using System.Text.Json;
+using static System.Net.Mime.MediaTypeNames;
+
 namespace SourceCodeEditor
 {
     delegate DialogResult DialogRes(string text, string caption, MessageBoxButtons buttons, MessageBoxIcon icon);
@@ -45,6 +48,8 @@ namespace SourceCodeEditor
 
             //Load hotkeys config from file on form load
             new HotKeysConfig(MainHeader).LoadHotkeysConfig();
+            LoadTemplatesToolStrips();
+
 
             //Get default theme from file and apply it on load
             theme = ThemeSerializer.Deserialize<CurrentTheme>("Themes/BlackTheme.theme")!;
@@ -52,6 +57,7 @@ namespace SourceCodeEditor
             CurrentTheme = DefaultTheme;
             new ThemeChanger(this).ChangeTheme(CurrentTheme);
             DeleteUnnecessaryLabels();
+
         }
 
         #region Methods
@@ -527,6 +533,67 @@ namespace SourceCodeEditor
         private void templatesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new TemplatesForm(MainTextField).ShowDialog();
+        }
+
+        private void OnTemplateClick(object sender, EventArgs e)
+        {
+            var item = (ToolStripMenuItem)sender;
+            string templateName = item.Text.Substring(0,9);
+            Template temp = null;
+
+            try
+            {
+                temp = JsonSerializer.Deserialize<Template>(File.ReadAllText($"Templates/{templateName}.json"));
+            }
+            catch (FileNotFoundException ex)
+            {
+                MessageBox.Show("Template file(s) was not found!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (MainTextField.Language == temp.Language)
+            {
+                try
+                {
+                    MainTextField.InsertText(File.ReadAllText($"Templates/{templateName}.txt"));
+                }
+                catch (FileNotFoundException ex)
+                {
+                    MessageBox.Show("Template file(s) was not found!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                return;
+            }
+            MessageBox.Show("Wrong language selected at Main Text Field", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void LoadTemplatesToolStrips()
+        {
+            var dir = new DirectoryInfo("Templates");
+            var files = dir.GetFiles();
+
+            var infoFiles = files.Where(value => value.Extension == ".json");
+
+            List<Template> infoFilesDeserialized = new List<Template>();
+
+            foreach ( var file in infoFiles) 
+            {
+                try
+                {
+                    infoFilesDeserialized.Add(JsonSerializer.Deserialize<Template>(File.ReadAllText(file.FullName)));
+                }
+                catch (FileNotFoundException ex)
+                {
+                    MessageBox.Show("Template file(s) was not found!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
+            int count = files.Length / 2;
+            for (int i = 0; i < count; i++)
+            {
+                templatesToolStripMenuItem.DropDownItems.Add(new ToolStripMenuItem($"Template{i+1} ({infoFilesDeserialized[i].Name})", null, OnTemplateClick));
+            }
         }
         #endregion
     }
