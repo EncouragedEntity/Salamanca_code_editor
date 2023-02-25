@@ -533,6 +533,9 @@ namespace SourceCodeEditor
         private void templatesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new TemplatesForm(MainTextField).ShowDialog();
+            DeleteTemplatesToolStrips();
+            LoadTemplatesToolStrips();
+            new ThemeChanger(this).ChangeHeaderTheme(theme);
         }
 
         private void OnTemplateClick(object sender, EventArgs e)
@@ -567,6 +570,18 @@ namespace SourceCodeEditor
             MessageBox.Show("Wrong language selected at Main Text Field", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
+        private void DeleteTemplatesToolStrips()
+        {
+            var items = templatesToolStripMenuItem.DropDownItems;
+            for (int i = 0; i < items.Count; i++)
+            {
+                if (items[i].Text != "Configuration")
+                {
+                    items.Remove(items[i]);
+                }
+            }
+        }
+
         private void LoadTemplatesToolStrips()
         {
             var dir = new DirectoryInfo("Templates");
@@ -592,7 +607,7 @@ namespace SourceCodeEditor
             int count = files.Length / 2;
             for (int i = 0; i < count; i++)
             {
-                templatesToolStripMenuItem.DropDownItems.Add(new ToolStripMenuItem($"Template{i+1} ({infoFilesDeserialized[i].Name})", null, OnTemplateClick));
+                templatesToolStripMenuItem.DropDownItems.Add(new ToolStripMenuItem($"Template{i+1} - {infoFilesDeserialized[i].Name} ({infoFilesDeserialized[i].Language})", null, OnTemplateClick));
             }
         }
         #endregion

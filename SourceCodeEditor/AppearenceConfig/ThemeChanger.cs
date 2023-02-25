@@ -360,7 +360,7 @@ namespace SourceCodeEditor.AppearenceConfig
         /// Changes "header's" items theme
         /// </summary>
         /// <param name="header">Object of main menu strip</param>
-        private void ChangeHeaderTheme(CurrentTheme theme)
+        public void ChangeHeaderTheme(CurrentTheme theme)
         {
             var allItems = new List<ToolStripMenuItem>();
             foreach (ToolStripMenuItem toolItem in _header.Items)
