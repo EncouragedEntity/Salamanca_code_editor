@@ -28,158 +28,141 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TemplateAddForm));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonBack = new System.Windows.Forms.Button();
-            this.buttonAdd = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.comboBoxLanguages = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBoxName = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.fastColoredTextBox1 = new FastColoredTextBoxNS.FastColoredTextBox();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fastColoredTextBox1)).BeginInit();
-            this.SuspendLayout();
+            panel1 = new Panel();
+            buttonBack = new Button();
+            buttonAdd = new Button();
+            panel2 = new Panel();
+            comboBoxLanguages = new ComboBox();
+            label2 = new Label();
+            textBoxName = new TextBox();
+            label1 = new Label();
+            fastColoredTextBox1 = new FastColoredTextBoxNS.FastColoredTextBox();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)fastColoredTextBox1).BeginInit();
+            SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.buttonBack);
-            this.panel1.Controls.Add(this.buttonAdd);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 386);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(568, 64);
-            this.panel1.TabIndex = 1;
+            panel1.Controls.Add(buttonBack);
+            panel1.Controls.Add(buttonAdd);
+            panel1.Dock = DockStyle.Bottom;
+            panel1.Location = new Point(0, 386);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(568, 64);
+            panel1.TabIndex = 1;
             // 
             // buttonBack
             // 
-            this.buttonBack.Location = new System.Drawing.Point(12, 23);
-            this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(94, 29);
-            this.buttonBack.TabIndex = 1;
-            this.buttonBack.Text = "Back";
-            this.buttonBack.UseVisualStyleBackColor = true;
-            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            buttonBack.Location = new Point(12, 23);
+            buttonBack.Name = "buttonBack";
+            buttonBack.Size = new Size(94, 29);
+            buttonBack.TabIndex = 1;
+            buttonBack.Text = "Back";
+            buttonBack.UseVisualStyleBackColor = true;
+            buttonBack.Click += buttonBack_Click;
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(453, 23);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(94, 29);
-            this.buttonAdd.TabIndex = 0;
-            this.buttonAdd.Text = "Add";
-            this.buttonAdd.UseVisualStyleBackColor = true;
-            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            buttonAdd.Location = new Point(453, 23);
+            buttonAdd.Name = "buttonAdd";
+            buttonAdd.Size = new Size(94, 29);
+            buttonAdd.TabIndex = 0;
+            buttonAdd.Text = "Add";
+            buttonAdd.UseVisualStyleBackColor = true;
+            buttonAdd.Click += buttonAdd_Click;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.comboBoxLanguages);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.textBoxName);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(568, 67);
-            this.panel2.TabIndex = 2;
+            panel2.Controls.Add(comboBoxLanguages);
+            panel2.Controls.Add(label2);
+            panel2.Controls.Add(textBoxName);
+            panel2.Controls.Add(label1);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(568, 67);
+            panel2.TabIndex = 2;
             // 
             // comboBoxLanguages
             // 
-            this.comboBoxLanguages.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxLanguages.FormattingEnabled = true;
-            this.comboBoxLanguages.Items.AddRange(new object[] {
-            "Custom",
-            "CSharp",
-            "VB",
-            "HTML",
-            "XML",
-            "SQL",
-            "PHP",
-            "JS",
-            "Lua"});
-            this.comboBoxLanguages.Location = new System.Drawing.Point(408, 24);
-            this.comboBoxLanguages.Name = "comboBoxLanguages";
-            this.comboBoxLanguages.Size = new System.Drawing.Size(139, 28);
-            this.comboBoxLanguages.TabIndex = 3;
-            this.comboBoxLanguages.SelectedIndexChanged += new System.EventHandler(this.comboBoxLanguages_SelectedIndexChanged);
+            comboBoxLanguages.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxLanguages.FormattingEnabled = true;
+            comboBoxLanguages.Items.AddRange(new object[] { "Custom", "CSharp", "VB", "HTML", "XML", "SQL", "PHP", "JS", "Lua" });
+            comboBoxLanguages.Location = new Point(408, 24);
+            comboBoxLanguages.Name = "comboBoxLanguages";
+            comboBoxLanguages.Size = new Size(139, 28);
+            comboBoxLanguages.TabIndex = 3;
+            comboBoxLanguages.SelectedIndexChanged += comboBoxLanguages_SelectedIndexChanged;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(321, 27);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 20);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Language: ";
+            label2.AutoSize = true;
+            label2.Location = new Point(321, 27);
+            label2.Name = "label2";
+            label2.Size = new Size(81, 20);
+            label2.TabIndex = 2;
+            label2.Text = "Language: ";
             // 
             // textBoxName
             // 
-            this.textBoxName.Location = new System.Drawing.Point(70, 24);
-            this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(109, 27);
-            this.textBoxName.TabIndex = 1;
-            this.textBoxName.Text = "Template";
+            textBoxName.Location = new Point(70, 24);
+            textBoxName.Name = "textBoxName";
+            textBoxName.Size = new Size(109, 27);
+            textBoxName.TabIndex = 1;
+            textBoxName.Text = "Template";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Name:";
+            label1.AutoSize = true;
+            label1.Location = new Point(12, 27);
+            label1.Name = "label1";
+            label1.Size = new Size(52, 20);
+            label1.TabIndex = 0;
+            label1.Text = "Name:";
             // 
             // fastColoredTextBox1
             // 
-            this.fastColoredTextBox1.AutoCompleteBracketsList = new char[] {
-        '(',
-        ')',
-        '{',
-        '}',
-        '[',
-        ']',
-        '\"',
-        '\"',
-        '\'',
-        '\''};
-            this.fastColoredTextBox1.AutoScrollMinSize = new System.Drawing.Size(31, 18);
-            this.fastColoredTextBox1.BackBrush = null;
-            this.fastColoredTextBox1.CharHeight = 18;
-            this.fastColoredTextBox1.CharWidth = 10;
-            this.fastColoredTextBox1.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.fastColoredTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fastColoredTextBox1.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.fastColoredTextBox1.IsReplaceMode = false;
-            this.fastColoredTextBox1.Location = new System.Drawing.Point(0, 67);
-            this.fastColoredTextBox1.Name = "fastColoredTextBox1";
-            this.fastColoredTextBox1.Paddings = new System.Windows.Forms.Padding(0);
-            this.fastColoredTextBox1.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
-            this.fastColoredTextBox1.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("fastColoredTextBox1.ServiceColors")));
-            this.fastColoredTextBox1.Size = new System.Drawing.Size(568, 319);
-            this.fastColoredTextBox1.TabIndex = 3;
-            this.fastColoredTextBox1.Zoom = 100;
-            this.fastColoredTextBox1.TextChanged += new System.EventHandler<FastColoredTextBoxNS.TextChangedEventArgs>(this.fastColoredTextBox1_TextChanged);
+            fastColoredTextBox1.AutoCompleteBracketsList = (new char[] { '(', ')', '{', '}', '[', ']', '"', '"', '\'', '\'' });
+            fastColoredTextBox1.AutoScrollMinSize = new Size(31, 18);
+            fastColoredTextBox1.BackBrush = null;
+            fastColoredTextBox1.CharHeight = 18;
+            fastColoredTextBox1.CharWidth = 10;
+            fastColoredTextBox1.DisabledColor = Color.FromArgb(100, 180, 180, 180);
+            fastColoredTextBox1.Dock = DockStyle.Fill;
+            fastColoredTextBox1.Font = new Font("Courier New", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            fastColoredTextBox1.IsReplaceMode = false;
+            fastColoredTextBox1.Location = new Point(0, 67);
+            fastColoredTextBox1.Name = "fastColoredTextBox1";
+            fastColoredTextBox1.Paddings = new Padding(0);
+            fastColoredTextBox1.SelectionColor = Color.FromArgb(60, 0, 0, 255);
+            fastColoredTextBox1.ServiceColors = (FastColoredTextBoxNS.ServiceColors)resources.GetObject("fastColoredTextBox1.ServiceColors");
+            fastColoredTextBox1.Size = new Size(568, 319);
+            fastColoredTextBox1.TabIndex = 3;
+            fastColoredTextBox1.Zoom = 100;
+            fastColoredTextBox1.TextChanged += fastColoredTextBox1_TextChanged;
             // 
             // TemplateAddForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(568, 450);
-            this.Controls.Add(this.fastColoredTextBox1);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "TemplateAddForm";
-            this.Text = "New Template";
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fastColoredTextBox1)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(568, 450);
+            Controls.Add(fastColoredTextBox1);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "TemplateAddForm";
+            Text = "New Template";
+            FormClosing += TemplateAddForm_FormClosing;
+            panel1.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)fastColoredTextBox1).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion

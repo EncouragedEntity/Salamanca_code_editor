@@ -1,5 +1,3 @@
-using SourceCodeEditor.AppearenceConfig;
-
 namespace SourceCodeEditor
 {
     internal static class Program

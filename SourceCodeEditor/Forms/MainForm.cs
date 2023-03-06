@@ -170,7 +170,7 @@ namespace SourceCodeEditor
         /// </summary>
         public void blackToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            theme.syntaxColors.SyntaxPath = "SyntaxColors/BlackSyntax.syn";
+            theme.syntaxColors!.SyntaxPath = "SyntaxColors/BlackSyntax.syn";
             CurrentTheme = Theme.Black;
             new ThemeChanger(this).ChangeTheme();
 
@@ -182,7 +182,7 @@ namespace SourceCodeEditor
         /// </summary>
         public void whiteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            theme.syntaxColors.SyntaxPath = "SyntaxColors/WhiteSyntax.syn";
+            theme.syntaxColors!.SyntaxPath = "SyntaxColors/WhiteSyntax.syn";
             CurrentTheme = Theme.White;
             new ThemeChanger(this).ChangeTheme();
 
@@ -532,23 +532,26 @@ namespace SourceCodeEditor
 
         private void templatesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new TemplatesForm(MainTextField).ShowDialog();
-            DeleteTemplatesToolStrips();
-            LoadTemplatesToolStrips();
-            new ThemeChanger(this).ChangeHeaderTheme(theme);
+            var templatesForm = new TemplatesForm(MainTextField);
+            templatesForm.ShowDialog();
+            if (templatesForm.IsTemplatesChanged)
+            {
+                DeleteTemplatesToolStrips();
+                LoadTemplatesToolStrips();
+                new ThemeChanger(this).ChangeHeaderTheme(theme);
+            }
         }
 
         private void OnTemplateClick(object sender, EventArgs e)
         {
             var item = (ToolStripMenuItem)sender;
             string templateName = item.Text.Substring(0,9);
-            Template temp = null;
-
+            Template temp;
             try
             {
-                temp = JsonSerializer.Deserialize<Template>(File.ReadAllText($"Templates/{templateName}.json"));
+                temp = JsonSerializer.Deserialize<Template>(File.ReadAllText($"Templates/{templateName}.json"))!;
             }
-            catch (FileNotFoundException ex)
+            catch (FileNotFoundException)
             {
                 MessageBox.Show("Template file(s) was not found!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -560,7 +563,7 @@ namespace SourceCodeEditor
                 {
                     MainTextField.InsertText(File.ReadAllText($"Templates/{templateName}.txt"));
                 }
-                catch (FileNotFoundException ex)
+                catch (FileNotFoundException)
                 {
                     MessageBox.Show("Template file(s) was not found!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -595,9 +598,9 @@ namespace SourceCodeEditor
             {
                 try
                 {
-                    infoFilesDeserialized.Add(JsonSerializer.Deserialize<Template>(File.ReadAllText(file.FullName)));
+                    infoFilesDeserialized.Add(JsonSerializer.Deserialize<Template>(File.ReadAllText(file.FullName))!);
                 }
-                catch (FileNotFoundException ex)
+                catch (FileNotFoundException)
                 {
                     MessageBox.Show("Template file(s) was not found!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -607,7 +610,7 @@ namespace SourceCodeEditor
             int count = files.Length / 2;
             for (int i = 0; i < count; i++)
             {
-                templatesToolStripMenuItem.DropDownItems.Add(new ToolStripMenuItem($"Template{i+1} - {infoFilesDeserialized[i].Name} ({infoFilesDeserialized[i].Language})", null, OnTemplateClick));
+                templatesToolStripMenuItem.DropDownItems.Add(new ToolStripMenuItem($"Template{i+1} - {infoFilesDeserialized[i].Name} ({infoFilesDeserialized[i].Language})", null, OnTemplateClick!));
             }
         }
         #endregion

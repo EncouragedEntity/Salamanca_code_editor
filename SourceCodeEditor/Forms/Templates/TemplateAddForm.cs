@@ -5,11 +5,11 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace SourceCodeEditor.Forms.Templates
 {
-    
+
 
     public partial class TemplateAddForm : Form
     {
-        
+
         private TemplatesForm Form { get; set; }
         private Template Template { get; set; }
         private string FilePath { get; set; }
@@ -31,11 +31,11 @@ namespace SourceCodeEditor.Forms.Templates
                     if (File.Exists(FilePath))
                         SetDefaultValues(Template);
                     else
-                        SetDefaultValues(new Template()); 
+                        SetDefaultValues(new Template());
                 }
                 catch (FileNotFoundException)
                 {
-                    
+
                 }
                 return;
             }
@@ -53,15 +53,15 @@ namespace SourceCodeEditor.Forms.Templates
         public Template AddTemplate()
         {
             Template.Name = textBoxName.Text;
-            Template.Language = (Language) comboBoxLanguages.SelectedIndex;
+            Template.Language = (Language)comboBoxLanguages.SelectedIndex;
             try
             {
-                    ChangeTemplateLabelText(Form.GetLabelById(Template.Number));
-                    File.WriteAllText(FilePath, fastColoredTextBox1.Text);
+                ChangeTemplateLabelText(Form.GetLabelById(Template.Number));
+                File.WriteAllText(FilePath, fastColoredTextBox1.Text);
 
-                    string JsonPath = FilePath.Replace("txt", "json");
-                    Template.Number++;
-                    File.WriteAllText(JsonPath, JsonSerializer.Serialize(Template, new JsonSerializerOptions() { WriteIndented = true }));
+                string JsonPath = FilePath.Replace("txt", "json");
+                Template.Number++;
+                File.WriteAllText(JsonPath, JsonSerializer.Serialize(Template, new JsonSerializerOptions() { WriteIndented = true }));
             }
             catch (IndexOutOfRangeException ex)
             {
@@ -79,46 +79,19 @@ namespace SourceCodeEditor.Forms.Templates
         {
             DeleteEmptyLines();
             AddTemplate();
+            this.DialogResult = DialogResult.Yes;
             this.Close();
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.No;
             this.Close();
         }
 
         private void comboBoxLanguages_SelectedIndexChanged(object sender, EventArgs e)
         {
             fastColoredTextBox1.Language = (Language)Enum.Parse(typeof(Language), comboBoxLanguages.SelectedItem.ToString());
-        }
-
-        private int GetFirstCharIndexFromSpecificLine(int LineIndex)
-        {
-            string text = fastColoredTextBox1.Text;
-
-            if (LineIndex <= 0)
-            {
-                return 0;
-            }
-
-            int index = 0;
-            int count = 0;
-
-            while (index < text.Length && count < LineIndex)
-            {
-                int nextLineBreak = text.IndexOf('\n', index);
-                if (nextLineBreak < 0)
-                {
-                    return text.Length;
-                }
-                else
-                {
-                    index = nextLineBreak + 1;
-                    count++;
-                }
-            }
-
-            return index;
         }
 
         private void DeleteEmptyLines()
@@ -207,6 +180,11 @@ namespace SourceCodeEditor.Forms.Templates
 
                 fastColoredTextBox1.SelectionStart = fastColoredTextBox1.LinesCount - 1;
             }
+        }
+
+        private void TemplateAddForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.DialogResult = DialogResult.No;
         }
     }
 

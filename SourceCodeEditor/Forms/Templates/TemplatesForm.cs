@@ -10,6 +10,8 @@ namespace SourceCodeEditor.Forms
         public FastColoredTextBox TextField { get; set; }
         private List<Template> Templates { get; set; }
 
+        public bool IsTemplatesChanged = false;
+
         public TemplatesForm(FastColoredTextBox textField)
         {
             Templates = Enumerable.Repeat(new Template(),10).ToList();
@@ -18,6 +20,7 @@ namespace SourceCodeEditor.Forms
             LoadTemplates();
 
             TextField = textField;
+            IsTemplatesChanged = false;
         }
 
         private void LoadTemplates()
@@ -30,6 +33,7 @@ namespace SourceCodeEditor.Forms
                     Template template = new Template();
                     template = JsonSerializer.Deserialize<Template>(File.ReadAllText($"Templates/{file.Name}"))!;
                     Templates[counter] = (template);
+                    IsTemplatesChanged = true;
                     counter++;
                 }
             }
@@ -53,7 +57,7 @@ namespace SourceCodeEditor.Forms
                 if(control is PictureBox)
                 {
                     PictureBox picbox = (PictureBox)control;
-                    picbox.Click += ButtonClick;
+                    picbox.Click += ButtonClick!;
                 }
             }
         }
@@ -126,7 +130,10 @@ namespace SourceCodeEditor.Forms
 
             var addTemplate = new TemplateAddForm(this, template, FilePath);
 
-            addTemplate.ShowDialog();
+            if (addTemplate.ShowDialog() == DialogResult.Yes)
+            {
+                IsTemplatesChanged = true;
+            }
         }
 
         private void TemplateEdit(int templateNumber)
@@ -136,15 +143,16 @@ namespace SourceCodeEditor.Forms
             string FilePath = $"{FolderPath}/{TemplateName}";
 
             var template = new Template();
-            template.Name = GetLabelById(templateNumber).Text;
+            template.Name = GetLabelById(templateNumber)!.Text;
             template.Number = templateNumber;
             template.Language = Templates[templateNumber].Language;
             
             var editTemplate = new TemplateAddForm(this, template, FilePath, TemplateAddMode.Editing);
-            editTemplate.ShowDialog();
-
-
-            LoadTemplates();
+            if(editTemplate.ShowDialog() == DialogResult.Yes)
+            {
+                LoadTemplates();
+                IsTemplatesChanged = true;
+            }
         }
 
         private void TemplateDelete(int templateNumber)
@@ -157,6 +165,7 @@ namespace SourceCodeEditor.Forms
                 FileSystem.DeleteFile(TemplatePath, UIOption.OnlyErrorDialogs, RecycleOption.DeletePermanently);
                 FileSystem.DeleteFile(JsonPath, UIOption.OnlyErrorDialogs, RecycleOption.DeletePermanently);
                 Templates.Remove(Templates.ElementAt(templateNumber));
+                IsTemplatesChanged = true;
 
                 GetLabelById(templateNumber)!.Text = $"Template{templateNumber + 1}";
             }
