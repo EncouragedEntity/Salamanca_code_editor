@@ -69,7 +69,7 @@ namespace SourceCodeEditor.Forms
 
         public Label? GetLabelById(int id)
         {
-            return tableLayoutPanel1.Controls.OfType<Label>().Where(value => value.Name == $"label{id + 1}").FirstOrDefault(); ;
+            return tableLayoutPanel1.Controls.OfType<Label>().Where(value => value.Name == $"label{id + 1}").FirstOrDefault();
         }
 
         private void ButtonClick(object sender, EventArgs e)
@@ -148,10 +148,43 @@ namespace SourceCodeEditor.Forms
             template.Language = Templates[templateNumber].Language;
             
             var editTemplate = new TemplateAddForm(this, template, FilePath, TemplateAddMode.Editing);
+
             if(editTemplate.ShowDialog() == DialogResult.Yes)
             {
                 LoadTemplates();
                 IsTemplatesChanged = true;
+            }
+        }
+
+        private void RenameTemplatesFiles()
+        {
+            var directory = new DirectoryInfo("Templates");
+            var files = directory.GetFiles();
+
+            for (int i = 1; i <= files.Length; i++)
+            {
+                var txtFiles = files.Where(file => file.Extension == ".txt").ToList();
+                var jsonFiles = files.Where(file => file.Extension == ".json").ToList();
+
+                for(int j = 1; j <= txtFiles.Count; j++)
+                {
+                    var txtFile = txtFiles[j-1];
+
+                    if (txtFile.Name != $"Template{j}{txtFile.Extension}")
+                    {
+                        File.Move(txtFile.FullName, $"Templates/Template{j}{txtFile.Extension}");
+                    }
+                }
+
+                for (int j = 1; j <= jsonFiles.Count; j++)
+                {
+                    var jsonFile = jsonFiles[j-1];
+
+                    if (jsonFile.Name != $"Template{j}{jsonFile.Extension}")
+                    {
+                        File.Move(jsonFile.FullName, $"Templates/Template{j}{jsonFile.Extension}");
+                    }
+                }
             }
         }
 
@@ -169,6 +202,9 @@ namespace SourceCodeEditor.Forms
 
                 GetLabelById(templateNumber)!.Text = $"Template{templateNumber + 1}";
             }
+
+            RenameTemplatesFiles();
+            LoadTemplates();
         }
     }
 }

@@ -72,7 +72,14 @@ namespace SourceCodeEditor.Forms.Templates
 
         public void ChangeTemplateLabelText(Label label)
         {
-            label.Text = textBoxName.Text;
+            try
+            {
+                label.Text = textBoxName.Text;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Change template name!");
+            }
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
@@ -184,7 +191,8 @@ namespace SourceCodeEditor.Forms.Templates
 
         private void TemplateAddForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.DialogResult = DialogResult.No;
+            if(this.DialogResult != DialogResult.Yes)
+                this.DialogResult = DialogResult.No;
         }
     }
 

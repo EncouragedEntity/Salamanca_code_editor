@@ -1,10 +1,5 @@
 ﻿using FastColoredTextBoxNS;
 using SourceCodeEditor.AppearenceConfig;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SourceCodeEditor
 {
@@ -66,7 +61,7 @@ namespace SourceCodeEditor
             return false;
         }
 
-        private void LanguageItem_Click(object? sender, EventArgs e)
+        private async void LanguageItem_Click(object? sender, EventArgs e)
         {
             var item = (ToolStripMenuItem)sender!;
             var status = MainForm.syntaxLabel;

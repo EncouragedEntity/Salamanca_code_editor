@@ -1,6 +1,5 @@
 ﻿using FastColoredTextBoxNS;
 using SourceCodeEditor.Enums;
-using System.Security.Permissions;
 
 namespace SourceCodeEditor.AppearenceConfig
 {
@@ -10,7 +9,7 @@ namespace SourceCodeEditor.AppearenceConfig
         /// Theme is Black by default
         /// </summary>
         private Theme _theme = Theme.Black;
-        private CurrentTheme currentTheme = new CurrentTheme();
+        private CurrentTheme currentTheme;
         private readonly MainForm mainForm;
         private readonly MenuStrip _header;
         private readonly FastColoredTextBox _mainTextField;
@@ -31,6 +30,7 @@ namespace SourceCodeEditor.AppearenceConfig
 
         public ThemeChanger(MainForm form)
         {
+            currentTheme = form.theme;
             mainForm = form;
             _theme = form.CurrentTheme;
             _header = form.MainHeader;
@@ -80,7 +80,7 @@ namespace SourceCodeEditor.AppearenceConfig
         public void ChangeGeneralThemeToBlack()
         {
             mainForm.theme.ThemePath = currentTheme.ThemePath = "Themes/BlackTheme.theme";
-            mainForm.theme.syntaxColors.SyntaxPath = "SyntaxColors/BlackSyntax.syn";
+            mainForm.theme.syntaxColors!.SyntaxPath = "SyntaxColors/BlackSyntax.syn";
             _theme = Theme.Black;
 
             currentTheme = ThemeSerializer.Deserialize<CurrentTheme>(currentTheme.ThemePath)!;
@@ -127,7 +127,7 @@ namespace SourceCodeEditor.AppearenceConfig
         {
             _theme = Theme.White;
             mainForm.theme.ThemePath =  currentTheme.ThemePath = "Themes/WhiteTheme.theme";
-            mainForm.theme.syntaxColors.SyntaxPath = "SyntaxColors/WhiteSyntax.syn";
+            mainForm.theme.syntaxColors!.SyntaxPath = "SyntaxColors/WhiteSyntax.syn";
 
 
             currentTheme = ThemeSerializer.Deserialize<CurrentTheme>(currentTheme.ThemePath)!;
@@ -174,7 +174,7 @@ namespace SourceCodeEditor.AppearenceConfig
 
         private void SetColorsToHighLighterBlack()
         {
-            currentTheme.syntaxColors.SetColorsToHighlighter(mainForm.MainTextField);
+            currentTheme.syntaxColors!.SetColorsToHighlighter(mainForm.MainTextField);
             /*
             _mainTextField.SyntaxHighlighter.ClassNameStyle = new TextStyle(Brushes.MediumSpringGreen, null, FontStyle.Bold);
             _mainTextField.SyntaxHighlighter.StringStyle = new TextStyle(Brushes.Orange, null, FontStyle.Regular);
@@ -236,13 +236,13 @@ namespace SourceCodeEditor.AppearenceConfig
             {
                 case Theme.Black: 
                     {
-                        currentTheme.syntaxColors.SyntaxPath = "SyntaxColors/BlackSyntax.syn";
+                        currentTheme.syntaxColors!.SyntaxPath = "SyntaxColors/BlackSyntax.syn";
                         SetColorsToHighLighterBlack();
                     }
                     break;
                 case Theme.White:
                     {
-                        currentTheme.syntaxColors.SyntaxPath = "SyntaxColors/WhiteSyntax.syn";
+                        currentTheme.syntaxColors!.SyntaxPath = "SyntaxColors/WhiteSyntax.syn";
                         SetColorsToHighLighterWhite();
                     }
                     break;
@@ -343,7 +343,6 @@ namespace SourceCodeEditor.AppearenceConfig
         /// </summary>
         public void ChangeSyntaxHighlithing()
         {
-
             var sercon = new ContentSerializer(_mainTextField.Text);
             _mainTextField.ClearStylesBuffer();
             sercon.SerializeContent();
@@ -362,6 +361,9 @@ namespace SourceCodeEditor.AppearenceConfig
         /// <param name="header">Object of main menu strip</param>
         public void ChangeHeaderTheme(CurrentTheme theme)
         {
+            if(theme.HeaderBack == Color.Transparent || theme.HeaderFore == Color.Transparent )
+                theme = ThemeSerializer.Deserialize<CurrentTheme>("Themes/BlackTheme.theme")!;
+
             var allItems = new List<ToolStripMenuItem>();
             foreach (ToolStripMenuItem toolItem in _header.Items)
             {

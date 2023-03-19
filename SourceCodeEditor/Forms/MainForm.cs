@@ -3,7 +3,6 @@ using SourceCodeEditor.AppearenceConfig;
 using SourceCodeEditor.Enums;
 using SourceCodeEditor.Forms;
 using System.Text.Json;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace SourceCodeEditor
 {
@@ -18,7 +17,7 @@ namespace SourceCodeEditor
         private string _applicationName { get; set; } = "Salamanca";
         public Theme CurrentTheme { get; set; }
         private Theme DefaultTheme { get; set; } = Theme.Black;
-        public CurrentTheme theme = new CurrentTheme();
+        public CurrentTheme theme;
         public Font DefaultTextFont { get; set; } = new Font(new FontFamily("Courier New"), 12);
         public WindowState StateOfWindow { get; set; } = Enums.WindowState.Windowed;
         public int DefaultZoom { get; set; } = 100;
@@ -40,6 +39,7 @@ namespace SourceCodeEditor
         public MainForm()
         {
             InitializeComponent();
+            theme = ThemeSerializer.Deserialize<CurrentTheme>("Themes/BlackTheme.theme")!;
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -52,12 +52,10 @@ namespace SourceCodeEditor
 
 
             //Get default theme from file and apply it on load
-            theme = ThemeSerializer.Deserialize<CurrentTheme>("Themes/BlackTheme.theme")!;
             theme.syntaxColors = ThemeSerializer.Deserialize<SyntaxColors>("SyntaxColors/BlackSyntax.syn");
             CurrentTheme = DefaultTheme;
             new ThemeChanger(this).ChangeTheme(CurrentTheme);
             DeleteUnnecessaryLabels();
-
         }
 
         #region Methods
@@ -534,12 +532,15 @@ namespace SourceCodeEditor
         {
             var templatesForm = new TemplatesForm(MainTextField);
             templatesForm.ShowDialog();
+
             if (templatesForm.IsTemplatesChanged)
             {
-                DeleteTemplatesToolStrips();
                 LoadTemplatesToolStrips();
+
+                /// After syntax changing, theme isn't loaded properly here
                 new ThemeChanger(this).ChangeHeaderTheme(theme);
             }
+
         }
 
         private void OnTemplateClick(object sender, EventArgs e)
@@ -575,14 +576,8 @@ namespace SourceCodeEditor
 
         private void DeleteTemplatesToolStrips()
         {
-            var items = templatesToolStripMenuItem.DropDownItems;
-            for (int i = 0; i < items.Count; i++)
-            {
-                if (items[i].Text != "Configuration")
-                {
-                    items.Remove(items[i]);
-                }
-            }
+            templatesToolStripMenuItem.DropDownItems.Clear();
+            templatesToolStripMenuItem.DropDownItems.Add("Configuration", null, templatesToolStripMenuItem_Click!);
         }
 
         private void LoadTemplatesToolStrips()
@@ -607,6 +602,7 @@ namespace SourceCodeEditor
                 }
             }
 
+            DeleteTemplatesToolStrips();
             int count = files.Length / 2;
             for (int i = 0; i < count; i++)
             {
