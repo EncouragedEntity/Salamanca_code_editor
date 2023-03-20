@@ -28,664 +28,663 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonBack = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBoxDelete10 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxDelete9 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxDelete8 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxDelete7 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxDelete6 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxDelete5 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxDelete4 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxDelete3 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxDelete2 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxEdit10 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxEdit9 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxEdit8 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxEdit7 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxEdit6 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxEdit5 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxEdit4 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxEdit3 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxEdit2 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxPlay10 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxPlay9 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxPlay8 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxPlay7 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxPlay6 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxPlay5 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxPlay4 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxPlay3 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxPlay2 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxDelete1 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxEdit1 = new System.Windows.Forms.PictureBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBoxPlay1 = new System.Windows.Forms.PictureBox();
-            this.panel1.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDelete10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDelete9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDelete8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDelete7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDelete6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDelete5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDelete4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDelete3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDelete2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEdit10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEdit9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEdit8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEdit7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEdit6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEdit5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEdit4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEdit3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEdit2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlay10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlay9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlay8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlay7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlay6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlay5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlay4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlay3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlay2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDelete1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlay1)).BeginInit();
-            this.SuspendLayout();
+            panel1 = new Panel();
+            buttonBack = new Button();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            pictureBoxDelete10 = new PictureBox();
+            pictureBoxDelete9 = new PictureBox();
+            pictureBoxDelete8 = new PictureBox();
+            pictureBoxDelete7 = new PictureBox();
+            pictureBoxDelete6 = new PictureBox();
+            pictureBoxDelete5 = new PictureBox();
+            pictureBoxDelete4 = new PictureBox();
+            pictureBoxDelete3 = new PictureBox();
+            pictureBoxDelete2 = new PictureBox();
+            pictureBoxEdit10 = new PictureBox();
+            pictureBoxEdit9 = new PictureBox();
+            pictureBoxEdit8 = new PictureBox();
+            pictureBoxEdit7 = new PictureBox();
+            pictureBoxEdit6 = new PictureBox();
+            pictureBoxEdit5 = new PictureBox();
+            pictureBoxEdit4 = new PictureBox();
+            pictureBoxEdit3 = new PictureBox();
+            pictureBoxEdit2 = new PictureBox();
+            pictureBoxPlay10 = new PictureBox();
+            pictureBoxPlay9 = new PictureBox();
+            pictureBoxPlay8 = new PictureBox();
+            pictureBoxPlay7 = new PictureBox();
+            pictureBoxPlay6 = new PictureBox();
+            pictureBoxPlay5 = new PictureBox();
+            pictureBoxPlay4 = new PictureBox();
+            pictureBoxPlay3 = new PictureBox();
+            pictureBoxPlay2 = new PictureBox();
+            pictureBoxDelete1 = new PictureBox();
+            pictureBoxEdit1 = new PictureBox();
+            label10 = new Label();
+            label9 = new Label();
+            label8 = new Label();
+            label7 = new Label();
+            label6 = new Label();
+            label5 = new Label();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            pictureBoxPlay1 = new PictureBox();
+            panel1.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxDelete10).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxDelete9).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxDelete8).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxDelete7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxDelete6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxDelete5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxDelete4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxDelete3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxDelete2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxEdit10).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxEdit9).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxEdit8).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxEdit7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxEdit6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxEdit5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxEdit4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxEdit3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxEdit2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxPlay10).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxPlay9).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxPlay8).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxPlay7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxPlay6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxPlay5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxPlay4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxPlay3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxPlay2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxDelete1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxEdit1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxPlay1).BeginInit();
+            SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.buttonBack);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 651);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(669, 36);
-            this.panel1.TabIndex = 1;
+            panel1.Controls.Add(buttonBack);
+            panel1.Dock = DockStyle.Bottom;
+            panel1.Location = new Point(0, 651);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(669, 36);
+            panel1.TabIndex = 1;
             // 
             // buttonBack
             // 
-            this.buttonBack.Location = new System.Drawing.Point(3, 4);
-            this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(94, 29);
-            this.buttonBack.TabIndex = 1;
-            this.buttonBack.Text = "Back";
-            this.buttonBack.UseVisualStyleBackColor = true;
-            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            buttonBack.Location = new Point(3, 4);
+            buttonBack.Name = "buttonBack";
+            buttonBack.Size = new Size(94, 29);
+            buttonBack.TabIndex = 1;
+            buttonBack.Text = "Back";
+            buttonBack.UseVisualStyleBackColor = true;
+            buttonBack.Click += buttonBack_Click;
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.Controls.Add(this.pictureBoxDelete10, 3, 9);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBoxDelete9, 3, 8);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBoxDelete8, 3, 7);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBoxDelete7, 3, 6);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBoxDelete6, 3, 5);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBoxDelete5, 3, 4);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBoxDelete4, 3, 3);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBoxDelete3, 3, 2);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBoxDelete2, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBoxEdit10, 2, 9);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBoxEdit9, 2, 8);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBoxEdit8, 2, 7);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBoxEdit7, 2, 6);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBoxEdit6, 2, 5);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBoxEdit5, 2, 4);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBoxEdit4, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBoxEdit3, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBoxEdit2, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBoxPlay10, 1, 9);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBoxPlay9, 1, 8);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBoxPlay8, 1, 7);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBoxPlay7, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBoxPlay6, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBoxPlay5, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBoxPlay4, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBoxPlay3, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBoxPlay2, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBoxDelete1, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBoxEdit1, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label10, 0, 9);
-            this.tableLayoutPanel1.Controls.Add(this.label9, 0, 8);
-            this.tableLayoutPanel1.Controls.Add(this.label8, 0, 7);
-            this.tableLayoutPanel1.Controls.Add(this.label7, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.label6, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBoxPlay1, 1, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 10;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(669, 651);
-            this.tableLayoutPanel1.TabIndex = 2;
+            tableLayoutPanel1.ColumnCount = 4;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10F));
+            tableLayoutPanel1.Controls.Add(pictureBoxDelete10, 3, 9);
+            tableLayoutPanel1.Controls.Add(pictureBoxDelete9, 3, 8);
+            tableLayoutPanel1.Controls.Add(pictureBoxDelete8, 3, 7);
+            tableLayoutPanel1.Controls.Add(pictureBoxDelete7, 3, 6);
+            tableLayoutPanel1.Controls.Add(pictureBoxDelete6, 3, 5);
+            tableLayoutPanel1.Controls.Add(pictureBoxDelete5, 3, 4);
+            tableLayoutPanel1.Controls.Add(pictureBoxDelete4, 3, 3);
+            tableLayoutPanel1.Controls.Add(pictureBoxDelete3, 3, 2);
+            tableLayoutPanel1.Controls.Add(pictureBoxDelete2, 3, 1);
+            tableLayoutPanel1.Controls.Add(pictureBoxEdit10, 2, 9);
+            tableLayoutPanel1.Controls.Add(pictureBoxEdit9, 2, 8);
+            tableLayoutPanel1.Controls.Add(pictureBoxEdit8, 2, 7);
+            tableLayoutPanel1.Controls.Add(pictureBoxEdit7, 2, 6);
+            tableLayoutPanel1.Controls.Add(pictureBoxEdit6, 2, 5);
+            tableLayoutPanel1.Controls.Add(pictureBoxEdit5, 2, 4);
+            tableLayoutPanel1.Controls.Add(pictureBoxEdit4, 2, 3);
+            tableLayoutPanel1.Controls.Add(pictureBoxEdit3, 2, 2);
+            tableLayoutPanel1.Controls.Add(pictureBoxEdit2, 2, 1);
+            tableLayoutPanel1.Controls.Add(pictureBoxPlay10, 1, 9);
+            tableLayoutPanel1.Controls.Add(pictureBoxPlay9, 1, 8);
+            tableLayoutPanel1.Controls.Add(pictureBoxPlay8, 1, 7);
+            tableLayoutPanel1.Controls.Add(pictureBoxPlay7, 1, 6);
+            tableLayoutPanel1.Controls.Add(pictureBoxPlay6, 1, 5);
+            tableLayoutPanel1.Controls.Add(pictureBoxPlay5, 1, 4);
+            tableLayoutPanel1.Controls.Add(pictureBoxPlay4, 1, 3);
+            tableLayoutPanel1.Controls.Add(pictureBoxPlay3, 1, 2);
+            tableLayoutPanel1.Controls.Add(pictureBoxPlay2, 1, 1);
+            tableLayoutPanel1.Controls.Add(pictureBoxDelete1, 3, 0);
+            tableLayoutPanel1.Controls.Add(pictureBoxEdit1, 2, 0);
+            tableLayoutPanel1.Controls.Add(label10, 0, 9);
+            tableLayoutPanel1.Controls.Add(label9, 0, 8);
+            tableLayoutPanel1.Controls.Add(label8, 0, 7);
+            tableLayoutPanel1.Controls.Add(label7, 0, 6);
+            tableLayoutPanel1.Controls.Add(label6, 0, 5);
+            tableLayoutPanel1.Controls.Add(label5, 0, 4);
+            tableLayoutPanel1.Controls.Add(label4, 0, 3);
+            tableLayoutPanel1.Controls.Add(label3, 0, 2);
+            tableLayoutPanel1.Controls.Add(label2, 0, 1);
+            tableLayoutPanel1.Controls.Add(label1, 0, 0);
+            tableLayoutPanel1.Controls.Add(pictureBoxPlay1, 1, 0);
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 10;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+            tableLayoutPanel1.Size = new Size(669, 651);
+            tableLayoutPanel1.TabIndex = 2;
             // 
             // pictureBoxDelete10
             // 
-            this.pictureBoxDelete10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxDelete10.Image = global::SourceCodeEditor.Properties.Resources.Delete;
-            this.pictureBoxDelete10.InitialImage = null;
-            this.pictureBoxDelete10.Location = new System.Drawing.Point(603, 588);
-            this.pictureBoxDelete10.Name = "pictureBoxDelete10";
-            this.pictureBoxDelete10.Size = new System.Drawing.Size(63, 60);
-            this.pictureBoxDelete10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxDelete10.TabIndex = 63;
-            this.pictureBoxDelete10.TabStop = false;
+            pictureBoxDelete10.Dock = DockStyle.Fill;
+            pictureBoxDelete10.Image = Properties.Resources.Delete;
+            pictureBoxDelete10.InitialImage = null;
+            pictureBoxDelete10.Location = new Point(603, 588);
+            pictureBoxDelete10.Name = "pictureBoxDelete10";
+            pictureBoxDelete10.Size = new Size(63, 60);
+            pictureBoxDelete10.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxDelete10.TabIndex = 63;
+            pictureBoxDelete10.TabStop = false;
             // 
             // pictureBoxDelete9
             // 
-            this.pictureBoxDelete9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxDelete9.Image = global::SourceCodeEditor.Properties.Resources.Delete;
-            this.pictureBoxDelete9.InitialImage = null;
-            this.pictureBoxDelete9.Location = new System.Drawing.Point(603, 523);
-            this.pictureBoxDelete9.Name = "pictureBoxDelete9";
-            this.pictureBoxDelete9.Size = new System.Drawing.Size(63, 59);
-            this.pictureBoxDelete9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxDelete9.TabIndex = 62;
-            this.pictureBoxDelete9.TabStop = false;
+            pictureBoxDelete9.Dock = DockStyle.Fill;
+            pictureBoxDelete9.Image = Properties.Resources.Delete;
+            pictureBoxDelete9.InitialImage = null;
+            pictureBoxDelete9.Location = new Point(603, 523);
+            pictureBoxDelete9.Name = "pictureBoxDelete9";
+            pictureBoxDelete9.Size = new Size(63, 59);
+            pictureBoxDelete9.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxDelete9.TabIndex = 62;
+            pictureBoxDelete9.TabStop = false;
             // 
             // pictureBoxDelete8
             // 
-            this.pictureBoxDelete8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxDelete8.Image = global::SourceCodeEditor.Properties.Resources.Delete;
-            this.pictureBoxDelete8.InitialImage = null;
-            this.pictureBoxDelete8.Location = new System.Drawing.Point(603, 458);
-            this.pictureBoxDelete8.Name = "pictureBoxDelete8";
-            this.pictureBoxDelete8.Size = new System.Drawing.Size(63, 59);
-            this.pictureBoxDelete8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxDelete8.TabIndex = 61;
-            this.pictureBoxDelete8.TabStop = false;
+            pictureBoxDelete8.Dock = DockStyle.Fill;
+            pictureBoxDelete8.Image = Properties.Resources.Delete;
+            pictureBoxDelete8.InitialImage = null;
+            pictureBoxDelete8.Location = new Point(603, 458);
+            pictureBoxDelete8.Name = "pictureBoxDelete8";
+            pictureBoxDelete8.Size = new Size(63, 59);
+            pictureBoxDelete8.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxDelete8.TabIndex = 61;
+            pictureBoxDelete8.TabStop = false;
             // 
             // pictureBoxDelete7
             // 
-            this.pictureBoxDelete7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxDelete7.Image = global::SourceCodeEditor.Properties.Resources.Delete;
-            this.pictureBoxDelete7.InitialImage = null;
-            this.pictureBoxDelete7.Location = new System.Drawing.Point(603, 393);
-            this.pictureBoxDelete7.Name = "pictureBoxDelete7";
-            this.pictureBoxDelete7.Size = new System.Drawing.Size(63, 59);
-            this.pictureBoxDelete7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxDelete7.TabIndex = 60;
-            this.pictureBoxDelete7.TabStop = false;
+            pictureBoxDelete7.Dock = DockStyle.Fill;
+            pictureBoxDelete7.Image = Properties.Resources.Delete;
+            pictureBoxDelete7.InitialImage = null;
+            pictureBoxDelete7.Location = new Point(603, 393);
+            pictureBoxDelete7.Name = "pictureBoxDelete7";
+            pictureBoxDelete7.Size = new Size(63, 59);
+            pictureBoxDelete7.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxDelete7.TabIndex = 60;
+            pictureBoxDelete7.TabStop = false;
             // 
             // pictureBoxDelete6
             // 
-            this.pictureBoxDelete6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxDelete6.Image = global::SourceCodeEditor.Properties.Resources.Delete;
-            this.pictureBoxDelete6.InitialImage = null;
-            this.pictureBoxDelete6.Location = new System.Drawing.Point(603, 328);
-            this.pictureBoxDelete6.Name = "pictureBoxDelete6";
-            this.pictureBoxDelete6.Size = new System.Drawing.Size(63, 59);
-            this.pictureBoxDelete6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxDelete6.TabIndex = 59;
-            this.pictureBoxDelete6.TabStop = false;
+            pictureBoxDelete6.Dock = DockStyle.Fill;
+            pictureBoxDelete6.Image = Properties.Resources.Delete;
+            pictureBoxDelete6.InitialImage = null;
+            pictureBoxDelete6.Location = new Point(603, 328);
+            pictureBoxDelete6.Name = "pictureBoxDelete6";
+            pictureBoxDelete6.Size = new Size(63, 59);
+            pictureBoxDelete6.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxDelete6.TabIndex = 59;
+            pictureBoxDelete6.TabStop = false;
             // 
             // pictureBoxDelete5
             // 
-            this.pictureBoxDelete5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxDelete5.Image = global::SourceCodeEditor.Properties.Resources.Delete;
-            this.pictureBoxDelete5.InitialImage = null;
-            this.pictureBoxDelete5.Location = new System.Drawing.Point(603, 263);
-            this.pictureBoxDelete5.Name = "pictureBoxDelete5";
-            this.pictureBoxDelete5.Size = new System.Drawing.Size(63, 59);
-            this.pictureBoxDelete5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxDelete5.TabIndex = 58;
-            this.pictureBoxDelete5.TabStop = false;
+            pictureBoxDelete5.Dock = DockStyle.Fill;
+            pictureBoxDelete5.Image = Properties.Resources.Delete;
+            pictureBoxDelete5.InitialImage = null;
+            pictureBoxDelete5.Location = new Point(603, 263);
+            pictureBoxDelete5.Name = "pictureBoxDelete5";
+            pictureBoxDelete5.Size = new Size(63, 59);
+            pictureBoxDelete5.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxDelete5.TabIndex = 58;
+            pictureBoxDelete5.TabStop = false;
             // 
             // pictureBoxDelete4
             // 
-            this.pictureBoxDelete4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxDelete4.Image = global::SourceCodeEditor.Properties.Resources.Delete;
-            this.pictureBoxDelete4.InitialImage = null;
-            this.pictureBoxDelete4.Location = new System.Drawing.Point(603, 198);
-            this.pictureBoxDelete4.Name = "pictureBoxDelete4";
-            this.pictureBoxDelete4.Size = new System.Drawing.Size(63, 59);
-            this.pictureBoxDelete4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxDelete4.TabIndex = 57;
-            this.pictureBoxDelete4.TabStop = false;
+            pictureBoxDelete4.Dock = DockStyle.Fill;
+            pictureBoxDelete4.Image = Properties.Resources.Delete;
+            pictureBoxDelete4.InitialImage = null;
+            pictureBoxDelete4.Location = new Point(603, 198);
+            pictureBoxDelete4.Name = "pictureBoxDelete4";
+            pictureBoxDelete4.Size = new Size(63, 59);
+            pictureBoxDelete4.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxDelete4.TabIndex = 57;
+            pictureBoxDelete4.TabStop = false;
             // 
             // pictureBoxDelete3
             // 
-            this.pictureBoxDelete3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxDelete3.Image = global::SourceCodeEditor.Properties.Resources.Delete;
-            this.pictureBoxDelete3.InitialImage = null;
-            this.pictureBoxDelete3.Location = new System.Drawing.Point(603, 133);
-            this.pictureBoxDelete3.Name = "pictureBoxDelete3";
-            this.pictureBoxDelete3.Size = new System.Drawing.Size(63, 59);
-            this.pictureBoxDelete3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxDelete3.TabIndex = 56;
-            this.pictureBoxDelete3.TabStop = false;
+            pictureBoxDelete3.Dock = DockStyle.Fill;
+            pictureBoxDelete3.Image = Properties.Resources.Delete;
+            pictureBoxDelete3.InitialImage = null;
+            pictureBoxDelete3.Location = new Point(603, 133);
+            pictureBoxDelete3.Name = "pictureBoxDelete3";
+            pictureBoxDelete3.Size = new Size(63, 59);
+            pictureBoxDelete3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxDelete3.TabIndex = 56;
+            pictureBoxDelete3.TabStop = false;
             // 
             // pictureBoxDelete2
             // 
-            this.pictureBoxDelete2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxDelete2.Image = global::SourceCodeEditor.Properties.Resources.Delete;
-            this.pictureBoxDelete2.InitialImage = null;
-            this.pictureBoxDelete2.Location = new System.Drawing.Point(603, 68);
-            this.pictureBoxDelete2.Name = "pictureBoxDelete2";
-            this.pictureBoxDelete2.Size = new System.Drawing.Size(63, 59);
-            this.pictureBoxDelete2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxDelete2.TabIndex = 55;
-            this.pictureBoxDelete2.TabStop = false;
+            pictureBoxDelete2.Dock = DockStyle.Fill;
+            pictureBoxDelete2.Image = Properties.Resources.Delete;
+            pictureBoxDelete2.InitialImage = null;
+            pictureBoxDelete2.Location = new Point(603, 68);
+            pictureBoxDelete2.Name = "pictureBoxDelete2";
+            pictureBoxDelete2.Size = new Size(63, 59);
+            pictureBoxDelete2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxDelete2.TabIndex = 55;
+            pictureBoxDelete2.TabStop = false;
             // 
             // pictureBoxEdit10
             // 
-            this.pictureBoxEdit10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxEdit10.Image = global::SourceCodeEditor.Properties.Resources.Edit;
-            this.pictureBoxEdit10.InitialImage = null;
-            this.pictureBoxEdit10.Location = new System.Drawing.Point(537, 588);
-            this.pictureBoxEdit10.Name = "pictureBoxEdit10";
-            this.pictureBoxEdit10.Size = new System.Drawing.Size(60, 60);
-            this.pictureBoxEdit10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxEdit10.TabIndex = 54;
-            this.pictureBoxEdit10.TabStop = false;
+            pictureBoxEdit10.Dock = DockStyle.Fill;
+            pictureBoxEdit10.Image = Properties.Resources.Edit;
+            pictureBoxEdit10.InitialImage = null;
+            pictureBoxEdit10.Location = new Point(537, 588);
+            pictureBoxEdit10.Name = "pictureBoxEdit10";
+            pictureBoxEdit10.Size = new Size(60, 60);
+            pictureBoxEdit10.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxEdit10.TabIndex = 54;
+            pictureBoxEdit10.TabStop = false;
             // 
             // pictureBoxEdit9
             // 
-            this.pictureBoxEdit9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxEdit9.Image = global::SourceCodeEditor.Properties.Resources.Edit;
-            this.pictureBoxEdit9.InitialImage = null;
-            this.pictureBoxEdit9.Location = new System.Drawing.Point(537, 523);
-            this.pictureBoxEdit9.Name = "pictureBoxEdit9";
-            this.pictureBoxEdit9.Size = new System.Drawing.Size(60, 59);
-            this.pictureBoxEdit9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxEdit9.TabIndex = 52;
-            this.pictureBoxEdit9.TabStop = false;
+            pictureBoxEdit9.Dock = DockStyle.Fill;
+            pictureBoxEdit9.Image = Properties.Resources.Edit;
+            pictureBoxEdit9.InitialImage = null;
+            pictureBoxEdit9.Location = new Point(537, 523);
+            pictureBoxEdit9.Name = "pictureBoxEdit9";
+            pictureBoxEdit9.Size = new Size(60, 59);
+            pictureBoxEdit9.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxEdit9.TabIndex = 52;
+            pictureBoxEdit9.TabStop = false;
             // 
             // pictureBoxEdit8
             // 
-            this.pictureBoxEdit8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxEdit8.Image = global::SourceCodeEditor.Properties.Resources.Edit;
-            this.pictureBoxEdit8.InitialImage = null;
-            this.pictureBoxEdit8.Location = new System.Drawing.Point(537, 458);
-            this.pictureBoxEdit8.Name = "pictureBoxEdit8";
-            this.pictureBoxEdit8.Size = new System.Drawing.Size(60, 59);
-            this.pictureBoxEdit8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxEdit8.TabIndex = 50;
-            this.pictureBoxEdit8.TabStop = false;
+            pictureBoxEdit8.Dock = DockStyle.Fill;
+            pictureBoxEdit8.Image = Properties.Resources.Edit;
+            pictureBoxEdit8.InitialImage = null;
+            pictureBoxEdit8.Location = new Point(537, 458);
+            pictureBoxEdit8.Name = "pictureBoxEdit8";
+            pictureBoxEdit8.Size = new Size(60, 59);
+            pictureBoxEdit8.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxEdit8.TabIndex = 50;
+            pictureBoxEdit8.TabStop = false;
             // 
             // pictureBoxEdit7
             // 
-            this.pictureBoxEdit7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxEdit7.Image = global::SourceCodeEditor.Properties.Resources.Edit;
-            this.pictureBoxEdit7.InitialImage = null;
-            this.pictureBoxEdit7.Location = new System.Drawing.Point(537, 393);
-            this.pictureBoxEdit7.Name = "pictureBoxEdit7";
-            this.pictureBoxEdit7.Size = new System.Drawing.Size(60, 59);
-            this.pictureBoxEdit7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxEdit7.TabIndex = 48;
-            this.pictureBoxEdit7.TabStop = false;
+            pictureBoxEdit7.Dock = DockStyle.Fill;
+            pictureBoxEdit7.Image = Properties.Resources.Edit;
+            pictureBoxEdit7.InitialImage = null;
+            pictureBoxEdit7.Location = new Point(537, 393);
+            pictureBoxEdit7.Name = "pictureBoxEdit7";
+            pictureBoxEdit7.Size = new Size(60, 59);
+            pictureBoxEdit7.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxEdit7.TabIndex = 48;
+            pictureBoxEdit7.TabStop = false;
             // 
             // pictureBoxEdit6
             // 
-            this.pictureBoxEdit6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxEdit6.Image = global::SourceCodeEditor.Properties.Resources.Edit;
-            this.pictureBoxEdit6.InitialImage = null;
-            this.pictureBoxEdit6.Location = new System.Drawing.Point(537, 328);
-            this.pictureBoxEdit6.Name = "pictureBoxEdit6";
-            this.pictureBoxEdit6.Size = new System.Drawing.Size(60, 59);
-            this.pictureBoxEdit6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxEdit6.TabIndex = 46;
-            this.pictureBoxEdit6.TabStop = false;
+            pictureBoxEdit6.Dock = DockStyle.Fill;
+            pictureBoxEdit6.Image = Properties.Resources.Edit;
+            pictureBoxEdit6.InitialImage = null;
+            pictureBoxEdit6.Location = new Point(537, 328);
+            pictureBoxEdit6.Name = "pictureBoxEdit6";
+            pictureBoxEdit6.Size = new Size(60, 59);
+            pictureBoxEdit6.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxEdit6.TabIndex = 46;
+            pictureBoxEdit6.TabStop = false;
             // 
             // pictureBoxEdit5
             // 
-            this.pictureBoxEdit5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxEdit5.Image = global::SourceCodeEditor.Properties.Resources.Edit;
-            this.pictureBoxEdit5.InitialImage = null;
-            this.pictureBoxEdit5.Location = new System.Drawing.Point(537, 263);
-            this.pictureBoxEdit5.Name = "pictureBoxEdit5";
-            this.pictureBoxEdit5.Size = new System.Drawing.Size(60, 59);
-            this.pictureBoxEdit5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxEdit5.TabIndex = 44;
-            this.pictureBoxEdit5.TabStop = false;
+            pictureBoxEdit5.Dock = DockStyle.Fill;
+            pictureBoxEdit5.Image = Properties.Resources.Edit;
+            pictureBoxEdit5.InitialImage = null;
+            pictureBoxEdit5.Location = new Point(537, 263);
+            pictureBoxEdit5.Name = "pictureBoxEdit5";
+            pictureBoxEdit5.Size = new Size(60, 59);
+            pictureBoxEdit5.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxEdit5.TabIndex = 44;
+            pictureBoxEdit5.TabStop = false;
             // 
             // pictureBoxEdit4
             // 
-            this.pictureBoxEdit4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxEdit4.Image = global::SourceCodeEditor.Properties.Resources.Edit;
-            this.pictureBoxEdit4.InitialImage = null;
-            this.pictureBoxEdit4.Location = new System.Drawing.Point(537, 198);
-            this.pictureBoxEdit4.Name = "pictureBoxEdit4";
-            this.pictureBoxEdit4.Size = new System.Drawing.Size(60, 59);
-            this.pictureBoxEdit4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxEdit4.TabIndex = 42;
-            this.pictureBoxEdit4.TabStop = false;
+            pictureBoxEdit4.Dock = DockStyle.Fill;
+            pictureBoxEdit4.Image = Properties.Resources.Edit;
+            pictureBoxEdit4.InitialImage = null;
+            pictureBoxEdit4.Location = new Point(537, 198);
+            pictureBoxEdit4.Name = "pictureBoxEdit4";
+            pictureBoxEdit4.Size = new Size(60, 59);
+            pictureBoxEdit4.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxEdit4.TabIndex = 42;
+            pictureBoxEdit4.TabStop = false;
             // 
             // pictureBoxEdit3
             // 
-            this.pictureBoxEdit3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxEdit3.Image = global::SourceCodeEditor.Properties.Resources.Edit;
-            this.pictureBoxEdit3.InitialImage = null;
-            this.pictureBoxEdit3.Location = new System.Drawing.Point(537, 133);
-            this.pictureBoxEdit3.Name = "pictureBoxEdit3";
-            this.pictureBoxEdit3.Size = new System.Drawing.Size(60, 59);
-            this.pictureBoxEdit3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxEdit3.TabIndex = 40;
-            this.pictureBoxEdit3.TabStop = false;
+            pictureBoxEdit3.Dock = DockStyle.Fill;
+            pictureBoxEdit3.Image = Properties.Resources.Edit;
+            pictureBoxEdit3.InitialImage = null;
+            pictureBoxEdit3.Location = new Point(537, 133);
+            pictureBoxEdit3.Name = "pictureBoxEdit3";
+            pictureBoxEdit3.Size = new Size(60, 59);
+            pictureBoxEdit3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxEdit3.TabIndex = 40;
+            pictureBoxEdit3.TabStop = false;
             // 
             // pictureBoxEdit2
             // 
-            this.pictureBoxEdit2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxEdit2.Image = global::SourceCodeEditor.Properties.Resources.Edit;
-            this.pictureBoxEdit2.InitialImage = null;
-            this.pictureBoxEdit2.Location = new System.Drawing.Point(537, 68);
-            this.pictureBoxEdit2.Name = "pictureBoxEdit2";
-            this.pictureBoxEdit2.Size = new System.Drawing.Size(60, 59);
-            this.pictureBoxEdit2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxEdit2.TabIndex = 38;
-            this.pictureBoxEdit2.TabStop = false;
+            pictureBoxEdit2.Dock = DockStyle.Fill;
+            pictureBoxEdit2.Image = Properties.Resources.Edit;
+            pictureBoxEdit2.InitialImage = null;
+            pictureBoxEdit2.Location = new Point(537, 68);
+            pictureBoxEdit2.Name = "pictureBoxEdit2";
+            pictureBoxEdit2.Size = new Size(60, 59);
+            pictureBoxEdit2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxEdit2.TabIndex = 38;
+            pictureBoxEdit2.TabStop = false;
             // 
             // pictureBoxPlay10
             // 
-            this.pictureBoxPlay10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxPlay10.Image = global::SourceCodeEditor.Properties.Resources.Play;
-            this.pictureBoxPlay10.InitialImage = null;
-            this.pictureBoxPlay10.Location = new System.Drawing.Point(471, 588);
-            this.pictureBoxPlay10.Name = "pictureBoxPlay10";
-            this.pictureBoxPlay10.Size = new System.Drawing.Size(60, 60);
-            this.pictureBoxPlay10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxPlay10.TabIndex = 37;
-            this.pictureBoxPlay10.TabStop = false;
+            pictureBoxPlay10.Dock = DockStyle.Fill;
+            pictureBoxPlay10.Image = Properties.Resources.Play;
+            pictureBoxPlay10.InitialImage = null;
+            pictureBoxPlay10.Location = new Point(471, 588);
+            pictureBoxPlay10.Name = "pictureBoxPlay10";
+            pictureBoxPlay10.Size = new Size(60, 60);
+            pictureBoxPlay10.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxPlay10.TabIndex = 37;
+            pictureBoxPlay10.TabStop = false;
             // 
             // pictureBoxPlay9
             // 
-            this.pictureBoxPlay9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxPlay9.Image = global::SourceCodeEditor.Properties.Resources.Play;
-            this.pictureBoxPlay9.InitialImage = null;
-            this.pictureBoxPlay9.Location = new System.Drawing.Point(471, 523);
-            this.pictureBoxPlay9.Name = "pictureBoxPlay9";
-            this.pictureBoxPlay9.Size = new System.Drawing.Size(60, 59);
-            this.pictureBoxPlay9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxPlay9.TabIndex = 34;
-            this.pictureBoxPlay9.TabStop = false;
+            pictureBoxPlay9.Dock = DockStyle.Fill;
+            pictureBoxPlay9.Image = Properties.Resources.Play;
+            pictureBoxPlay9.InitialImage = null;
+            pictureBoxPlay9.Location = new Point(471, 523);
+            pictureBoxPlay9.Name = "pictureBoxPlay9";
+            pictureBoxPlay9.Size = new Size(60, 59);
+            pictureBoxPlay9.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxPlay9.TabIndex = 34;
+            pictureBoxPlay9.TabStop = false;
             // 
             // pictureBoxPlay8
             // 
-            this.pictureBoxPlay8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxPlay8.Image = global::SourceCodeEditor.Properties.Resources.Play;
-            this.pictureBoxPlay8.InitialImage = null;
-            this.pictureBoxPlay8.Location = new System.Drawing.Point(471, 458);
-            this.pictureBoxPlay8.Name = "pictureBoxPlay8";
-            this.pictureBoxPlay8.Size = new System.Drawing.Size(60, 59);
-            this.pictureBoxPlay8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxPlay8.TabIndex = 31;
-            this.pictureBoxPlay8.TabStop = false;
+            pictureBoxPlay8.Dock = DockStyle.Fill;
+            pictureBoxPlay8.Image = Properties.Resources.Play;
+            pictureBoxPlay8.InitialImage = null;
+            pictureBoxPlay8.Location = new Point(471, 458);
+            pictureBoxPlay8.Name = "pictureBoxPlay8";
+            pictureBoxPlay8.Size = new Size(60, 59);
+            pictureBoxPlay8.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxPlay8.TabIndex = 31;
+            pictureBoxPlay8.TabStop = false;
             // 
             // pictureBoxPlay7
             // 
-            this.pictureBoxPlay7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxPlay7.Image = global::SourceCodeEditor.Properties.Resources.Play;
-            this.pictureBoxPlay7.InitialImage = null;
-            this.pictureBoxPlay7.Location = new System.Drawing.Point(471, 393);
-            this.pictureBoxPlay7.Name = "pictureBoxPlay7";
-            this.pictureBoxPlay7.Size = new System.Drawing.Size(60, 59);
-            this.pictureBoxPlay7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxPlay7.TabIndex = 28;
-            this.pictureBoxPlay7.TabStop = false;
+            pictureBoxPlay7.Dock = DockStyle.Fill;
+            pictureBoxPlay7.Image = Properties.Resources.Play;
+            pictureBoxPlay7.InitialImage = null;
+            pictureBoxPlay7.Location = new Point(471, 393);
+            pictureBoxPlay7.Name = "pictureBoxPlay7";
+            pictureBoxPlay7.Size = new Size(60, 59);
+            pictureBoxPlay7.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxPlay7.TabIndex = 28;
+            pictureBoxPlay7.TabStop = false;
             // 
             // pictureBoxPlay6
             // 
-            this.pictureBoxPlay6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxPlay6.Image = global::SourceCodeEditor.Properties.Resources.Play;
-            this.pictureBoxPlay6.InitialImage = null;
-            this.pictureBoxPlay6.Location = new System.Drawing.Point(471, 328);
-            this.pictureBoxPlay6.Name = "pictureBoxPlay6";
-            this.pictureBoxPlay6.Size = new System.Drawing.Size(60, 59);
-            this.pictureBoxPlay6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxPlay6.TabIndex = 25;
-            this.pictureBoxPlay6.TabStop = false;
+            pictureBoxPlay6.Dock = DockStyle.Fill;
+            pictureBoxPlay6.Image = Properties.Resources.Play;
+            pictureBoxPlay6.InitialImage = null;
+            pictureBoxPlay6.Location = new Point(471, 328);
+            pictureBoxPlay6.Name = "pictureBoxPlay6";
+            pictureBoxPlay6.Size = new Size(60, 59);
+            pictureBoxPlay6.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxPlay6.TabIndex = 25;
+            pictureBoxPlay6.TabStop = false;
             // 
             // pictureBoxPlay5
             // 
-            this.pictureBoxPlay5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxPlay5.Image = global::SourceCodeEditor.Properties.Resources.Play;
-            this.pictureBoxPlay5.InitialImage = null;
-            this.pictureBoxPlay5.Location = new System.Drawing.Point(471, 263);
-            this.pictureBoxPlay5.Name = "pictureBoxPlay5";
-            this.pictureBoxPlay5.Size = new System.Drawing.Size(60, 59);
-            this.pictureBoxPlay5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxPlay5.TabIndex = 22;
-            this.pictureBoxPlay5.TabStop = false;
+            pictureBoxPlay5.Dock = DockStyle.Fill;
+            pictureBoxPlay5.Image = Properties.Resources.Play;
+            pictureBoxPlay5.InitialImage = null;
+            pictureBoxPlay5.Location = new Point(471, 263);
+            pictureBoxPlay5.Name = "pictureBoxPlay5";
+            pictureBoxPlay5.Size = new Size(60, 59);
+            pictureBoxPlay5.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxPlay5.TabIndex = 22;
+            pictureBoxPlay5.TabStop = false;
             // 
             // pictureBoxPlay4
             // 
-            this.pictureBoxPlay4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxPlay4.Image = global::SourceCodeEditor.Properties.Resources.Play;
-            this.pictureBoxPlay4.InitialImage = null;
-            this.pictureBoxPlay4.Location = new System.Drawing.Point(471, 198);
-            this.pictureBoxPlay4.Name = "pictureBoxPlay4";
-            this.pictureBoxPlay4.Size = new System.Drawing.Size(60, 59);
-            this.pictureBoxPlay4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxPlay4.TabIndex = 19;
-            this.pictureBoxPlay4.TabStop = false;
+            pictureBoxPlay4.Dock = DockStyle.Fill;
+            pictureBoxPlay4.Image = Properties.Resources.Play;
+            pictureBoxPlay4.InitialImage = null;
+            pictureBoxPlay4.Location = new Point(471, 198);
+            pictureBoxPlay4.Name = "pictureBoxPlay4";
+            pictureBoxPlay4.Size = new Size(60, 59);
+            pictureBoxPlay4.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxPlay4.TabIndex = 19;
+            pictureBoxPlay4.TabStop = false;
             // 
             // pictureBoxPlay3
             // 
-            this.pictureBoxPlay3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxPlay3.Image = global::SourceCodeEditor.Properties.Resources.Play;
-            this.pictureBoxPlay3.InitialImage = null;
-            this.pictureBoxPlay3.Location = new System.Drawing.Point(471, 133);
-            this.pictureBoxPlay3.Name = "pictureBoxPlay3";
-            this.pictureBoxPlay3.Size = new System.Drawing.Size(60, 59);
-            this.pictureBoxPlay3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxPlay3.TabIndex = 16;
-            this.pictureBoxPlay3.TabStop = false;
+            pictureBoxPlay3.Dock = DockStyle.Fill;
+            pictureBoxPlay3.Image = Properties.Resources.Play;
+            pictureBoxPlay3.InitialImage = null;
+            pictureBoxPlay3.Location = new Point(471, 133);
+            pictureBoxPlay3.Name = "pictureBoxPlay3";
+            pictureBoxPlay3.Size = new Size(60, 59);
+            pictureBoxPlay3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxPlay3.TabIndex = 16;
+            pictureBoxPlay3.TabStop = false;
             // 
             // pictureBoxPlay2
             // 
-            this.pictureBoxPlay2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxPlay2.Image = global::SourceCodeEditor.Properties.Resources.Play;
-            this.pictureBoxPlay2.InitialImage = null;
-            this.pictureBoxPlay2.Location = new System.Drawing.Point(471, 68);
-            this.pictureBoxPlay2.Name = "pictureBoxPlay2";
-            this.pictureBoxPlay2.Size = new System.Drawing.Size(60, 59);
-            this.pictureBoxPlay2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxPlay2.TabIndex = 13;
-            this.pictureBoxPlay2.TabStop = false;
+            pictureBoxPlay2.Dock = DockStyle.Fill;
+            pictureBoxPlay2.Image = Properties.Resources.Play;
+            pictureBoxPlay2.InitialImage = null;
+            pictureBoxPlay2.Location = new Point(471, 68);
+            pictureBoxPlay2.Name = "pictureBoxPlay2";
+            pictureBoxPlay2.Size = new Size(60, 59);
+            pictureBoxPlay2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxPlay2.TabIndex = 13;
+            pictureBoxPlay2.TabStop = false;
             // 
             // pictureBoxDelete1
             // 
-            this.pictureBoxDelete1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxDelete1.Image = global::SourceCodeEditor.Properties.Resources.Delete;
-            this.pictureBoxDelete1.InitialImage = null;
-            this.pictureBoxDelete1.Location = new System.Drawing.Point(603, 3);
-            this.pictureBoxDelete1.Name = "pictureBoxDelete1";
-            this.pictureBoxDelete1.Size = new System.Drawing.Size(63, 59);
-            this.pictureBoxDelete1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxDelete1.TabIndex = 12;
-            this.pictureBoxDelete1.TabStop = false;
+            pictureBoxDelete1.Dock = DockStyle.Fill;
+            pictureBoxDelete1.Image = Properties.Resources.Delete;
+            pictureBoxDelete1.InitialImage = null;
+            pictureBoxDelete1.Location = new Point(603, 3);
+            pictureBoxDelete1.Name = "pictureBoxDelete1";
+            pictureBoxDelete1.Size = new Size(63, 59);
+            pictureBoxDelete1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxDelete1.TabIndex = 12;
+            pictureBoxDelete1.TabStop = false;
             // 
             // pictureBoxEdit1
             // 
-            this.pictureBoxEdit1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxEdit1.Image = global::SourceCodeEditor.Properties.Resources.Edit;
-            this.pictureBoxEdit1.InitialImage = null;
-            this.pictureBoxEdit1.Location = new System.Drawing.Point(537, 3);
-            this.pictureBoxEdit1.Name = "pictureBoxEdit1";
-            this.pictureBoxEdit1.Size = new System.Drawing.Size(60, 59);
-            this.pictureBoxEdit1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxEdit1.TabIndex = 11;
-            this.pictureBoxEdit1.TabStop = false;
+            pictureBoxEdit1.Dock = DockStyle.Fill;
+            pictureBoxEdit1.Image = Properties.Resources.Edit;
+            pictureBoxEdit1.InitialImage = null;
+            pictureBoxEdit1.Location = new Point(537, 3);
+            pictureBoxEdit1.Name = "pictureBoxEdit1";
+            pictureBoxEdit1.Size = new Size(60, 59);
+            pictureBoxEdit1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxEdit1.TabIndex = 11;
+            pictureBoxEdit1.TabStop = false;
             // 
             // label10
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(3, 585);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(87, 20);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "Template10";
+            label10.AutoSize = true;
+            label10.Location = new Point(3, 585);
+            label10.Name = "label10";
+            label10.Size = new Size(87, 20);
+            label10.TabIndex = 9;
+            label10.Text = "Template10";
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(3, 520);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(79, 20);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "Template9";
+            label9.AutoSize = true;
+            label9.Location = new Point(3, 520);
+            label9.Name = "label9";
+            label9.Size = new Size(79, 20);
+            label9.TabIndex = 8;
+            label9.Text = "Template9";
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 455);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(79, 20);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "Template8";
+            label8.AutoSize = true;
+            label8.Location = new Point(3, 455);
+            label8.Name = "label8";
+            label8.Size = new Size(79, 20);
+            label8.TabIndex = 7;
+            label8.Text = "Template8";
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 390);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(79, 20);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Template7";
+            label7.AutoSize = true;
+            label7.Location = new Point(3, 390);
+            label7.Name = "label7";
+            label7.Size = new Size(79, 20);
+            label7.TabIndex = 6;
+            label7.Text = "Template7";
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 325);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(79, 20);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Template6";
+            label6.AutoSize = true;
+            label6.Location = new Point(3, 325);
+            label6.Name = "label6";
+            label6.Size = new Size(79, 20);
+            label6.TabIndex = 5;
+            label6.Text = "Template6";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 260);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 20);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Template5";
+            label5.AutoSize = true;
+            label5.Location = new Point(3, 260);
+            label5.Name = "label5";
+            label5.Size = new Size(79, 20);
+            label5.TabIndex = 4;
+            label5.Text = "Template5";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 195);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 20);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Template4";
+            label4.AutoSize = true;
+            label4.Location = new Point(3, 195);
+            label4.Name = "label4";
+            label4.Size = new Size(79, 20);
+            label4.TabIndex = 3;
+            label4.Text = "Template4";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 130);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 20);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Template3";
+            label3.AutoSize = true;
+            label3.Location = new Point(3, 130);
+            label3.Name = "label3";
+            label3.Size = new Size(79, 20);
+            label3.TabIndex = 2;
+            label3.Text = "Template3";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 65);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Template2";
+            label2.AutoSize = true;
+            label2.Location = new Point(3, 65);
+            label2.Name = "label2";
+            label2.Size = new Size(79, 20);
+            label2.TabIndex = 1;
+            label2.Text = "Template2";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Template1";
+            label1.AutoSize = true;
+            label1.Location = new Point(3, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(79, 20);
+            label1.TabIndex = 0;
+            label1.Text = "Template1";
             // 
             // pictureBoxPlay1
             // 
-            this.pictureBoxPlay1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxPlay1.Image = global::SourceCodeEditor.Properties.Resources.Play;
-            this.pictureBoxPlay1.InitialImage = null;
-            this.pictureBoxPlay1.Location = new System.Drawing.Point(471, 3);
-            this.pictureBoxPlay1.Name = "pictureBoxPlay1";
-            this.pictureBoxPlay1.Size = new System.Drawing.Size(60, 59);
-            this.pictureBoxPlay1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxPlay1.TabIndex = 10;
-            this.pictureBoxPlay1.TabStop = false;
+            pictureBoxPlay1.Dock = DockStyle.Fill;
+            pictureBoxPlay1.Image = Properties.Resources.Play;
+            pictureBoxPlay1.InitialImage = null;
+            pictureBoxPlay1.Location = new Point(471, 3);
+            pictureBoxPlay1.Name = "pictureBoxPlay1";
+            pictureBoxPlay1.Size = new Size(60, 59);
+            pictureBoxPlay1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxPlay1.TabIndex = 10;
+            pictureBoxPlay1.TabStop = false;
             // 
             // TemplatesForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(669, 687);
-            this.ControlBox = false;
-            this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "TemplatesForm";
-            this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Templates";
-            this.panel1.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDelete10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDelete9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDelete8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDelete7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDelete6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDelete5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDelete4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDelete3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDelete2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEdit10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEdit9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEdit8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEdit7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEdit6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEdit5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEdit4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEdit3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEdit2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlay10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlay9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlay8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlay7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlay6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlay5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlay4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlay3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlay2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDelete1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlay1)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(669, 687);
+            ControlBox = false;
+            Controls.Add(tableLayoutPanel1);
+            Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Name = "TemplatesForm";
+            ShowInTaskbar = false;
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Templates";
+            panel1.ResumeLayout(false);
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxDelete10).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxDelete9).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxDelete8).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxDelete7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxDelete6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxDelete5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxDelete4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxDelete3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxDelete2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxEdit10).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxEdit9).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxEdit8).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxEdit7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxEdit6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxEdit5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxEdit4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxEdit3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxEdit2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxPlay10).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxPlay9).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxPlay8).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxPlay7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxPlay6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxPlay5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxPlay4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxPlay3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxPlay2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxDelete1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxEdit1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxPlay1).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion

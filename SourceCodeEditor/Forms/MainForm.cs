@@ -606,7 +606,7 @@ namespace SourceCodeEditor
             int count = files.Length / 2;
             for (int i = 0; i < count; i++)
             {
-                templatesToolStripMenuItem.DropDownItems.Add(new ToolStripMenuItem($"Template{i+1} - {infoFilesDeserialized[i].Name} ({infoFilesDeserialized[i].Language})", null, OnTemplateClick!));
+                templatesToolStripMenuItem.DropDownItems.Add(new ToolStripMenuItem($"Template{infoFilesDeserialized[i].Number} - {infoFilesDeserialized[i].Name} ({infoFilesDeserialized[i].Language})", null, OnTemplateClick!));
             }
         }
         #endregion

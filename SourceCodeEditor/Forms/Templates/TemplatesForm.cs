@@ -14,7 +14,7 @@ namespace SourceCodeEditor.Forms
 
         public TemplatesForm(FastColoredTextBox textField)
         {
-            Templates = Enumerable.Repeat(new Template(),10).ToList();
+            Templates = Enumerable.Repeat(new Template(), 10).ToList();
             InitializeComponent();
             SetButtonsEvents();
             LoadTemplates();
@@ -40,8 +40,8 @@ namespace SourceCodeEditor.Forms
 
             for (int i = 0; i < Templates.Count; i++)
             {
-                if(!String.IsNullOrEmpty(Templates[i].Name))
-                    GetLabelById(i)!.Text = Templates[i].Name;
+                if (!String.IsNullOrEmpty(Templates[i].Name))
+                    GetLabelById(Templates[i].Number - 1)!.Text = Templates[i].Name;
             }
         }
 
@@ -54,7 +54,7 @@ namespace SourceCodeEditor.Forms
         {
             foreach (var control in tableLayoutPanel1.Controls)
             {
-                if(control is PictureBox)
+                if (control is PictureBox)
                 {
                     PictureBox picbox = (PictureBox)control;
                     picbox.Click += ButtonClick!;
@@ -109,13 +109,13 @@ namespace SourceCodeEditor.Forms
                 return;
             }
 
-            MessageBox.Show("Wrong language selected at Main Text Field","Error!",MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show("Wrong language selected at Main Text Field", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void TemplateAdd(int templateNumber)
         {
             string FolderPath = "Templates";
-            string TemplateName = $"Template{templateNumber+1}.txt";
+            string TemplateName = $"Template{templateNumber + 1}.txt";
             string FilePath = $"{FolderPath}/{TemplateName}";
 
             var template = new Template();
@@ -146,10 +146,10 @@ namespace SourceCodeEditor.Forms
             template.Name = GetLabelById(templateNumber)!.Text;
             template.Number = templateNumber;
             template.Language = Templates[templateNumber].Language;
-            
+
             var editTemplate = new TemplateAddForm(this, template, FilePath, TemplateAddMode.Editing);
 
-            if(editTemplate.ShowDialog() == DialogResult.Yes)
+            if (editTemplate.ShowDialog() == DialogResult.Yes)
             {
                 LoadTemplates();
                 IsTemplatesChanged = true;
@@ -166,9 +166,9 @@ namespace SourceCodeEditor.Forms
                 var txtFiles = files.Where(file => file.Extension == ".txt").ToList();
                 var jsonFiles = files.Where(file => file.Extension == ".json").ToList();
 
-                for(int j = 1; j <= txtFiles.Count; j++)
+                for (int j = 1; j <= txtFiles.Count; j++)
                 {
-                    var txtFile = txtFiles[j-1];
+                    var txtFile = txtFiles[j - 1];
 
                     if (txtFile.Name != $"Template{j}{txtFile.Extension}")
                     {
@@ -178,7 +178,7 @@ namespace SourceCodeEditor.Forms
 
                 for (int j = 1; j <= jsonFiles.Count; j++)
                 {
-                    var jsonFile = jsonFiles[j-1];
+                    var jsonFile = jsonFiles[j - 1];
 
                     if (jsonFile.Name != $"Template{j}{jsonFile.Extension}")
                     {
