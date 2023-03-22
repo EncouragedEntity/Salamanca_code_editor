@@ -537,7 +537,6 @@ namespace SourceCodeEditor
             {
                 LoadTemplatesToolStrips();
 
-                /// After syntax changing, theme isn't loaded properly here
                 new ThemeChanger(this).ChangeHeaderTheme(theme);
             }
 

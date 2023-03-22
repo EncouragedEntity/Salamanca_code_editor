@@ -25,16 +25,14 @@ namespace SourceCodeEditor.Forms
 
         private void LoadTemplates()
         {
-            int counter = 0;
             foreach (var file in new DirectoryInfo("Templates").GetFiles())
             {
                 if (Path.GetExtension(file.Name) == ".json")
                 {
                     Template template = new Template();
                     template = JsonSerializer.Deserialize<Template>(File.ReadAllText($"Templates/{file.Name}"))!;
-                    Templates[counter] = (template);
+                    Templates[template.Number - 1] = (template);
                     IsTemplatesChanged = true;
-                    counter++;
                 }
             }
 

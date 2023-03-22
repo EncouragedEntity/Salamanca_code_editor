@@ -57,6 +57,7 @@ namespace SourceCodeEditor
             {
                 return true;
             }
+
             MainForm.MainTextField.Language = lang;
             return false;
         }
