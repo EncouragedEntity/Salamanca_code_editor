@@ -17,13 +17,14 @@
         public Color LabelsFore { get; set; }
 
         public SyntaxColors? syntaxColors { get; set; }
-        
+
         public CurrentTheme() : this(Color.Transparent, Color.Transparent, Color.Transparent, Color.Transparent, Color.Transparent,
-                                     Color.Transparent, Color.Transparent, Color.Transparent, Color.Transparent, Color.Transparent, 
-                                     null) { }
-        
+                                     Color.Transparent, Color.Transparent, Color.Transparent, Color.Transparent, Color.Transparent,
+                                     null)
+        { }
+
         public CurrentTheme(Color headerBack, Color headerFore, Color footerBack, Color footerFore,
-                            Color mainBack, Color mainFore,Color mainIndentBack, Color mainLineNumber, 
+                            Color mainBack, Color mainFore, Color mainIndentBack, Color mainLineNumber,
                             Color labelsBack, Color labelsFore, SyntaxColors? syntax)
         {
             HeaderBack = headerBack;

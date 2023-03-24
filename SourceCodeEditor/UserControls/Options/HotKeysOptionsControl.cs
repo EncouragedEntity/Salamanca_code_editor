@@ -107,7 +107,7 @@
         private void PrintHotKeys()
         {
             dataGridView1.CurrentCell.Value = String.Empty;
-            foreach (var key in listofkeys) 
+            foreach (var key in listofkeys)
             {
                 if (key != listofkeys.Last())
                 {
@@ -120,7 +120,7 @@
 
         private void buttonDiscard_Click(object sender, EventArgs e)
         {
-            HotKeysOptionsControl_Load(sender,e);
+            HotKeysOptionsControl_Load(sender, e);
         }
 
         private void buttonSave_Click(object sender, EventArgs e)

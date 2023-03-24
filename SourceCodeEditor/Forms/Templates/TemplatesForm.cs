@@ -9,7 +9,6 @@ namespace SourceCodeEditor.Forms
     {
         public FastColoredTextBox TextField { get; set; }
         private List<Template> Templates { get; set; }
-
         public bool IsTemplatesChanged = false;
 
         public TemplatesForm(FastColoredTextBox textField)
@@ -202,6 +201,11 @@ namespace SourceCodeEditor.Forms
             }
 
             RenameTemplatesFiles();
+            LoadTemplates();
+        }
+
+        private void fileSystemWatcher1_Changed(object sender, FileSystemEventArgs e)
+        {
             LoadTemplates();
         }
     }

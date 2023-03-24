@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json;
-using System.Threading.Tasks;
-using System.Web;
-using System.Xml;
+﻿using System.Text.Json;
 
 namespace SourceCodeEditor
 {
@@ -13,7 +6,7 @@ namespace SourceCodeEditor
     {
         private readonly MenuStrip? menuStrip = null;
 
-        public HotKeysConfig(MenuStrip MainMenuStrip) 
+        public HotKeysConfig(MenuStrip MainMenuStrip)
         {
             menuStrip = MainMenuStrip;
         }
@@ -25,7 +18,7 @@ namespace SourceCodeEditor
         /// <returns>JSON string</returns>
         private static string SerializeListOfHotKeys(List<Keys> listofHotKeys)
         {
-            return JsonSerializer.Serialize(listofHotKeys, new JsonSerializerOptions { WriteIndented = true});
+            return JsonSerializer.Serialize(listofHotKeys, new JsonSerializerOptions { WriteIndented = true });
         }
 
         /// <summary>
@@ -43,7 +36,7 @@ namespace SourceCodeEditor
         /// </summary>
         public void SaveHotkeysConfig()
         {
-            File.WriteAllText("HotKeysConfig.json",SerializeListOfHotKeys(GetCurrentHotKeysNotNull()));
+            File.WriteAllText("HotKeysConfig.json", SerializeListOfHotKeys(GetCurrentHotKeysNotNull()));
         }
 
         /// <summary>
@@ -86,7 +79,7 @@ namespace SourceCodeEditor
         /// <summary>
         /// Loads hotkey values from JSON file and assigns them to ToolStripMenu items
         /// </summary>
-        public void LoadHotkeysConfig() 
+        public void LoadHotkeysConfig()
         {
             var listOfHeaderItems = menuStrip!.Items;
 
@@ -104,5 +97,5 @@ namespace SourceCodeEditor
                 }
             }
         }
-    }   
+    }
 }

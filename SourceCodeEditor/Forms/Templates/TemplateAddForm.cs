@@ -1,7 +1,5 @@
 ﻿using FastColoredTextBoxNS;
-using System.Linq;
 using System.Text.Json;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace SourceCodeEditor.Forms.Templates
 {
@@ -191,7 +189,7 @@ namespace SourceCodeEditor.Forms.Templates
 
         private void TemplateAddForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if(this.DialogResult != DialogResult.Yes)
+            if (this.DialogResult != DialogResult.Yes)
                 this.DialogResult = DialogResult.No;
         }
     }

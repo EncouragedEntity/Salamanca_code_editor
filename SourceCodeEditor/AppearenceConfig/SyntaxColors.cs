@@ -48,7 +48,8 @@ namespace SourceCodeEditor.AppearenceConfig
                                      Tuple.Create(Color.Transparent, FontStyle.Regular), Tuple.Create(Color.Transparent, FontStyle.Regular),
                                      Tuple.Create(Color.Transparent, FontStyle.Regular), Tuple.Create(Color.Transparent, FontStyle.Regular),
                                      Tuple.Create(Color.Transparent, FontStyle.Regular), Tuple.Create(Color.Transparent, FontStyle.Regular),
-                                     Tuple.Create(Color.Transparent, FontStyle.Regular)) { SyntaxPath = "BlackSyntax.syn"; }
+                                     Tuple.Create(Color.Transparent, FontStyle.Regular))
+        { SyntaxPath = "BlackSyntax.syn"; }
 
         public SyntaxColors(Tuple<Color, FontStyle> className, Tuple<Color, FontStyle> stringStyle, Tuple<Color, FontStyle> commentStyle,
                             Tuple<Color, FontStyle> commentTagStyle, Tuple<Color, FontStyle> keywordStyle, Tuple<Color, FontStyle> keywordStyle2,

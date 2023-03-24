@@ -44,7 +44,7 @@ namespace SourceCodeEditor.AppearenceConfig
 
             SetLabelsColors();
         }
-        
+
         private void GetLabelsColors()
         {
             var firstLabel = _labels.FirstOrDefault();
@@ -62,18 +62,18 @@ namespace SourceCodeEditor.AppearenceConfig
             _theme.MainTextFieldBack = _mainTextField.BackColor;
             _theme.MainTextFieldFore = _mainTextField.ForeColor;
 
-            GetLabelsColors();  
+            GetLabelsColors();
         }
 
         public static T? Deserialize<T>(string path)
         {
-                using (Stream str = File.Open(path, FileMode.Open, FileAccess.Read))
-                {
-                    var bf = new BinaryFormatter();
-                    var obj = (T)bf.Deserialize(str);
-                    str.Close();
-                    return obj;
-                }
+            using (Stream str = File.Open(path, FileMode.Open, FileAccess.Read))
+            {
+                var bf = new BinaryFormatter();
+                var obj = (T)bf.Deserialize(str);
+                str.Close();
+                return obj;
+            }
         }
 
         public void SerializeTheme()

@@ -17,7 +17,7 @@
             numericUpDownActualZoom.Value = MainForm.MainTextField.Zoom;
             #endregion
             #region Font
-            fontDialog1.Font = MainForm.MainTextField.Font;
+            numericUpDownFontSize.Value = Convert.ToDecimal(MainForm.MainTextField.Font.Size);
             #endregion
         }
 
@@ -28,22 +28,9 @@
             MainForm.MainTextField.Zoom = Convert.ToInt32(numericUpDownActualZoom.Value);
             #endregion
             #region Font
-            try
-            {
-                MainForm.MainTextField.Font = fontDialog1.Font;
-            }
-            catch (ArgumentException)
-            {
-                MainForm.MainTextField.Font = MainForm.DefaultTextFont;
-                DialogRes ShowException = new DialogRes(MessageBox.Show);
-                ShowException("Current font isn`t availible!","Exclamation!",MessageBoxButtons.OK,MessageBoxIcon.Exclamation); 
-            }
+            MainForm.SetFontSizeForEverything(float.Parse(numericUpDownFontSize.Value.ToString()));
             #endregion
-        }
 
-        private void buttonFont_Click(object sender, EventArgs e)
-        {
-            fontDialog1.ShowDialog();
         }
 
         private void buttonDiscard_Click(object sender, EventArgs e)
@@ -55,7 +42,7 @@
         {
             if (e.KeyCode == Keys.Enter)
             {
-                buttonSave_Click(sender,e);
+                buttonSave_Click(sender, e);
             }
         }
 

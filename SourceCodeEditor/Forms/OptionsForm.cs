@@ -1,5 +1,4 @@
-﻿using SourceCodeEditor.AppearenceConfig;
-using SourceCodeEditor.Enums;
+﻿using SourceCodeEditor.Enums;
 using SourceCodeEditor.UserControls;
 using SourceCodeEditor.UserControls.Options;
 
@@ -31,7 +30,7 @@ namespace SourceCodeEditor.Forms
         private void ValidateSize()
         {
             dataGridView1.Width = this.Width / 4;
-            dataGridView1.Columns[0].Width = dataGridView1.Width-3;
+            dataGridView1.Columns[0].Width = dataGridView1.Width - 3;
         }
 
         /// <summary>
@@ -137,11 +136,13 @@ namespace SourceCodeEditor.Forms
                 case "General":
                     {
                         ChangeOptionPanel(Options.General);
-                    }break;
+                    }
+                    break;
                 case "Theme":
                     {
                         ChangeOptionPanel(Options.Theme);
-                    }break;
+                    }
+                    break;
                 case "HotKeys":
                     {
                         ChangeOptionPanel(Options.HotKeys);

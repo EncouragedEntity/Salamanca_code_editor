@@ -1,13 +1,4 @@
 ﻿using SourceCodeEditor.Enums;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace SourceCodeEditor.UserControls
 {
@@ -39,8 +30,9 @@ namespace SourceCodeEditor.UserControls
             {
                 case "White":
                     {
-                        mainForm.whiteToolStripMenuItem_Click(sender,e);
-                    }break;
+                        mainForm.whiteToolStripMenuItem_Click(sender, e);
+                    }
+                    break;
                 case "Black":
                     {
                         mainForm.blackToolStripMenuItem_Click(sender, e);

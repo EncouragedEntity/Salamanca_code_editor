@@ -1,14 +1,5 @@
 ﻿using SourceCodeEditor.AppearenceConfig;
 using SourceCodeEditor.Forms;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace SourceCodeEditor.UserControls.Options
 {
@@ -120,9 +111,9 @@ namespace SourceCodeEditor.UserControls.Options
 
             if (colorDialog1.ShowDialog() == DialogResult.OK)
             {
-                obj!.BackColor = colorDialog1.Color; 
+                obj!.BackColor = colorDialog1.Color;
             }
-            
+
         }
 
         private void ColorsOptionsControl_Load(object sender, EventArgs e)
@@ -151,7 +142,7 @@ namespace SourceCodeEditor.UserControls.Options
             new ThemeSerializer(CurrentTheme, form).SerializeTheme();
             if (optionsForm.ColorsChanged)
                 new ThemeChanger(form).ChangeTheme();
-            
+
         }
 
         /// <summary>
@@ -183,7 +174,7 @@ namespace SourceCodeEditor.UserControls.Options
         {
             CurrentTheme = ThemeSerializer.Deserialize<CurrentTheme>(_defaultTheme)!;
             SetButtonsColors();
-            buttonSave_Click(sender,e);
+            buttonSave_Click(sender, e);
         }
     }
 }

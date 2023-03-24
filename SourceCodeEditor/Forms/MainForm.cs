@@ -2,6 +2,7 @@ using FastColoredTextBoxNS;
 using SourceCodeEditor.AppearenceConfig;
 using SourceCodeEditor.Enums;
 using SourceCodeEditor.Forms;
+using System.IO;
 using System.Text.Json;
 
 namespace SourceCodeEditor
@@ -81,7 +82,7 @@ namespace SourceCodeEditor
             FileNameToFormText(_currentFile);
 
             await ReadTextFromFile();
-        }       
+        }
         /// <summary>
         /// Save RichTextBox content to current file
         /// </summary>
@@ -212,11 +213,13 @@ namespace SourceCodeEditor
                 case true:
                     {
                         MarkFileAsSaved();
-                    } break;
+                    }
+                    break;
                 case false:
                     {
                         MarkFileAsUnsaved();
-                    } break;
+                    }
+                    break;
             }
         }
         /// <summary>
@@ -315,7 +318,7 @@ namespace SourceCodeEditor
         }
         private void DeleteSyntaxLabel()
         {
-            DeleteStatusLabel(syntaxLabel,syntaxToolStripMenuItem1);
+            DeleteStatusLabel(syntaxLabel, syntaxToolStripMenuItem1);
         }
 
         /// <summary>
@@ -331,7 +334,7 @@ namespace SourceCodeEditor
                 return;
             }
             item.Checked = true;
-            if(CurrentTheme == Theme.Black)
+            if (CurrentTheme == Theme.Black)
                 label.ForeColor = Color.White;
             else
                 label.ForeColor = Color.Black;
@@ -490,7 +493,7 @@ namespace SourceCodeEditor
 
                     /// If user wants to cancel the operation of closing
                     /// We use "FormClosingEvents" object and set its property "Cancel" to true
-                    if(result == DialogResult.Cancel)
+                    if (result == DialogResult.Cancel)
                         e.Cancel = true;
                 }
             }
@@ -502,7 +505,7 @@ namespace SourceCodeEditor
         private void screenModeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var item = (ToolStripMenuItem)sender;
-            
+
             switch (StateOfWindow)
             {
                 case Enums.WindowState.Windowed:
@@ -512,10 +515,10 @@ namespace SourceCodeEditor
 
                         item.Text = $"Switch to {StateOfWindow}";
                         StateOfWindow = Enums.WindowState.Fullscreen;
-                        
+
                     }
                     break;
-                case Enums.WindowState.Fullscreen: 
+                case Enums.WindowState.Fullscreen:
                     {
                         FormBorderStyle = FormBorderStyle.Sizable;
                         WindowState = FormWindowState.Normal;
@@ -545,7 +548,7 @@ namespace SourceCodeEditor
         private void OnTemplateClick(object sender, EventArgs e)
         {
             var item = (ToolStripMenuItem)sender;
-            string templateName = item.Text.Substring(0,9);
+            string templateName = item.Text.Substring(0, 9);
             Template temp;
             try
             {
@@ -553,7 +556,8 @@ namespace SourceCodeEditor
             }
             catch (FileNotFoundException)
             {
-                MessageBox.Show("Template file(s) was not found!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Template file(s) was not found!\nThe menu item will be removed.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                templatesToolStripMenuItem.DropDownItems.Remove(item);
                 return;
             }
 
@@ -588,7 +592,7 @@ namespace SourceCodeEditor
 
             List<Template> infoFilesDeserialized = new List<Template>();
 
-            foreach ( var file in infoFiles) 
+            foreach (var file in infoFiles)
             {
                 try
                 {
@@ -607,6 +611,16 @@ namespace SourceCodeEditor
             {
                 templatesToolStripMenuItem.DropDownItems.Add(new ToolStripMenuItem($"Template{infoFilesDeserialized[i].Number} - {infoFilesDeserialized[i].Name} ({infoFilesDeserialized[i].Language})", null, OnTemplateClick!));
             }
+        }
+
+        public void SetFontSizeForEverything(float fontSize)
+        {
+            SetFontSizeForMainTextField(fontSize);
+        }
+
+        public void SetFontSizeForMainTextField(float fontSize)
+        {
+            MainTextField.Font = new Font(MainTextField.Font.FontFamily, fontSize,MainTextField.Font.Style);
         }
         #endregion
     }

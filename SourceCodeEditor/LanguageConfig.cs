@@ -6,21 +6,21 @@ namespace SourceCodeEditor
     public class LanguageConfig
     {
         public MainForm? MainForm { get; set; }
-        public LanguageConfig(MainForm? form) 
+        public LanguageConfig(MainForm? form)
         {
             MainForm = form;
         }
 
         public LanguageConfig() : this(null) { }
 
-        public string[] GetLanguages() 
+        public string[] GetLanguages()
         {
             return Enum.GetNames(typeof(Language));
         }
 
         public void LoadLanguages()
         {
-            foreach(var lang in GetLanguages())
+            foreach (var lang in GetLanguages())
             {
                 MainForm.syntaxToolStripMenuItem.DropDownItems.Add(lang);
             }
@@ -80,7 +80,7 @@ namespace SourceCodeEditor
                     break;
                 case "CSharp":
                     {
-                        if (ChangeLanguage(Language.CSharp)) 
+                        if (ChangeLanguage(Language.CSharp))
                             return;
                     }
                     break;

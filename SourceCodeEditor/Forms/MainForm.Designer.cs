@@ -30,450 +30,406 @@ namespace SourceCodeEditor
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.MainHeader = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.themeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.blackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.whiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.screenModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.syntaxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.templatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.configurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.MainTextField = new FastColoredTextBoxNS.FastColoredTextBox();
-            this.MainFooter = new System.Windows.Forms.StatusStrip();
-            this.FooterContext = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.linesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.symbolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.currentLineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fileStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.zoomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.syntaxToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.LineCountLable = new System.Windows.Forms.ToolStripStatusLabel();
-            this.SymbolCountLable = new System.Windows.Forms.ToolStripStatusLabel();
-            this.CurrentLineLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.IsSavedLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.zoomPercentageLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.syntaxLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.MainHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MainTextField)).BeginInit();
-            this.MainFooter.SuspendLayout();
-            this.FooterContext.SuspendLayout();
-            this.SuspendLayout();
+            MainHeader = new MenuStrip();
+            fileToolStripMenuItem = new ToolStripMenuItem();
+            openToolStripMenuItem = new ToolStripMenuItem();
+            newToolStripMenuItem = new ToolStripMenuItem();
+            saveToolStripMenuItem = new ToolStripMenuItem();
+            saveAsToolStripMenuItem = new ToolStripMenuItem();
+            editToolStripMenuItem = new ToolStripMenuItem();
+            undoToolStripMenuItem = new ToolStripMenuItem();
+            redoToolStripMenuItem = new ToolStripMenuItem();
+            cutToolStripMenuItem = new ToolStripMenuItem();
+            copyToolStripMenuItem = new ToolStripMenuItem();
+            pasteToolStripMenuItem = new ToolStripMenuItem();
+            viewToolStripMenuItem = new ToolStripMenuItem();
+            themeToolStripMenuItem = new ToolStripMenuItem();
+            blackToolStripMenuItem = new ToolStripMenuItem();
+            whiteToolStripMenuItem = new ToolStripMenuItem();
+            screenModeToolStripMenuItem = new ToolStripMenuItem();
+            syntaxToolStripMenuItem = new ToolStripMenuItem();
+            toolsToolStripMenuItem = new ToolStripMenuItem();
+            optionsToolStripMenuItem = new ToolStripMenuItem();
+            templatesToolStripMenuItem = new ToolStripMenuItem();
+            configurationToolStripMenuItem = new ToolStripMenuItem();
+            openFileDialog1 = new OpenFileDialog();
+            saveFileDialog1 = new SaveFileDialog();
+            MainTextField = new FastColoredTextBox();
+            MainFooter = new StatusStrip();
+            FooterContext = new ContextMenuStrip(components);
+            linesToolStripMenuItem = new ToolStripMenuItem();
+            symbolToolStripMenuItem = new ToolStripMenuItem();
+            currentLineToolStripMenuItem = new ToolStripMenuItem();
+            fileStatusToolStripMenuItem = new ToolStripMenuItem();
+            zoomToolStripMenuItem = new ToolStripMenuItem();
+            syntaxToolStripMenuItem1 = new ToolStripMenuItem();
+            LineCountLable = new ToolStripStatusLabel();
+            SymbolCountLable = new ToolStripStatusLabel();
+            CurrentLineLabel = new ToolStripStatusLabel();
+            IsSavedLabel = new ToolStripStatusLabel();
+            zoomPercentageLabel = new ToolStripStatusLabel();
+            syntaxLabel = new ToolStripStatusLabel();
+            MainHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)MainTextField).BeginInit();
+            MainFooter.SuspendLayout();
+            FooterContext.SuspendLayout();
+            SuspendLayout();
             // 
             // MainHeader
             // 
-            this.MainHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.MainHeader.ForeColor = System.Drawing.Color.White;
-            this.MainHeader.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.MainHeader.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.editToolStripMenuItem,
-            this.viewToolStripMenuItem,
-            this.toolsToolStripMenuItem,
-            this.templatesToolStripMenuItem});
-            this.MainHeader.Location = new System.Drawing.Point(0, 0);
-            this.MainHeader.Name = "MainHeader";
-            this.MainHeader.Size = new System.Drawing.Size(800, 28);
-            this.MainHeader.TabIndex = 1;
+            MainHeader.BackColor = Color.FromArgb(50, 50, 50);
+            MainHeader.ForeColor = Color.White;
+            MainHeader.ImageScalingSize = new Size(20, 20);
+            MainHeader.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, editToolStripMenuItem, viewToolStripMenuItem, toolsToolStripMenuItem, templatesToolStripMenuItem });
+            MainHeader.Location = new Point(0, 0);
+            MainHeader.Name = "MainHeader";
+            MainHeader.Size = new Size(800, 28);
+            MainHeader.TabIndex = 1;
             // 
             // fileToolStripMenuItem
             // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openToolStripMenuItem,
-            this.newToolStripMenuItem,
-            this.saveToolStripMenuItem,
-            this.saveAsToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
-            this.fileToolStripMenuItem.Text = "File";
+            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { openToolStripMenuItem, newToolStripMenuItem, saveToolStripMenuItem, saveAsToolStripMenuItem });
+            fileToolStripMenuItem.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            fileToolStripMenuItem.Size = new Size(46, 24);
+            fileToolStripMenuItem.Text = "File";
             // 
             // openToolStripMenuItem
             // 
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl + O";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
-            this.openToolStripMenuItem.Text = "Open";
-            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            openToolStripMenuItem.Name = "openToolStripMenuItem";
+            openToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl + O";
+            openToolStripMenuItem.Size = new Size(247, 26);
+            openToolStripMenuItem.Text = "Open";
+            openToolStripMenuItem.Click += openToolStripMenuItem_Click;
             // 
             // newToolStripMenuItem
             // 
-            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl + N";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
-            this.newToolStripMenuItem.Text = "New";
-            this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
+            newToolStripMenuItem.Name = "newToolStripMenuItem";
+            newToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl + N";
+            newToolStripMenuItem.Size = new Size(247, 26);
+            newToolStripMenuItem.Text = "New";
+            newToolStripMenuItem.Click += newToolStripMenuItem_Click;
             // 
             // saveToolStripMenuItem
             // 
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl + S";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
-            this.saveToolStripMenuItem.Text = "Save";
-            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            saveToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl + S";
+            saveToolStripMenuItem.Size = new Size(247, 26);
+            saveToolStripMenuItem.Text = "Save";
+            saveToolStripMenuItem.Click += saveToolStripMenuItem_Click;
             // 
             // saveAsToolStripMenuItem
             // 
-            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl + Shift + S";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
-            this.saveAsToolStripMenuItem.Text = "Save as";
-            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
+            saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
+            saveAsToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl + Shift + S";
+            saveAsToolStripMenuItem.Size = new Size(247, 26);
+            saveAsToolStripMenuItem.Text = "Save as";
+            saveAsToolStripMenuItem.Click += saveAsToolStripMenuItem_Click;
             // 
             // editToolStripMenuItem
             // 
-            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.undoToolStripMenuItem,
-            this.redoToolStripMenuItem,
-            this.cutToolStripMenuItem,
-            this.copyToolStripMenuItem,
-            this.pasteToolStripMenuItem});
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
-            this.editToolStripMenuItem.Text = "Edit";
+            editToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { undoToolStripMenuItem, redoToolStripMenuItem, cutToolStripMenuItem, copyToolStripMenuItem, pasteToolStripMenuItem });
+            editToolStripMenuItem.Name = "editToolStripMenuItem";
+            editToolStripMenuItem.Size = new Size(49, 24);
+            editToolStripMenuItem.Text = "Edit";
             // 
             // undoToolStripMenuItem
             // 
-            this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
-            this.undoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
-            this.undoToolStripMenuItem.Text = "Undo";
-            this.undoToolStripMenuItem.Click += new System.EventHandler(this.undoToolStripMenuItem_Click);
+            undoToolStripMenuItem.Name = "undoToolStripMenuItem";
+            undoToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Z;
+            undoToolStripMenuItem.Size = new Size(224, 26);
+            undoToolStripMenuItem.Text = "Undo";
+            undoToolStripMenuItem.Click += undoToolStripMenuItem_Click;
             // 
             // redoToolStripMenuItem
             // 
-            this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
-            this.redoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
-            this.redoToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
-            this.redoToolStripMenuItem.Text = "Redo";
-            this.redoToolStripMenuItem.Click += new System.EventHandler(this.redoToolStripMenuItem_Click);
+            redoToolStripMenuItem.Name = "redoToolStripMenuItem";
+            redoToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Y;
+            redoToolStripMenuItem.Size = new Size(224, 26);
+            redoToolStripMenuItem.Text = "Redo";
+            redoToolStripMenuItem.Click += redoToolStripMenuItem_Click;
             // 
             // cutToolStripMenuItem
             // 
-            this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
-            this.cutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.cutToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
-            this.cutToolStripMenuItem.Text = "Cut";
-            this.cutToolStripMenuItem.Click += new System.EventHandler(this.cutToolStripMenuItem_Click);
+            cutToolStripMenuItem.Name = "cutToolStripMenuItem";
+            cutToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.X;
+            cutToolStripMenuItem.Size = new Size(224, 26);
+            cutToolStripMenuItem.Text = "Cut";
+            cutToolStripMenuItem.Click += cutToolStripMenuItem_Click;
             // 
             // copyToolStripMenuItem
             // 
-            this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
-            this.copyToolStripMenuItem.Text = "Copy";
-            this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
+            copyToolStripMenuItem.Name = "copyToolStripMenuItem";
+            copyToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.C;
+            copyToolStripMenuItem.Size = new Size(224, 26);
+            copyToolStripMenuItem.Text = "Copy";
+            copyToolStripMenuItem.Click += copyToolStripMenuItem_Click;
             // 
             // pasteToolStripMenuItem
             // 
-            this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
-            this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
-            this.pasteToolStripMenuItem.Text = "Paste";
-            this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
+            pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
+            pasteToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.V;
+            pasteToolStripMenuItem.Size = new Size(224, 26);
+            pasteToolStripMenuItem.Text = "Paste";
+            pasteToolStripMenuItem.Click += pasteToolStripMenuItem_Click;
             // 
             // viewToolStripMenuItem
             // 
-            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.themeToolStripMenuItem,
-            this.screenModeToolStripMenuItem,
-            this.syntaxToolStripMenuItem});
-            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
-            this.viewToolStripMenuItem.Text = "View";
+            viewToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { themeToolStripMenuItem, screenModeToolStripMenuItem, syntaxToolStripMenuItem });
+            viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            viewToolStripMenuItem.Size = new Size(55, 24);
+            viewToolStripMenuItem.Text = "View";
             // 
             // themeToolStripMenuItem
             // 
-            this.themeToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
-            this.themeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.blackToolStripMenuItem,
-            this.whiteToolStripMenuItem});
-            this.themeToolStripMenuItem.Name = "themeToolStripMenuItem";
-            this.themeToolStripMenuItem.ShowShortcutKeys = false;
-            this.themeToolStripMenuItem.Size = new System.Drawing.Size(222, 26);
-            this.themeToolStripMenuItem.Text = "Theme";
+            themeToolStripMenuItem.BackColor = SystemColors.Control;
+            themeToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { blackToolStripMenuItem, whiteToolStripMenuItem });
+            themeToolStripMenuItem.Name = "themeToolStripMenuItem";
+            themeToolStripMenuItem.ShowShortcutKeys = false;
+            themeToolStripMenuItem.Size = new Size(224, 26);
+            themeToolStripMenuItem.Text = "Theme";
             // 
             // blackToolStripMenuItem
             // 
-            this.blackToolStripMenuItem.Checked = true;
-            this.blackToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.blackToolStripMenuItem.Name = "blackToolStripMenuItem";
-            this.blackToolStripMenuItem.Size = new System.Drawing.Size(131, 26);
-            this.blackToolStripMenuItem.Text = "Black";
-            this.blackToolStripMenuItem.Click += new System.EventHandler(this.blackToolStripMenuItem_Click);
+            blackToolStripMenuItem.Checked = true;
+            blackToolStripMenuItem.CheckState = CheckState.Checked;
+            blackToolStripMenuItem.Name = "blackToolStripMenuItem";
+            blackToolStripMenuItem.Size = new Size(131, 26);
+            blackToolStripMenuItem.Text = "Black";
+            blackToolStripMenuItem.Click += blackToolStripMenuItem_Click;
             // 
             // whiteToolStripMenuItem
             // 
-            this.whiteToolStripMenuItem.Name = "whiteToolStripMenuItem";
-            this.whiteToolStripMenuItem.Size = new System.Drawing.Size(131, 26);
-            this.whiteToolStripMenuItem.Text = "White";
-            this.whiteToolStripMenuItem.Click += new System.EventHandler(this.whiteToolStripMenuItem_Click);
+            whiteToolStripMenuItem.Name = "whiteToolStripMenuItem";
+            whiteToolStripMenuItem.Size = new Size(131, 26);
+            whiteToolStripMenuItem.Text = "White";
+            whiteToolStripMenuItem.Click += whiteToolStripMenuItem_Click;
             // 
             // screenModeToolStripMenuItem
             // 
-            this.screenModeToolStripMenuItem.Name = "screenModeToolStripMenuItem";
-            this.screenModeToolStripMenuItem.Size = new System.Drawing.Size(222, 26);
-            this.screenModeToolStripMenuItem.Text = "Switch to Fullscreen";
-            this.screenModeToolStripMenuItem.Click += new System.EventHandler(this.screenModeToolStripMenuItem_Click);
+            screenModeToolStripMenuItem.Name = "screenModeToolStripMenuItem";
+            screenModeToolStripMenuItem.Size = new Size(224, 26);
+            screenModeToolStripMenuItem.Text = "Switch to Fullscreen";
+            screenModeToolStripMenuItem.Click += screenModeToolStripMenuItem_Click;
             // 
             // syntaxToolStripMenuItem
             // 
-            this.syntaxToolStripMenuItem.Name = "syntaxToolStripMenuItem";
-            this.syntaxToolStripMenuItem.Size = new System.Drawing.Size(222, 26);
-            this.syntaxToolStripMenuItem.Text = "Syntax";
+            syntaxToolStripMenuItem.Name = "syntaxToolStripMenuItem";
+            syntaxToolStripMenuItem.Size = new Size(224, 26);
+            syntaxToolStripMenuItem.Text = "Syntax";
             // 
             // toolsToolStripMenuItem
             // 
-            this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.optionsToolStripMenuItem});
-            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
-            this.toolsToolStripMenuItem.Text = "Tools";
+            toolsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { optionsToolStripMenuItem });
+            toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
+            toolsToolStripMenuItem.Size = new Size(58, 24);
+            toolsToolStripMenuItem.Text = "Tools";
             // 
             // optionsToolStripMenuItem
             // 
-            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
-            this.optionsToolStripMenuItem.Text = "Options";
-            this.optionsToolStripMenuItem.Click += new System.EventHandler(this.optionsToolStripMenuItem_Click);
+            optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
+            optionsToolStripMenuItem.Size = new Size(224, 26);
+            optionsToolStripMenuItem.Text = "Options";
+            optionsToolStripMenuItem.Click += optionsToolStripMenuItem_Click;
             // 
             // templatesToolStripMenuItem
             // 
-            this.templatesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.configurationToolStripMenuItem});
-            this.templatesToolStripMenuItem.Name = "templatesToolStripMenuItem";
-            this.templatesToolStripMenuItem.Size = new System.Drawing.Size(91, 24);
-            this.templatesToolStripMenuItem.Text = "Templates";
+            templatesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { configurationToolStripMenuItem });
+            templatesToolStripMenuItem.Name = "templatesToolStripMenuItem";
+            templatesToolStripMenuItem.Size = new Size(91, 24);
+            templatesToolStripMenuItem.Text = "Templates";
             // 
             // configurationToolStripMenuItem
             // 
-            this.configurationToolStripMenuItem.Name = "configurationToolStripMenuItem";
-            this.configurationToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.configurationToolStripMenuItem.Text = "Configuration";
-            this.configurationToolStripMenuItem.Click += new System.EventHandler(this.templatesToolStripMenuItem_Click);
+            configurationToolStripMenuItem.Name = "configurationToolStripMenuItem";
+            configurationToolStripMenuItem.Size = new Size(183, 26);
+            configurationToolStripMenuItem.Text = "Configuration";
+            configurationToolStripMenuItem.Click += templatesToolStripMenuItem_Click;
             // 
             // openFileDialog1
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            openFileDialog1.FileName = "openFileDialog1";
             // 
             // MainTextField
             // 
-            this.MainTextField.AutoCompleteBracketsList = new char[] {
-        '(',
-        ')',
-        '{',
-        '}',
-        '[',
-        ']',
-        '\"',
-        '\"',
-        '\'',
-        '\''};
-            this.MainTextField.AutoIndentCharsPatterns = "\r\n^\\s*[\\w\\.]+(\\s\\w+)?\\s*(?<range>=)\\s*(?<range>[^;]+);\r\n^\\s*(case|default)\\s*[^:]" +
-    "*(?<range>:)\\s*(?<range>[^;]+);\r\n";
-            this.MainTextField.AutoScrollMinSize = new System.Drawing.Size(35, 22);
-            this.MainTextField.BackBrush = null;
-            this.MainTextField.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.MainTextField.BracketsHighlightStrategy = FastColoredTextBoxNS.BracketsHighlightStrategy.Strategy2;
-            this.MainTextField.CharHeight = 22;
-            this.MainTextField.CharWidth = 12;
-            this.MainTextField.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.MainTextField.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainTextField.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MainTextField.ForeColor = System.Drawing.Color.White;
-            this.MainTextField.Hotkeys = resources.GetString("MainTextField.Hotkeys");
-            this.MainTextField.IndentBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.MainTextField.IsReplaceMode = false;
-            this.MainTextField.LeftBracket = '(';
-            this.MainTextField.LeftBracket2 = '{';
-            this.MainTextField.LineNumberColor = System.Drawing.Color.Silver;
-            this.MainTextField.Location = new System.Drawing.Point(0, 28);
-            this.MainTextField.Name = "MainTextField";
-            this.MainTextField.Paddings = new System.Windows.Forms.Padding(0);
-            this.MainTextField.RightBracket = ')';
-            this.MainTextField.RightBracket2 = '}';
-            this.MainTextField.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
-            this.MainTextField.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("MainTextField.ServiceColors")));
-            this.MainTextField.Size = new System.Drawing.Size(800, 422);
-            this.MainTextField.TabIndex = 3;
-            this.MainTextField.Zoom = 100;
-            this.MainTextField.TextChanged += new System.EventHandler<FastColoredTextBoxNS.TextChangedEventArgs>(this.MainTextField_TextChanged);
-            this.MainTextField.SelectionChanged += new System.EventHandler(this.MainTextField_SelectionChanged);
-            this.MainTextField.LineInserted += new System.EventHandler<FastColoredTextBoxNS.LineInsertedEventArgs>(this.MainTextField_LineInserted);
-            this.MainTextField.LineRemoved += new System.EventHandler<FastColoredTextBoxNS.LineRemovedEventArgs>(this.MainTextField_LineRemoved);
-            this.MainTextField.ZoomChanged += new System.EventHandler(this.MainTextField_ZoomChanged);
+            MainTextField.AutoCompleteBracketsList = (new char[] { '(', ')', '{', '}', '[', ']', '"', '"', '\'', '\'' });
+            MainTextField.AutoIndentCharsPatterns = "\r\n^\\s*[\\w\\.]+(\\s\\w+)?\\s*(?<range>=)\\s*(?<range>[^;]+);\r\n^\\s*(case|default)\\s*[^:]*(?<range>:)\\s*(?<range>[^;]+);\r\n";
+            MainTextField.AutoScrollMinSize = new Size(35, 22);
+            MainTextField.BackBrush = null;
+            MainTextField.BackColor = Color.FromArgb(80, 80, 80);
+            MainTextField.BracketsHighlightStrategy = BracketsHighlightStrategy.Strategy2;
+            MainTextField.CharHeight = 22;
+            MainTextField.CharWidth = 12;
+            MainTextField.DisabledColor = Color.FromArgb(100, 180, 180, 180);
+            MainTextField.Dock = DockStyle.Fill;
+            MainTextField.Font = new Font("Courier New", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            MainTextField.ForeColor = Color.White;
+            MainTextField.Hotkeys = resources.GetString("MainTextField.Hotkeys");
+            MainTextField.IndentBackColor = Color.FromArgb(50, 50, 50);
+            MainTextField.IsReplaceMode = false;
+            MainTextField.LeftBracket = '(';
+            MainTextField.LeftBracket2 = '{';
+            MainTextField.LineNumberColor = Color.Silver;
+            MainTextField.Location = new Point(0, 28);
+            MainTextField.Name = "MainTextField";
+            MainTextField.Paddings = new Padding(0);
+            MainTextField.RightBracket = ')';
+            MainTextField.RightBracket2 = '}';
+            MainTextField.SelectionColor = Color.FromArgb(60, 0, 0, 255);
+            MainTextField.ServiceColors = (ServiceColors)resources.GetObject("MainTextField.ServiceColors");
+            MainTextField.Size = new Size(800, 422);
+            MainTextField.TabIndex = 3;
+            MainTextField.Zoom = 100;
+            MainTextField.TextChanged += MainTextField_TextChanged;
+            MainTextField.SelectionChanged += MainTextField_SelectionChanged;
+            MainTextField.LineInserted += MainTextField_LineInserted;
+            MainTextField.LineRemoved += MainTextField_LineRemoved;
+            MainTextField.ZoomChanged += MainTextField_ZoomChanged;
             // 
             // MainFooter
             // 
-            this.MainFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.MainFooter.ContextMenuStrip = this.FooterContext;
-            this.MainFooter.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.MainFooter.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.LineCountLable,
-            this.SymbolCountLable,
-            this.CurrentLineLabel,
-            this.IsSavedLabel,
-            this.zoomPercentageLabel,
-            this.syntaxLabel});
-            this.MainFooter.Location = new System.Drawing.Point(0, 424);
-            this.MainFooter.Name = "MainFooter";
-            this.MainFooter.Size = new System.Drawing.Size(800, 26);
-            this.MainFooter.TabIndex = 4;
-            this.MainFooter.Text = "statusStrip1";
+            MainFooter.BackColor = Color.FromArgb(50, 50, 50);
+            MainFooter.ContextMenuStrip = FooterContext;
+            MainFooter.ImageScalingSize = new Size(20, 20);
+            MainFooter.Items.AddRange(new ToolStripItem[] { LineCountLable, SymbolCountLable, CurrentLineLabel, IsSavedLabel, zoomPercentageLabel, syntaxLabel });
+            MainFooter.Location = new Point(0, 424);
+            MainFooter.Name = "MainFooter";
+            MainFooter.Size = new Size(800, 26);
+            MainFooter.TabIndex = 4;
+            MainFooter.Text = "statusStrip1";
             // 
             // FooterContext
             // 
-            this.FooterContext.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.FooterContext.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.linesToolStripMenuItem,
-            this.symbolToolStripMenuItem,
-            this.currentLineToolStripMenuItem,
-            this.fileStatusToolStripMenuItem,
-            this.zoomToolStripMenuItem,
-            this.syntaxToolStripMenuItem1});
-            this.FooterContext.Name = "contextMenuStrip1";
-            this.FooterContext.Size = new System.Drawing.Size(179, 160);
+            FooterContext.ImageScalingSize = new Size(20, 20);
+            FooterContext.Items.AddRange(new ToolStripItem[] { linesToolStripMenuItem, symbolToolStripMenuItem, currentLineToolStripMenuItem, fileStatusToolStripMenuItem, zoomToolStripMenuItem, syntaxToolStripMenuItem1 });
+            FooterContext.Name = "contextMenuStrip1";
+            FooterContext.Size = new Size(179, 160);
             // 
             // linesToolStripMenuItem
             // 
-            this.linesToolStripMenuItem.Checked = true;
-            this.linesToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.linesToolStripMenuItem.Name = "linesToolStripMenuItem";
-            this.linesToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
-            this.linesToolStripMenuItem.Text = "Lines";
-            this.linesToolStripMenuItem.Click += new System.EventHandler(this.linesToolStripMenuItem_Click);
+            linesToolStripMenuItem.Checked = true;
+            linesToolStripMenuItem.CheckState = CheckState.Checked;
+            linesToolStripMenuItem.Name = "linesToolStripMenuItem";
+            linesToolStripMenuItem.Size = new Size(178, 26);
+            linesToolStripMenuItem.Text = "Lines";
+            linesToolStripMenuItem.Click += linesToolStripMenuItem_Click;
             // 
             // symbolToolStripMenuItem
             // 
-            this.symbolToolStripMenuItem.Checked = true;
-            this.symbolToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.symbolToolStripMenuItem.Name = "symbolToolStripMenuItem";
-            this.symbolToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
-            this.symbolToolStripMenuItem.Text = "Current symbol";
-            this.symbolToolStripMenuItem.Click += new System.EventHandler(this.symbolToolStripMenuItem_Click);
+            symbolToolStripMenuItem.Checked = true;
+            symbolToolStripMenuItem.CheckState = CheckState.Checked;
+            symbolToolStripMenuItem.Name = "symbolToolStripMenuItem";
+            symbolToolStripMenuItem.Size = new Size(178, 26);
+            symbolToolStripMenuItem.Text = "Current symbol";
+            symbolToolStripMenuItem.Click += symbolToolStripMenuItem_Click;
             // 
             // currentLineToolStripMenuItem
             // 
-            this.currentLineToolStripMenuItem.Checked = true;
-            this.currentLineToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.currentLineToolStripMenuItem.Name = "currentLineToolStripMenuItem";
-            this.currentLineToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
-            this.currentLineToolStripMenuItem.Text = "Current line";
-            this.currentLineToolStripMenuItem.Click += new System.EventHandler(this.currentLineToolStripMenuItem_Click);
+            currentLineToolStripMenuItem.Checked = true;
+            currentLineToolStripMenuItem.CheckState = CheckState.Checked;
+            currentLineToolStripMenuItem.Name = "currentLineToolStripMenuItem";
+            currentLineToolStripMenuItem.Size = new Size(178, 26);
+            currentLineToolStripMenuItem.Text = "Current line";
+            currentLineToolStripMenuItem.Click += currentLineToolStripMenuItem_Click;
             // 
             // fileStatusToolStripMenuItem
             // 
-            this.fileStatusToolStripMenuItem.Checked = true;
-            this.fileStatusToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.fileStatusToolStripMenuItem.Name = "fileStatusToolStripMenuItem";
-            this.fileStatusToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
-            this.fileStatusToolStripMenuItem.Text = "File status";
-            this.fileStatusToolStripMenuItem.Click += new System.EventHandler(this.fileStatusToolStripMenuItem_Click);
+            fileStatusToolStripMenuItem.Checked = true;
+            fileStatusToolStripMenuItem.CheckState = CheckState.Checked;
+            fileStatusToolStripMenuItem.Name = "fileStatusToolStripMenuItem";
+            fileStatusToolStripMenuItem.Size = new Size(178, 26);
+            fileStatusToolStripMenuItem.Text = "File status";
+            fileStatusToolStripMenuItem.Click += fileStatusToolStripMenuItem_Click;
             // 
             // zoomToolStripMenuItem
             // 
-            this.zoomToolStripMenuItem.Checked = true;
-            this.zoomToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.zoomToolStripMenuItem.Name = "zoomToolStripMenuItem";
-            this.zoomToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
-            this.zoomToolStripMenuItem.Text = " Zoom";
-            this.zoomToolStripMenuItem.Click += new System.EventHandler(this.zoomToolStripMenuItem_Click);
+            zoomToolStripMenuItem.Checked = true;
+            zoomToolStripMenuItem.CheckState = CheckState.Checked;
+            zoomToolStripMenuItem.Name = "zoomToolStripMenuItem";
+            zoomToolStripMenuItem.Size = new Size(178, 26);
+            zoomToolStripMenuItem.Text = " Zoom";
+            zoomToolStripMenuItem.Click += zoomToolStripMenuItem_Click;
             // 
             // syntaxToolStripMenuItem1
             // 
-            this.syntaxToolStripMenuItem1.Checked = true;
-            this.syntaxToolStripMenuItem1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.syntaxToolStripMenuItem1.Name = "syntaxToolStripMenuItem1";
-            this.syntaxToolStripMenuItem1.Size = new System.Drawing.Size(178, 26);
-            this.syntaxToolStripMenuItem1.Text = "Syntax";
-            this.syntaxToolStripMenuItem1.Click += new System.EventHandler(this.syntaxToolStripMenuItem1_Click);
+            syntaxToolStripMenuItem1.Checked = true;
+            syntaxToolStripMenuItem1.CheckState = CheckState.Checked;
+            syntaxToolStripMenuItem1.Name = "syntaxToolStripMenuItem1";
+            syntaxToolStripMenuItem1.Size = new Size(178, 26);
+            syntaxToolStripMenuItem1.Text = "Syntax";
+            syntaxToolStripMenuItem1.Click += syntaxToolStripMenuItem1_Click;
             // 
             // LineCountLable
             // 
-            this.LineCountLable.ForeColor = System.Drawing.Color.White;
-            this.LineCountLable.Name = "LineCountLable";
-            this.LineCountLable.Size = new System.Drawing.Size(57, 20);
-            this.LineCountLable.Text = "Lines: 0";
+            LineCountLable.ForeColor = Color.White;
+            LineCountLable.Name = "LineCountLable";
+            LineCountLable.Size = new Size(57, 20);
+            LineCountLable.Text = "Lines: 0";
             // 
             // SymbolCountLable
             // 
-            this.SymbolCountLable.ForeColor = System.Drawing.Color.White;
-            this.SymbolCountLable.Name = "SymbolCountLable";
-            this.SymbolCountLable.Size = new System.Drawing.Size(124, 20);
-            this.SymbolCountLable.Text = "Current symbol: 0";
+            SymbolCountLable.ForeColor = Color.White;
+            SymbolCountLable.Name = "SymbolCountLable";
+            SymbolCountLable.Size = new Size(124, 20);
+            SymbolCountLable.Text = "Current symbol: 0";
             // 
             // CurrentLineLabel
             // 
-            this.CurrentLineLabel.ForeColor = System.Drawing.Color.White;
-            this.CurrentLineLabel.Name = "CurrentLineLabel";
-            this.CurrentLineLabel.Size = new System.Drawing.Size(100, 20);
-            this.CurrentLineLabel.Text = "Current line: 0";
+            CurrentLineLabel.ForeColor = Color.White;
+            CurrentLineLabel.Name = "CurrentLineLabel";
+            CurrentLineLabel.Size = new Size(100, 20);
+            CurrentLineLabel.Text = "Current line: 0";
             // 
             // IsSavedLabel
             // 
-            this.IsSavedLabel.ForeColor = System.Drawing.Color.White;
-            this.IsSavedLabel.Name = "IsSavedLabel";
-            this.IsSavedLabel.Size = new System.Drawing.Size(137, 20);
-            this.IsSavedLabel.Text = "File status: Unsaved";
+            IsSavedLabel.ForeColor = Color.White;
+            IsSavedLabel.Name = "IsSavedLabel";
+            IsSavedLabel.Size = new Size(137, 20);
+            IsSavedLabel.Text = "File status: Unsaved";
             // 
             // zoomPercentageLabel
             // 
-            this.zoomPercentageLabel.AutoToolTip = true;
-            this.zoomPercentageLabel.ForeColor = System.Drawing.Color.White;
-            this.zoomPercentageLabel.Name = "zoomPercentageLabel";
-            this.zoomPercentageLabel.Size = new System.Drawing.Size(92, 20);
-            this.zoomPercentageLabel.Text = "Zoom: 100%";
-            this.zoomPercentageLabel.ToolTipText = "Click to set to default";
-            this.zoomPercentageLabel.Click += new System.EventHandler(this.zoomPercentageLabel_Click);
+            zoomPercentageLabel.AutoToolTip = true;
+            zoomPercentageLabel.ForeColor = Color.White;
+            zoomPercentageLabel.Name = "zoomPercentageLabel";
+            zoomPercentageLabel.Size = new Size(92, 20);
+            zoomPercentageLabel.Text = "Zoom: 100%";
+            zoomPercentageLabel.ToolTipText = "Click to set to default";
+            zoomPercentageLabel.Click += zoomPercentageLabel_Click;
             // 
             // syntaxLabel
             // 
-            this.syntaxLabel.ForeColor = System.Drawing.Color.White;
-            this.syntaxLabel.Name = "syntaxLabel";
-            this.syntaxLabel.Size = new System.Drawing.Size(109, 20);
-            this.syntaxLabel.Text = "Syntax: Custom";
+            syntaxLabel.ForeColor = Color.White;
+            syntaxLabel.Name = "syntaxLabel";
+            syntaxLabel.Size = new Size(109, 20);
+            syntaxLabel.Text = "Syntax: Custom";
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.MainFooter);
-            this.Controls.Add(this.MainTextField);
-            this.Controls.Add(this.MainHeader);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.KeyPreview = true;
-            this.MainMenuStrip = this.MainHeader;
-            this.Name = "MainForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Salamanca | *";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
-            this.Load += new System.EventHandler(this.MainForm_Load);
-            this.MainHeader.ResumeLayout(false);
-            this.MainHeader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MainTextField)).EndInit();
-            this.MainFooter.ResumeLayout(false);
-            this.MainFooter.PerformLayout();
-            this.FooterContext.ResumeLayout(false);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(MainFooter);
+            Controls.Add(MainTextField);
+            Controls.Add(MainHeader);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            KeyPreview = true;
+            MainMenuStrip = MainHeader;
+            Name = "MainForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Salamanca | *";
+            FormClosing += MainForm_FormClosing;
+            Load += MainForm_Load;
+            MainHeader.ResumeLayout(false);
+            MainHeader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)MainTextField).EndInit();
+            MainFooter.ResumeLayout(false);
+            MainFooter.PerformLayout();
+            FooterContext.ResumeLayout(false);
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

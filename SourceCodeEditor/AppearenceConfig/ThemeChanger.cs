@@ -126,7 +126,7 @@ namespace SourceCodeEditor.AppearenceConfig
         public void ChangeGeneralThemeToWhite()
         {
             _theme = Theme.White;
-            mainForm.theme.ThemePath =  currentTheme.ThemePath = "Themes/WhiteTheme.theme";
+            mainForm.theme.ThemePath = currentTheme.ThemePath = "Themes/WhiteTheme.theme";
             mainForm.theme.syntaxColors!.SyntaxPath = "SyntaxColors/WhiteSyntax.syn";
 
 
@@ -234,7 +234,7 @@ namespace SourceCodeEditor.AppearenceConfig
         {
             switch (_theme)
             {
-                case Theme.Black: 
+                case Theme.Black:
                     {
                         currentTheme.syntaxColors!.SyntaxPath = "SyntaxColors/BlackSyntax.syn";
                         SetColorsToHighLighterBlack();
@@ -361,7 +361,7 @@ namespace SourceCodeEditor.AppearenceConfig
         /// <param name="header">Object of main menu strip</param>
         public void ChangeHeaderTheme(CurrentTheme theme)
         {
-            if(theme.HeaderBack == Color.Transparent || theme.HeaderFore == Color.Transparent )
+            if (theme.HeaderBack == Color.Transparent || theme.HeaderFore == Color.Transparent)
                 theme = ThemeSerializer.Deserialize<CurrentTheme>("Themes/BlackTheme.theme")!;
 
             var allItems = new List<ToolStripMenuItem>();
