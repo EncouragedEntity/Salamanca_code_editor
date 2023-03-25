@@ -200,7 +200,7 @@ namespace SourceCodeEditor
             DeleteSymbolLabel();
             DeleteFileStatusLabel();
             DeleteSyntaxLabel();
-            DeleteFontSizeLabel();
+            DeleteFontSizeLabel(); 
         }
 
         /// <summary>
@@ -277,7 +277,7 @@ namespace SourceCodeEditor
             return labels;
         }
 
-
+        
         /// <summary>
         /// Show OptionsForm dialog
         /// </summary>
@@ -672,7 +672,5 @@ namespace SourceCodeEditor
             }
         }
         #endregion
-
-
     }
 }

@@ -8,6 +8,7 @@ namespace SourceCodeEditor.Forms
     public partial class TemplatesForm : Form
     {
         public FastColoredTextBox TextField { get; set; }
+        public Font Font { get; set; }
         private List<Template> Templates { get; set; }
         public bool IsTemplatesChanged = false;
 
@@ -27,12 +28,13 @@ namespace SourceCodeEditor.Forms
 
         private void SetLabelsFontSize()
         {
+            Font = new Font(TextField.Font.FontFamily, TextField.Font.Size, TextField.Font.Style);
             foreach (var control in tableLayoutPanel1.Controls)
             {
                 if (control is Label)
                 {
                     var label = (Label)control;
-                    label.Font = new Font(TextField.Font.FontFamily, TextField.Font.Size, TextField.Font.Style);
+                    label.Font = Font;
                 }
             }
         }

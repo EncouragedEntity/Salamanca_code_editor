@@ -35,9 +35,9 @@
             buttonAdd = new Button();
             panel2 = new Panel();
             comboBoxLanguages = new ComboBox();
-            label2 = new Label();
+            labelLanguage = new Label();
             textBoxName = new TextBox();
-            label1 = new Label();
+            labelName = new Label();
             fastColoredTextBox1 = new FastColoredTextBoxNS.FastColoredTextBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -56,6 +56,7 @@
             // 
             // buttonBack
             // 
+            buttonBack.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             buttonBack.Location = new Point(12, 23);
             buttonBack.Name = "buttonBack";
             buttonBack.Size = new Size(94, 29);
@@ -66,7 +67,8 @@
             // 
             // buttonAdd
             // 
-            buttonAdd.Location = new Point(453, 23);
+            buttonAdd.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonAdd.Location = new Point(462, 23);
             buttonAdd.Name = "buttonAdd";
             buttonAdd.Size = new Size(94, 29);
             buttonAdd.TabIndex = 0;
@@ -77,9 +79,9 @@
             // panel2
             // 
             panel2.Controls.Add(comboBoxLanguages);
-            panel2.Controls.Add(label2);
+            panel2.Controls.Add(labelLanguage);
             panel2.Controls.Add(textBoxName);
-            panel2.Controls.Add(label1);
+            panel2.Controls.Add(labelName);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
@@ -97,31 +99,33 @@
             comboBoxLanguages.TabIndex = 3;
             comboBoxLanguages.SelectedIndexChanged += comboBoxLanguages_SelectedIndexChanged;
             // 
-            // label2
+            // labelLanguage
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(321, 27);
-            label2.Name = "label2";
-            label2.Size = new Size(81, 20);
-            label2.TabIndex = 2;
-            label2.Text = "Language: ";
+            labelLanguage.Anchor = AnchorStyles.Right;
+            labelLanguage.AutoSize = true;
+            labelLanguage.Location = new Point(321, 27);
+            labelLanguage.Name = "labelLanguage";
+            labelLanguage.Size = new Size(81, 20);
+            labelLanguage.TabIndex = 2;
+            labelLanguage.Text = "Language: ";
             // 
             // textBoxName
             // 
-            textBoxName.Location = new Point(70, 24);
+            textBoxName.Location = new Point(61, 24);
             textBoxName.Name = "textBoxName";
             textBoxName.Size = new Size(109, 27);
             textBoxName.TabIndex = 1;
             textBoxName.Text = "Template";
             // 
-            // label1
+            // labelName
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(12, 27);
-            label1.Name = "label1";
-            label1.Size = new Size(52, 20);
-            label1.TabIndex = 0;
-            label1.Text = "Name:";
+            labelName.Anchor = AnchorStyles.Right;
+            labelName.AutoSize = true;
+            labelName.Location = new Point(3, 27);
+            labelName.Name = "labelName";
+            labelName.Size = new Size(52, 20);
+            labelName.TabIndex = 0;
+            labelName.Text = "Name:";
             // 
             // fastColoredTextBox1
             // 
@@ -132,7 +136,6 @@
             fastColoredTextBox1.CharWidth = 10;
             fastColoredTextBox1.DisabledColor = Color.FromArgb(100, 180, 180, 180);
             fastColoredTextBox1.Dock = DockStyle.Fill;
-            fastColoredTextBox1.Font = new Font("Courier New", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             fastColoredTextBox1.IsReplaceMode = false;
             fastColoredTextBox1.Location = new Point(0, 67);
             fastColoredTextBox1.Name = "fastColoredTextBox1";
@@ -169,8 +172,8 @@
         private Panel panel1;
         private Panel panel2;
         private TextBox textBoxName;
-        private Label label1;
-        private Label label2;
+        private Label labelName;
+        private Label labelLanguage;
         private ComboBox comboBoxLanguages;
         private Button buttonBack;
         private Button buttonAdd;

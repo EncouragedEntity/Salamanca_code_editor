@@ -38,7 +38,54 @@ namespace SourceCodeEditor.Forms.Templates
                 return;
             }
             comboBoxLanguages.SelectedIndex = Convert.ToInt32(Language.Custom);
+            SetFontSizeForEverything();
         }
+
+        private void SetFontSizeForEverything()
+        {
+            foreach (Control control in this.Controls)
+            {
+                control.Font = Form.Font;
+                if (control is GroupBox)
+                {
+                    foreach (Control control1 in control.Controls)
+                    {
+                        control1.Font = Form.Font;
+                    }
+                }
+            }
+
+            ValidateSize();
+        }
+
+        private void ValidateSize()
+        {
+            int rightSideLabelName = labelName.Location.X + labelName.Width;
+            int rightSideLabelLanguage = labelLanguage.Location.X + labelLanguage.Width;
+            int rightSideTextBoxName = textBoxName.Location.X + textBoxName.Width;
+
+
+            if (rightSideLabelName > textBoxName.Location.X)
+            {
+                labelName.Location = new Point(labelName.Location.X - (rightSideLabelName - textBoxName.Location.X), labelName.Location.Y);
+            }
+
+            if (rightSideLabelLanguage > comboBoxLanguages.Location.X)
+            {
+                labelLanguage.Location = new Point(labelLanguage.Location.X - (rightSideLabelLanguage - comboBoxLanguages.Location.X), labelLanguage.Location.Y);
+            }
+
+            if (labelName.Location.X < this.Location.X)
+            {
+                this.Width += this.Location.X - labelName.Location.X;
+            }
+
+            if (labelLanguage.Location.X < rightSideTextBoxName)
+            {
+                this.Width += rightSideTextBoxName - labelLanguage.Location.X;
+            }
+        }
+
 
         private void SetDefaultValues(Template temp)
         {
