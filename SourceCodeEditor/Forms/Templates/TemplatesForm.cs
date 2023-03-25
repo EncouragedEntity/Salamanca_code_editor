@@ -19,7 +19,22 @@ namespace SourceCodeEditor.Forms
             LoadTemplates();
 
             TextField = textField;
+
+            SetLabelsFontSize();
+
             IsTemplatesChanged = false;
+        }
+
+        private void SetLabelsFontSize()
+        {
+            foreach (var control in tableLayoutPanel1.Controls)
+            {
+                if (control is Label)
+                {
+                    var label = (Label)control;
+                    label.Font = new Font(TextField.Font.FontFamily, TextField.Font.Size, TextField.Font.Style);
+                }
+            }
         }
 
         private void LoadTemplates()
@@ -28,8 +43,7 @@ namespace SourceCodeEditor.Forms
             {
                 if (Path.GetExtension(file.Name) == ".json")
                 {
-                    Template template = new Template();
-                    template = JsonSerializer.Deserialize<Template>(File.ReadAllText($"Templates/{file.Name}"))!;
+                    Template template = JsonSerializer.Deserialize<Template>(File.ReadAllText($"Templates/{file.Name}"))!;
                     Templates[template.Number - 1] = (template);
                     IsTemplatesChanged = true;
                 }

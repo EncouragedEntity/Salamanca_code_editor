@@ -338,6 +338,7 @@ namespace SourceCodeEditor
                 label.ForeColor = Color.White;
             else
                 label.ForeColor = Color.Black;
+            label.Font = new Font(MainFooter.Font.FontFamily, MainTextField.Font.Size, MainFooter.Font.Style);
             MainFooter.Items.Add(label);
         }
         /// <summary>
@@ -357,6 +358,7 @@ namespace SourceCodeEditor
                 label.ForeColor = Color.White;
             else
                 label.ForeColor = Color.Black;
+            label.Font = new Font(MainFooter.Font.FontFamily, MainTextField.Font.Size, MainFooter.Font.Style);
             MainFooter.Items.Add(SymbolCountLable);
         }
         /// <summary>
@@ -376,6 +378,7 @@ namespace SourceCodeEditor
                 label.ForeColor = Color.White;
             else
                 label.ForeColor = Color.Black;
+            label.Font = new Font(MainFooter.Font.FontFamily, MainTextField.Font.Size, MainFooter.Font.Style);
             MainFooter.Items.Add(CurrentLineLabel);
         }
         /// <summary>
@@ -395,6 +398,7 @@ namespace SourceCodeEditor
                 label.ForeColor = Color.White;
             else
                 label.ForeColor = Color.Black;
+            label.Font = new Font(MainFooter.Font.FontFamily, MainTextField.Font.Size, MainFooter.Font.Style);
             MainFooter.Items.Add(label);
         }
         /// <summary>
@@ -414,6 +418,7 @@ namespace SourceCodeEditor
                 button.ForeColor = Color.White;
             else
                 button.ForeColor = Color.Black;
+            button.Font = new Font(MainFooter.Font.FontFamily, MainTextField.Font.Size, MainFooter.Font.Style);
             MainFooter.Items.Add(button);
         }
         private void syntaxToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -430,6 +435,7 @@ namespace SourceCodeEditor
                 button.ForeColor = Color.White;
             else
                 button.ForeColor = Color.Black;
+            button.Font = new Font(MainFooter.Font.FontFamily, MainTextField.Font.Size, MainFooter.Font.Style);
             MainFooter.Items.Add(button);
         }
         /// <summary>
@@ -616,11 +622,29 @@ namespace SourceCodeEditor
         public void SetFontSizeForEverything(float fontSize)
         {
             SetFontSizeForMainTextField(fontSize);
+            SetFontSizeForHeader(fontSize);
+            SetFontSizeForFooter(fontSize);
         }
 
         public void SetFontSizeForMainTextField(float fontSize)
         {
             MainTextField.Font = new Font(MainTextField.Font.FontFamily, fontSize,MainTextField.Font.Style);
+        }
+
+        public void SetFontSizeForHeader(float fontSize)
+        {
+            foreach (ToolStripItem item in MainHeader.Items)
+            {
+                item.Font = new Font(MainHeader.Font.FontFamily, fontSize, MainHeader.Font.Style);
+            }
+        }
+
+        public void SetFontSizeForFooter(float fontSize)
+        {
+            foreach (ToolStripItem item in MainFooter.Items)
+            {
+                item.Font = new Font(MainHeader.Font.FontFamily, fontSize, MainHeader.Font.Style);
+            }
         }
         #endregion
     }
