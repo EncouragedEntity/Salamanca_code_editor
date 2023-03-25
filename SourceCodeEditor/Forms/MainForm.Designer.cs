@@ -65,12 +65,14 @@ namespace SourceCodeEditor
             fileStatusToolStripMenuItem = new ToolStripMenuItem();
             zoomToolStripMenuItem = new ToolStripMenuItem();
             syntaxToolStripMenuItem1 = new ToolStripMenuItem();
+            fontSizeToolStripMenuItem = new ToolStripMenuItem();
             LineCountLable = new ToolStripStatusLabel();
             SymbolCountLable = new ToolStripStatusLabel();
             CurrentLineLabel = new ToolStripStatusLabel();
             IsSavedLabel = new ToolStripStatusLabel();
             zoomPercentageLabel = new ToolStripStatusLabel();
             syntaxLabel = new ToolStripStatusLabel();
+            FontSizeLabel = new ToolStripStatusLabel();
             MainHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)MainTextField).BeginInit();
             MainFooter.SuspendLayout();
@@ -139,7 +141,7 @@ namespace SourceCodeEditor
             // 
             undoToolStripMenuItem.Name = "undoToolStripMenuItem";
             undoToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Z;
-            undoToolStripMenuItem.Size = new Size(224, 26);
+            undoToolStripMenuItem.Size = new Size(179, 26);
             undoToolStripMenuItem.Text = "Undo";
             undoToolStripMenuItem.Click += undoToolStripMenuItem_Click;
             // 
@@ -147,7 +149,7 @@ namespace SourceCodeEditor
             // 
             redoToolStripMenuItem.Name = "redoToolStripMenuItem";
             redoToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Y;
-            redoToolStripMenuItem.Size = new Size(224, 26);
+            redoToolStripMenuItem.Size = new Size(179, 26);
             redoToolStripMenuItem.Text = "Redo";
             redoToolStripMenuItem.Click += redoToolStripMenuItem_Click;
             // 
@@ -155,7 +157,7 @@ namespace SourceCodeEditor
             // 
             cutToolStripMenuItem.Name = "cutToolStripMenuItem";
             cutToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.X;
-            cutToolStripMenuItem.Size = new Size(224, 26);
+            cutToolStripMenuItem.Size = new Size(179, 26);
             cutToolStripMenuItem.Text = "Cut";
             cutToolStripMenuItem.Click += cutToolStripMenuItem_Click;
             // 
@@ -163,7 +165,7 @@ namespace SourceCodeEditor
             // 
             copyToolStripMenuItem.Name = "copyToolStripMenuItem";
             copyToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.C;
-            copyToolStripMenuItem.Size = new Size(224, 26);
+            copyToolStripMenuItem.Size = new Size(179, 26);
             copyToolStripMenuItem.Text = "Copy";
             copyToolStripMenuItem.Click += copyToolStripMenuItem_Click;
             // 
@@ -171,7 +173,7 @@ namespace SourceCodeEditor
             // 
             pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
             pasteToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.V;
-            pasteToolStripMenuItem.Size = new Size(224, 26);
+            pasteToolStripMenuItem.Size = new Size(179, 26);
             pasteToolStripMenuItem.Text = "Paste";
             pasteToolStripMenuItem.Click += pasteToolStripMenuItem_Click;
             // 
@@ -188,7 +190,7 @@ namespace SourceCodeEditor
             themeToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { blackToolStripMenuItem, whiteToolStripMenuItem });
             themeToolStripMenuItem.Name = "themeToolStripMenuItem";
             themeToolStripMenuItem.ShowShortcutKeys = false;
-            themeToolStripMenuItem.Size = new Size(224, 26);
+            themeToolStripMenuItem.Size = new Size(222, 26);
             themeToolStripMenuItem.Text = "Theme";
             // 
             // blackToolStripMenuItem
@@ -210,14 +212,14 @@ namespace SourceCodeEditor
             // screenModeToolStripMenuItem
             // 
             screenModeToolStripMenuItem.Name = "screenModeToolStripMenuItem";
-            screenModeToolStripMenuItem.Size = new Size(224, 26);
+            screenModeToolStripMenuItem.Size = new Size(222, 26);
             screenModeToolStripMenuItem.Text = "Switch to Fullscreen";
             screenModeToolStripMenuItem.Click += screenModeToolStripMenuItem_Click;
             // 
             // syntaxToolStripMenuItem
             // 
             syntaxToolStripMenuItem.Name = "syntaxToolStripMenuItem";
-            syntaxToolStripMenuItem.Size = new Size(224, 26);
+            syntaxToolStripMenuItem.Size = new Size(222, 26);
             syntaxToolStripMenuItem.Text = "Syntax";
             // 
             // toolsToolStripMenuItem
@@ -230,7 +232,7 @@ namespace SourceCodeEditor
             // optionsToolStripMenuItem
             // 
             optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            optionsToolStripMenuItem.Size = new Size(224, 26);
+            optionsToolStripMenuItem.Size = new Size(144, 26);
             optionsToolStripMenuItem.Text = "Options";
             optionsToolStripMenuItem.Click += optionsToolStripMenuItem_Click;
             // 
@@ -293,7 +295,7 @@ namespace SourceCodeEditor
             MainFooter.BackColor = Color.FromArgb(50, 50, 50);
             MainFooter.ContextMenuStrip = FooterContext;
             MainFooter.ImageScalingSize = new Size(20, 20);
-            MainFooter.Items.AddRange(new ToolStripItem[] { LineCountLable, SymbolCountLable, CurrentLineLabel, IsSavedLabel, zoomPercentageLabel, syntaxLabel });
+            MainFooter.Items.AddRange(new ToolStripItem[] { LineCountLable, SymbolCountLable, CurrentLineLabel, IsSavedLabel, zoomPercentageLabel, syntaxLabel, FontSizeLabel });
             MainFooter.Location = new Point(0, 424);
             MainFooter.Name = "MainFooter";
             MainFooter.Size = new Size(800, 26);
@@ -303,9 +305,9 @@ namespace SourceCodeEditor
             // FooterContext
             // 
             FooterContext.ImageScalingSize = new Size(20, 20);
-            FooterContext.Items.AddRange(new ToolStripItem[] { linesToolStripMenuItem, symbolToolStripMenuItem, currentLineToolStripMenuItem, fileStatusToolStripMenuItem, zoomToolStripMenuItem, syntaxToolStripMenuItem1 });
+            FooterContext.Items.AddRange(new ToolStripItem[] { linesToolStripMenuItem, symbolToolStripMenuItem, currentLineToolStripMenuItem, fileStatusToolStripMenuItem, zoomToolStripMenuItem, syntaxToolStripMenuItem1, fontSizeToolStripMenuItem });
             FooterContext.Name = "contextMenuStrip1";
-            FooterContext.Size = new Size(179, 160);
+            FooterContext.Size = new Size(179, 186);
             // 
             // linesToolStripMenuItem
             // 
@@ -361,6 +363,15 @@ namespace SourceCodeEditor
             syntaxToolStripMenuItem1.Text = "Syntax";
             syntaxToolStripMenuItem1.Click += syntaxToolStripMenuItem1_Click;
             // 
+            // fontSizeToolStripMenuItem
+            // 
+            fontSizeToolStripMenuItem.Checked = true;
+            fontSizeToolStripMenuItem.CheckState = CheckState.Checked;
+            fontSizeToolStripMenuItem.Name = "fontSizeToolStripMenuItem";
+            fontSizeToolStripMenuItem.Size = new Size(178, 26);
+            fontSizeToolStripMenuItem.Text = "Font size";
+            fontSizeToolStripMenuItem.Click += fontSizeToolStripMenuItem_Click;
+            // 
             // LineCountLable
             // 
             LineCountLable.ForeColor = Color.White;
@@ -405,6 +416,13 @@ namespace SourceCodeEditor
             syntaxLabel.Name = "syntaxLabel";
             syntaxLabel.Size = new Size(109, 20);
             syntaxLabel.Text = "Syntax: Custom";
+            // 
+            // FontSizeLabel
+            // 
+            FontSizeLabel.ForeColor = Color.White;
+            FontSizeLabel.Name = "FontSizeLabel";
+            FontSizeLabel.Size = new Size(82, 20);
+            FontSizeLabel.Text = "Font size: 0";
             // 
             // MainForm
             // 
@@ -472,5 +490,7 @@ namespace SourceCodeEditor
         private ToolStripMenuItem syntaxToolStripMenuItem1;
         private ToolStripMenuItem templatesToolStripMenuItem;
         private ToolStripMenuItem configurationToolStripMenuItem;
+        private ToolStripStatusLabel FontSizeLabel;
+        private ToolStripMenuItem fontSizeToolStripMenuItem;
     }
 }

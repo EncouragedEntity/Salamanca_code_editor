@@ -2,7 +2,6 @@ using FastColoredTextBoxNS;
 using SourceCodeEditor.AppearenceConfig;
 using SourceCodeEditor.Enums;
 using SourceCodeEditor.Forms;
-using System.IO;
 using System.Text.Json;
 
 namespace SourceCodeEditor
@@ -201,6 +200,7 @@ namespace SourceCodeEditor
             DeleteSymbolLabel();
             DeleteFileStatusLabel();
             DeleteSyntaxLabel();
+            DeleteFontSizeLabel();
         }
 
         /// <summary>
@@ -321,6 +321,11 @@ namespace SourceCodeEditor
             DeleteStatusLabel(syntaxLabel, syntaxToolStripMenuItem1);
         }
 
+        private void DeleteFontSizeLabel()
+        {
+            DeleteStatusLabel(FontSizeLabel, fontSizeToolStripMenuItem);
+        }
+
         /// <summary>
         /// Line count status switching
         /// </summary>
@@ -338,7 +343,7 @@ namespace SourceCodeEditor
                 label.ForeColor = Color.White;
             else
                 label.ForeColor = Color.Black;
-            label.Font = new Font(MainFooter.Font.FontFamily, MainTextField.Font.Size, MainFooter.Font.Style);
+            label.Font = new Font(MainFooter.Font.FontFamily, MainTextField.Font.Size - 3, MainFooter.Font.Style);
             MainFooter.Items.Add(label);
         }
         /// <summary>
@@ -358,7 +363,7 @@ namespace SourceCodeEditor
                 label.ForeColor = Color.White;
             else
                 label.ForeColor = Color.Black;
-            label.Font = new Font(MainFooter.Font.FontFamily, MainTextField.Font.Size, MainFooter.Font.Style);
+            label.Font = new Font(MainFooter.Font.FontFamily, MainTextField.Font.Size - 3, MainFooter.Font.Style);
             MainFooter.Items.Add(SymbolCountLable);
         }
         /// <summary>
@@ -378,7 +383,7 @@ namespace SourceCodeEditor
                 label.ForeColor = Color.White;
             else
                 label.ForeColor = Color.Black;
-            label.Font = new Font(MainFooter.Font.FontFamily, MainTextField.Font.Size, MainFooter.Font.Style);
+            label.Font = new Font(MainFooter.Font.FontFamily, MainTextField.Font.Size - 3, MainFooter.Font.Style);
             MainFooter.Items.Add(CurrentLineLabel);
         }
         /// <summary>
@@ -398,7 +403,7 @@ namespace SourceCodeEditor
                 label.ForeColor = Color.White;
             else
                 label.ForeColor = Color.Black;
-            label.Font = new Font(MainFooter.Font.FontFamily, MainTextField.Font.Size, MainFooter.Font.Style);
+            label.Font = new Font(MainFooter.Font.FontFamily, MainTextField.Font.Size - 3, MainFooter.Font.Style);
             MainFooter.Items.Add(label);
         }
         /// <summary>
@@ -418,7 +423,7 @@ namespace SourceCodeEditor
                 button.ForeColor = Color.White;
             else
                 button.ForeColor = Color.Black;
-            button.Font = new Font(MainFooter.Font.FontFamily, MainTextField.Font.Size, MainFooter.Font.Style);
+            button.Font = new Font(MainFooter.Font.FontFamily, MainTextField.Font.Size - 3, MainFooter.Font.Style);
             MainFooter.Items.Add(button);
         }
         private void syntaxToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -435,9 +440,29 @@ namespace SourceCodeEditor
                 button.ForeColor = Color.White;
             else
                 button.ForeColor = Color.Black;
-            button.Font = new Font(MainFooter.Font.FontFamily, MainTextField.Font.Size, MainFooter.Font.Style);
+            button.Font = new Font(MainFooter.Font.FontFamily, MainTextField.Font.Size - 3, MainFooter.Font.Style);
             MainFooter.Items.Add(button);
         }
+
+        private void fontSizeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var item = (ToolStripMenuItem)sender;
+            var label = FontSizeLabel;
+            if (item.Checked)
+            {
+                DeleteFontSizeLabel();
+                return;
+            }
+            label.Text = $"Font size: {MainTextField.Font.Size}";
+            item.Checked = true;
+            if (CurrentTheme == Theme.Black)
+                label.ForeColor = Color.White;
+            else
+                label.ForeColor = Color.Black;
+            label.Font = new Font(MainFooter.Font.FontFamily, MainTextField.Font.Size - 3, MainFooter.Font.Style);
+            MainFooter.Items.Add(label);
+        }
+
         /// <summary>
         /// Set the selection details into status labels
         /// </summary>
@@ -628,14 +653,14 @@ namespace SourceCodeEditor
 
         public void SetFontSizeForMainTextField(float fontSize)
         {
-            MainTextField.Font = new Font(MainTextField.Font.FontFamily, fontSize,MainTextField.Font.Style);
+            MainTextField.Font = new Font(MainTextField.Font.FontFamily, fontSize, MainTextField.Font.Style);
         }
 
         public void SetFontSizeForHeader(float fontSize)
         {
             foreach (ToolStripItem item in MainHeader.Items)
             {
-                item.Font = new Font(MainHeader.Font.FontFamily, fontSize, MainHeader.Font.Style);
+                item.Font = new Font(MainHeader.Font.FontFamily, fontSize - 3, MainHeader.Font.Style);
             }
         }
 
@@ -643,9 +668,11 @@ namespace SourceCodeEditor
         {
             foreach (ToolStripItem item in MainFooter.Items)
             {
-                item.Font = new Font(MainHeader.Font.FontFamily, fontSize, MainHeader.Font.Style);
+                item.Font = new Font(MainHeader.Font.FontFamily, fontSize - 3, MainHeader.Font.Style);
             }
         }
         #endregion
+
+
     }
 }

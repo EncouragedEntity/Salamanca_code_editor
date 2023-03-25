@@ -182,6 +182,7 @@
             numericUpDownFontSize.Size = new Size(150, 27);
             numericUpDownFontSize.TabIndex = 3;
             numericUpDownFontSize.Value = new decimal(new int[] { 8, 0, 0, 0 });
+            numericUpDownFontSize.KeyDown += numericUpDown1_KeyDown;
             // 
             // label3
             // 
