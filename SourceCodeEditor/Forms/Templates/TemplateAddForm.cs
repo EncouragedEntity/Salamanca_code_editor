@@ -35,6 +35,7 @@ namespace SourceCodeEditor.Forms.Templates
                 {
 
                 }
+                SetFontSizeForEverything();
                 return;
             }
             comboBoxLanguages.SelectedIndex = Convert.ToInt32(Language.Custom);
@@ -60,29 +61,28 @@ namespace SourceCodeEditor.Forms.Templates
 
         private void ValidateSize()
         {
-            int rightSideLabelName = labelName.Location.X + labelName.Width;
-            int rightSideLabelLanguage = labelLanguage.Location.X + labelLanguage.Width;
-            int rightSideTextBoxName = textBoxName.Location.X + textBoxName.Width;
-
-            if (rightSideLabelName > textBoxName.Location.X)
+            if (labelName.Bounds.IntersectsWith(textBoxName.Bounds))
             {
-                labelName.Location = new Point(labelName.Location.X - (rightSideLabelName - textBoxName.Location.X), labelName.Location.Y);
+                textBoxName.Location = new Point(labelName.Location.X + labelName.Width, textBoxName.Location.Y);
             }
 
-            if (rightSideLabelLanguage > comboBoxLanguages.Location.X)
+            if (this.Bounds.IntersectsWith(comboBoxLanguages.Bounds))
             {
-                labelLanguage.Location = new Point(labelLanguage.Location.X - (rightSideLabelLanguage - comboBoxLanguages.Location.X), labelLanguage.Location.Y);
+                int newFormWidth = comboBoxLanguages.Bounds.Right + comboBoxLanguages.Margin.Right + this.Padding.Right;
+                this.Width = newFormWidth;
+
+                if (labelLanguage.Bounds.IntersectsWith(comboBoxLanguages.Bounds))
+                {
+                    int newLabelX = comboBoxLanguages.Bounds.Left - labelLanguage.Width - labelLanguage.Margin.Right;
+                    labelLanguage.Location = new Point(newLabelX, labelLanguage.Location.Y);
+                }
             }
 
-            if (labelName.Location.X < this.Location.X)
+            if (textBoxName.Bounds.IntersectsWith(labelLanguage.Bounds))
             {
-                this.Width += this.Location.X - labelName.Location.X;
+                this.Width += textBoxName.Bounds.X + textBoxName.Width - labelLanguage.Bounds.X;
             }
 
-            if (labelLanguage.Location.X < rightSideTextBoxName)
-            {
-                this.Width += rightSideTextBoxName - labelLanguage.Location.X;
-            }
         }
 
 
@@ -100,7 +100,7 @@ namespace SourceCodeEditor.Forms.Templates
             Template.Language = (Language)comboBoxLanguages.SelectedIndex;
             try
             {
-                ChangeTemplateLabelText(Form.GetLabelById(Template.Number));
+                ChangeTemplateLabelText(Form.GetLabelById(Template.Number)!);
                 File.WriteAllText(FilePath, fastColoredTextBox1.Text);
 
                 string JsonPath = FilePath.Replace("txt", "json");

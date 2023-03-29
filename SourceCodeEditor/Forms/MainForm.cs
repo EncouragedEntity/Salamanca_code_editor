@@ -644,18 +644,17 @@ namespace SourceCodeEditor
             }
         }
 
+        #region Font
         public void SetFontSizeForEverything(float fontSize)
         {
             SetFontSizeForMainTextField(fontSize);
             SetFontSizeForHeader(fontSize);
             SetFontSizeForFooter(fontSize);
         }
-
         public void SetFontSizeForMainTextField(float fontSize)
         {
             MainTextField.Font = new Font(MainTextField.Font.FontFamily, fontSize, MainTextField.Font.Style);
         }
-
         public void SetFontSizeForHeader(float fontSize)
         {
             foreach (ToolStripItem item in MainHeader.Items)
@@ -663,14 +662,16 @@ namespace SourceCodeEditor
                 item.Font = new Font(MainHeader.Font.FontFamily, fontSize - 3, MainHeader.Font.Style);
             }
         }
-
         public void SetFontSizeForFooter(float fontSize)
         {
             foreach (ToolStripItem item in MainFooter.Items)
             {
                 item.Font = new Font(MainHeader.Font.FontFamily, fontSize - 3, MainHeader.Font.Style);
             }
-        }
+        } 
+        #endregion
+
+
         #endregion
     }
 }

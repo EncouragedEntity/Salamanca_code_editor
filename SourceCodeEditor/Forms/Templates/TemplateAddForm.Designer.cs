@@ -90,6 +90,7 @@
             // 
             // comboBoxLanguages
             // 
+            comboBoxLanguages.Anchor = AnchorStyles.Right;
             comboBoxLanguages.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxLanguages.FormattingEnabled = true;
             comboBoxLanguages.Items.AddRange(new object[] { "Custom", "CSharp", "VB", "HTML", "XML", "SQL", "PHP", "JS", "Lua" });
@@ -111,6 +112,7 @@
             // 
             // textBoxName
             // 
+            textBoxName.Anchor = AnchorStyles.Left;
             textBoxName.Location = new Point(61, 24);
             textBoxName.Name = "textBoxName";
             textBoxName.Size = new Size(109, 27);
@@ -119,7 +121,7 @@
             // 
             // labelName
             // 
-            labelName.Anchor = AnchorStyles.Right;
+            labelName.Anchor = AnchorStyles.Left;
             labelName.AutoSize = true;
             labelName.Location = new Point(3, 27);
             labelName.Name = "labelName";
