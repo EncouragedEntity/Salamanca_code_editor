@@ -146,6 +146,7 @@ namespace SourceCodeEditor.Forms
             if (addTemplate.ShowDialog() == DialogResult.Yes)
             {
                 IsTemplatesChanged = true;
+                Templates[templateNumber] = template;
             }
         }
 

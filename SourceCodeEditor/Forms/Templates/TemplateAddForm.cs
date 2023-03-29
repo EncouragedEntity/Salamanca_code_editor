@@ -64,7 +64,6 @@ namespace SourceCodeEditor.Forms.Templates
             int rightSideLabelLanguage = labelLanguage.Location.X + labelLanguage.Width;
             int rightSideTextBoxName = textBoxName.Location.X + textBoxName.Width;
 
-
             if (rightSideLabelName > textBoxName.Location.X)
             {
                 labelName.Location = new Point(labelName.Location.X - (rightSideLabelName - textBoxName.Location.X), labelName.Location.Y);
@@ -185,34 +184,6 @@ namespace SourceCodeEditor.Forms.Templates
 
             // Set the trimmed text back into the FastColoredTextBox control
             fastColoredTextBox1.Text = trimmedText;
-
-
-            /*
-            // Get the number of lines in the control
-            int lineCount = fastColoredTextBox1.LinesCount;
-
-            // Create a new list to hold the non-empty lines
-            List<string> nonEmptyLines = new List<string>();
-
-            // Loop through all lines in the control
-            for (int i = 0; i < lineCount; i++)
-            {
-                // Get the text of the current line
-                string lineText = fastColoredTextBox1.GetLineText(i);
-
-                // If the line is not empty, add it to the nonEmptyLines list
-                if (!string.IsNullOrWhiteSpace(lineText))
-                {
-                    nonEmptyLines.Add(lineText);
-                }
-            }
-
-            // Clear the control
-            fastColoredTextBox1.Clear();
-
-            // Add the non-empty lines back to the control
-            fastColoredTextBox1.Text = string.Join("\n", nonEmptyLines);
-            */
         }
 
         private void fastColoredTextBox1_TextChanged(object sender, TextChangedEventArgs e)
