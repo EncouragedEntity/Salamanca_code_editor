@@ -20,7 +20,9 @@ namespace SourceCodeEditor.UserControls.Options
             _defaultSyntax = form.CurrentTheme == Enums.Theme.Black ? "SyntaxColors/BlackSyntaxDefault.syn" : "SyntaxColors/WhiteSyntaxDefault.syn";
 
             Properties = _syntaxColors.GetType().GetProperties().ToList();
-            Colors = new List<Color>();
+            Colors = new List<Color>(23);
+            Colors = Enumerable.Repeat(new Color(), 23).ToList();
+
             FontStyles = new List<FontStyle>();
             InitializeComponent();
             SetButtonsEvents();
@@ -28,10 +30,12 @@ namespace SourceCodeEditor.UserControls.Options
 
         private void SetButtonsColors()
         {
-            foreach (var property in Properties)
+            for (int i = 0; i < Properties.Count; i++)
             {
+                var property = Properties[i];
                 var value = (Tuple<Color, FontStyle>)property.GetValue(_syntaxColors)!;
-                Colors.Add(value.Item1);
+
+                Colors[i] = value.Item1;
             }
 
             var buttons = tableLayoutPanel1.Controls.OfType<Button>().ToList();
@@ -119,6 +123,15 @@ namespace SourceCodeEditor.UserControls.Options
         private void buttonToDefault_Click(object sender, EventArgs e)
         {
             _syntaxColors = ThemeSerializer.Deserialize<SyntaxColors>(_defaultSyntax);
+            SyntaxColorsOptionsControl_Load(sender, e);
+        }
+
+        private void buttonDiscard_Click(object sender, EventArgs e)
+        {
+            if (_mainForm.CurrentTheme == Enums.Theme.Black)
+                _syntaxColors = ThemeSerializer.Deserialize<SyntaxColors>("SyntaxColors/BlackSyntax.syn");
+            if (_mainForm.CurrentTheme == Enums.Theme.White)
+                _syntaxColors = ThemeSerializer.Deserialize<SyntaxColors>("SyntaxColors/WhiteSyntax.syn");
             SyntaxColorsOptionsControl_Load(sender, e);
         }
     }

@@ -172,10 +172,5 @@ namespace SourceCodeEditor.Forms
         {
             ValidateSize();
         }
-
-        private void OptionsForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-
-        }
     }
 }

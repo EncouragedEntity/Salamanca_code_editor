@@ -39,11 +39,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\COURSE WORK\\SourceCodeEditor\\SourceCodeEditor\\SourceCodeEditor.csproj",
+      "projectUniqueName": "C:\\College\\COURSE WORK\\SourceCodeEditor\\SourceCodeEditor\\SourceCodeEditor.csproj",
       "projectName": "SourceCodeEditor",
-      "projectPath": "D:\\COURSE WORK\\SourceCodeEditor\\SourceCodeEditor\\SourceCodeEditor.csproj",
+      "projectPath": "C:\\College\\COURSE WORK\\SourceCodeEditor\\SourceCodeEditor\\SourceCodeEditor.csproj",
       "packagesPath": "C:\\Users\\Main User\\.nuget\\packages\\",
-      "outputPath": "D:\\COURSE WORK\\SourceCodeEditor\\SourceCodeEditor\\obj\\",
+      "outputPath": "C:\\College\\COURSE WORK\\SourceCodeEditor\\SourceCodeEditor\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Main User\\AppData\\Roaming\\NuGet\\NuGet.Config",

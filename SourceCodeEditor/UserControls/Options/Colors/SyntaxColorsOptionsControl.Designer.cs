@@ -28,871 +28,871 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonAttribute = new System.Windows.Forms.Button();
-            this.buttonAttributeValueHtml = new System.Windows.Forms.Button();
-            this.buttonClass = new System.Windows.Forms.Button();
-            this.buttonEntityHtml = new System.Windows.Forms.Button();
-            this.buttonFunctions = new System.Windows.Forms.Button();
-            this.buttonString = new System.Windows.Forms.Button();
-            this.buttonComment = new System.Windows.Forms.Button();
-            this.buttonCommentTag = new System.Windows.Forms.Button();
-            this.buttonKeyword = new System.Windows.Forms.Button();
-            this.buttonKeyword2 = new System.Windows.Forms.Button();
-            this.buttonKeyword3 = new System.Windows.Forms.Button();
-            this.buttonVariable = new System.Windows.Forms.Button();
-            this.buttonTypesSql = new System.Windows.Forms.Button();
-            this.buttonNumbers = new System.Windows.Forms.Button();
-            this.buttonStatementsSql = new System.Windows.Forms.Button();
-            this.buttonTagBracketHtml = new System.Windows.Forms.Button();
-            this.buttonTagNameHtml = new System.Windows.Forms.Button();
-            this.buttonEntityXml = new System.Windows.Forms.Button();
-            this.buttonAttributeXml = new System.Windows.Forms.Button();
-            this.buttonAttributeValueXml = new System.Windows.Forms.Button();
-            this.buttonCDataXml = new System.Windows.Forms.Button();
-            this.buttonTagBracketXml = new System.Windows.Forms.Button();
-            this.buttonTagNameXml = new System.Windows.Forms.Button();
-            this.labelAttribute = new System.Windows.Forms.Label();
-            this.labelAttributeValueHtml = new System.Windows.Forms.Label();
-            this.labelClass = new System.Windows.Forms.Label();
-            this.labelEntityHtml = new System.Windows.Forms.Label();
-            this.labelFunctions = new System.Windows.Forms.Label();
-            this.labelString = new System.Windows.Forms.Label();
-            this.labelComment = new System.Windows.Forms.Label();
-            this.labelCommentTag = new System.Windows.Forms.Label();
-            this.labelKeyword = new System.Windows.Forms.Label();
-            this.labelKeyword2 = new System.Windows.Forms.Label();
-            this.labelKeyword3 = new System.Windows.Forms.Label();
-            this.labelVariable = new System.Windows.Forms.Label();
-            this.labelTypesSql = new System.Windows.Forms.Label();
-            this.labelNumbers = new System.Windows.Forms.Label();
-            this.labelStatementsSql = new System.Windows.Forms.Label();
-            this.labelTagBracketHtml = new System.Windows.Forms.Label();
-            this.labelTagNameHtml = new System.Windows.Forms.Label();
-            this.labelEntityXml = new System.Windows.Forms.Label();
-            this.labelAttributeXml = new System.Windows.Forms.Label();
-            this.labelAttributeValueXml = new System.Windows.Forms.Label();
-            this.labelCDataXml = new System.Windows.Forms.Label();
-            this.labelTagBracketXml = new System.Windows.Forms.Label();
-            this.labelTagNameXml = new System.Windows.Forms.Label();
-            this.fontStyleControl1 = new SourceCodeEditor.UserControls.FontStyleControl();
-            this.fontStyleControl2 = new SourceCodeEditor.UserControls.FontStyleControl();
-            this.fontStyleControl3 = new SourceCodeEditor.UserControls.FontStyleControl();
-            this.fontStyleControl4 = new SourceCodeEditor.UserControls.FontStyleControl();
-            this.fontStyleControl5 = new SourceCodeEditor.UserControls.FontStyleControl();
-            this.fontStyleControl6 = new SourceCodeEditor.UserControls.FontStyleControl();
-            this.fontStyleControl7 = new SourceCodeEditor.UserControls.FontStyleControl();
-            this.fontStyleControl8 = new SourceCodeEditor.UserControls.FontStyleControl();
-            this.fontStyleControl9 = new SourceCodeEditor.UserControls.FontStyleControl();
-            this.fontStyleControl10 = new SourceCodeEditor.UserControls.FontStyleControl();
-            this.fontStyleControl11 = new SourceCodeEditor.UserControls.FontStyleControl();
-            this.fontStyleControl12 = new SourceCodeEditor.UserControls.FontStyleControl();
-            this.fontStyleControl13 = new SourceCodeEditor.UserControls.FontStyleControl();
-            this.fontStyleControl14 = new SourceCodeEditor.UserControls.FontStyleControl();
-            this.fontStyleControl15 = new SourceCodeEditor.UserControls.FontStyleControl();
-            this.fontStyleControl16 = new SourceCodeEditor.UserControls.FontStyleControl();
-            this.fontStyleControl17 = new SourceCodeEditor.UserControls.FontStyleControl();
-            this.fontStyleControl18 = new SourceCodeEditor.UserControls.FontStyleControl();
-            this.fontStyleControl19 = new SourceCodeEditor.UserControls.FontStyleControl();
-            this.fontStyleControl20 = new SourceCodeEditor.UserControls.FontStyleControl();
-            this.fontStyleControl21 = new SourceCodeEditor.UserControls.FontStyleControl();
-            this.fontStyleControl22 = new SourceCodeEditor.UserControls.FontStyleControl();
-            this.fontStyleControl23 = new SourceCodeEditor.UserControls.FontStyleControl();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonToDefault = new System.Windows.Forms.Button();
-            this.buttonDiscard = new System.Windows.Forms.Button();
-            this.buttonSave = new System.Windows.Forms.Button();
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.SuspendLayout();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            buttonAttribute = new Button();
+            buttonAttributeValueHtml = new Button();
+            buttonClass = new Button();
+            buttonEntityHtml = new Button();
+            buttonFunctions = new Button();
+            buttonString = new Button();
+            buttonComment = new Button();
+            buttonCommentTag = new Button();
+            buttonKeyword = new Button();
+            buttonKeyword2 = new Button();
+            buttonKeyword3 = new Button();
+            buttonVariable = new Button();
+            buttonTypesSql = new Button();
+            buttonNumbers = new Button();
+            buttonStatementsSql = new Button();
+            buttonTagBracketHtml = new Button();
+            buttonTagNameHtml = new Button();
+            buttonEntityXml = new Button();
+            buttonAttributeXml = new Button();
+            buttonAttributeValueXml = new Button();
+            buttonCDataXml = new Button();
+            buttonTagBracketXml = new Button();
+            buttonTagNameXml = new Button();
+            labelAttribute = new Label();
+            labelAttributeValueHtml = new Label();
+            labelClass = new Label();
+            labelEntityHtml = new Label();
+            labelFunctions = new Label();
+            labelString = new Label();
+            labelComment = new Label();
+            labelCommentTag = new Label();
+            labelKeyword = new Label();
+            labelKeyword2 = new Label();
+            labelKeyword3 = new Label();
+            labelVariable = new Label();
+            labelTypesSql = new Label();
+            labelNumbers = new Label();
+            labelStatementsSql = new Label();
+            labelTagBracketHtml = new Label();
+            labelTagNameHtml = new Label();
+            labelEntityXml = new Label();
+            labelAttributeXml = new Label();
+            labelAttributeValueXml = new Label();
+            labelCDataXml = new Label();
+            labelTagBracketXml = new Label();
+            labelTagNameXml = new Label();
+            fontStyleControl1 = new FontStyleControl();
+            fontStyleControl2 = new FontStyleControl();
+            fontStyleControl3 = new FontStyleControl();
+            fontStyleControl4 = new FontStyleControl();
+            fontStyleControl5 = new FontStyleControl();
+            fontStyleControl6 = new FontStyleControl();
+            fontStyleControl7 = new FontStyleControl();
+            fontStyleControl8 = new FontStyleControl();
+            fontStyleControl9 = new FontStyleControl();
+            fontStyleControl10 = new FontStyleControl();
+            fontStyleControl11 = new FontStyleControl();
+            fontStyleControl12 = new FontStyleControl();
+            fontStyleControl13 = new FontStyleControl();
+            fontStyleControl14 = new FontStyleControl();
+            fontStyleControl15 = new FontStyleControl();
+            fontStyleControl16 = new FontStyleControl();
+            fontStyleControl17 = new FontStyleControl();
+            fontStyleControl18 = new FontStyleControl();
+            fontStyleControl19 = new FontStyleControl();
+            fontStyleControl20 = new FontStyleControl();
+            fontStyleControl21 = new FontStyleControl();
+            fontStyleControl22 = new FontStyleControl();
+            fontStyleControl23 = new FontStyleControl();
+            panel1 = new Panel();
+            buttonToDefault = new Button();
+            buttonDiscard = new Button();
+            buttonSave = new Button();
+            colorDialog1 = new ColorDialog();
+            tableLayoutPanel1.SuspendLayout();
+            panel1.SuspendLayout();
+            SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 260F));
-            this.tableLayoutPanel1.Controls.Add(this.buttonAttribute, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.buttonAttributeValueHtml, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.buttonClass, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.buttonEntityHtml, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.buttonFunctions, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.buttonString, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.buttonComment, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.buttonCommentTag, 1, 7);
-            this.tableLayoutPanel1.Controls.Add(this.buttonKeyword, 1, 8);
-            this.tableLayoutPanel1.Controls.Add(this.buttonKeyword2, 1, 9);
-            this.tableLayoutPanel1.Controls.Add(this.buttonKeyword3, 1, 10);
-            this.tableLayoutPanel1.Controls.Add(this.buttonVariable, 1, 11);
-            this.tableLayoutPanel1.Controls.Add(this.buttonTypesSql, 1, 12);
-            this.tableLayoutPanel1.Controls.Add(this.buttonNumbers, 1, 13);
-            this.tableLayoutPanel1.Controls.Add(this.buttonStatementsSql, 1, 14);
-            this.tableLayoutPanel1.Controls.Add(this.buttonTagBracketHtml, 1, 15);
-            this.tableLayoutPanel1.Controls.Add(this.buttonTagNameHtml, 1, 16);
-            this.tableLayoutPanel1.Controls.Add(this.buttonEntityXml, 1, 17);
-            this.tableLayoutPanel1.Controls.Add(this.buttonAttributeXml, 1, 18);
-            this.tableLayoutPanel1.Controls.Add(this.buttonAttributeValueXml, 1, 19);
-            this.tableLayoutPanel1.Controls.Add(this.buttonCDataXml, 1, 20);
-            this.tableLayoutPanel1.Controls.Add(this.buttonTagBracketXml, 1, 21);
-            this.tableLayoutPanel1.Controls.Add(this.buttonTagNameXml, 1, 22);
-            this.tableLayoutPanel1.Controls.Add(this.labelAttribute, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.labelAttributeValueHtml, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.labelClass, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.labelEntityHtml, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.labelFunctions, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.labelString, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.labelComment, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.labelCommentTag, 0, 7);
-            this.tableLayoutPanel1.Controls.Add(this.labelKeyword, 0, 8);
-            this.tableLayoutPanel1.Controls.Add(this.labelKeyword2, 0, 9);
-            this.tableLayoutPanel1.Controls.Add(this.labelKeyword3, 0, 10);
-            this.tableLayoutPanel1.Controls.Add(this.labelVariable, 0, 11);
-            this.tableLayoutPanel1.Controls.Add(this.labelTypesSql, 0, 12);
-            this.tableLayoutPanel1.Controls.Add(this.labelNumbers, 0, 13);
-            this.tableLayoutPanel1.Controls.Add(this.labelStatementsSql, 0, 14);
-            this.tableLayoutPanel1.Controls.Add(this.labelTagBracketHtml, 0, 15);
-            this.tableLayoutPanel1.Controls.Add(this.labelTagNameHtml, 0, 16);
-            this.tableLayoutPanel1.Controls.Add(this.labelEntityXml, 0, 17);
-            this.tableLayoutPanel1.Controls.Add(this.labelAttributeXml, 0, 18);
-            this.tableLayoutPanel1.Controls.Add(this.labelAttributeValueXml, 0, 19);
-            this.tableLayoutPanel1.Controls.Add(this.labelCDataXml, 0, 20);
-            this.tableLayoutPanel1.Controls.Add(this.labelTagBracketXml, 0, 21);
-            this.tableLayoutPanel1.Controls.Add(this.labelTagNameXml, 0, 22);
-            this.tableLayoutPanel1.Controls.Add(this.fontStyleControl1, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.fontStyleControl2, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.fontStyleControl3, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.fontStyleControl4, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.fontStyleControl5, 2, 4);
-            this.tableLayoutPanel1.Controls.Add(this.fontStyleControl6, 2, 5);
-            this.tableLayoutPanel1.Controls.Add(this.fontStyleControl7, 2, 6);
-            this.tableLayoutPanel1.Controls.Add(this.fontStyleControl8, 2, 7);
-            this.tableLayoutPanel1.Controls.Add(this.fontStyleControl9, 2, 8);
-            this.tableLayoutPanel1.Controls.Add(this.fontStyleControl10, 2, 9);
-            this.tableLayoutPanel1.Controls.Add(this.fontStyleControl11, 2, 10);
-            this.tableLayoutPanel1.Controls.Add(this.fontStyleControl12, 2, 11);
-            this.tableLayoutPanel1.Controls.Add(this.fontStyleControl13, 2, 12);
-            this.tableLayoutPanel1.Controls.Add(this.fontStyleControl14, 2, 13);
-            this.tableLayoutPanel1.Controls.Add(this.fontStyleControl15, 2, 14);
-            this.tableLayoutPanel1.Controls.Add(this.fontStyleControl16, 2, 15);
-            this.tableLayoutPanel1.Controls.Add(this.fontStyleControl17, 2, 16);
-            this.tableLayoutPanel1.Controls.Add(this.fontStyleControl18, 2, 17);
-            this.tableLayoutPanel1.Controls.Add(this.fontStyleControl19, 2, 18);
-            this.tableLayoutPanel1.Controls.Add(this.fontStyleControl20, 2, 19);
-            this.tableLayoutPanel1.Controls.Add(this.fontStyleControl21, 2, 20);
-            this.tableLayoutPanel1.Controls.Add(this.fontStyleControl22, 2, 21);
-            this.tableLayoutPanel1.Controls.Add(this.fontStyleControl23, 2, 22);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 23;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(597, 2299);
-            this.tableLayoutPanel1.TabIndex = 0;
+            tableLayoutPanel1.ColumnCount = 3;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 260F));
+            tableLayoutPanel1.Controls.Add(buttonAttribute, 1, 0);
+            tableLayoutPanel1.Controls.Add(buttonAttributeValueHtml, 1, 1);
+            tableLayoutPanel1.Controls.Add(buttonClass, 1, 2);
+            tableLayoutPanel1.Controls.Add(buttonEntityHtml, 1, 3);
+            tableLayoutPanel1.Controls.Add(buttonFunctions, 1, 4);
+            tableLayoutPanel1.Controls.Add(buttonString, 1, 5);
+            tableLayoutPanel1.Controls.Add(buttonComment, 1, 6);
+            tableLayoutPanel1.Controls.Add(buttonCommentTag, 1, 7);
+            tableLayoutPanel1.Controls.Add(buttonKeyword, 1, 8);
+            tableLayoutPanel1.Controls.Add(buttonKeyword2, 1, 9);
+            tableLayoutPanel1.Controls.Add(buttonKeyword3, 1, 10);
+            tableLayoutPanel1.Controls.Add(buttonVariable, 1, 11);
+            tableLayoutPanel1.Controls.Add(buttonTypesSql, 1, 12);
+            tableLayoutPanel1.Controls.Add(buttonNumbers, 1, 13);
+            tableLayoutPanel1.Controls.Add(buttonStatementsSql, 1, 14);
+            tableLayoutPanel1.Controls.Add(buttonTagBracketHtml, 1, 15);
+            tableLayoutPanel1.Controls.Add(buttonTagNameHtml, 1, 16);
+            tableLayoutPanel1.Controls.Add(buttonEntityXml, 1, 17);
+            tableLayoutPanel1.Controls.Add(buttonAttributeXml, 1, 18);
+            tableLayoutPanel1.Controls.Add(buttonAttributeValueXml, 1, 19);
+            tableLayoutPanel1.Controls.Add(buttonCDataXml, 1, 20);
+            tableLayoutPanel1.Controls.Add(buttonTagBracketXml, 1, 21);
+            tableLayoutPanel1.Controls.Add(buttonTagNameXml, 1, 22);
+            tableLayoutPanel1.Controls.Add(labelAttribute, 0, 0);
+            tableLayoutPanel1.Controls.Add(labelAttributeValueHtml, 0, 1);
+            tableLayoutPanel1.Controls.Add(labelClass, 0, 2);
+            tableLayoutPanel1.Controls.Add(labelEntityHtml, 0, 3);
+            tableLayoutPanel1.Controls.Add(labelFunctions, 0, 4);
+            tableLayoutPanel1.Controls.Add(labelString, 0, 5);
+            tableLayoutPanel1.Controls.Add(labelComment, 0, 6);
+            tableLayoutPanel1.Controls.Add(labelCommentTag, 0, 7);
+            tableLayoutPanel1.Controls.Add(labelKeyword, 0, 8);
+            tableLayoutPanel1.Controls.Add(labelKeyword2, 0, 9);
+            tableLayoutPanel1.Controls.Add(labelKeyword3, 0, 10);
+            tableLayoutPanel1.Controls.Add(labelVariable, 0, 11);
+            tableLayoutPanel1.Controls.Add(labelTypesSql, 0, 12);
+            tableLayoutPanel1.Controls.Add(labelNumbers, 0, 13);
+            tableLayoutPanel1.Controls.Add(labelStatementsSql, 0, 14);
+            tableLayoutPanel1.Controls.Add(labelTagBracketHtml, 0, 15);
+            tableLayoutPanel1.Controls.Add(labelTagNameHtml, 0, 16);
+            tableLayoutPanel1.Controls.Add(labelEntityXml, 0, 17);
+            tableLayoutPanel1.Controls.Add(labelAttributeXml, 0, 18);
+            tableLayoutPanel1.Controls.Add(labelAttributeValueXml, 0, 19);
+            tableLayoutPanel1.Controls.Add(labelCDataXml, 0, 20);
+            tableLayoutPanel1.Controls.Add(labelTagBracketXml, 0, 21);
+            tableLayoutPanel1.Controls.Add(labelTagNameXml, 0, 22);
+            tableLayoutPanel1.Controls.Add(fontStyleControl1, 2, 0);
+            tableLayoutPanel1.Controls.Add(fontStyleControl2, 2, 1);
+            tableLayoutPanel1.Controls.Add(fontStyleControl3, 2, 2);
+            tableLayoutPanel1.Controls.Add(fontStyleControl4, 2, 3);
+            tableLayoutPanel1.Controls.Add(fontStyleControl5, 2, 4);
+            tableLayoutPanel1.Controls.Add(fontStyleControl6, 2, 5);
+            tableLayoutPanel1.Controls.Add(fontStyleControl7, 2, 6);
+            tableLayoutPanel1.Controls.Add(fontStyleControl8, 2, 7);
+            tableLayoutPanel1.Controls.Add(fontStyleControl9, 2, 8);
+            tableLayoutPanel1.Controls.Add(fontStyleControl10, 2, 9);
+            tableLayoutPanel1.Controls.Add(fontStyleControl11, 2, 10);
+            tableLayoutPanel1.Controls.Add(fontStyleControl12, 2, 11);
+            tableLayoutPanel1.Controls.Add(fontStyleControl13, 2, 12);
+            tableLayoutPanel1.Controls.Add(fontStyleControl14, 2, 13);
+            tableLayoutPanel1.Controls.Add(fontStyleControl15, 2, 14);
+            tableLayoutPanel1.Controls.Add(fontStyleControl16, 2, 15);
+            tableLayoutPanel1.Controls.Add(fontStyleControl17, 2, 16);
+            tableLayoutPanel1.Controls.Add(fontStyleControl18, 2, 17);
+            tableLayoutPanel1.Controls.Add(fontStyleControl19, 2, 18);
+            tableLayoutPanel1.Controls.Add(fontStyleControl20, 2, 19);
+            tableLayoutPanel1.Controls.Add(fontStyleControl21, 2, 20);
+            tableLayoutPanel1.Controls.Add(fontStyleControl22, 2, 21);
+            tableLayoutPanel1.Controls.Add(fontStyleControl23, 2, 22);
+            tableLayoutPanel1.Dock = DockStyle.Top;
+            tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 23;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel1.Size = new Size(576, 2299);
+            tableLayoutPanel1.TabIndex = 0;
             // 
             // buttonAttribute
             // 
-            this.buttonAttribute.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.buttonAttribute.Location = new System.Drawing.Point(205, 3);
-            this.buttonAttribute.Name = "buttonAttribute";
-            this.buttonAttribute.Size = new System.Drawing.Size(94, 94);
-            this.buttonAttribute.TabIndex = 0;
-            this.buttonAttribute.UseVisualStyleBackColor = true;
+            buttonAttribute.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            buttonAttribute.Location = new Point(190, 3);
+            buttonAttribute.Name = "buttonAttribute";
+            buttonAttribute.Size = new Size(94, 94);
+            buttonAttribute.TabIndex = 0;
+            buttonAttribute.UseVisualStyleBackColor = true;
             // 
             // buttonAttributeValueHtml
             // 
-            this.buttonAttributeValueHtml.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.buttonAttributeValueHtml.Location = new System.Drawing.Point(205, 103);
-            this.buttonAttributeValueHtml.Name = "buttonAttributeValueHtml";
-            this.buttonAttributeValueHtml.Size = new System.Drawing.Size(94, 94);
-            this.buttonAttributeValueHtml.TabIndex = 1;
-            this.buttonAttributeValueHtml.UseVisualStyleBackColor = true;
+            buttonAttributeValueHtml.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            buttonAttributeValueHtml.Location = new Point(190, 103);
+            buttonAttributeValueHtml.Name = "buttonAttributeValueHtml";
+            buttonAttributeValueHtml.Size = new Size(94, 94);
+            buttonAttributeValueHtml.TabIndex = 1;
+            buttonAttributeValueHtml.UseVisualStyleBackColor = true;
             // 
             // buttonClass
             // 
-            this.buttonClass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.buttonClass.Location = new System.Drawing.Point(205, 203);
-            this.buttonClass.Name = "buttonClass";
-            this.buttonClass.Size = new System.Drawing.Size(94, 94);
-            this.buttonClass.TabIndex = 2;
-            this.buttonClass.UseVisualStyleBackColor = true;
+            buttonClass.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            buttonClass.Location = new Point(190, 203);
+            buttonClass.Name = "buttonClass";
+            buttonClass.Size = new Size(94, 94);
+            buttonClass.TabIndex = 2;
+            buttonClass.UseVisualStyleBackColor = true;
             // 
             // buttonEntityHtml
             // 
-            this.buttonEntityHtml.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.buttonEntityHtml.Location = new System.Drawing.Point(205, 303);
-            this.buttonEntityHtml.Name = "buttonEntityHtml";
-            this.buttonEntityHtml.Size = new System.Drawing.Size(94, 94);
-            this.buttonEntityHtml.TabIndex = 3;
-            this.buttonEntityHtml.UseVisualStyleBackColor = true;
+            buttonEntityHtml.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            buttonEntityHtml.Location = new Point(190, 303);
+            buttonEntityHtml.Name = "buttonEntityHtml";
+            buttonEntityHtml.Size = new Size(94, 94);
+            buttonEntityHtml.TabIndex = 3;
+            buttonEntityHtml.UseVisualStyleBackColor = true;
             // 
             // buttonFunctions
             // 
-            this.buttonFunctions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.buttonFunctions.Location = new System.Drawing.Point(205, 403);
-            this.buttonFunctions.Name = "buttonFunctions";
-            this.buttonFunctions.Size = new System.Drawing.Size(94, 94);
-            this.buttonFunctions.TabIndex = 4;
-            this.buttonFunctions.UseVisualStyleBackColor = true;
+            buttonFunctions.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            buttonFunctions.Location = new Point(190, 403);
+            buttonFunctions.Name = "buttonFunctions";
+            buttonFunctions.Size = new Size(94, 94);
+            buttonFunctions.TabIndex = 4;
+            buttonFunctions.UseVisualStyleBackColor = true;
             // 
             // buttonString
             // 
-            this.buttonString.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.buttonString.Location = new System.Drawing.Point(205, 503);
-            this.buttonString.Name = "buttonString";
-            this.buttonString.Size = new System.Drawing.Size(94, 94);
-            this.buttonString.TabIndex = 5;
-            this.buttonString.UseVisualStyleBackColor = true;
+            buttonString.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            buttonString.Location = new Point(190, 503);
+            buttonString.Name = "buttonString";
+            buttonString.Size = new Size(94, 94);
+            buttonString.TabIndex = 5;
+            buttonString.UseVisualStyleBackColor = true;
             // 
             // buttonComment
             // 
-            this.buttonComment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.buttonComment.Location = new System.Drawing.Point(205, 603);
-            this.buttonComment.Name = "buttonComment";
-            this.buttonComment.Size = new System.Drawing.Size(94, 94);
-            this.buttonComment.TabIndex = 4;
-            this.buttonComment.UseVisualStyleBackColor = true;
+            buttonComment.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            buttonComment.Location = new Point(190, 603);
+            buttonComment.Name = "buttonComment";
+            buttonComment.Size = new Size(94, 94);
+            buttonComment.TabIndex = 4;
+            buttonComment.UseVisualStyleBackColor = true;
             // 
             // buttonCommentTag
             // 
-            this.buttonCommentTag.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.buttonCommentTag.Location = new System.Drawing.Point(205, 703);
-            this.buttonCommentTag.Name = "buttonCommentTag";
-            this.buttonCommentTag.Size = new System.Drawing.Size(94, 94);
-            this.buttonCommentTag.TabIndex = 6;
-            this.buttonCommentTag.UseVisualStyleBackColor = true;
+            buttonCommentTag.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            buttonCommentTag.Location = new Point(190, 703);
+            buttonCommentTag.Name = "buttonCommentTag";
+            buttonCommentTag.Size = new Size(94, 94);
+            buttonCommentTag.TabIndex = 6;
+            buttonCommentTag.UseVisualStyleBackColor = true;
             // 
             // buttonKeyword
             // 
-            this.buttonKeyword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.buttonKeyword.Location = new System.Drawing.Point(205, 803);
-            this.buttonKeyword.Name = "buttonKeyword";
-            this.buttonKeyword.Size = new System.Drawing.Size(94, 94);
-            this.buttonKeyword.TabIndex = 7;
-            this.buttonKeyword.UseVisualStyleBackColor = true;
+            buttonKeyword.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            buttonKeyword.Location = new Point(190, 803);
+            buttonKeyword.Name = "buttonKeyword";
+            buttonKeyword.Size = new Size(94, 94);
+            buttonKeyword.TabIndex = 7;
+            buttonKeyword.UseVisualStyleBackColor = true;
             // 
             // buttonKeyword2
             // 
-            this.buttonKeyword2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.buttonKeyword2.Location = new System.Drawing.Point(205, 903);
-            this.buttonKeyword2.Name = "buttonKeyword2";
-            this.buttonKeyword2.Size = new System.Drawing.Size(94, 94);
-            this.buttonKeyword2.TabIndex = 7;
-            this.buttonKeyword2.UseVisualStyleBackColor = true;
+            buttonKeyword2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            buttonKeyword2.Location = new Point(190, 903);
+            buttonKeyword2.Name = "buttonKeyword2";
+            buttonKeyword2.Size = new Size(94, 94);
+            buttonKeyword2.TabIndex = 7;
+            buttonKeyword2.UseVisualStyleBackColor = true;
             // 
             // buttonKeyword3
             // 
-            this.buttonKeyword3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.buttonKeyword3.Location = new System.Drawing.Point(205, 1003);
-            this.buttonKeyword3.Name = "buttonKeyword3";
-            this.buttonKeyword3.Size = new System.Drawing.Size(94, 94);
-            this.buttonKeyword3.TabIndex = 8;
-            this.buttonKeyword3.UseVisualStyleBackColor = true;
+            buttonKeyword3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            buttonKeyword3.Location = new Point(190, 1003);
+            buttonKeyword3.Name = "buttonKeyword3";
+            buttonKeyword3.Size = new Size(94, 94);
+            buttonKeyword3.TabIndex = 8;
+            buttonKeyword3.UseVisualStyleBackColor = true;
             // 
             // buttonVariable
             // 
-            this.buttonVariable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.buttonVariable.Location = new System.Drawing.Point(205, 1103);
-            this.buttonVariable.Name = "buttonVariable";
-            this.buttonVariable.Size = new System.Drawing.Size(94, 94);
-            this.buttonVariable.TabIndex = 9;
-            this.buttonVariable.UseVisualStyleBackColor = true;
+            buttonVariable.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            buttonVariable.Location = new Point(190, 1103);
+            buttonVariable.Name = "buttonVariable";
+            buttonVariable.Size = new Size(94, 94);
+            buttonVariable.TabIndex = 9;
+            buttonVariable.UseVisualStyleBackColor = true;
             // 
             // buttonTypesSql
             // 
-            this.buttonTypesSql.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.buttonTypesSql.Location = new System.Drawing.Point(205, 1203);
-            this.buttonTypesSql.Name = "buttonTypesSql";
-            this.buttonTypesSql.Size = new System.Drawing.Size(94, 94);
-            this.buttonTypesSql.TabIndex = 10;
-            this.buttonTypesSql.UseVisualStyleBackColor = true;
+            buttonTypesSql.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            buttonTypesSql.Location = new Point(190, 1203);
+            buttonTypesSql.Name = "buttonTypesSql";
+            buttonTypesSql.Size = new Size(94, 94);
+            buttonTypesSql.TabIndex = 10;
+            buttonTypesSql.UseVisualStyleBackColor = true;
             // 
             // buttonNumbers
             // 
-            this.buttonNumbers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.buttonNumbers.Location = new System.Drawing.Point(205, 1303);
-            this.buttonNumbers.Name = "buttonNumbers";
-            this.buttonNumbers.Size = new System.Drawing.Size(94, 94);
-            this.buttonNumbers.TabIndex = 10;
-            this.buttonNumbers.UseVisualStyleBackColor = true;
+            buttonNumbers.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            buttonNumbers.Location = new Point(190, 1303);
+            buttonNumbers.Name = "buttonNumbers";
+            buttonNumbers.Size = new Size(94, 94);
+            buttonNumbers.TabIndex = 10;
+            buttonNumbers.UseVisualStyleBackColor = true;
             // 
             // buttonStatementsSql
             // 
-            this.buttonStatementsSql.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.buttonStatementsSql.Location = new System.Drawing.Point(205, 1403);
-            this.buttonStatementsSql.Name = "buttonStatementsSql";
-            this.buttonStatementsSql.Size = new System.Drawing.Size(94, 94);
-            this.buttonStatementsSql.TabIndex = 11;
-            this.buttonStatementsSql.UseVisualStyleBackColor = true;
+            buttonStatementsSql.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            buttonStatementsSql.Location = new Point(190, 1403);
+            buttonStatementsSql.Name = "buttonStatementsSql";
+            buttonStatementsSql.Size = new Size(94, 94);
+            buttonStatementsSql.TabIndex = 11;
+            buttonStatementsSql.UseVisualStyleBackColor = true;
             // 
             // buttonTagBracketHtml
             // 
-            this.buttonTagBracketHtml.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.buttonTagBracketHtml.Location = new System.Drawing.Point(205, 1503);
-            this.buttonTagBracketHtml.Name = "buttonTagBracketHtml";
-            this.buttonTagBracketHtml.Size = new System.Drawing.Size(94, 94);
-            this.buttonTagBracketHtml.TabIndex = 12;
-            this.buttonTagBracketHtml.UseVisualStyleBackColor = true;
+            buttonTagBracketHtml.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            buttonTagBracketHtml.Location = new Point(190, 1503);
+            buttonTagBracketHtml.Name = "buttonTagBracketHtml";
+            buttonTagBracketHtml.Size = new Size(94, 94);
+            buttonTagBracketHtml.TabIndex = 12;
+            buttonTagBracketHtml.UseVisualStyleBackColor = true;
             // 
             // buttonTagNameHtml
             // 
-            this.buttonTagNameHtml.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.buttonTagNameHtml.Location = new System.Drawing.Point(205, 1603);
-            this.buttonTagNameHtml.Name = "buttonTagNameHtml";
-            this.buttonTagNameHtml.Size = new System.Drawing.Size(94, 94);
-            this.buttonTagNameHtml.TabIndex = 13;
-            this.buttonTagNameHtml.UseVisualStyleBackColor = true;
+            buttonTagNameHtml.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            buttonTagNameHtml.Location = new Point(190, 1603);
+            buttonTagNameHtml.Name = "buttonTagNameHtml";
+            buttonTagNameHtml.Size = new Size(94, 94);
+            buttonTagNameHtml.TabIndex = 13;
+            buttonTagNameHtml.UseVisualStyleBackColor = true;
             // 
             // buttonEntityXml
             // 
-            this.buttonEntityXml.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.buttonEntityXml.Location = new System.Drawing.Point(205, 1703);
-            this.buttonEntityXml.Name = "buttonEntityXml";
-            this.buttonEntityXml.Size = new System.Drawing.Size(94, 94);
-            this.buttonEntityXml.TabIndex = 18;
-            this.buttonEntityXml.UseVisualStyleBackColor = true;
+            buttonEntityXml.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            buttonEntityXml.Location = new Point(190, 1703);
+            buttonEntityXml.Name = "buttonEntityXml";
+            buttonEntityXml.Size = new Size(94, 94);
+            buttonEntityXml.TabIndex = 18;
+            buttonEntityXml.UseVisualStyleBackColor = true;
             // 
             // buttonAttributeXml
             // 
-            this.buttonAttributeXml.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.buttonAttributeXml.Location = new System.Drawing.Point(205, 1803);
-            this.buttonAttributeXml.Name = "buttonAttributeXml";
-            this.buttonAttributeXml.Size = new System.Drawing.Size(94, 94);
-            this.buttonAttributeXml.TabIndex = 17;
-            this.buttonAttributeXml.UseVisualStyleBackColor = true;
+            buttonAttributeXml.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            buttonAttributeXml.Location = new Point(190, 1803);
+            buttonAttributeXml.Name = "buttonAttributeXml";
+            buttonAttributeXml.Size = new Size(94, 94);
+            buttonAttributeXml.TabIndex = 17;
+            buttonAttributeXml.UseVisualStyleBackColor = true;
             // 
             // buttonAttributeValueXml
             // 
-            this.buttonAttributeValueXml.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.buttonAttributeValueXml.Location = new System.Drawing.Point(205, 1903);
-            this.buttonAttributeValueXml.Name = "buttonAttributeValueXml";
-            this.buttonAttributeValueXml.Size = new System.Drawing.Size(94, 94);
-            this.buttonAttributeValueXml.TabIndex = 16;
-            this.buttonAttributeValueXml.UseVisualStyleBackColor = true;
+            buttonAttributeValueXml.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            buttonAttributeValueXml.Location = new Point(190, 1903);
+            buttonAttributeValueXml.Name = "buttonAttributeValueXml";
+            buttonAttributeValueXml.Size = new Size(94, 94);
+            buttonAttributeValueXml.TabIndex = 16;
+            buttonAttributeValueXml.UseVisualStyleBackColor = true;
             // 
             // buttonCDataXml
             // 
-            this.buttonCDataXml.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.buttonCDataXml.Location = new System.Drawing.Point(205, 2003);
-            this.buttonCDataXml.Name = "buttonCDataXml";
-            this.buttonCDataXml.Size = new System.Drawing.Size(94, 94);
-            this.buttonCDataXml.TabIndex = 15;
-            this.buttonCDataXml.UseVisualStyleBackColor = true;
+            buttonCDataXml.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            buttonCDataXml.Location = new Point(190, 2003);
+            buttonCDataXml.Name = "buttonCDataXml";
+            buttonCDataXml.Size = new Size(94, 94);
+            buttonCDataXml.TabIndex = 15;
+            buttonCDataXml.UseVisualStyleBackColor = true;
             // 
             // buttonTagBracketXml
             // 
-            this.buttonTagBracketXml.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.buttonTagBracketXml.Location = new System.Drawing.Point(205, 2103);
-            this.buttonTagBracketXml.Name = "buttonTagBracketXml";
-            this.buttonTagBracketXml.Size = new System.Drawing.Size(94, 94);
-            this.buttonTagBracketXml.TabIndex = 14;
-            this.buttonTagBracketXml.UseVisualStyleBackColor = true;
+            buttonTagBracketXml.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            buttonTagBracketXml.Location = new Point(190, 2103);
+            buttonTagBracketXml.Name = "buttonTagBracketXml";
+            buttonTagBracketXml.Size = new Size(94, 94);
+            buttonTagBracketXml.TabIndex = 14;
+            buttonTagBracketXml.UseVisualStyleBackColor = true;
             // 
             // buttonTagNameXml
             // 
-            this.buttonTagNameXml.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.buttonTagNameXml.Location = new System.Drawing.Point(205, 2203);
-            this.buttonTagNameXml.Name = "buttonTagNameXml";
-            this.buttonTagNameXml.Size = new System.Drawing.Size(94, 94);
-            this.buttonTagNameXml.TabIndex = 19;
-            this.buttonTagNameXml.UseVisualStyleBackColor = true;
+            buttonTagNameXml.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            buttonTagNameXml.Location = new Point(190, 2203);
+            buttonTagNameXml.Name = "buttonTagNameXml";
+            buttonTagNameXml.Size = new Size(94, 94);
+            buttonTagNameXml.TabIndex = 19;
+            buttonTagNameXml.UseVisualStyleBackColor = true;
             // 
             // labelAttribute
             // 
-            this.labelAttribute.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelAttribute.AutoSize = true;
-            this.labelAttribute.Location = new System.Drawing.Point(3, 40);
-            this.labelAttribute.Name = "labelAttribute";
-            this.labelAttribute.Size = new System.Drawing.Size(162, 20);
-            this.labelAttribute.TabIndex = 20;
-            this.labelAttribute.Text = "Attribute (C#)";
-            this.labelAttribute.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            labelAttribute.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            labelAttribute.AutoSize = true;
+            labelAttribute.Location = new Point(3, 40);
+            labelAttribute.Name = "labelAttribute";
+            labelAttribute.Size = new Size(152, 20);
+            labelAttribute.TabIndex = 20;
+            labelAttribute.Text = "Attribute (C#)";
+            labelAttribute.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // labelAttributeValueHtml
             // 
-            this.labelAttributeValueHtml.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelAttributeValueHtml.AutoSize = true;
-            this.labelAttributeValueHtml.Location = new System.Drawing.Point(3, 140);
-            this.labelAttributeValueHtml.Name = "labelAttributeValueHtml";
-            this.labelAttributeValueHtml.Size = new System.Drawing.Size(162, 20);
-            this.labelAttributeValueHtml.TabIndex = 21;
-            this.labelAttributeValueHtml.Text = "Attribute value (HTML)";
-            this.labelAttributeValueHtml.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            labelAttributeValueHtml.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            labelAttributeValueHtml.AutoSize = true;
+            labelAttributeValueHtml.Location = new Point(3, 130);
+            labelAttributeValueHtml.Name = "labelAttributeValueHtml";
+            labelAttributeValueHtml.Size = new Size(152, 40);
+            labelAttributeValueHtml.TabIndex = 21;
+            labelAttributeValueHtml.Text = "Attribute value (HTML)";
+            labelAttributeValueHtml.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // labelClass
             // 
-            this.labelClass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelClass.AutoSize = true;
-            this.labelClass.Location = new System.Drawing.Point(3, 240);
-            this.labelClass.Name = "labelClass";
-            this.labelClass.Size = new System.Drawing.Size(162, 20);
-            this.labelClass.TabIndex = 22;
-            this.labelClass.Text = "Class name";
-            this.labelClass.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            labelClass.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            labelClass.AutoSize = true;
+            labelClass.Location = new Point(3, 240);
+            labelClass.Name = "labelClass";
+            labelClass.Size = new Size(152, 20);
+            labelClass.TabIndex = 22;
+            labelClass.Text = "Class name";
+            labelClass.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // labelEntityHtml
             // 
-            this.labelEntityHtml.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelEntityHtml.AutoSize = true;
-            this.labelEntityHtml.Location = new System.Drawing.Point(3, 340);
-            this.labelEntityHtml.Name = "labelEntityHtml";
-            this.labelEntityHtml.Size = new System.Drawing.Size(162, 20);
-            this.labelEntityHtml.TabIndex = 23;
-            this.labelEntityHtml.Text = "HTML entity";
-            this.labelEntityHtml.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            labelEntityHtml.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            labelEntityHtml.AutoSize = true;
+            labelEntityHtml.Location = new Point(3, 340);
+            labelEntityHtml.Name = "labelEntityHtml";
+            labelEntityHtml.Size = new Size(152, 20);
+            labelEntityHtml.TabIndex = 23;
+            labelEntityHtml.Text = "HTML entity";
+            labelEntityHtml.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // labelFunctions
             // 
-            this.labelFunctions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelFunctions.AutoSize = true;
-            this.labelFunctions.Location = new System.Drawing.Point(3, 440);
-            this.labelFunctions.Name = "labelFunctions";
-            this.labelFunctions.Size = new System.Drawing.Size(162, 20);
-            this.labelFunctions.TabIndex = 24;
-            this.labelFunctions.Text = "Functions";
-            this.labelFunctions.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            labelFunctions.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            labelFunctions.AutoSize = true;
+            labelFunctions.Location = new Point(3, 440);
+            labelFunctions.Name = "labelFunctions";
+            labelFunctions.Size = new Size(152, 20);
+            labelFunctions.TabIndex = 24;
+            labelFunctions.Text = "Functions";
+            labelFunctions.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // labelString
             // 
-            this.labelString.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelString.AutoSize = true;
-            this.labelString.Location = new System.Drawing.Point(3, 540);
-            this.labelString.Name = "labelString";
-            this.labelString.Size = new System.Drawing.Size(162, 20);
-            this.labelString.TabIndex = 25;
-            this.labelString.Text = "String";
-            this.labelString.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            labelString.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            labelString.AutoSize = true;
+            labelString.Location = new Point(3, 540);
+            labelString.Name = "labelString";
+            labelString.Size = new Size(152, 20);
+            labelString.TabIndex = 25;
+            labelString.Text = "String";
+            labelString.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // labelComment
             // 
-            this.labelComment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelComment.AutoSize = true;
-            this.labelComment.Location = new System.Drawing.Point(3, 640);
-            this.labelComment.Name = "labelComment";
-            this.labelComment.Size = new System.Drawing.Size(162, 20);
-            this.labelComment.TabIndex = 26;
-            this.labelComment.Text = "Comment";
-            this.labelComment.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            labelComment.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            labelComment.AutoSize = true;
+            labelComment.Location = new Point(3, 640);
+            labelComment.Name = "labelComment";
+            labelComment.Size = new Size(152, 20);
+            labelComment.TabIndex = 26;
+            labelComment.Text = "Comment";
+            labelComment.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // labelCommentTag
             // 
-            this.labelCommentTag.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelCommentTag.AutoSize = true;
-            this.labelCommentTag.Location = new System.Drawing.Point(3, 740);
-            this.labelCommentTag.Name = "labelCommentTag";
-            this.labelCommentTag.Size = new System.Drawing.Size(162, 20);
-            this.labelCommentTag.TabIndex = 27;
-            this.labelCommentTag.Text = "Comment tag";
-            this.labelCommentTag.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            labelCommentTag.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            labelCommentTag.AutoSize = true;
+            labelCommentTag.Location = new Point(3, 740);
+            labelCommentTag.Name = "labelCommentTag";
+            labelCommentTag.Size = new Size(152, 20);
+            labelCommentTag.TabIndex = 27;
+            labelCommentTag.Text = "Comment tag";
+            labelCommentTag.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // labelKeyword
             // 
-            this.labelKeyword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelKeyword.AutoSize = true;
-            this.labelKeyword.Location = new System.Drawing.Point(3, 840);
-            this.labelKeyword.Name = "labelKeyword";
-            this.labelKeyword.Size = new System.Drawing.Size(162, 20);
-            this.labelKeyword.TabIndex = 28;
-            this.labelKeyword.Text = "Keyword";
-            this.labelKeyword.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            labelKeyword.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            labelKeyword.AutoSize = true;
+            labelKeyword.Location = new Point(3, 840);
+            labelKeyword.Name = "labelKeyword";
+            labelKeyword.Size = new Size(152, 20);
+            labelKeyword.TabIndex = 28;
+            labelKeyword.Text = "Keyword";
+            labelKeyword.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // labelKeyword2
             // 
-            this.labelKeyword2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelKeyword2.AutoSize = true;
-            this.labelKeyword2.Location = new System.Drawing.Point(3, 930);
-            this.labelKeyword2.Name = "labelKeyword2";
-            this.labelKeyword2.Size = new System.Drawing.Size(162, 40);
-            this.labelKeyword2.TabIndex = 29;
-            this.labelKeyword2.Text = "Keyword 2 (specific PHP)";
-            this.labelKeyword2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            labelKeyword2.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            labelKeyword2.AutoSize = true;
+            labelKeyword2.Location = new Point(3, 930);
+            labelKeyword2.Name = "labelKeyword2";
+            labelKeyword2.Size = new Size(152, 40);
+            labelKeyword2.TabIndex = 29;
+            labelKeyword2.Text = "Keyword 2 (specific PHP)";
+            labelKeyword2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // labelKeyword3
             // 
-            this.labelKeyword3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelKeyword3.AutoSize = true;
-            this.labelKeyword3.Location = new System.Drawing.Point(3, 1030);
-            this.labelKeyword3.Name = "labelKeyword3";
-            this.labelKeyword3.Size = new System.Drawing.Size(162, 40);
-            this.labelKeyword3.TabIndex = 30;
-            this.labelKeyword3.Text = "Keyword 3 (specific PHP)";
-            this.labelKeyword3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            labelKeyword3.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            labelKeyword3.AutoSize = true;
+            labelKeyword3.Location = new Point(3, 1030);
+            labelKeyword3.Name = "labelKeyword3";
+            labelKeyword3.Size = new Size(152, 40);
+            labelKeyword3.TabIndex = 30;
+            labelKeyword3.Text = "Keyword 3 (specific PHP)";
+            labelKeyword3.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // labelVariable
             // 
-            this.labelVariable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelVariable.AutoSize = true;
-            this.labelVariable.Location = new System.Drawing.Point(3, 1140);
-            this.labelVariable.Name = "labelVariable";
-            this.labelVariable.Size = new System.Drawing.Size(162, 20);
-            this.labelVariable.TabIndex = 31;
-            this.labelVariable.Text = "Variable";
-            this.labelVariable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            labelVariable.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            labelVariable.AutoSize = true;
+            labelVariable.Location = new Point(3, 1140);
+            labelVariable.Name = "labelVariable";
+            labelVariable.Size = new Size(152, 20);
+            labelVariable.TabIndex = 31;
+            labelVariable.Text = "Variable";
+            labelVariable.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // labelTypesSql
             // 
-            this.labelTypesSql.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelTypesSql.AutoSize = true;
-            this.labelTypesSql.Location = new System.Drawing.Point(3, 1240);
-            this.labelTypesSql.Name = "labelTypesSql";
-            this.labelTypesSql.Size = new System.Drawing.Size(162, 20);
-            this.labelTypesSql.TabIndex = 32;
-            this.labelTypesSql.Text = "Types (SQL)";
-            this.labelTypesSql.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            labelTypesSql.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            labelTypesSql.AutoSize = true;
+            labelTypesSql.Location = new Point(3, 1240);
+            labelTypesSql.Name = "labelTypesSql";
+            labelTypesSql.Size = new Size(152, 20);
+            labelTypesSql.TabIndex = 32;
+            labelTypesSql.Text = "Types (SQL)";
+            labelTypesSql.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // labelNumbers
             // 
-            this.labelNumbers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelNumbers.AutoSize = true;
-            this.labelNumbers.Location = new System.Drawing.Point(3, 1340);
-            this.labelNumbers.Name = "labelNumbers";
-            this.labelNumbers.Size = new System.Drawing.Size(162, 20);
-            this.labelNumbers.TabIndex = 33;
-            this.labelNumbers.Text = "Numbers";
-            this.labelNumbers.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            labelNumbers.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            labelNumbers.AutoSize = true;
+            labelNumbers.Location = new Point(3, 1340);
+            labelNumbers.Name = "labelNumbers";
+            labelNumbers.Size = new Size(152, 20);
+            labelNumbers.TabIndex = 33;
+            labelNumbers.Text = "Numbers";
+            labelNumbers.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // labelStatementsSql
             // 
-            this.labelStatementsSql.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelStatementsSql.AutoSize = true;
-            this.labelStatementsSql.Location = new System.Drawing.Point(3, 1440);
-            this.labelStatementsSql.Name = "labelStatementsSql";
-            this.labelStatementsSql.Size = new System.Drawing.Size(162, 20);
-            this.labelStatementsSql.TabIndex = 34;
-            this.labelStatementsSql.Text = "Statements (SQL)";
-            this.labelStatementsSql.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            labelStatementsSql.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            labelStatementsSql.AutoSize = true;
+            labelStatementsSql.Location = new Point(3, 1440);
+            labelStatementsSql.Name = "labelStatementsSql";
+            labelStatementsSql.Size = new Size(152, 20);
+            labelStatementsSql.TabIndex = 34;
+            labelStatementsSql.Text = "Statements (SQL)";
+            labelStatementsSql.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // labelTagBracketHtml
             // 
-            this.labelTagBracketHtml.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelTagBracketHtml.AutoSize = true;
-            this.labelTagBracketHtml.Location = new System.Drawing.Point(3, 1540);
-            this.labelTagBracketHtml.Name = "labelTagBracketHtml";
-            this.labelTagBracketHtml.Size = new System.Drawing.Size(162, 20);
-            this.labelTagBracketHtml.TabIndex = 35;
-            this.labelTagBracketHtml.Text = "Tag bracket (HTML)";
-            this.labelTagBracketHtml.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            labelTagBracketHtml.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            labelTagBracketHtml.AutoSize = true;
+            labelTagBracketHtml.Location = new Point(3, 1540);
+            labelTagBracketHtml.Name = "labelTagBracketHtml";
+            labelTagBracketHtml.Size = new Size(152, 20);
+            labelTagBracketHtml.TabIndex = 35;
+            labelTagBracketHtml.Text = "Tag bracket (HTML)";
+            labelTagBracketHtml.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // labelTagNameHtml
             // 
-            this.labelTagNameHtml.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelTagNameHtml.AutoSize = true;
-            this.labelTagNameHtml.Location = new System.Drawing.Point(3, 1640);
-            this.labelTagNameHtml.Name = "labelTagNameHtml";
-            this.labelTagNameHtml.Size = new System.Drawing.Size(162, 20);
-            this.labelTagNameHtml.TabIndex = 36;
-            this.labelTagNameHtml.Text = "Tag name (HTML)";
-            this.labelTagNameHtml.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            labelTagNameHtml.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            labelTagNameHtml.AutoSize = true;
+            labelTagNameHtml.Location = new Point(3, 1640);
+            labelTagNameHtml.Name = "labelTagNameHtml";
+            labelTagNameHtml.Size = new Size(152, 20);
+            labelTagNameHtml.TabIndex = 36;
+            labelTagNameHtml.Text = "Tag name (HTML)";
+            labelTagNameHtml.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // labelEntityXml
             // 
-            this.labelEntityXml.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelEntityXml.AutoSize = true;
-            this.labelEntityXml.Location = new System.Drawing.Point(3, 1740);
-            this.labelEntityXml.Name = "labelEntityXml";
-            this.labelEntityXml.Size = new System.Drawing.Size(162, 20);
-            this.labelEntityXml.TabIndex = 37;
-            this.labelEntityXml.Text = "XML entity";
-            this.labelEntityXml.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            labelEntityXml.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            labelEntityXml.AutoSize = true;
+            labelEntityXml.Location = new Point(3, 1740);
+            labelEntityXml.Name = "labelEntityXml";
+            labelEntityXml.Size = new Size(152, 20);
+            labelEntityXml.TabIndex = 37;
+            labelEntityXml.Text = "XML entity";
+            labelEntityXml.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // labelAttributeXml
             // 
-            this.labelAttributeXml.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelAttributeXml.AutoSize = true;
-            this.labelAttributeXml.Location = new System.Drawing.Point(3, 1840);
-            this.labelAttributeXml.Name = "labelAttributeXml";
-            this.labelAttributeXml.Size = new System.Drawing.Size(162, 20);
-            this.labelAttributeXml.TabIndex = 38;
-            this.labelAttributeXml.Text = "XML attribute";
-            this.labelAttributeXml.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            labelAttributeXml.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            labelAttributeXml.AutoSize = true;
+            labelAttributeXml.Location = new Point(3, 1840);
+            labelAttributeXml.Name = "labelAttributeXml";
+            labelAttributeXml.Size = new Size(152, 20);
+            labelAttributeXml.TabIndex = 38;
+            labelAttributeXml.Text = "XML attribute";
+            labelAttributeXml.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // labelAttributeValueXml
             // 
-            this.labelAttributeValueXml.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelAttributeValueXml.AutoSize = true;
-            this.labelAttributeValueXml.Location = new System.Drawing.Point(3, 1940);
-            this.labelAttributeValueXml.Name = "labelAttributeValueXml";
-            this.labelAttributeValueXml.Size = new System.Drawing.Size(162, 20);
-            this.labelAttributeValueXml.TabIndex = 39;
-            this.labelAttributeValueXml.Text = "XML attribute value";
-            this.labelAttributeValueXml.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            labelAttributeValueXml.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            labelAttributeValueXml.AutoSize = true;
+            labelAttributeValueXml.Location = new Point(3, 1940);
+            labelAttributeValueXml.Name = "labelAttributeValueXml";
+            labelAttributeValueXml.Size = new Size(152, 20);
+            labelAttributeValueXml.TabIndex = 39;
+            labelAttributeValueXml.Text = "XML attribute value";
+            labelAttributeValueXml.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // labelCDataXml
             // 
-            this.labelCDataXml.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelCDataXml.AutoSize = true;
-            this.labelCDataXml.Location = new System.Drawing.Point(3, 2040);
-            this.labelCDataXml.Name = "labelCDataXml";
-            this.labelCDataXml.Size = new System.Drawing.Size(162, 20);
-            this.labelCDataXml.TabIndex = 40;
-            this.labelCDataXml.Text = "XML CData";
-            this.labelCDataXml.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            labelCDataXml.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            labelCDataXml.AutoSize = true;
+            labelCDataXml.Location = new Point(3, 2040);
+            labelCDataXml.Name = "labelCDataXml";
+            labelCDataXml.Size = new Size(152, 20);
+            labelCDataXml.TabIndex = 40;
+            labelCDataXml.Text = "XML CData";
+            labelCDataXml.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // labelTagBracketXml
             // 
-            this.labelTagBracketXml.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelTagBracketXml.AutoSize = true;
-            this.labelTagBracketXml.Location = new System.Drawing.Point(3, 2140);
-            this.labelTagBracketXml.Name = "labelTagBracketXml";
-            this.labelTagBracketXml.Size = new System.Drawing.Size(162, 20);
-            this.labelTagBracketXml.TabIndex = 41;
-            this.labelTagBracketXml.Text = "XML tag bracket";
-            this.labelTagBracketXml.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            labelTagBracketXml.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            labelTagBracketXml.AutoSize = true;
+            labelTagBracketXml.Location = new Point(3, 2140);
+            labelTagBracketXml.Name = "labelTagBracketXml";
+            labelTagBracketXml.Size = new Size(152, 20);
+            labelTagBracketXml.TabIndex = 41;
+            labelTagBracketXml.Text = "XML tag bracket";
+            labelTagBracketXml.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // labelTagNameXml
             // 
-            this.labelTagNameXml.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelTagNameXml.AutoSize = true;
-            this.labelTagNameXml.Location = new System.Drawing.Point(3, 2240);
-            this.labelTagNameXml.Name = "labelTagNameXml";
-            this.labelTagNameXml.Size = new System.Drawing.Size(162, 20);
-            this.labelTagNameXml.TabIndex = 42;
-            this.labelTagNameXml.Text = "XML tag name";
-            this.labelTagNameXml.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            labelTagNameXml.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            labelTagNameXml.AutoSize = true;
+            labelTagNameXml.Location = new Point(3, 2240);
+            labelTagNameXml.Name = "labelTagNameXml";
+            labelTagNameXml.Size = new Size(152, 20);
+            labelTagNameXml.TabIndex = 42;
+            labelTagNameXml.Text = "XML tag name";
+            labelTagNameXml.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // fontStyleControl1
             // 
-            this.fontStyleControl1.Location = new System.Drawing.Point(339, 3);
-            this.fontStyleControl1.Name = "fontStyleControl1";
-            this.fontStyleControl1.Size = new System.Drawing.Size(254, 94);
-            this.fontStyleControl1.TabIndex = 43;
+            fontStyleControl1.Location = new Point(319, 3);
+            fontStyleControl1.Name = "fontStyleControl1";
+            fontStyleControl1.Size = new Size(254, 94);
+            fontStyleControl1.TabIndex = 43;
             // 
             // fontStyleControl2
             // 
-            this.fontStyleControl2.Location = new System.Drawing.Point(339, 103);
-            this.fontStyleControl2.Name = "fontStyleControl2";
-            this.fontStyleControl2.Size = new System.Drawing.Size(254, 94);
-            this.fontStyleControl2.TabIndex = 44;
+            fontStyleControl2.Location = new Point(319, 103);
+            fontStyleControl2.Name = "fontStyleControl2";
+            fontStyleControl2.Size = new Size(254, 94);
+            fontStyleControl2.TabIndex = 44;
             // 
             // fontStyleControl3
             // 
-            this.fontStyleControl3.Location = new System.Drawing.Point(339, 203);
-            this.fontStyleControl3.Name = "fontStyleControl3";
-            this.fontStyleControl3.Size = new System.Drawing.Size(254, 94);
-            this.fontStyleControl3.TabIndex = 45;
+            fontStyleControl3.Location = new Point(319, 203);
+            fontStyleControl3.Name = "fontStyleControl3";
+            fontStyleControl3.Size = new Size(254, 94);
+            fontStyleControl3.TabIndex = 45;
             // 
             // fontStyleControl4
             // 
-            this.fontStyleControl4.Location = new System.Drawing.Point(339, 303);
-            this.fontStyleControl4.Name = "fontStyleControl4";
-            this.fontStyleControl4.Size = new System.Drawing.Size(254, 94);
-            this.fontStyleControl4.TabIndex = 46;
+            fontStyleControl4.Location = new Point(319, 303);
+            fontStyleControl4.Name = "fontStyleControl4";
+            fontStyleControl4.Size = new Size(254, 94);
+            fontStyleControl4.TabIndex = 46;
             // 
             // fontStyleControl5
             // 
-            this.fontStyleControl5.Location = new System.Drawing.Point(339, 403);
-            this.fontStyleControl5.Name = "fontStyleControl5";
-            this.fontStyleControl5.Size = new System.Drawing.Size(254, 94);
-            this.fontStyleControl5.TabIndex = 47;
+            fontStyleControl5.Location = new Point(319, 403);
+            fontStyleControl5.Name = "fontStyleControl5";
+            fontStyleControl5.Size = new Size(254, 94);
+            fontStyleControl5.TabIndex = 47;
             // 
             // fontStyleControl6
             // 
-            this.fontStyleControl6.Location = new System.Drawing.Point(339, 503);
-            this.fontStyleControl6.Name = "fontStyleControl6";
-            this.fontStyleControl6.Size = new System.Drawing.Size(254, 94);
-            this.fontStyleControl6.TabIndex = 48;
+            fontStyleControl6.Location = new Point(319, 503);
+            fontStyleControl6.Name = "fontStyleControl6";
+            fontStyleControl6.Size = new Size(254, 94);
+            fontStyleControl6.TabIndex = 48;
             // 
             // fontStyleControl7
             // 
-            this.fontStyleControl7.Location = new System.Drawing.Point(339, 603);
-            this.fontStyleControl7.Name = "fontStyleControl7";
-            this.fontStyleControl7.Size = new System.Drawing.Size(254, 94);
-            this.fontStyleControl7.TabIndex = 49;
+            fontStyleControl7.Location = new Point(319, 603);
+            fontStyleControl7.Name = "fontStyleControl7";
+            fontStyleControl7.Size = new Size(254, 94);
+            fontStyleControl7.TabIndex = 49;
             // 
             // fontStyleControl8
             // 
-            this.fontStyleControl8.Location = new System.Drawing.Point(339, 703);
-            this.fontStyleControl8.Name = "fontStyleControl8";
-            this.fontStyleControl8.Size = new System.Drawing.Size(254, 94);
-            this.fontStyleControl8.TabIndex = 50;
+            fontStyleControl8.Location = new Point(319, 703);
+            fontStyleControl8.Name = "fontStyleControl8";
+            fontStyleControl8.Size = new Size(254, 94);
+            fontStyleControl8.TabIndex = 50;
             // 
             // fontStyleControl9
             // 
-            this.fontStyleControl9.Location = new System.Drawing.Point(339, 803);
-            this.fontStyleControl9.Name = "fontStyleControl9";
-            this.fontStyleControl9.Size = new System.Drawing.Size(254, 94);
-            this.fontStyleControl9.TabIndex = 51;
+            fontStyleControl9.Location = new Point(319, 803);
+            fontStyleControl9.Name = "fontStyleControl9";
+            fontStyleControl9.Size = new Size(254, 94);
+            fontStyleControl9.TabIndex = 51;
             // 
             // fontStyleControl10
             // 
-            this.fontStyleControl10.Location = new System.Drawing.Point(339, 903);
-            this.fontStyleControl10.Name = "fontStyleControl10";
-            this.fontStyleControl10.Size = new System.Drawing.Size(254, 94);
-            this.fontStyleControl10.TabIndex = 52;
+            fontStyleControl10.Location = new Point(319, 903);
+            fontStyleControl10.Name = "fontStyleControl10";
+            fontStyleControl10.Size = new Size(254, 94);
+            fontStyleControl10.TabIndex = 52;
             // 
             // fontStyleControl11
             // 
-            this.fontStyleControl11.Location = new System.Drawing.Point(339, 1003);
-            this.fontStyleControl11.Name = "fontStyleControl11";
-            this.fontStyleControl11.Size = new System.Drawing.Size(254, 94);
-            this.fontStyleControl11.TabIndex = 53;
+            fontStyleControl11.Location = new Point(319, 1003);
+            fontStyleControl11.Name = "fontStyleControl11";
+            fontStyleControl11.Size = new Size(254, 94);
+            fontStyleControl11.TabIndex = 53;
             // 
             // fontStyleControl12
             // 
-            this.fontStyleControl12.Location = new System.Drawing.Point(339, 1103);
-            this.fontStyleControl12.Name = "fontStyleControl12";
-            this.fontStyleControl12.Size = new System.Drawing.Size(254, 94);
-            this.fontStyleControl12.TabIndex = 54;
+            fontStyleControl12.Location = new Point(319, 1103);
+            fontStyleControl12.Name = "fontStyleControl12";
+            fontStyleControl12.Size = new Size(254, 94);
+            fontStyleControl12.TabIndex = 54;
             // 
             // fontStyleControl13
             // 
-            this.fontStyleControl13.Location = new System.Drawing.Point(339, 1203);
-            this.fontStyleControl13.Name = "fontStyleControl13";
-            this.fontStyleControl13.Size = new System.Drawing.Size(254, 94);
-            this.fontStyleControl13.TabIndex = 55;
+            fontStyleControl13.Location = new Point(319, 1203);
+            fontStyleControl13.Name = "fontStyleControl13";
+            fontStyleControl13.Size = new Size(254, 94);
+            fontStyleControl13.TabIndex = 55;
             // 
             // fontStyleControl14
             // 
-            this.fontStyleControl14.Location = new System.Drawing.Point(339, 1303);
-            this.fontStyleControl14.Name = "fontStyleControl14";
-            this.fontStyleControl14.Size = new System.Drawing.Size(254, 94);
-            this.fontStyleControl14.TabIndex = 56;
+            fontStyleControl14.Location = new Point(319, 1303);
+            fontStyleControl14.Name = "fontStyleControl14";
+            fontStyleControl14.Size = new Size(254, 94);
+            fontStyleControl14.TabIndex = 56;
             // 
             // fontStyleControl15
             // 
-            this.fontStyleControl15.Location = new System.Drawing.Point(339, 1403);
-            this.fontStyleControl15.Name = "fontStyleControl15";
-            this.fontStyleControl15.Size = new System.Drawing.Size(254, 94);
-            this.fontStyleControl15.TabIndex = 57;
+            fontStyleControl15.Location = new Point(319, 1403);
+            fontStyleControl15.Name = "fontStyleControl15";
+            fontStyleControl15.Size = new Size(254, 94);
+            fontStyleControl15.TabIndex = 57;
             // 
             // fontStyleControl16
             // 
-            this.fontStyleControl16.Location = new System.Drawing.Point(339, 1503);
-            this.fontStyleControl16.Name = "fontStyleControl16";
-            this.fontStyleControl16.Size = new System.Drawing.Size(254, 94);
-            this.fontStyleControl16.TabIndex = 58;
+            fontStyleControl16.Location = new Point(319, 1503);
+            fontStyleControl16.Name = "fontStyleControl16";
+            fontStyleControl16.Size = new Size(254, 94);
+            fontStyleControl16.TabIndex = 58;
             // 
             // fontStyleControl17
             // 
-            this.fontStyleControl17.Location = new System.Drawing.Point(339, 1603);
-            this.fontStyleControl17.Name = "fontStyleControl17";
-            this.fontStyleControl17.Size = new System.Drawing.Size(254, 94);
-            this.fontStyleControl17.TabIndex = 59;
+            fontStyleControl17.Location = new Point(319, 1603);
+            fontStyleControl17.Name = "fontStyleControl17";
+            fontStyleControl17.Size = new Size(254, 94);
+            fontStyleControl17.TabIndex = 59;
             // 
             // fontStyleControl18
             // 
-            this.fontStyleControl18.Location = new System.Drawing.Point(339, 1703);
-            this.fontStyleControl18.Name = "fontStyleControl18";
-            this.fontStyleControl18.Size = new System.Drawing.Size(254, 94);
-            this.fontStyleControl18.TabIndex = 60;
+            fontStyleControl18.Location = new Point(319, 1703);
+            fontStyleControl18.Name = "fontStyleControl18";
+            fontStyleControl18.Size = new Size(254, 94);
+            fontStyleControl18.TabIndex = 60;
             // 
             // fontStyleControl19
             // 
-            this.fontStyleControl19.Location = new System.Drawing.Point(339, 1803);
-            this.fontStyleControl19.Name = "fontStyleControl19";
-            this.fontStyleControl19.Size = new System.Drawing.Size(254, 94);
-            this.fontStyleControl19.TabIndex = 61;
+            fontStyleControl19.Location = new Point(319, 1803);
+            fontStyleControl19.Name = "fontStyleControl19";
+            fontStyleControl19.Size = new Size(254, 94);
+            fontStyleControl19.TabIndex = 61;
             // 
             // fontStyleControl20
             // 
-            this.fontStyleControl20.Location = new System.Drawing.Point(339, 1903);
-            this.fontStyleControl20.Name = "fontStyleControl20";
-            this.fontStyleControl20.Size = new System.Drawing.Size(254, 94);
-            this.fontStyleControl20.TabIndex = 62;
+            fontStyleControl20.Location = new Point(319, 1903);
+            fontStyleControl20.Name = "fontStyleControl20";
+            fontStyleControl20.Size = new Size(254, 94);
+            fontStyleControl20.TabIndex = 62;
             // 
             // fontStyleControl21
             // 
-            this.fontStyleControl21.Location = new System.Drawing.Point(339, 2003);
-            this.fontStyleControl21.Name = "fontStyleControl21";
-            this.fontStyleControl21.Size = new System.Drawing.Size(254, 94);
-            this.fontStyleControl21.TabIndex = 63;
+            fontStyleControl21.Location = new Point(319, 2003);
+            fontStyleControl21.Name = "fontStyleControl21";
+            fontStyleControl21.Size = new Size(254, 94);
+            fontStyleControl21.TabIndex = 63;
             // 
             // fontStyleControl22
             // 
-            this.fontStyleControl22.Location = new System.Drawing.Point(339, 2103);
-            this.fontStyleControl22.Name = "fontStyleControl22";
-            this.fontStyleControl22.Size = new System.Drawing.Size(254, 94);
-            this.fontStyleControl22.TabIndex = 64;
+            fontStyleControl22.Location = new Point(319, 2103);
+            fontStyleControl22.Name = "fontStyleControl22";
+            fontStyleControl22.Size = new Size(254, 94);
+            fontStyleControl22.TabIndex = 64;
             // 
             // fontStyleControl23
             // 
-            this.fontStyleControl23.Location = new System.Drawing.Point(339, 2203);
-            this.fontStyleControl23.Name = "fontStyleControl23";
-            this.fontStyleControl23.Size = new System.Drawing.Size(254, 94);
-            this.fontStyleControl23.TabIndex = 65;
+            fontStyleControl23.Location = new Point(319, 2203);
+            fontStyleControl23.Name = "fontStyleControl23";
+            fontStyleControl23.Size = new Size(254, 94);
+            fontStyleControl23.TabIndex = 65;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.buttonToDefault);
-            this.panel1.Controls.Add(this.buttonDiscard);
-            this.panel1.Controls.Add(this.buttonSave);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 2299);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(597, 68);
-            this.panel1.TabIndex = 1;
+            panel1.Controls.Add(buttonToDefault);
+            panel1.Controls.Add(buttonDiscard);
+            panel1.Controls.Add(buttonSave);
+            panel1.Dock = DockStyle.Bottom;
+            panel1.Location = new Point(0, 2299);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(576, 68);
+            panel1.TabIndex = 1;
             // 
             // buttonToDefault
             // 
-            this.buttonToDefault.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonToDefault.Location = new System.Drawing.Point(263, 36);
-            this.buttonToDefault.Name = "buttonToDefault";
-            this.buttonToDefault.Size = new System.Drawing.Size(131, 29);
-            this.buttonToDefault.TabIndex = 2;
-            this.buttonToDefault.Text = "Return to default";
-            this.buttonToDefault.UseVisualStyleBackColor = true;
-            this.buttonToDefault.Click += new System.EventHandler(this.buttonToDefault_Click);
+            buttonToDefault.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonToDefault.Location = new Point(242, 36);
+            buttonToDefault.Name = "buttonToDefault";
+            buttonToDefault.Size = new Size(131, 29);
+            buttonToDefault.TabIndex = 2;
+            buttonToDefault.Text = "Return to default";
+            buttonToDefault.UseVisualStyleBackColor = true;
+            buttonToDefault.Click += buttonToDefault_Click;
             // 
             // buttonDiscard
             // 
-            this.buttonDiscard.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonDiscard.Location = new System.Drawing.Point(400, 36);
-            this.buttonDiscard.Name = "buttonDiscard";
-            this.buttonDiscard.Size = new System.Drawing.Size(94, 29);
-            this.buttonDiscard.TabIndex = 1;
-            this.buttonDiscard.Text = "Discard";
-            this.buttonDiscard.UseVisualStyleBackColor = true;
+            buttonDiscard.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonDiscard.Location = new Point(379, 36);
+            buttonDiscard.Name = "buttonDiscard";
+            buttonDiscard.Size = new Size(94, 29);
+            buttonDiscard.TabIndex = 1;
+            buttonDiscard.Text = "Discard";
+            buttonDiscard.UseVisualStyleBackColor = true;
+            buttonDiscard.Click += buttonDiscard_Click;
             // 
             // buttonSave
             // 
-            this.buttonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSave.Location = new System.Drawing.Point(500, 36);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(94, 29);
-            this.buttonSave.TabIndex = 0;
-            this.buttonSave.Text = "Save";
-            this.buttonSave.UseVisualStyleBackColor = true;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            buttonSave.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonSave.Location = new Point(479, 36);
+            buttonSave.Name = "buttonSave";
+            buttonSave.Size = new Size(94, 29);
+            buttonSave.TabIndex = 0;
+            buttonSave.Text = "Save";
+            buttonSave.UseVisualStyleBackColor = true;
+            buttonSave.Click += buttonSave_Click;
             // 
             // SyntaxColorsOptionsControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
-            this.BackColor = System.Drawing.Color.Gray;
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "SyntaxColorsOptionsControl";
-            this.Size = new System.Drawing.Size(597, 1929);
-            this.Load += new System.EventHandler(this.SyntaxColorsOptionsControl_Load);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
+            BackColor = Color.Gray;
+            Controls.Add(panel1);
+            Controls.Add(tableLayoutPanel1);
+            Name = "SyntaxColorsOptionsControl";
+            Size = new Size(576, 1929);
+            Load += SyntaxColorsOptionsControl_Load;
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
+            panel1.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion

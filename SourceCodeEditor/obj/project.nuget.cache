@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OhSCPPvS1bCu8pMCRWDjbRdMuew8I2tqzgLk/UzwKIplZ+kornaaEpZ6hEbj4l7MFKFAtAJO9/1p+wAV/G9uzw==",
+  "dgSpecHash": "Z7hb5qDfl7aK2shzTw9sa0Ytfe2Ci0wTF/GQyedqVR/Vo8Xmv0itEZUBYeNyTwL0p+nWVBbPYnGvIzEMoGJOOQ==",
   "success": true,
-  "projectFilePath": "D:\\COURSE WORK\\SourceCodeEditor\\SourceCodeEditor\\SourceCodeEditor.csproj",
+  "projectFilePath": "C:\\College\\COURSE WORK\\SourceCodeEditor\\SourceCodeEditor\\SourceCodeEditor.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Main User\\.nuget\\packages\\fctb\\2.16.24\\fctb.2.16.24.nupkg.sha512"
   ],

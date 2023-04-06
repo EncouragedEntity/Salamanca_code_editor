@@ -101,7 +101,6 @@
             this.Name = "OptionsForm";
             this.ShowIcon = false;
             this.Text = "Options";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OptionsForm_FormClosing);
             this.Load += new System.EventHandler(this.OptionsForm_Load);
             this.SizeChanged += new System.EventHandler(this.OptionsForm_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
