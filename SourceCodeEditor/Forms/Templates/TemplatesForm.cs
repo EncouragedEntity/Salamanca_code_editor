@@ -135,7 +135,7 @@ namespace SourceCodeEditor.Forms
         private void TemplateAdd(int templateNumber)
         {
             string FolderPath = "Templates";
-            string TemplateName = $"Template{templateNumber + 1}.txt";
+            string TemplateName = $"Template{templateNumber}.txt";
             string FilePath = $"{FolderPath}/{TemplateName}";
 
             var template = new Template();
