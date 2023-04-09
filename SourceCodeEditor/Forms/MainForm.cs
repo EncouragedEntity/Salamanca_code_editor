@@ -56,6 +56,9 @@ namespace SourceCodeEditor
             CurrentTheme = DefaultTheme;
             new ThemeChanger(this).ChangeTheme(CurrentTheme);
             DeleteUnnecessaryLabels();
+
+            LoadTemplatesToolStrips();
+            new ThemeChanger(this).ChangeHeaderTheme(theme);
         }
 
         #region Methods
@@ -564,15 +567,14 @@ namespace SourceCodeEditor
 
         private void templatesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            LoadTemplatesToolStrips();
+            new ThemeChanger(this).ChangeHeaderTheme(theme);
+
             var templatesForm = new TemplatesForm(MainTextField);
             templatesForm.ShowDialog();
 
-            if (templatesForm.IsTemplatesChanged)
-            {
-                LoadTemplatesToolStrips();
-
-                new ThemeChanger(this).ChangeHeaderTheme(theme);
-            }
+            LoadTemplatesToolStrips();
+            new ThemeChanger(this).ChangeHeaderTheme(theme);
 
         }
 
@@ -605,7 +607,7 @@ namespace SourceCodeEditor
                 }
                 return;
             }
-            MessageBox.Show("Wrong language selected at Main Text Field", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show($"Wrong language selected at Main Text Field.\nYou should select \"{temp.Language}\"!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void DeleteTemplatesToolStrips()
@@ -616,6 +618,8 @@ namespace SourceCodeEditor
 
         private void LoadTemplatesToolStrips()
         {
+            new TemplateFileManager().RenameTemplatesFiles();
+
             var dir = new DirectoryInfo("Templates");
             var files = dir.GetFiles();
 

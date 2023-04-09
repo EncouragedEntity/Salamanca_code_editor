@@ -100,11 +100,10 @@ namespace SourceCodeEditor.Forms.Templates
             Template.Language = (Language)comboBoxLanguages.SelectedIndex;
             try
             {
-                ChangeTemplateLabelText(Form.GetLabelById(Template.Number)!);
+                ChangeTemplateLabelText(Form.GetLabelById(Template.Number)!, Form.GetLabelById(Template.Number + 10)!);
                 File.WriteAllText(FilePath, fastColoredTextBox1.Text);
 
                 string JsonPath = FilePath.Replace("txt", "json");
-                Template.Number++;
                 File.WriteAllText(JsonPath, JsonSerializer.Serialize(Template, new JsonSerializerOptions() { WriteIndented = true }));
             }
             catch (IndexOutOfRangeException ex)
@@ -114,11 +113,12 @@ namespace SourceCodeEditor.Forms.Templates
             return Template;
         }
 
-        public void ChangeTemplateLabelText(Label label)
+        public void ChangeTemplateLabelText(Label labelName, Label labelLang)
         {
             try
             {
-                label.Text = textBoxName.Text;
+                labelName.Text = textBoxName.Text;
+                labelLang.Text = comboBoxLanguages.SelectedItem.ToString();
             }
             catch (Exception)
             {

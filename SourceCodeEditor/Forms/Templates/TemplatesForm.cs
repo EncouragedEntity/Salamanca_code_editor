@@ -24,6 +24,8 @@ namespace SourceCodeEditor.Forms
             SetLabelsFontSize();
 
             IsTemplatesChanged = false;
+
+            new TemplateFileManager().RenameTemplatesFiles();
         }
 
         private void SetLabelsFontSize()
@@ -41,20 +43,60 @@ namespace SourceCodeEditor.Forms
 
         private void LoadTemplates()
         {
-            foreach (var file in new DirectoryInfo("Templates").GetFiles())
+            new TemplateFileManager().RenameTemplatesFiles();
+
+            var tempList = new List<Template>();
+            if (!Templates.All(value => value.Number == 0))
             {
-                if (Path.GetExtension(file.Name) == ".json")
-                {
-                    Template template = JsonSerializer.Deserialize<Template>(File.ReadAllText($"Templates/{file.Name}"))!;
-                    Templates[template.Number - 1] = (template);
-                    IsTemplatesChanged = true;
-                }
+                Templates.Clear();
+                Templates = Enumerable.Repeat(new Template(), 10).ToList();
+            }
+
+            foreach (var file in new DirectoryInfo("Templates").GetFiles().Where(file => file.Extension == ".json"))
+            {
+                tempList.Add(JsonSerializer.Deserialize<Template>(File.ReadAllText($"Templates/{file.Name}"))!);
             }
 
             for (int i = 0; i < Templates.Count; i++)
             {
+                try
+                {
+                    Templates[i] = tempList[i];
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    Templates[i] = new Template(); 
+                }
+            }
+
+            SetLabelsContent();
+        }
+
+        private void SetLabelsContent()
+        {
+            SetLabelsNameContent();
+            SetLabelsLanguageContent();
+        }
+
+        private void SetLabelsNameContent()
+        {
+            for (int i = 0; i < Templates.Count; i++)
+            {
                 if (!String.IsNullOrEmpty(Templates[i].Name))
-                    GetLabelById(Templates[i].Number)!.Text = Templates[i].Name;
+                {
+                    GetLabelById(Templates[i].Number)!.Text = $"{Templates[i].Name}";
+                    continue;
+                }
+
+                GetLabelById(i + 1)!.Text = $"Template{i + 1}";
+            }
+        }
+
+        private void SetLabelsLanguageContent()
+        {
+            for (int i = 11; i <= 20; i++)
+            {
+                GetLabelById(i)!.Text = $"{Templates[i - 11].Language}";
             }
         }
 
@@ -122,14 +164,15 @@ namespace SourceCodeEditor.Forms
                 TemplateAdd(templateNumber);
                 return;
             }
+            var template = Templates[templateNumber - 1];
 
-            if (Templates[templateNumber - 1].Language == TextField.Language)
+            if (template.Language == TextField.Language)
             {
                 TextField.InsertText(File.ReadAllText(TemplatePath));
                 return;
             }
 
-            MessageBox.Show("Wrong language selected at Main Text Field", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show($"Wrong language selected at Main Text Field.\nYou should select \"{template.Language}\"!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void TemplateAdd(int templateNumber)
@@ -153,8 +196,22 @@ namespace SourceCodeEditor.Forms
             if (addTemplate.ShowDialog() == DialogResult.Yes)
             {
                 IsTemplatesChanged = true;
-                Templates[templateNumber] = template;
+                Templates[templateNumber - 1] = template;
             }
+        }
+
+        private string GetTemplateNameFromLabel(int templateNumber)
+        {
+            var text = GetLabelById(templateNumber)!.Text;
+
+            foreach (var value in Enum.GetNames<Language>())
+            {
+                if (text.Contains("(" + value + ")"))
+                {
+                    return text.Replace($"({value})", "").Trim();
+                }
+            }
+            return text;
         }
 
         private void TemplateEdit(int templateNumber)
@@ -164,7 +221,9 @@ namespace SourceCodeEditor.Forms
             string FilePath = $"{FolderPath}/{TemplateName}";
 
             var template = new Template();
-            template.Name = GetLabelById(templateNumber)!.Text;
+
+            template.Name = GetTemplateNameFromLabel(templateNumber);
+
             template.Number = templateNumber;
             template.Language = Templates[templateNumber - 1].Language;
 
@@ -177,39 +236,7 @@ namespace SourceCodeEditor.Forms
             }
         }
 
-        private void RenameTemplatesFiles()
-        {
-            var directory = new DirectoryInfo("Templates");
-            var files = directory.GetFiles();
-
-            for (int i = 1; i <= files.Length; i++)
-            {
-                var txtFiles = files.Where(file => file.Extension == ".txt").ToList();
-                var jsonFiles = files.Where(file => file.Extension == ".json").ToList();
-
-                for (int j = 1; j <= txtFiles.Count; j++)
-                {
-                    var txtFile = txtFiles[j - 1];
-
-                    if (txtFile.Name != $"Template{j}{txtFile.Extension}")
-                    {
-                        if(!File.Exists($"Templates/Template{j}{txtFile.Extension}"))
-                            File.Move(txtFile.FullName, $"Templates/Template{j}{txtFile.Extension}");
-                    }
-                }
-
-                for (int j = 1; j <= jsonFiles.Count; j++)
-                {
-                    var jsonFile = jsonFiles[j - 1];
-
-                    if (jsonFile.Name != $"Template{j}{jsonFile.Extension}")
-                    {
-                        if (!File.Exists($"Templates/Template{j}{jsonFile.Extension}"))
-                            File.Move(jsonFile.FullName, $"Templates/Template{j}{jsonFile.Extension}");
-                    }
-                }
-            }
-        }
+        
 
         private void TemplateDelete(int templateNumber)
         {
@@ -217,22 +244,27 @@ namespace SourceCodeEditor.Forms
             if (File.Exists(TemplatePath))
             {
                 string JsonPath = TemplatePath.Replace("txt", "json");
-
-                FileSystem.DeleteFile(TemplatePath, UIOption.OnlyErrorDialogs, RecycleOption.DeletePermanently);
-                FileSystem.DeleteFile(JsonPath, UIOption.OnlyErrorDialogs, RecycleOption.DeletePermanently);
-                Templates.Remove(Templates.ElementAt(templateNumber - 1));
+                    try
+                    {
+                        FileSystem.DeleteFile(TemplatePath, UIOption.OnlyErrorDialogs, RecycleOption.DeletePermanently);
+                        FileSystem.DeleteFile(JsonPath, UIOption.OnlyErrorDialogs, RecycleOption.DeletePermanently);
+                    }
+                    catch (FileNotFoundException)
+                    {
+                    
+                    }
+                Templates[templateNumber - 1] = new Template($"Template{templateNumber}", templateNumber);
                 IsTemplatesChanged = true;
 
                 GetLabelById(templateNumber)!.Text = $"Template{templateNumber}";
             }
 
-            RenameTemplatesFiles();
             LoadTemplates();
         }
 
-        private void fileSystemWatcher1_Changed(object sender, FileSystemEventArgs e)
+        private void TemplatesForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            LoadTemplates();
+            new TemplateFileManager().RenameTemplatesFiles();
         }
     }
 }
