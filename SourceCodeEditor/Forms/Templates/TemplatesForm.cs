@@ -33,9 +33,8 @@ namespace SourceCodeEditor.Forms
             Font = new Font(TextField.Font.FontFamily, TextField.Font.Size, TextField.Font.Style);
             foreach (var control in tableLayoutPanel1.Controls)
             {
-                if (control is Label)
+                if (control is Label label)
                 {
-                    var label = (Label)control;
                     label.Font = Font;
                 }
             }

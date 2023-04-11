@@ -38,6 +38,11 @@ namespace SourceCodeEditor.AppearenceConfig
             _footer = form.MainFooter;
             _labels = form.GetLabelsFromForm();
         }
+
+        public ThemeChanger(FastColoredTextBox mainTextField)
+        {
+            _mainTextField = mainTextField;
+        }
         /// <summary>
         /// Change theme
         /// </summary>
@@ -201,6 +206,35 @@ namespace SourceCodeEditor.AppearenceConfig
             _mainTextField.SyntaxHighlighter.XmlTagNameStyle = new TextStyle(Brushes.Salmon, null, FontStyle.Regular);
             */
         }
+
+        public void SetColorsToHighLighterBlackManual()
+        {
+
+            _mainTextField.SyntaxHighlighter.ClassNameStyle = new TextStyle(Brushes.MediumSpringGreen, null, FontStyle.Bold);
+            _mainTextField.SyntaxHighlighter.StringStyle = new TextStyle(Brushes.Orange, null, FontStyle.Regular);
+            _mainTextField.SyntaxHighlighter.CommentStyle = new TextStyle(Brushes.LimeGreen, null, FontStyle.Regular);
+            _mainTextField.SyntaxHighlighter.CommentTagStyle = new TextStyle(Brushes.DarkGray, null, FontStyle.Regular);
+            _mainTextField.SyntaxHighlighter.KeywordStyle = new TextStyle(Brushes.DeepSkyBlue, null, FontStyle.Regular);
+            _mainTextField.SyntaxHighlighter.KeywordStyle2 = new TextStyle(Brushes.DeepSkyBlue, null, FontStyle.Regular);
+            _mainTextField.SyntaxHighlighter.KeywordStyle3 = new TextStyle(Brushes.DarkBlue, null, FontStyle.Regular);
+            _mainTextField.SyntaxHighlighter.AttributeStyle = new TextStyle(Brushes.Yellow, null, FontStyle.Regular);
+            _mainTextField.SyntaxHighlighter.AttributeValueStyle = new TextStyle(Brushes.LightGreen, null, FontStyle.Regular);
+            _mainTextField.SyntaxHighlighter.FunctionsStyle = new TextStyle(Brushes.Blue, null, FontStyle.Regular);
+            _mainTextField.SyntaxHighlighter.HtmlEntityStyle = new TextStyle(Brushes.LightBlue, null, FontStyle.Regular);
+            _mainTextField.SyntaxHighlighter.XmlEntityStyle = new TextStyle(Brushes.LightBlue, null, FontStyle.Regular);
+            _mainTextField.SyntaxHighlighter.NumberStyle = new TextStyle(Brushes.Red, null, FontStyle.Regular);
+            _mainTextField.SyntaxHighlighter.StatementsStyle = new TextStyle(Brushes.LightCoral, null, FontStyle.Regular);
+            _mainTextField.SyntaxHighlighter.TagBracketStyle = new TextStyle(Brushes.RoyalBlue, null, FontStyle.Regular);
+            _mainTextField.SyntaxHighlighter.TagNameStyle = new TextStyle(Brushes.Salmon, null, FontStyle.Regular);
+            _mainTextField.SyntaxHighlighter.TypesStyle = new TextStyle(Brushes.Aqua, null, FontStyle.Regular);
+            _mainTextField.SyntaxHighlighter.VariableStyle = new TextStyle(Brushes.Cyan, null, FontStyle.Regular);
+            _mainTextField.SyntaxHighlighter.XmlAttributeStyle = new TextStyle(Brushes.Green, null, FontStyle.Regular);
+            _mainTextField.SyntaxHighlighter.XmlAttributeValueStyle = new TextStyle(Brushes.LightGreen, null, FontStyle.Regular);
+            _mainTextField.SyntaxHighlighter.XmlCDataStyle = new TextStyle(Brushes.Salmon, null, FontStyle.Regular);
+            _mainTextField.SyntaxHighlighter.XmlTagBracketStyle = new TextStyle(Brushes.Blue, null, FontStyle.Regular);
+            _mainTextField.SyntaxHighlighter.XmlTagNameStyle = new TextStyle(Brushes.Salmon, null, FontStyle.Regular);
+        }
+
         private void SetColorsToHighLighterWhite()
         {
             SetColorsToHighLighterBlack();
@@ -230,6 +264,34 @@ namespace SourceCodeEditor.AppearenceConfig
             _mainTextField.SyntaxHighlighter.XmlTagNameStyle = new TextStyle(Brushes.Salmon, null, FontStyle.Regular);
             */
         }
+
+        public void SetColorsToHighLighterWhiteManual()
+        {
+            _mainTextField.SyntaxHighlighter.ClassNameStyle = new TextStyle(Brushes.DarkGreen, null, FontStyle.Bold);
+            _mainTextField.SyntaxHighlighter.StringStyle = new TextStyle(Brushes.DarkRed, null, FontStyle.Regular);
+            _mainTextField.SyntaxHighlighter.CommentStyle = new TextStyle(Brushes.Green, null, FontStyle.Regular);
+            _mainTextField.SyntaxHighlighter.CommentTagStyle = new TextStyle(Brushes.DarkViolet, null, FontStyle.Regular);
+            _mainTextField.SyntaxHighlighter.KeywordStyle = new TextStyle(Brushes.BlueViolet, null, FontStyle.Regular);
+            _mainTextField.SyntaxHighlighter.KeywordStyle2 = new TextStyle(Brushes.BlueViolet, null, FontStyle.Regular);
+            _mainTextField.SyntaxHighlighter.KeywordStyle3 = new TextStyle(Brushes.DarkBlue, null, FontStyle.Regular);
+            _mainTextField.SyntaxHighlighter.AttributeStyle = new TextStyle(Brushes.DarkOrange, null, FontStyle.Regular);
+            _mainTextField.SyntaxHighlighter.AttributeValueStyle = new TextStyle(Brushes.DarkGreen, null, FontStyle.Regular);
+            _mainTextField.SyntaxHighlighter.FunctionsStyle = new TextStyle(Brushes.Blue, null, FontStyle.Regular);
+            _mainTextField.SyntaxHighlighter.HtmlEntityStyle = new TextStyle(Brushes.DarkMagenta, null, FontStyle.Regular);
+            _mainTextField.SyntaxHighlighter.XmlEntityStyle = new TextStyle(Brushes.Blue, null, FontStyle.Regular);
+            _mainTextField.SyntaxHighlighter.NumberStyle = new TextStyle(Brushes.Red, null, FontStyle.Regular);
+            _mainTextField.SyntaxHighlighter.StatementsStyle = new TextStyle(Brushes.Coral, null, FontStyle.Regular);
+            _mainTextField.SyntaxHighlighter.TagBracketStyle = new TextStyle(Brushes.Blue, null, FontStyle.Regular);
+            _mainTextField.SyntaxHighlighter.TagNameStyle = new TextStyle(Brushes.Salmon, null, FontStyle.Regular);
+            _mainTextField.SyntaxHighlighter.TypesStyle = new TextStyle(Brushes.DarkOrchid, null, FontStyle.Regular);
+            _mainTextField.SyntaxHighlighter.VariableStyle = new TextStyle(Brushes.DarkSlateBlue, null, FontStyle.Regular);
+            _mainTextField.SyntaxHighlighter.XmlAttributeStyle = new TextStyle(Brushes.DarkGreen, null, FontStyle.Regular);
+            _mainTextField.SyntaxHighlighter.XmlAttributeValueStyle = new TextStyle(Brushes.DeepPink, null, FontStyle.Regular);
+            _mainTextField.SyntaxHighlighter.XmlCDataStyle = new TextStyle(Brushes.Salmon, null, FontStyle.Regular);
+            _mainTextField.SyntaxHighlighter.XmlTagBracketStyle = new TextStyle(Brushes.Blue, null, FontStyle.Regular);
+            _mainTextField.SyntaxHighlighter.XmlTagNameStyle = new TextStyle(Brushes.Salmon, null, FontStyle.Regular);
+        }
+
         private void SetColorsToHighlighter()
         {
             switch (_theme)
@@ -343,16 +405,16 @@ namespace SourceCodeEditor.AppearenceConfig
         /// </summary>
         public void ChangeSyntaxHighlithing()
         {
-            var sercon = new ContentSerializer(_mainTextField.Text);
-            _mainTextField.ClearStylesBuffer();
-            sercon.SerializeContent();
-            SelectionStart = _mainTextField.SelectionStart;
-            _mainTextField.Text = String.Empty;
-            SetColorsToCurrentTheme();
-            SetColorsToHighlighter();
-            mainForm.theme = currentTheme;
-            _mainTextField.Text = sercon.Deserialize();
-            _mainTextField.SelectionStart = SelectionStart;
+                var sercon = new ContentSerializer();
+                _mainTextField.ClearStylesBuffer();
+                sercon.SerializeContent(_mainTextField.Text);
+                SelectionStart = _mainTextField.SelectionStart;
+                _mainTextField.Text = String.Empty;
+                SetColorsToCurrentTheme();
+                SetColorsToHighlighter();
+                mainForm.theme = currentTheme;
+                _mainTextField.Text = sercon.Deserialize();
+                _mainTextField.SelectionStart = SelectionStart;
         }
 
         /// <summary>

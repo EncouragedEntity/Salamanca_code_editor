@@ -1,4 +1,5 @@
 ﻿using FastColoredTextBoxNS;
+using SourceCodeEditor.AppearenceConfig;
 using System.Text.Json;
 
 namespace SourceCodeEditor.Forms.Templates
@@ -143,6 +144,18 @@ namespace SourceCodeEditor.Forms.Templates
         private void comboBoxLanguages_SelectedIndexChanged(object sender, EventArgs e)
         {
             fastColoredTextBox1.Language = (Language)Enum.Parse(typeof(Language), comboBoxLanguages.SelectedItem.ToString());
+            ChangeTextBoxStyle();
+        }
+
+        private void ChangeTextBoxStyle()
+        {
+            var sercon = new ContentSerializer("AddFormContent.bin");
+            fastColoredTextBox1.ClearStylesBuffer();
+            sercon.SerializeContent(fastColoredTextBox1.Text);
+            int SelectionStart = fastColoredTextBox1.SelectionStart;
+            new ThemeChanger(this.fastColoredTextBox1).SetColorsToHighLighterWhiteManual();
+            fastColoredTextBox1.Text = sercon.Deserialize();
+            fastColoredTextBox1.SelectionStart = SelectionStart;
         }
 
         private void DeleteEmptyLines()

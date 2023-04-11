@@ -1,21 +1,24 @@
-﻿using System.Runtime.Serialization.Formatters.Binary;
+﻿using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace SourceCodeEditor
 {
     public class ContentSerializer
     {
-        public string? Content { get; set; }
+        private string _path;
 
-        public ContentSerializer(string content)
+        public ContentSerializer(string path = "TextFieldContent.bin")
         {
-            Content = content;
+            _path = path;
         }
 
         public ContentSerializer() : this(String.Empty) { }
 
-        public void SerializeContent()
+        public void SerializeContent(string Content)
         {
-            using (Stream str = File.Open("TextFieldContent.bin", FileMode.Create))
+            if (_path == String.Empty)
+                _path = "TextFieldContent.bin";
+            using (Stream str = File.Open(_path, FileMode.Create))
             {
                 var bf = new BinaryFormatter();
                 bf.Serialize(str, Content);
@@ -25,10 +28,10 @@ namespace SourceCodeEditor
 
         public string? Deserialize()
         {
-            using (Stream str = File.Open("TextFieldContent.bin", FileMode.Open))
+            using (Stream str = File.Open(_path, FileMode.Open))
             {
                 var bf = new BinaryFormatter();
-                return Content = bf.Deserialize(str) as String;
+                return bf.Deserialize(str) as String;
             }
         }
     }
