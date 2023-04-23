@@ -15,7 +15,6 @@ namespace SourceCodeEditor.AppearenceConfig
         private readonly FastColoredTextBox _mainTextField;
         private readonly StatusStrip _footer;
         private readonly IEnumerable<ToolStripStatusLabel> _labels;
-
         private int SelectionStart = 0;
 
         public ThemeChanger(MainForm form, Theme theme, MenuStrip header, FastColoredTextBox mainTextField, StatusStrip footer, IEnumerable<ToolStripStatusLabel> labels)
@@ -27,7 +26,6 @@ namespace SourceCodeEditor.AppearenceConfig
             _footer = footer;
             _labels = labels;
         }
-
         public ThemeChanger(MainForm form)
         {
             currentTheme = form.theme;
@@ -38,11 +36,11 @@ namespace SourceCodeEditor.AppearenceConfig
             _footer = form.MainFooter;
             _labels = form.GetLabelsFromForm();
         }
-
         public ThemeChanger(FastColoredTextBox mainTextField)
         {
             _mainTextField = mainTextField;
         }
+
         /// <summary>
         /// Change theme
         /// </summary>
@@ -78,7 +76,6 @@ namespace SourceCodeEditor.AppearenceConfig
                     break;
             }
         }
-
         /// <summary>
         /// Set Application controls theme to "Black"
         /// </summary>
@@ -124,7 +121,6 @@ namespace SourceCodeEditor.AppearenceConfig
             _mainTextField.LineNumberColor = Color.Silver;
             */
         }
-
         /// <summary>
         /// Set Application controls theme to "White"
         /// </summary>
@@ -176,7 +172,6 @@ namespace SourceCodeEditor.AppearenceConfig
             currentTheme.LabelsFore = Color.Black;
             */
         }
-
         private void SetColorsToHighLighterBlack()
         {
             currentTheme.syntaxColors!.SetColorsToHighlighter(mainForm.MainTextField);
@@ -206,10 +201,8 @@ namespace SourceCodeEditor.AppearenceConfig
             _mainTextField.SyntaxHighlighter.XmlTagNameStyle = new TextStyle(Brushes.Salmon, null, FontStyle.Regular);
             */
         }
-
         public void SetColorsToHighLighterBlackManual()
         {
-
             _mainTextField.SyntaxHighlighter.ClassNameStyle = new TextStyle(Brushes.MediumSpringGreen, null, FontStyle.Bold);
             _mainTextField.SyntaxHighlighter.StringStyle = new TextStyle(Brushes.Orange, null, FontStyle.Regular);
             _mainTextField.SyntaxHighlighter.CommentStyle = new TextStyle(Brushes.LimeGreen, null, FontStyle.Regular);
@@ -234,7 +227,6 @@ namespace SourceCodeEditor.AppearenceConfig
             _mainTextField.SyntaxHighlighter.XmlTagBracketStyle = new TextStyle(Brushes.Blue, null, FontStyle.Regular);
             _mainTextField.SyntaxHighlighter.XmlTagNameStyle = new TextStyle(Brushes.Salmon, null, FontStyle.Regular);
         }
-
         private void SetColorsToHighLighterWhite()
         {
             SetColorsToHighLighterBlack();
@@ -264,7 +256,6 @@ namespace SourceCodeEditor.AppearenceConfig
             _mainTextField.SyntaxHighlighter.XmlTagNameStyle = new TextStyle(Brushes.Salmon, null, FontStyle.Regular);
             */
         }
-
         public void SetColorsToHighLighterWhiteManual()
         {
             _mainTextField.SyntaxHighlighter.ClassNameStyle = new TextStyle(Brushes.DarkGreen, null, FontStyle.Bold);
@@ -291,7 +282,6 @@ namespace SourceCodeEditor.AppearenceConfig
             _mainTextField.SyntaxHighlighter.XmlTagBracketStyle = new TextStyle(Brushes.Blue, null, FontStyle.Regular);
             _mainTextField.SyntaxHighlighter.XmlTagNameStyle = new TextStyle(Brushes.Salmon, null, FontStyle.Regular);
         }
-
         private void SetColorsToHighlighter()
         {
             switch (_theme)
@@ -311,7 +301,6 @@ namespace SourceCodeEditor.AppearenceConfig
             }
 
         }
-
         private void SetColorsToCurrentThemeBlack()
         {
             currentTheme.syntaxColors = ThemeSerializer.Deserialize<SyntaxColors>("SyntaxColors/BlackSyntax.syn");
@@ -324,7 +313,6 @@ namespace SourceCodeEditor.AppearenceConfig
             currentTheme.syntaxColors = ThemeSerializer.Deserialize<SyntaxColors>("SyntaxColors/WhiteSyntax.syn");
 
         }
-
         public void SetColorsToBlackThemeManually()
         {
             currentTheme.syntaxColors!.ClassNameStyle = Tuple.Create(Color.MediumSpringGreen, FontStyle.Bold);
@@ -377,7 +365,6 @@ namespace SourceCodeEditor.AppearenceConfig
             currentTheme.syntaxColors.XmlTagBracketStyle = Tuple.Create(Color.Blue, FontStyle.Regular);
             currentTheme.syntaxColors.XmlTagNameStyle = Tuple.Create(Color.Salmon, FontStyle.Regular);
         }
-
         private void SetColorsToCurrentTheme()
         {
             currentTheme.syntaxColors = new SyntaxColors();
@@ -399,7 +386,6 @@ namespace SourceCodeEditor.AppearenceConfig
             }
 
         }
-
         /// <summary>
         /// Change syntax highlighting
         /// </summary>
@@ -416,7 +402,6 @@ namespace SourceCodeEditor.AppearenceConfig
                 _mainTextField.Text = sercon.Deserialize();
                 _mainTextField.SelectionStart = SelectionStart;
         }
-
         /// <summary>
         /// Changes "header's" items theme
         /// </summary>

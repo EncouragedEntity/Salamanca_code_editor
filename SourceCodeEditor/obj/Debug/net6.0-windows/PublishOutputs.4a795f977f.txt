@@ -1,0 +1,6 @@
+C:\College\COURSE WORK\SourceCodeEditor\SourceCodeEditor\bin\Release\net6.0-windows\publish\SourceCodeEditor.exe
+C:\College\COURSE WORK\SourceCodeEditor\SourceCodeEditor\bin\Release\net6.0-windows\publish\SourceCodeEditor.dll
+C:\College\COURSE WORK\SourceCodeEditor\SourceCodeEditor\bin\Release\net6.0-windows\publish\SourceCodeEditor.deps.json
+C:\College\COURSE WORK\SourceCodeEditor\SourceCodeEditor\bin\Release\net6.0-windows\publish\SourceCodeEditor.runtimeconfig.json
+C:\College\COURSE WORK\SourceCodeEditor\SourceCodeEditor\bin\Release\net6.0-windows\publish\SourceCodeEditor.pdb
+C:\College\COURSE WORK\SourceCodeEditor\SourceCodeEditor\bin\Release\net6.0-windows\publish\FastColoredTextBox.dll

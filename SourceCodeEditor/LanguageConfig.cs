@@ -10,14 +10,12 @@ namespace SourceCodeEditor
         {
             MainForm = form;
         }
-
         public LanguageConfig() : this(null) { }
 
         public string[] GetLanguages()
         {
             return Enum.GetNames(typeof(Language));
         }
-
         public void LoadLanguages()
         {
             foreach (var lang in GetLanguages())
@@ -28,7 +26,6 @@ namespace SourceCodeEditor
             var firtsItem = MainForm.syntaxToolStripMenuItem.DropDownItems[0] as ToolStripMenuItem;
             firtsItem!.Checked = true;
         }
-
         private void SetLanguagesEvents()
         {
             foreach (ToolStripDropDownItem item in MainForm.syntaxToolStripMenuItem.DropDownItems)
@@ -36,7 +33,6 @@ namespace SourceCodeEditor
                 item.Click += LanguageItem_Click;
             }
         }
-
         private void RemoveCheckFromOtherItems()
         {
             foreach (ToolStripMenuItem item in MainForm.syntaxToolStripMenuItem.DropDownItems)
@@ -61,7 +57,6 @@ namespace SourceCodeEditor
             MainForm.MainTextField.Language = lang;
             return false;
         }
-
         private async void LanguageItem_Click(object? sender, EventArgs e)
         {
             var item = (ToolStripMenuItem)sender!;

@@ -11,7 +11,6 @@ namespace SourceCodeEditor
         public Template() : this(0, String.Empty, Language.Custom) { }
         public Template(string name) : this(0, name, Language.Custom) { }
         public Template(string name, int number) : this(number, name, Language.Custom) { }
-
         public Template(int number, string name, Language language)
         {
             Number = number;

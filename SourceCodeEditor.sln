@@ -7,12 +7,18 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SourceCodeEditor", "SourceC
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		All|Any CPU = All|Any CPU
 		Debug|Any CPU = Debug|Any CPU
+		DefaultBuild|Any CPU = DefaultBuild|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E7C1C0F9-DE82-4F9E-8F36-E6E234AA8C9E}.All|Any CPU.ActiveCfg = Release|Any CPU
+		{E7C1C0F9-DE82-4F9E-8F36-E6E234AA8C9E}.All|Any CPU.Build.0 = Release|Any CPU
 		{E7C1C0F9-DE82-4F9E-8F36-E6E234AA8C9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E7C1C0F9-DE82-4F9E-8F36-E6E234AA8C9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7C1C0F9-DE82-4F9E-8F36-E6E234AA8C9E}.DefaultBuild|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7C1C0F9-DE82-4F9E-8F36-E6E234AA8C9E}.DefaultBuild|Any CPU.Build.0 = Debug|Any CPU
 		{E7C1C0F9-DE82-4F9E-8F36-E6E234AA8C9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7C1C0F9-DE82-4F9E-8F36-E6E234AA8C9E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection

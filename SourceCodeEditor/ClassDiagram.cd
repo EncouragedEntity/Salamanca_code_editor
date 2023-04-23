@@ -1,0 +1,296 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="SourceCodeEditor.AppearenceConfig.CurrentTheme">
+    <Position X="5" Y="7.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AQAgAABAAAAAAAAAAECAAAAABAAAABAAEAAAEQAAEAA=</HashCode>
+      <FileName>AppearenceConfig\CurrentTheme.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="syntaxColors" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SourceCodeEditor.AppearenceConfig.SyntaxColors">
+    <Position X="0.5" Y="4.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AEYABkAAkQgAAACgAAQIBAAgAALACAAAAgAAEEAQIAA=</HashCode>
+      <FileName>AppearenceConfig\SyntaxColors.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SourceCodeEditor.AppearenceConfig.ThemeChanger">
+    <Position X="17" Y="4" Width="3.25" />
+    <AssociationLine Name="mainForm" Type="SourceCodeEditor.MainForm">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.62" Y="0.11" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AQIgABAgAEAQAkAAggAAIAAAAAqACAAAABQCBAAAQAA=</HashCode>
+      <FileName>AppearenceConfig\ThemeChanger.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_theme" />
+      <Field Name="currentTheme" />
+      <Field Name="mainForm" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SourceCodeEditor.AppearenceConfig.ThemeSerializer">
+    <Position X="5" Y="2.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AQAgAAAAACAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AppearenceConfig\ThemeSerializer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_theme" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SourceCodeEditor.MainForm">
+    <Position X="12" Y="5.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="CurrentTheme" Type="SourceCodeEditor.Enums.Theme">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.137" Y="0.104" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="DefaultTheme" Type="SourceCodeEditor.Enums.Theme">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.369" Y="0.482" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="StateOfWindow" Type="SourceCodeEditor.Enums.WindowState">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.539" Y="0.148" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>BKAEEjC40zQiDUJpgGDH0AcCixgIQ0BdL8BzBDFgjmk=</HashCode>
+      <FileName>Forms\MainForm.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="theme" />
+      <Property Name="CurrentTheme" />
+      <Property Name="DefaultTheme" />
+      <Property Name="StateOfWindow" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SourceCodeEditor.Forms.OptionsForm">
+    <Position X="9.25" Y="6.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AgAAAADAACABAAgAAgCAAAECAEggAAQAQAAAAAEAAAA=</HashCode>
+      <FileName>Forms\OptionsForm.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="mainForm" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SourceCodeEditor.Forms.Templates.TemplateAddForm">
+    <Position X="12.75" Y="0.5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AIAAIAIAIOABACCEAAiAKgICAEAAAAAAAABBAQECACg=</HashCode>
+      <FileName>Forms\Templates\TemplateAddForm.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Form" />
+      <Property Name="Template" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SourceCodeEditor.Forms.TemplatesForm">
+    <Position X="15.75" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>/0AAEAoAgGAWCBAAQACCiCACAAABAAECoADRQQBCErg=</HashCode>
+      <FileName>Forms\Templates\TemplatesForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SourceCodeEditor.UserControls.FontStyleControl" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAACAAAACAACCAAAACAEAAAAAAAAAAAgACAAg=</HashCode>
+      <FileName>UserControls\FontStyleControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SourceCodeEditor.UserControls.ThemeOptionsControl">
+    <Position X="10.75" Y="2.75" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAECAAAQAAAgCAAABCAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UserControls\Options\ThemeOptionsControl.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="mainForm" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SourceCodeEditor.UserControls.Options.HotKeysOptionsControl">
+    <Position X="14.25" Y="6.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="_mainForm" Type="SourceCodeEditor.MainForm">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.167" Y="-0.671" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAKgAAACAAAQAAAACAAAACgkwCAAAAAQgAIAAAAAQ=</HashCode>
+      <FileName>UserControls\Options\HotKeysOptionsControl.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_mainForm" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SourceCodeEditor.UserControls.GeneralOptionsControl">
+    <Position X="14.5" Y="4.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAACCCABEgAADBAAACAAIIAQAAMBAAAQgIgAI=</HashCode>
+      <FileName>UserControls\Options\GeneralOptionsControl.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="MainForm" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SourceCodeEditor.UserControls.Options.ColorsOptionsControl">
+    <Position X="8.5" Y="2.75" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>EQAAAAAQAWQSABggQJDCAABCEgAAAgQAcBDAiQQBACA=</HashCode>
+      <FileName>UserControls\Options\Colors\ColorsOptionsControl.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="form" />
+      <Property Name="optionsForm" />
+      <Property Name="CurrentTheme" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SourceCodeEditor.UserControls.Options.SyntaxColorsOptionsControl">
+    <Position X="0.5" Y="2.5" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AmExAgGgRDAAAADgaoPAZACCZABcBwEYcQgRiwgahCI=</HashCode>
+      <FileName>UserControls\Options\Colors\SyntaxColorsOptionsControl.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="_syntaxColors" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SourceCodeEditor.ContentSerializer" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAAEAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ContentSerializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SourceCodeEditor.Header">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Header.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SourceCodeEditor.HotKeysConfig" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAICCAQAQAA=</HashCode>
+      <FileName>HotKeysConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SourceCodeEditor.LanguageConfig">
+    <Position X="11.75" Y="8.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAgBAAAAAAACAAAQAAAAAAEAAAAAAAIAAAAAAAAAACA=</HashCode>
+      <FileName>LanguageConfig.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="MainForm" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SourceCodeEditor.Template">
+    <Position X="9.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAEAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Template.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SourceCodeEditor.TemplateFileManager" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TemplateFileManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="SourceCodeEditor.Enums.Options" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAEACAAAAAAAAAAAQAAgAAAAAA=</HashCode>
+      <FileName>Enums\Options.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SourceCodeEditor.Enums.Theme">
+    <Position X="15" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\Theme.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SourceCodeEditor.Enums.WindowState">
+    <Position X="12.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\WindowState.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SourceCodeEditor.Forms.Templates.TemplateAddMode" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAACAAAAA=</HashCode>
+      <FileName>Forms\Templates\TemplateAddMode.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Delegate Name="SourceCodeEditor.DialogRes" Collapsed="true">
+    <Position X="5.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAACAABAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Forms\MainForm.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

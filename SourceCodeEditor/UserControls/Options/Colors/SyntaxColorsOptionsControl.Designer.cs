@@ -210,13 +210,13 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 100F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 100F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(576, 2299);
+            tableLayoutPanel1.Size = new Size(555, 2299);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // buttonAttribute
             // 
             buttonAttribute.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            buttonAttribute.Location = new Point(190, 3);
+            buttonAttribute.Location = new Point(173, 3);
             buttonAttribute.Name = "buttonAttribute";
             buttonAttribute.Size = new Size(94, 94);
             buttonAttribute.TabIndex = 0;
@@ -225,7 +225,7 @@
             // buttonAttributeValueHtml
             // 
             buttonAttributeValueHtml.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            buttonAttributeValueHtml.Location = new Point(190, 103);
+            buttonAttributeValueHtml.Location = new Point(173, 103);
             buttonAttributeValueHtml.Name = "buttonAttributeValueHtml";
             buttonAttributeValueHtml.Size = new Size(94, 94);
             buttonAttributeValueHtml.TabIndex = 1;
@@ -234,7 +234,7 @@
             // buttonClass
             // 
             buttonClass.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            buttonClass.Location = new Point(190, 203);
+            buttonClass.Location = new Point(173, 203);
             buttonClass.Name = "buttonClass";
             buttonClass.Size = new Size(94, 94);
             buttonClass.TabIndex = 2;
@@ -243,7 +243,7 @@
             // buttonEntityHtml
             // 
             buttonEntityHtml.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            buttonEntityHtml.Location = new Point(190, 303);
+            buttonEntityHtml.Location = new Point(173, 303);
             buttonEntityHtml.Name = "buttonEntityHtml";
             buttonEntityHtml.Size = new Size(94, 94);
             buttonEntityHtml.TabIndex = 3;
@@ -252,7 +252,7 @@
             // buttonFunctions
             // 
             buttonFunctions.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            buttonFunctions.Location = new Point(190, 403);
+            buttonFunctions.Location = new Point(173, 403);
             buttonFunctions.Name = "buttonFunctions";
             buttonFunctions.Size = new Size(94, 94);
             buttonFunctions.TabIndex = 4;
@@ -261,7 +261,7 @@
             // buttonString
             // 
             buttonString.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            buttonString.Location = new Point(190, 503);
+            buttonString.Location = new Point(173, 503);
             buttonString.Name = "buttonString";
             buttonString.Size = new Size(94, 94);
             buttonString.TabIndex = 5;
@@ -270,7 +270,7 @@
             // buttonComment
             // 
             buttonComment.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            buttonComment.Location = new Point(190, 603);
+            buttonComment.Location = new Point(173, 603);
             buttonComment.Name = "buttonComment";
             buttonComment.Size = new Size(94, 94);
             buttonComment.TabIndex = 4;
@@ -279,7 +279,7 @@
             // buttonCommentTag
             // 
             buttonCommentTag.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            buttonCommentTag.Location = new Point(190, 703);
+            buttonCommentTag.Location = new Point(173, 703);
             buttonCommentTag.Name = "buttonCommentTag";
             buttonCommentTag.Size = new Size(94, 94);
             buttonCommentTag.TabIndex = 6;
@@ -288,7 +288,7 @@
             // buttonKeyword
             // 
             buttonKeyword.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            buttonKeyword.Location = new Point(190, 803);
+            buttonKeyword.Location = new Point(173, 803);
             buttonKeyword.Name = "buttonKeyword";
             buttonKeyword.Size = new Size(94, 94);
             buttonKeyword.TabIndex = 7;
@@ -297,7 +297,7 @@
             // buttonKeyword2
             // 
             buttonKeyword2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            buttonKeyword2.Location = new Point(190, 903);
+            buttonKeyword2.Location = new Point(173, 903);
             buttonKeyword2.Name = "buttonKeyword2";
             buttonKeyword2.Size = new Size(94, 94);
             buttonKeyword2.TabIndex = 7;
@@ -306,7 +306,7 @@
             // buttonKeyword3
             // 
             buttonKeyword3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            buttonKeyword3.Location = new Point(190, 1003);
+            buttonKeyword3.Location = new Point(173, 1003);
             buttonKeyword3.Name = "buttonKeyword3";
             buttonKeyword3.Size = new Size(94, 94);
             buttonKeyword3.TabIndex = 8;
@@ -315,7 +315,7 @@
             // buttonVariable
             // 
             buttonVariable.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            buttonVariable.Location = new Point(190, 1103);
+            buttonVariable.Location = new Point(173, 1103);
             buttonVariable.Name = "buttonVariable";
             buttonVariable.Size = new Size(94, 94);
             buttonVariable.TabIndex = 9;
@@ -324,7 +324,7 @@
             // buttonTypesSql
             // 
             buttonTypesSql.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            buttonTypesSql.Location = new Point(190, 1203);
+            buttonTypesSql.Location = new Point(173, 1203);
             buttonTypesSql.Name = "buttonTypesSql";
             buttonTypesSql.Size = new Size(94, 94);
             buttonTypesSql.TabIndex = 10;
@@ -333,7 +333,7 @@
             // buttonNumbers
             // 
             buttonNumbers.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            buttonNumbers.Location = new Point(190, 1303);
+            buttonNumbers.Location = new Point(173, 1303);
             buttonNumbers.Name = "buttonNumbers";
             buttonNumbers.Size = new Size(94, 94);
             buttonNumbers.TabIndex = 10;
@@ -342,7 +342,7 @@
             // buttonStatementsSql
             // 
             buttonStatementsSql.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            buttonStatementsSql.Location = new Point(190, 1403);
+            buttonStatementsSql.Location = new Point(173, 1403);
             buttonStatementsSql.Name = "buttonStatementsSql";
             buttonStatementsSql.Size = new Size(94, 94);
             buttonStatementsSql.TabIndex = 11;
@@ -351,7 +351,7 @@
             // buttonTagBracketHtml
             // 
             buttonTagBracketHtml.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            buttonTagBracketHtml.Location = new Point(190, 1503);
+            buttonTagBracketHtml.Location = new Point(173, 1503);
             buttonTagBracketHtml.Name = "buttonTagBracketHtml";
             buttonTagBracketHtml.Size = new Size(94, 94);
             buttonTagBracketHtml.TabIndex = 12;
@@ -360,7 +360,7 @@
             // buttonTagNameHtml
             // 
             buttonTagNameHtml.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            buttonTagNameHtml.Location = new Point(190, 1603);
+            buttonTagNameHtml.Location = new Point(173, 1603);
             buttonTagNameHtml.Name = "buttonTagNameHtml";
             buttonTagNameHtml.Size = new Size(94, 94);
             buttonTagNameHtml.TabIndex = 13;
@@ -369,7 +369,7 @@
             // buttonEntityXml
             // 
             buttonEntityXml.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            buttonEntityXml.Location = new Point(190, 1703);
+            buttonEntityXml.Location = new Point(173, 1703);
             buttonEntityXml.Name = "buttonEntityXml";
             buttonEntityXml.Size = new Size(94, 94);
             buttonEntityXml.TabIndex = 18;
@@ -378,7 +378,7 @@
             // buttonAttributeXml
             // 
             buttonAttributeXml.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            buttonAttributeXml.Location = new Point(190, 1803);
+            buttonAttributeXml.Location = new Point(173, 1803);
             buttonAttributeXml.Name = "buttonAttributeXml";
             buttonAttributeXml.Size = new Size(94, 94);
             buttonAttributeXml.TabIndex = 17;
@@ -387,7 +387,7 @@
             // buttonAttributeValueXml
             // 
             buttonAttributeValueXml.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            buttonAttributeValueXml.Location = new Point(190, 1903);
+            buttonAttributeValueXml.Location = new Point(173, 1903);
             buttonAttributeValueXml.Name = "buttonAttributeValueXml";
             buttonAttributeValueXml.Size = new Size(94, 94);
             buttonAttributeValueXml.TabIndex = 16;
@@ -396,7 +396,7 @@
             // buttonCDataXml
             // 
             buttonCDataXml.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            buttonCDataXml.Location = new Point(190, 2003);
+            buttonCDataXml.Location = new Point(173, 2003);
             buttonCDataXml.Name = "buttonCDataXml";
             buttonCDataXml.Size = new Size(94, 94);
             buttonCDataXml.TabIndex = 15;
@@ -405,7 +405,7 @@
             // buttonTagBracketXml
             // 
             buttonTagBracketXml.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            buttonTagBracketXml.Location = new Point(190, 2103);
+            buttonTagBracketXml.Location = new Point(173, 2103);
             buttonTagBracketXml.Name = "buttonTagBracketXml";
             buttonTagBracketXml.Size = new Size(94, 94);
             buttonTagBracketXml.TabIndex = 14;
@@ -414,7 +414,7 @@
             // buttonTagNameXml
             // 
             buttonTagNameXml.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            buttonTagNameXml.Location = new Point(190, 2203);
+            buttonTagNameXml.Location = new Point(173, 2203);
             buttonTagNameXml.Name = "buttonTagNameXml";
             buttonTagNameXml.Size = new Size(94, 94);
             buttonTagNameXml.TabIndex = 19;
@@ -426,20 +426,20 @@
             labelAttribute.AutoSize = true;
             labelAttribute.Location = new Point(3, 40);
             labelAttribute.Name = "labelAttribute";
-            labelAttribute.Size = new Size(152, 20);
+            labelAttribute.Size = new Size(141, 20);
             labelAttribute.TabIndex = 20;
-            labelAttribute.Text = "Attribute (C#)";
+            labelAttribute.Text = "Attribute ";
             labelAttribute.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // labelAttributeValueHtml
             // 
             labelAttributeValueHtml.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             labelAttributeValueHtml.AutoSize = true;
-            labelAttributeValueHtml.Location = new Point(3, 130);
+            labelAttributeValueHtml.Location = new Point(3, 140);
             labelAttributeValueHtml.Name = "labelAttributeValueHtml";
-            labelAttributeValueHtml.Size = new Size(152, 40);
+            labelAttributeValueHtml.Size = new Size(141, 20);
             labelAttributeValueHtml.TabIndex = 21;
-            labelAttributeValueHtml.Text = "Attribute value (HTML)";
+            labelAttributeValueHtml.Text = "Attribute value ";
             labelAttributeValueHtml.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // labelClass
@@ -448,7 +448,7 @@
             labelClass.AutoSize = true;
             labelClass.Location = new Point(3, 240);
             labelClass.Name = "labelClass";
-            labelClass.Size = new Size(152, 20);
+            labelClass.Size = new Size(141, 20);
             labelClass.TabIndex = 22;
             labelClass.Text = "Class name";
             labelClass.TextAlign = ContentAlignment.MiddleCenter;
@@ -459,7 +459,7 @@
             labelEntityHtml.AutoSize = true;
             labelEntityHtml.Location = new Point(3, 340);
             labelEntityHtml.Name = "labelEntityHtml";
-            labelEntityHtml.Size = new Size(152, 20);
+            labelEntityHtml.Size = new Size(141, 20);
             labelEntityHtml.TabIndex = 23;
             labelEntityHtml.Text = "HTML entity";
             labelEntityHtml.TextAlign = ContentAlignment.MiddleCenter;
@@ -470,7 +470,7 @@
             labelFunctions.AutoSize = true;
             labelFunctions.Location = new Point(3, 440);
             labelFunctions.Name = "labelFunctions";
-            labelFunctions.Size = new Size(152, 20);
+            labelFunctions.Size = new Size(141, 20);
             labelFunctions.TabIndex = 24;
             labelFunctions.Text = "Functions";
             labelFunctions.TextAlign = ContentAlignment.MiddleCenter;
@@ -481,7 +481,7 @@
             labelString.AutoSize = true;
             labelString.Location = new Point(3, 540);
             labelString.Name = "labelString";
-            labelString.Size = new Size(152, 20);
+            labelString.Size = new Size(141, 20);
             labelString.TabIndex = 25;
             labelString.Text = "String";
             labelString.TextAlign = ContentAlignment.MiddleCenter;
@@ -492,7 +492,7 @@
             labelComment.AutoSize = true;
             labelComment.Location = new Point(3, 640);
             labelComment.Name = "labelComment";
-            labelComment.Size = new Size(152, 20);
+            labelComment.Size = new Size(141, 20);
             labelComment.TabIndex = 26;
             labelComment.Text = "Comment";
             labelComment.TextAlign = ContentAlignment.MiddleCenter;
@@ -503,7 +503,7 @@
             labelCommentTag.AutoSize = true;
             labelCommentTag.Location = new Point(3, 740);
             labelCommentTag.Name = "labelCommentTag";
-            labelCommentTag.Size = new Size(152, 20);
+            labelCommentTag.Size = new Size(141, 20);
             labelCommentTag.TabIndex = 27;
             labelCommentTag.Text = "Comment tag";
             labelCommentTag.TextAlign = ContentAlignment.MiddleCenter;
@@ -514,7 +514,7 @@
             labelKeyword.AutoSize = true;
             labelKeyword.Location = new Point(3, 840);
             labelKeyword.Name = "labelKeyword";
-            labelKeyword.Size = new Size(152, 20);
+            labelKeyword.Size = new Size(141, 20);
             labelKeyword.TabIndex = 28;
             labelKeyword.Text = "Keyword";
             labelKeyword.TextAlign = ContentAlignment.MiddleCenter;
@@ -525,7 +525,7 @@
             labelKeyword2.AutoSize = true;
             labelKeyword2.Location = new Point(3, 930);
             labelKeyword2.Name = "labelKeyword2";
-            labelKeyword2.Size = new Size(152, 40);
+            labelKeyword2.Size = new Size(141, 40);
             labelKeyword2.TabIndex = 29;
             labelKeyword2.Text = "Keyword 2 (specific PHP)";
             labelKeyword2.TextAlign = ContentAlignment.MiddleCenter;
@@ -536,7 +536,7 @@
             labelKeyword3.AutoSize = true;
             labelKeyword3.Location = new Point(3, 1030);
             labelKeyword3.Name = "labelKeyword3";
-            labelKeyword3.Size = new Size(152, 40);
+            labelKeyword3.Size = new Size(141, 40);
             labelKeyword3.TabIndex = 30;
             labelKeyword3.Text = "Keyword 3 (specific PHP)";
             labelKeyword3.TextAlign = ContentAlignment.MiddleCenter;
@@ -547,7 +547,7 @@
             labelVariable.AutoSize = true;
             labelVariable.Location = new Point(3, 1140);
             labelVariable.Name = "labelVariable";
-            labelVariable.Size = new Size(152, 20);
+            labelVariable.Size = new Size(141, 20);
             labelVariable.TabIndex = 31;
             labelVariable.Text = "Variable";
             labelVariable.TextAlign = ContentAlignment.MiddleCenter;
@@ -558,7 +558,7 @@
             labelTypesSql.AutoSize = true;
             labelTypesSql.Location = new Point(3, 1240);
             labelTypesSql.Name = "labelTypesSql";
-            labelTypesSql.Size = new Size(152, 20);
+            labelTypesSql.Size = new Size(141, 20);
             labelTypesSql.TabIndex = 32;
             labelTypesSql.Text = "Types (SQL)";
             labelTypesSql.TextAlign = ContentAlignment.MiddleCenter;
@@ -569,7 +569,7 @@
             labelNumbers.AutoSize = true;
             labelNumbers.Location = new Point(3, 1340);
             labelNumbers.Name = "labelNumbers";
-            labelNumbers.Size = new Size(152, 20);
+            labelNumbers.Size = new Size(141, 20);
             labelNumbers.TabIndex = 33;
             labelNumbers.Text = "Numbers";
             labelNumbers.TextAlign = ContentAlignment.MiddleCenter;
@@ -580,7 +580,7 @@
             labelStatementsSql.AutoSize = true;
             labelStatementsSql.Location = new Point(3, 1440);
             labelStatementsSql.Name = "labelStatementsSql";
-            labelStatementsSql.Size = new Size(152, 20);
+            labelStatementsSql.Size = new Size(141, 20);
             labelStatementsSql.TabIndex = 34;
             labelStatementsSql.Text = "Statements (SQL)";
             labelStatementsSql.TextAlign = ContentAlignment.MiddleCenter;
@@ -591,7 +591,7 @@
             labelTagBracketHtml.AutoSize = true;
             labelTagBracketHtml.Location = new Point(3, 1540);
             labelTagBracketHtml.Name = "labelTagBracketHtml";
-            labelTagBracketHtml.Size = new Size(152, 20);
+            labelTagBracketHtml.Size = new Size(141, 20);
             labelTagBracketHtml.TabIndex = 35;
             labelTagBracketHtml.Text = "Tag bracket (HTML)";
             labelTagBracketHtml.TextAlign = ContentAlignment.MiddleCenter;
@@ -602,7 +602,7 @@
             labelTagNameHtml.AutoSize = true;
             labelTagNameHtml.Location = new Point(3, 1640);
             labelTagNameHtml.Name = "labelTagNameHtml";
-            labelTagNameHtml.Size = new Size(152, 20);
+            labelTagNameHtml.Size = new Size(141, 20);
             labelTagNameHtml.TabIndex = 36;
             labelTagNameHtml.Text = "Tag name (HTML)";
             labelTagNameHtml.TextAlign = ContentAlignment.MiddleCenter;
@@ -613,7 +613,7 @@
             labelEntityXml.AutoSize = true;
             labelEntityXml.Location = new Point(3, 1740);
             labelEntityXml.Name = "labelEntityXml";
-            labelEntityXml.Size = new Size(152, 20);
+            labelEntityXml.Size = new Size(141, 20);
             labelEntityXml.TabIndex = 37;
             labelEntityXml.Text = "XML entity";
             labelEntityXml.TextAlign = ContentAlignment.MiddleCenter;
@@ -624,7 +624,7 @@
             labelAttributeXml.AutoSize = true;
             labelAttributeXml.Location = new Point(3, 1840);
             labelAttributeXml.Name = "labelAttributeXml";
-            labelAttributeXml.Size = new Size(152, 20);
+            labelAttributeXml.Size = new Size(141, 20);
             labelAttributeXml.TabIndex = 38;
             labelAttributeXml.Text = "XML attribute";
             labelAttributeXml.TextAlign = ContentAlignment.MiddleCenter;
@@ -635,7 +635,7 @@
             labelAttributeValueXml.AutoSize = true;
             labelAttributeValueXml.Location = new Point(3, 1940);
             labelAttributeValueXml.Name = "labelAttributeValueXml";
-            labelAttributeValueXml.Size = new Size(152, 20);
+            labelAttributeValueXml.Size = new Size(141, 20);
             labelAttributeValueXml.TabIndex = 39;
             labelAttributeValueXml.Text = "XML attribute value";
             labelAttributeValueXml.TextAlign = ContentAlignment.MiddleCenter;
@@ -646,7 +646,7 @@
             labelCDataXml.AutoSize = true;
             labelCDataXml.Location = new Point(3, 2040);
             labelCDataXml.Name = "labelCDataXml";
-            labelCDataXml.Size = new Size(152, 20);
+            labelCDataXml.Size = new Size(141, 20);
             labelCDataXml.TabIndex = 40;
             labelCDataXml.Text = "XML CData";
             labelCDataXml.TextAlign = ContentAlignment.MiddleCenter;
@@ -657,7 +657,7 @@
             labelTagBracketXml.AutoSize = true;
             labelTagBracketXml.Location = new Point(3, 2140);
             labelTagBracketXml.Name = "labelTagBracketXml";
-            labelTagBracketXml.Size = new Size(152, 20);
+            labelTagBracketXml.Size = new Size(141, 20);
             labelTagBracketXml.TabIndex = 41;
             labelTagBracketXml.Text = "XML tag bracket";
             labelTagBracketXml.TextAlign = ContentAlignment.MiddleCenter;
@@ -668,168 +668,168 @@
             labelTagNameXml.AutoSize = true;
             labelTagNameXml.Location = new Point(3, 2240);
             labelTagNameXml.Name = "labelTagNameXml";
-            labelTagNameXml.Size = new Size(152, 20);
+            labelTagNameXml.Size = new Size(141, 20);
             labelTagNameXml.TabIndex = 42;
             labelTagNameXml.Text = "XML tag name";
             labelTagNameXml.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // fontStyleControl1
             // 
-            fontStyleControl1.Location = new Point(319, 3);
+            fontStyleControl1.Location = new Point(297, 3);
             fontStyleControl1.Name = "fontStyleControl1";
             fontStyleControl1.Size = new Size(254, 94);
             fontStyleControl1.TabIndex = 43;
             // 
             // fontStyleControl2
             // 
-            fontStyleControl2.Location = new Point(319, 103);
+            fontStyleControl2.Location = new Point(297, 103);
             fontStyleControl2.Name = "fontStyleControl2";
             fontStyleControl2.Size = new Size(254, 94);
             fontStyleControl2.TabIndex = 44;
             // 
             // fontStyleControl3
             // 
-            fontStyleControl3.Location = new Point(319, 203);
+            fontStyleControl3.Location = new Point(297, 203);
             fontStyleControl3.Name = "fontStyleControl3";
             fontStyleControl3.Size = new Size(254, 94);
             fontStyleControl3.TabIndex = 45;
             // 
             // fontStyleControl4
             // 
-            fontStyleControl4.Location = new Point(319, 303);
+            fontStyleControl4.Location = new Point(297, 303);
             fontStyleControl4.Name = "fontStyleControl4";
             fontStyleControl4.Size = new Size(254, 94);
             fontStyleControl4.TabIndex = 46;
             // 
             // fontStyleControl5
             // 
-            fontStyleControl5.Location = new Point(319, 403);
+            fontStyleControl5.Location = new Point(297, 403);
             fontStyleControl5.Name = "fontStyleControl5";
             fontStyleControl5.Size = new Size(254, 94);
             fontStyleControl5.TabIndex = 47;
             // 
             // fontStyleControl6
             // 
-            fontStyleControl6.Location = new Point(319, 503);
+            fontStyleControl6.Location = new Point(297, 503);
             fontStyleControl6.Name = "fontStyleControl6";
             fontStyleControl6.Size = new Size(254, 94);
             fontStyleControl6.TabIndex = 48;
             // 
             // fontStyleControl7
             // 
-            fontStyleControl7.Location = new Point(319, 603);
+            fontStyleControl7.Location = new Point(297, 603);
             fontStyleControl7.Name = "fontStyleControl7";
             fontStyleControl7.Size = new Size(254, 94);
             fontStyleControl7.TabIndex = 49;
             // 
             // fontStyleControl8
             // 
-            fontStyleControl8.Location = new Point(319, 703);
+            fontStyleControl8.Location = new Point(297, 703);
             fontStyleControl8.Name = "fontStyleControl8";
             fontStyleControl8.Size = new Size(254, 94);
             fontStyleControl8.TabIndex = 50;
             // 
             // fontStyleControl9
             // 
-            fontStyleControl9.Location = new Point(319, 803);
+            fontStyleControl9.Location = new Point(297, 803);
             fontStyleControl9.Name = "fontStyleControl9";
             fontStyleControl9.Size = new Size(254, 94);
             fontStyleControl9.TabIndex = 51;
             // 
             // fontStyleControl10
             // 
-            fontStyleControl10.Location = new Point(319, 903);
+            fontStyleControl10.Location = new Point(297, 903);
             fontStyleControl10.Name = "fontStyleControl10";
             fontStyleControl10.Size = new Size(254, 94);
             fontStyleControl10.TabIndex = 52;
             // 
             // fontStyleControl11
             // 
-            fontStyleControl11.Location = new Point(319, 1003);
+            fontStyleControl11.Location = new Point(297, 1003);
             fontStyleControl11.Name = "fontStyleControl11";
             fontStyleControl11.Size = new Size(254, 94);
             fontStyleControl11.TabIndex = 53;
             // 
             // fontStyleControl12
             // 
-            fontStyleControl12.Location = new Point(319, 1103);
+            fontStyleControl12.Location = new Point(297, 1103);
             fontStyleControl12.Name = "fontStyleControl12";
             fontStyleControl12.Size = new Size(254, 94);
             fontStyleControl12.TabIndex = 54;
             // 
             // fontStyleControl13
             // 
-            fontStyleControl13.Location = new Point(319, 1203);
+            fontStyleControl13.Location = new Point(297, 1203);
             fontStyleControl13.Name = "fontStyleControl13";
             fontStyleControl13.Size = new Size(254, 94);
             fontStyleControl13.TabIndex = 55;
             // 
             // fontStyleControl14
             // 
-            fontStyleControl14.Location = new Point(319, 1303);
+            fontStyleControl14.Location = new Point(297, 1303);
             fontStyleControl14.Name = "fontStyleControl14";
             fontStyleControl14.Size = new Size(254, 94);
             fontStyleControl14.TabIndex = 56;
             // 
             // fontStyleControl15
             // 
-            fontStyleControl15.Location = new Point(319, 1403);
+            fontStyleControl15.Location = new Point(297, 1403);
             fontStyleControl15.Name = "fontStyleControl15";
             fontStyleControl15.Size = new Size(254, 94);
             fontStyleControl15.TabIndex = 57;
             // 
             // fontStyleControl16
             // 
-            fontStyleControl16.Location = new Point(319, 1503);
+            fontStyleControl16.Location = new Point(297, 1503);
             fontStyleControl16.Name = "fontStyleControl16";
             fontStyleControl16.Size = new Size(254, 94);
             fontStyleControl16.TabIndex = 58;
             // 
             // fontStyleControl17
             // 
-            fontStyleControl17.Location = new Point(319, 1603);
+            fontStyleControl17.Location = new Point(297, 1603);
             fontStyleControl17.Name = "fontStyleControl17";
             fontStyleControl17.Size = new Size(254, 94);
             fontStyleControl17.TabIndex = 59;
             // 
             // fontStyleControl18
             // 
-            fontStyleControl18.Location = new Point(319, 1703);
+            fontStyleControl18.Location = new Point(297, 1703);
             fontStyleControl18.Name = "fontStyleControl18";
             fontStyleControl18.Size = new Size(254, 94);
             fontStyleControl18.TabIndex = 60;
             // 
             // fontStyleControl19
             // 
-            fontStyleControl19.Location = new Point(319, 1803);
+            fontStyleControl19.Location = new Point(297, 1803);
             fontStyleControl19.Name = "fontStyleControl19";
             fontStyleControl19.Size = new Size(254, 94);
             fontStyleControl19.TabIndex = 61;
             // 
             // fontStyleControl20
             // 
-            fontStyleControl20.Location = new Point(319, 1903);
+            fontStyleControl20.Location = new Point(297, 1903);
             fontStyleControl20.Name = "fontStyleControl20";
             fontStyleControl20.Size = new Size(254, 94);
             fontStyleControl20.TabIndex = 62;
             // 
             // fontStyleControl21
             // 
-            fontStyleControl21.Location = new Point(319, 2003);
+            fontStyleControl21.Location = new Point(297, 2003);
             fontStyleControl21.Name = "fontStyleControl21";
             fontStyleControl21.Size = new Size(254, 94);
             fontStyleControl21.TabIndex = 63;
             // 
             // fontStyleControl22
             // 
-            fontStyleControl22.Location = new Point(319, 2103);
+            fontStyleControl22.Location = new Point(297, 2103);
             fontStyleControl22.Name = "fontStyleControl22";
             fontStyleControl22.Size = new Size(254, 94);
             fontStyleControl22.TabIndex = 64;
             // 
             // fontStyleControl23
             // 
-            fontStyleControl23.Location = new Point(319, 2203);
+            fontStyleControl23.Location = new Point(297, 2203);
             fontStyleControl23.Name = "fontStyleControl23";
             fontStyleControl23.Size = new Size(254, 94);
             fontStyleControl23.TabIndex = 65;
@@ -842,13 +842,13 @@
             panel1.Dock = DockStyle.Bottom;
             panel1.Location = new Point(0, 2299);
             panel1.Name = "panel1";
-            panel1.Size = new Size(576, 68);
+            panel1.Size = new Size(555, 68);
             panel1.TabIndex = 1;
             // 
             // buttonToDefault
             // 
             buttonToDefault.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            buttonToDefault.Location = new Point(242, 36);
+            buttonToDefault.Location = new Point(221, 36);
             buttonToDefault.Name = "buttonToDefault";
             buttonToDefault.Size = new Size(131, 29);
             buttonToDefault.TabIndex = 2;
@@ -859,7 +859,7 @@
             // buttonDiscard
             // 
             buttonDiscard.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            buttonDiscard.Location = new Point(379, 36);
+            buttonDiscard.Location = new Point(358, 36);
             buttonDiscard.Name = "buttonDiscard";
             buttonDiscard.Size = new Size(94, 29);
             buttonDiscard.TabIndex = 1;
@@ -870,7 +870,7 @@
             // buttonSave
             // 
             buttonSave.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            buttonSave.Location = new Point(479, 36);
+            buttonSave.Location = new Point(458, 36);
             buttonSave.Name = "buttonSave";
             buttonSave.Size = new Size(94, 29);
             buttonSave.TabIndex = 0;
@@ -887,7 +887,7 @@
             Controls.Add(panel1);
             Controls.Add(tableLayoutPanel1);
             Name = "SyntaxColorsOptionsControl";
-            Size = new Size(576, 1929);
+            Size = new Size(555, 1929);
             Load += SyntaxColorsOptionsControl_Load;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();

@@ -1,4 +1,5 @@
 using FastColoredTextBoxNS;
+using Microsoft.VisualBasic.FileIO;
 using SourceCodeEditor.AppearenceConfig;
 using SourceCodeEditor.Enums;
 using SourceCodeEditor.Forms;
@@ -35,32 +36,31 @@ namespace SourceCodeEditor
         /// </summary>
         private bool _isFileSaved { get; set; } = false;
         #endregion
-
         public MainForm()
         {
             InitializeComponent();
+            // Get default theme from file and apply it on load
             theme = ThemeSerializer.Deserialize<CurrentTheme>("Themes/BlackTheme.theme")!;
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
-            //Set toolStripMenuItem dropdown items from "MainTextField.Languages" on load
+            // Set toolStripMenuItem dropdown items from "MainTextField.Languages" on load
             new LanguageConfig(this).LoadLanguages();
-
-            //Load hotkeys config from file on form load
+            // Load hotkeys config from file on form load
             new HotKeysConfig(MainHeader).LoadHotkeysConfig();
-            LoadTemplatesToolStrips();
-
-
-            //Get default theme from file and apply it on load
+            // Set syntax colors from file
             theme.syntaxColors = ThemeSerializer.Deserialize<SyntaxColors>("SyntaxColors/BlackSyntax.syn");
+            // Set current theme as default
             CurrentTheme = DefaultTheme;
+            // Change theme of application to default
             new ThemeChanger(this).ChangeTheme(CurrentTheme);
+            // Delete unnecessary labels
             DeleteUnnecessaryLabels();
-
+            // Load templates to dropdown
             LoadTemplatesToolStrips();
+            // Change theme of header after loading
             new ThemeChanger(this).ChangeHeaderTheme(theme);
         }
-
         #region Methods
 
         #region File
@@ -205,7 +205,6 @@ namespace SourceCodeEditor
             DeleteSyntaxLabel();
             DeleteFontSizeLabel(); 
         }
-
         /// <summary>
         /// Switches file save mark ("*") in form text
         /// </summary>
@@ -241,13 +240,11 @@ namespace SourceCodeEditor
             FileNameToFormText(_currentFile);
             IsSavedLabel.Text = "File status: Saved";
         }
-
         /// <summary>
         /// Sets form text as App name and file opened name
         /// </summary>
         /// <param name="FileName">Name of file to set</param>
         private void FileNameToFormText(string FileName = "*") => this.Text = $"{_applicationName} | {Path.GetFileName(FileName)}";
-
         /// <summary>
         /// Get all labels from StatusStrip
         /// </summary>
@@ -279,8 +276,6 @@ namespace SourceCodeEditor
             }
             return labels;
         }
-
-        
         /// <summary>
         /// Show OptionsForm dialog
         /// </summary>
@@ -288,7 +283,6 @@ namespace SourceCodeEditor
         {
             new OptionsForm(this).ShowDialog();
         }
-
         /// <summary>
         /// Deletes status label from footer and unchecks context menu item
         /// </summary>
@@ -323,12 +317,10 @@ namespace SourceCodeEditor
         {
             DeleteStatusLabel(syntaxLabel, syntaxToolStripMenuItem1);
         }
-
         private void DeleteFontSizeLabel()
         {
             DeleteStatusLabel(FontSizeLabel, fontSizeToolStripMenuItem);
         }
-
         /// <summary>
         /// Line count status switching
         /// </summary>
@@ -446,7 +438,6 @@ namespace SourceCodeEditor
             button.Font = new Font(MainFooter.Font.FontFamily, MainTextField.Font.Size - 3, MainFooter.Font.Style);
             MainFooter.Items.Add(button);
         }
-
         private void fontSizeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var item = (ToolStripMenuItem)sender;
@@ -465,7 +456,6 @@ namespace SourceCodeEditor
             label.Font = new Font(MainFooter.Font.FontFamily, MainTextField.Font.Size - 3, MainFooter.Font.Style);
             MainFooter.Items.Add(label);
         }
-
         /// <summary>
         /// Set the selection details into status labels
         /// </summary>
@@ -474,7 +464,6 @@ namespace SourceCodeEditor
             SymbolCountLable.Text = $"Current symbol: {MainTextField.Selection.Start.iChar}";
             CurrentLineLabel.Text = $"Current line: {MainTextField.Selection.Start.iLine + 1}";
         }
-
         /// <summary>
         /// Occurs when content of MainTextField changes somehow
         /// </summary>
@@ -496,18 +485,15 @@ namespace SourceCodeEditor
         {
             MainTextField_OnContentChanged();
         }
-
         private void MainTextField_ZoomChanged(object sender, EventArgs e)
         {
             var zoom = MainTextField.Zoom;
             zoomPercentageLabel.Text = $"Zoom: {zoom}%";
         }
-
         private void zoomPercentageLabel_Click(object sender, EventArgs e)
         {
             MainTextField.Zoom = DefaultZoom;
         }
-
         /// <summary>
         /// Shows message box on form closing if file is unsaved to confirm closing with or without save
         /// </summary>
@@ -531,8 +517,33 @@ namespace SourceCodeEditor
                         e.Cancel = true;
                 }
             }
-        }
 
+
+                DeleteTemporaryFiles();
+
+        }
+        /// <summary>
+        /// Deletes temporary files
+        /// </summary>
+        private void DeleteTemporaryFiles()
+        {
+            try
+            {
+                FileSystem.DeleteFile("AddFormContent.bin", UIOption.OnlyErrorDialogs, RecycleOption.DeletePermanently);
+            }
+            catch (FileNotFoundException)
+            {
+
+            }
+            try
+            {
+                FileSystem.DeleteFile("TextFieldContent.bin", UIOption.OnlyErrorDialogs, RecycleOption.DeletePermanently);
+            }
+            catch (FileNotFoundException)
+            {
+
+            }
+        }
         /// <summary>
         /// Switch state of window
         /// </summary>
@@ -563,8 +574,8 @@ namespace SourceCodeEditor
                     }
                     break;
             }
-        }
 
+        }
         private void templatesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LoadTemplatesToolStrips();
@@ -577,7 +588,6 @@ namespace SourceCodeEditor
             new ThemeChanger(this).ChangeHeaderTheme(theme);
 
         }
-
         private void OnTemplateClick(object sender, EventArgs e)
         {
             var item = (ToolStripMenuItem)sender;
@@ -609,13 +619,17 @@ namespace SourceCodeEditor
             }
             MessageBox.Show($"Wrong language selected at Main Text Field.\nYou should select \"{temp.Language}\"!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-
+        /// <summary>
+        /// Delete all templates tool strips
+        /// </summary>
         private void DeleteTemplatesToolStrips()
         {
             templatesToolStripMenuItem.DropDownItems.Clear();
             templatesToolStripMenuItem.DropDownItems.Add("Configuration", null, templatesToolStripMenuItem_Click!);
         }
-
+        /// <summary>
+        /// Load templates tool strips
+        /// </summary>
         private void LoadTemplatesToolStrips()
         {
             new TemplateFileManager().RenameTemplatesFiles();
@@ -647,18 +661,31 @@ namespace SourceCodeEditor
                 templatesToolStripMenuItem.DropDownItems.Add(new ToolStripMenuItem($"Template{infoFilesDeserialized[i].Number} - {infoFilesDeserialized[i].Name} ({infoFilesDeserialized[i].Language})", null, OnTemplateClick!));
             }
         }
-
         #region Font
+        /// <summary>
+        /// Set font size for everything
+        /// </summary>
+        /// <param name="fontSize">Font size to set</param>
         public void SetFontSizeForEverything(float fontSize)
         {
             SetFontSizeForMainTextField(fontSize);
             SetFontSizeForHeader(fontSize);
             SetFontSizeForFooter(fontSize);
+
+            FontSizeLabel.Text = $"Font size: {fontSize}";
         }
+        /// <summary>
+        /// Set font size for main text field
+        /// </summary>
+        /// <param name="fontSize">Font size to set</param>
         public void SetFontSizeForMainTextField(float fontSize)
         {
             MainTextField.Font = new Font(MainTextField.Font.FontFamily, fontSize, MainTextField.Font.Style);
         }
+        /// <summary>
+        /// Set font size for header menu strip
+        /// </summary>
+        /// <param name="fontSize">Font size to set</param>
         public void SetFontSizeForHeader(float fontSize)
         {
             foreach (ToolStripItem item in MainHeader.Items)
@@ -666,6 +693,10 @@ namespace SourceCodeEditor
                 item.Font = new Font(MainHeader.Font.FontFamily, fontSize - 3, MainHeader.Font.Style);
             }
         }
+        /// <summary>
+        /// Set font size for footer status strip
+        /// </summary>
+        /// <param name="fontSize">Font size to set</param>
         public void SetFontSizeForFooter(float fontSize)
         {
             foreach (ToolStripItem item in MainFooter.Items)
@@ -674,8 +705,6 @@ namespace SourceCodeEditor
             }
         } 
         #endregion
-
-
         #endregion
     }
 }

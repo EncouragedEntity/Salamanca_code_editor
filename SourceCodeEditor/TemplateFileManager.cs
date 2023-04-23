@@ -4,7 +4,6 @@ namespace SourceCodeEditor
 {
     public class TemplateFileManager
     {
-
         /// <summary>
         /// If there are spaces between templates, clear them and put templates in order
         /// </summary>

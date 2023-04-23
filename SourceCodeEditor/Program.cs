@@ -10,8 +10,7 @@ namespace SourceCodeEditor
         {
             ApplicationConfiguration.Initialize();
 
-            MainForm mainForm = new MainForm();
-            Application.Run(mainForm);
+            Application.Run(new MainForm());
         }
     }
 }

@@ -7,6 +7,8 @@
     public partial class HotKeysOptionsControl : UserControl
     {
         private MainForm? _mainForm = null;
+        private List<Keys> listofkeys = new List<Keys>();
+
         public HotKeysOptionsControl(MainForm? mainForm)
         {
             InitializeComponent();
@@ -31,17 +33,9 @@
             }
         }
 
-        private void SetPanelButtonsPosition()
-        {
-            var buttons = panel1.Controls.OfType<Button>().ToList();
-            buttons[0].Left = panel1.Width - 95;
-            buttons[1].Left = panel1.Width - buttons[0].Width - 100;
-        }
-
         private void ValidateSize()
         {
             SetDataGridWidth();
-            SetPanelButtonsPosition();
         }
 
         private void HotKeysOptionsControl_SizeChanged(object sender, EventArgs e)
@@ -77,7 +71,6 @@
             return (false, -1, -1);
         }
 
-        private List<Keys> listofkeys = new List<Keys>();
 
         private void dataGridView1_KeyUp(object sender, KeyEventArgs e)
         {
@@ -116,16 +109,6 @@
                 else
                     dataGridView1.CurrentCell.Value += $"{key} ";
             }
-        }
-
-        private void buttonDiscard_Click(object sender, EventArgs e)
-        {
-            HotKeysOptionsControl_Load(sender, e);
-        }
-
-        private void buttonSave_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

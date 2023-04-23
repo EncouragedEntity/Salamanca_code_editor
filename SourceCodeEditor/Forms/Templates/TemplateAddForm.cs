@@ -129,10 +129,20 @@ namespace SourceCodeEditor.Forms.Templates
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            DeleteEmptyLines();
-            AddTemplate();
-            this.DialogResult = DialogResult.Yes;
-            this.Close();
+            if (textBoxName.Text != "Template")
+            {
+                if (!String.IsNullOrEmpty(fastColoredTextBox1.Text))
+                {
+                    DeleteEmptyLines();
+                    AddTemplate();
+                    this.DialogResult = DialogResult.Yes;
+                    this.Close();
+                    return;
+                }
+                MessageBox.Show("Template's content mustn't be empty!","Error!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return;
+            }
+            MessageBox.Show("Template's name mustn't be default!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
